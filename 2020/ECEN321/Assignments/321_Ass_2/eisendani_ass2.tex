@@ -1,0 +1,168 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage{amsmath} % Required for some math elements
+\usepackage{hyperref} 
+\usepackage{xcolor}
+\usepackage{lipsum} 
+\usepackage{cite}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{bookmark}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[margin=16mm]{geometry}
+\usepackage[caption=false, font=footnotesize]{subfig}
+
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{label = Step \arabic*:}
+
+\hypersetup{ %color attributes of citation, link, etc.
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=gray,      
+    urlcolor=blue,
+    citecolor=blue,
+}
+
+\newcommand{\matlab}{\textsc{Matlab}} %very important and totally necessary addition
+
+\newcommand\Item[1][]{%
+  \ifx\relax#1\relax  \item \else \item[#1] \fi
+  \abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+ 
+\title{ECEN321: Engineering Statistics \\ Assignment 2 Submission}
+\author{Daniel Eisen : 300447549}
+\date{\today}
+
+\begin{document}
+\maketitle
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONTENT
+%----------------------------------------------------------------------------------------
+\begin{enumerate}
+\section*{Counting Methods}
+        \item (Navidi 2.2.10) % 1
+        \begin{enumerate}
+                \item[] $\frac{N!}{K_{1}!K_{2}!K_{3}!} = \frac{15!}{6!5!4!} = 630,630$
+        \end{enumerate}
+
+\section*{Conditional Probability}
+        \item (Navidi 2.3.10) \\ % 2
+        $P(A \cap N^{c}) = 0.2 \;\; P(A^{c} \cap N) = 0.7 \;\; P(A \cap N) = 0.1$
+        \begin{enumerate}
+                \item % a
+                $P(A) = P(A \cap N^{c}) + P(A \cap N) = 0.3$
+                \item % b
+                $P(N) = P(A^{c} \cap N) + P(A \cap N) = 0.8$
+                \item % c
+                $P(N|A) = \frac{P(A \cap N)}{P(A)} = \frac{0.1}{0.3} = 0.33\bar{3}$
+                \item % d
+                $P(A|N) = \frac{P(A \cap N)}{P(N)} = \frac{0.1}{0.8} = 0.125$
+                \item % e
+                $P(N^{c}|A) = \frac{P(A \cap N^{c})}{P(A)} = \frac{0.2}{0.3} = 0.667$
+                \item % f
+                $P(A^{c}|N) = \frac{P(A^{c} \cap N)}{P(N)} = \frac{0.7}{0.8} = 0.875$
+        \end{enumerate}
+
+        \item (Navidi 2.3.20) \\ % 3
+        $P(G)=0.7 \;\; P(M)=0.2 \;\; P(P)=0.1$ \\
+        $P(A|G)=0.005 \;\; P(A|M)=0.01 \;\; P(A|P)=0.025$
+        \begin{enumerate}
+                \item % a
+                $P(G \cap A) = P(A|G)*P(G) = 0.005 * 0.7 = 0.0035$
+                \item % b
+                \begin{align*}
+                        P(A) &= P(G \cap A) + P(M \cap A) + P(P \cap A) \\
+                             &= P(A|G)*P(G) + P(A|M)*P(M) + P(A|P)*P(P) \\
+                             &= 0.005 * 0.7 + 0.01 * 0.2 + 0.025 * 0.1 \\ 
+                        P(A) &=0.008 
+                \end{align*}
+                \item % c
+                $P(G|A) = \frac{P(G \cap A)}{P(A)} = \frac{0.0035}{0.008} = 0.4375$
+        \end{enumerate}
+
+        \newpage
+        \item (Navidi 2.3.32) \\ % 4 
+        $P(f) = 0.0002 \;\; P(P^{c}|f) = 0.995 \;\; P(P|f^{c}) = 0.99$
+        \begin{enumerate}
+                \Item % a
+                \begin{align*}
+                P(f|P^{c}) &= \frac{P(P^{c}|f)P(f)}{P(P^{c}|f)P(f) + P(P^{c}|f^{c})P(f^{c})} \\
+                           &= \frac{P(P^{c}|f)P(f)}{P(P^{c}|f)P(f) + [1-P(P|f^{c})][1-P(f)]} \\
+                           &= \frac{(0.995)(0.0002)}{(0.995)(0.0002) + [1-0.99][1-0.0002]} \\
+                P(f|P^{c}) &= 0.01952
+                \end{align*}
+                \item % b
+                i. If a bottle fails, it has a probability of having a flaw of 0.01952
+                \Item % c
+                \begin{align*}
+                P(f^{c}|P) &= \frac{P(P|f^{c})P(f^{c})}{P(P|f^{c})P(f^{c}) + P(P|f)P(f)} \\
+                           &= \frac{P(P|f^{c})P(f^{c})}{P(P|f^{c})P(f^{c}) + [1-P(P^{c}|f)]P(f)} \\
+                           &= \frac{(0.99)(0.9998)}{(0.99)(0.9998) + (1-0.995)(0.0002)} \\
+                P(f^{c}|P) &= 0.999998989698
+                \end{align*}
+                \item % d
+                ii. Given that the bottle passed the inspection it has a probability of being flawless of 0.999998989698
+                \item % e
+                Having a high false positive rate of fault detection (a) is fine, as long as the chance of the inspection passing only a flawless bottle is high (c)    
+        \end{enumerate}
+        
+        \item (Navidi 2.4.2) % 5 
+        \begin{table}[h]
+                \begin{tabular}{l|lllll}
+                $x$    & 0   & 1   & 2    & 3   & 4    \\ \hline
+                $p(x)$ & 0.4 & 0.3 & 0.15 & 0.1 & 0.05
+        \end{tabular}
+        \end{table}
+        \begin{enumerate}
+                \item % a
+                $P(X \le 2) = \sum_{n \le 2} P(X = n) = 0.4+0.3+0.15 = 0.85$
+                \item % b
+                $P(X > 1) = \sum_{n > 1}P(X = n) = 0.15 + 0.1 + 0.05 = 0.3$
+                \item % c
+                $\mu_{X} = \sum_{x}xP(X=x) = 0(0.4)+1(0.3)+2(0.15)+3(0.1)+4(0.05)=1.1$
+                \item % d
+                $\sigma_{X}^{2} = (\sum_{x}x^{2}P(X=x)) - \mu_{X}^{2} = (0^{2}(0.4)+1^{2}(0.3)+2^{2}(0.15)+3^{2}(0.1)+4^{2}(0.05)) - 1.1^{2} = 1.39$
+        \end{enumerate}
+
+        \item (Navidi 2.4.14) % 6
+        \begin{enumerate}
+                \item % a
+                $P(X > 25) = \int_{25}^{30}\frac{x}{250} \,\mathrm{d}x = \frac{x^{2}}{500}\Big|_{25}^{30} = 0.55$
+                \item % b
+                $\mu_{X} = \int_{20}^{30}\frac{x^{2}}{250} \,\mathrm{d}x = \frac{x^{3}}{750}\Big|_{20}^{30} = 25.33\bar{3}$
+                \item % c
+                $\sigma_{X}^{2} = \int_{20}^{30}\frac{x^{3}}{250} \,\mathrm{d}x - \mu_{X}^{2} = \frac{x^{4}}{1000}\Big|_{20}^{30} - (25.33\bar{3})^{2} = 8.22\bar{2}$
+                \item % d
+                $\sigma_{X} = 2.867442$
+                \Item
+                \begin{align*}
+                        F(x) &= \int_{-\infty}^{x}f(t) \, \mathrm{d}t \\ \\ %%
+                        x < 20, F(x) &= \int_{-\infty}^{x} 0 \, \mathrm{d}t = 0 \\ \\%%
+                        20 \le x < 30, F(x) &= \int_{-\infty}^{20} 0 \, \mathrm{d}+ \int_{20}^{x} \frac{t}{250} \, \mathrm{d}t \\ %%
+                                            &= 0 + \frac{t^{2}}{500}\Big|_{20}^{x} \\
+                                       F(x) &= \frac{x^{2}}{500} - \frac{4}{5} \\ \\
+                        x \ge 30, F(x) &= \int_{-\infty}^{20} 0 \, \mathrm{d} + \int_{20}^{30} \frac{t}{250} \, \mathrm{d}t + \int_{30}^{x} 0 \, \mathrm{d}t \\ %%
+                                       &= 0 + \frac{t^{2}}{500}\Big|_{20}^{30} + 0 \\
+                                       &= 0 + 1 + 0 \\
+                                  F(x) &= 1
+                \end{align*}
+                \item % f
+                $P(X > 28) = \int_{28}^{30}\frac{x}{250} \,\mathrm{d}x = \frac{x^{2}}{500}\Big|_{28}^{30} = 0.232$
+        \end{enumerate}
+
+\section*{Linear Functions of Random Variables}
+        \item (Navidi 2.5.6)
+        \begin{enumerate}
+                \item[] $\sigma = 7 \times10^{-15}$ 
+                \item[] $\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{N}} = \frac{7 \times10^{-15}}{\sqrt{2}} =4.9497475 \times 10^{-15}$ 
+        \end{enumerate}
+\end{enumerate}
+\end{document}

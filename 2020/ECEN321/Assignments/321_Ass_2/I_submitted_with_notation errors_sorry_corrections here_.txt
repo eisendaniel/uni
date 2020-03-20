@@ -1,0 +1,5 @@
+I have some notation errors in question 3b due to lazy latex copy pasting, sorry.
+ 
+It should be 
+P (A) = P(G ∩ A) + P(M ∩ A) + P(P ∩ A)
+= P(A|G)P(G) + P(A|M )P(M) + P(A|P)P(P)
