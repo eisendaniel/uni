@@ -1,0 +1,351 @@
+A51 MACRO ASSEMBLER  CLOCK7                                                               05/22/2019 14:15:27 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.5.0
+OBJECT MODULE PLACED IN .\Objects\clock7.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE clock7.a51 SET(LARGE) DEBUG PRINT(.\Listings\clock7.lst) OBJECT(.\Objec
+                      ts\clock7.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1                     ORG     0H
+
+0000 020030            2                     LJMP MAIN                
+
+                       3                     
+
+000B                   4                     ORG  000BH                       
+
+000B 020100            5                     LJMP TINT                
+
+                       6                             
+
+0030                   7                     ORG 30H 
+
+0030 7814              8     MAIN:   MOV     R0,#20
+
+0032 7958              9                     MOV     R1,#58H          
+
+0034 7A59             10                     MOV     R2,#59H          
+
+0036 7B23             11                     MOV     R3,#23H          
+
+0038 114F             12                     ACALL SETDIS             
+
+003A 758901           13                     MOV TMOD,#0x01           
+
+003D 758C3C           14                     MOV     TH0,#0x3C
+
+0040 758AB0           15                     MOV     TL0,#0xB0
+
+0043 D2A9             16                     SETB ET0                         
+
+0045 D2AF             17                     SETB EA                  
+
+0047 D28C             18                     SETB TR0                 
+
+0049 1168             19     DISPL:  ACALL DIST                       
+
+004B 11F7             20                     ACALL   DELAY3
+
+004D 0149             21                     AJMP DISPL
+
+                      22                     
+
+004F 7430             23     SETDIS: MOV     A,#30H                   
+
+0051 11CF             24                     ACALL   COMNWRT         
+
+0053 11E9             25                     ACALL   DELAY1          
+
+0055 740C             26                     MOV     A,#0CH          
+
+0057 11CF             27                     ACALL   COMNWRT         
+
+0059 11E9             28                     ACALL   DELAY1          
+
+005B 7401             29                     MOV     A,#01           
+
+005D 11CF             30                     ACALL   COMNWRT         
+
+005F 11EE             31                     ACALL   DELAY2          
+
+0061 7406             32                     MOV     A,#06H          
+
+0063 11CF             33                     ACALL   COMNWRT         
+
+0065 11E9             34                     ACALL   DELAY1          
+
+0067 22               35                     RET
+
+                      36                     
+
+0068 7401             37     DIST:   MOV     A,#01                    
+
+006A 11CF             38                     ACALL   COMNWRT          
+
+006C 11EE             39                     ACALL   DELAY2          
+
+006E EB               40                     MOV     A,R3             
+
+006F C4               41                     SWAP A
+
+0070 540F             42                     ANL A,#0FH
+
+0072 4430             43                     ORL A,#30H
+
+0074 11DC             44                     ACALL   DATAWRT         
+
+0076 11E9             45                     ACALL   DELAY1  
+
+0078 EB               46                     MOV     A,R3                    
+
+0079 540F             47                     ANL A,#0FH
+
+007B 4430             48                     ORL A,#30H
+
+007D 11DC             49                     ACALL   DATAWRT         
+
+007F 11E9             50                     ACALL   DELAY1
+
+0081 743A             51                     MOV     A,#3AH          
+
+0083 11DC             52                     ACALL   DATAWRT         
+
+0085 11E9             53                     ACALL   DELAY1
+
+0087 EA               54                     MOV     A,R2                    
+
+0088 C4               55                     SWAP A
+
+0089 540F             56                     ANL A,#0FH
+
+008B 4430             57                     ORL A,#30H
+
+A51 MACRO ASSEMBLER  CLOCK7                                                               05/22/2019 14:15:27 PAGE     2
+
+008D 11DC             58                     ACALL   DATAWRT         
+
+008F 11E9             59                     ACALL   DELAY1  
+
+0091 EA               60                     MOV     A,R2                    
+
+0092 540F             61                     ANL A,#0FH
+
+0094 4430             62                     ORL A,#30H
+
+0096 11DC             63                     ACALL   DATAWRT
+
+0098 743A             64                     MOV     A,#3AH          
+
+009A 11DC             65                     ACALL   DATAWRT         
+
+009C 11E9             66                     ACALL   DELAY1
+
+009E E9               67                     MOV     A,R1                    
+
+009F C4               68                     SWAP A
+
+00A0 540F             69                     ANL A,#0FH
+
+00A2 4430             70                     ORL A,#30H
+
+00A4 11DC             71                     ACALL   DATAWRT         
+
+00A6 11E9             72                     ACALL   DELAY1  
+
+00A8 E9               73                     MOV     A,R1                    
+
+00A9 540F             74                     ANL A,#0FH
+
+00AB 4430             75                     ORL A,#30H      
+
+00AD 11DC             76                     ACALL   DATAWRT
+
+00AF 22               77                     RET
+
+                      78                     
+
+00B0 E9               79     INCT:   MOV A,R1                         
+
+00B1 2401             80                     ADD A,#1                         
+
+00B3 D4               81                     DA A
+
+00B4 F9               82                     MOV R1,A
+
+00B5 B46016           83                     CJNE A,#60H,INCE         
+
+00B8 7900             84                     MOV R1,#0
+
+00BA EA               85                     MOV A,R2                         
+
+00BB 2401             86                     ADD A,#1                        
+
+00BD D4               87                     DA A
+
+00BE FA               88                     MOV R2,A
+
+00BF B4600C           89                     CJNE A,#60H,INCE         
+
+00C2 7A00             90                     MOV R2,#0
+
+00C4 EB               91                     MOV A,R3                         
+
+00C5 2401             92                     ADD A,#1                        
+
+00C7 D4               93                     DA A
+
+00C8 FB               94                     MOV R3,A
+
+00C9 B42402           95                     CJNE A,#24H,INCE         
+
+00CC 7B00             96                     MOV R3,#0
+
+00CE 22               97     INCE:   RET
+
+                      98                     
+
+                      99                             
+
+00CF                 100     COMNWRT:
+
+00CF F590            101                     MOV     P1,A            
+
+00D1 C2A0            102                     CLR     P2.0            
+
+00D3 C2A1            103                     CLR     P2.1            
+
+00D5 D2A2            104                     SETB    P2.2            
+
+00D7 11E9            105                     ACALL   DELAY1          
+
+00D9 C2A2            106                     CLR     P2.2            
+
+00DB 22              107                     RET
+
+                     108                     
+
+00DC                 109     DATAWRT:                        
+
+00DC F590            110                     MOV     P1,A            
+
+00DE D2A0            111                     SETB    P2.0            
+
+00E0 C2A1            112                     CLR     P2.1            
+
+00E2 D2A2            113                     SETB    P2.2            
+
+00E4 11E9            114                     ACALL   DELAY1          
+
+00E6 C2A2            115                     CLR     P2.2            
+
+00E8 22              116                     RET
+
+                     117     
+
+00E9 7D1E            118     DELAY1: MOV     R5,#30                   
+
+00EB DDFE            119     LP1:    DJNZ    R5,LP1          
+
+00ED 22              120             RET
+
+                     121                     
+
+00EE 7D32            122     DELAY2: MOV     R5,#50                   
+
+00F0 7C32            123     HERE2:  MOV     R4,#50  
+
+A51 MACRO ASSEMBLER  CLOCK7                                                               05/22/2019 14:15:27 PAGE     3
+
+00F2 DCFE            124     HERE:   DJNZ    R4,HERE                 
+
+00F4 DDFA            125             DJNZ    R5,HERE2
+
+00F6 22              126             RET     
+
+                     127                     
+
+00F7 7DFA            128     DELAY3: MOV     R5,#250                  
+
+00F9 7CFA            129     HERE4:  MOV     R4,#250 
+
+00FB DCFE            130     HERE3:  DJNZ    R4,HERE3                
+
+00FD DDFA            131             DJNZ    R5,HERE4
+
+00FF 22              132             RET     
+
+                     133     
+
+0100 C28C            134     TINT:   CLR TR0
+
+0102 C28D            135                     CLR TF0                          
+
+0104 758C3C          136                     MOV     TH0,#0x3C
+
+0107 758AB0          137                     MOV     TL0,#0xB0 
+
+                     138                     
+
+010A D28C            139                     SETB TR0
+
+010C D806            140                     DJNZ R0, TINTE
+
+010E 7814            141                     MOV R0, #20
+
+0110 B2A3            142                     CPL P2.3
+
+0112 11B0            143                     ACALL INCT
+
+                     144                     
+
+                     145                     
+
+0114 32              146     TINTE:  RETI
+
+                     147     
+
+                     148                     END
+
+A51 MACRO ASSEMBLER  CLOCK7                                                               05/22/2019 14:15:27 PAGE     4
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+COMNWRT. . . . . .  C ADDR   00CFH   A   
+DATAWRT. . . . . .  C ADDR   00DCH   A   
+DELAY1 . . . . . .  C ADDR   00E9H   A   
+DELAY2 . . . . . .  C ADDR   00EEH   A   
+DELAY3 . . . . . .  C ADDR   00F7H   A   
+DISPL. . . . . . .  C ADDR   0049H   A   
+DIST . . . . . . .  C ADDR   0068H   A   
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+ET0. . . . . . . .  B ADDR   00A8H.1 A   
+HERE . . . . . . .  C ADDR   00F2H   A   
+HERE2. . . . . . .  C ADDR   00F0H   A   
+HERE3. . . . . . .  C ADDR   00FBH   A   
+HERE4. . . . . . .  C ADDR   00F9H   A   
+INCE . . . . . . .  C ADDR   00CEH   A   
+INCT . . . . . . .  C ADDR   00B0H   A   
+LP1. . . . . . . .  C ADDR   00EBH   A   
+MAIN . . . . . . .  C ADDR   0030H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+SETDIS . . . . . .  C ADDR   004FH   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TINT . . . . . . .  C ADDR   0100H   A   
+TINTE. . . . . . .  C ADDR   0114H   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
