@@ -1,0 +1,105 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage{amsmath} % Required for some math elements
+\usepackage{hyperref} 
+\usepackage{xcolor}
+\usepackage{lipsum} 
+\usepackage{cite}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{bookmark}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{enumitem}   
+\usepackage[margin=16mm]{geometry}
+\usepackage[caption=false, font=footnotesize]{subfig}
+
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{label = Step \arabic*:}
+
+\hypersetup{ %color attributes of citation, link, etc.
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=gray,      
+    urlcolor=blue,
+    citecolor=blue,
+}
+
+\newcommand{\matlab}{\textsc{Matlab}} %very important and totally necessary addition
+
+\newcommand\Item[1][]{%
+  \ifx\relax#1\relax  \item \else \item[#1] \fi
+  \abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+ 
+\title{ECEN321: Analogue Electronics \\ Assignment 1: Power Amplifiers - Submission}
+\author{Daniel Eisen : 300447549}
+\date{\today}
+
+\begin{document}
+\maketitle
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONTENT
+%----------------------------------------------------------------------------------------
+\section*{Question 1}
+  \begin{enumerate}[label = \Roman*.]
+          \item \textit{An audio amplifier operates in the frequency range of..} \\ 
+          \textbf{a. 20Hz to 20kHz} 
+
+          \item \textit{For maximum peak-to-peak output voltage, the Q point should be..} \\ 
+          \textbf{c. At the centre of the dc load line}
+          
+          \item \textit{An amplifier has two load lines because..} \\ 
+          \textbf{d. All of the above} 
+          
+          \item \textit{Push-pull is almost always used with..} \\ 
+          \textbf{b. Class B} 
+          
+          \item \textit{Class C amplifiers are almost always..} \\ 
+          \textbf{c. Tuned RF amplifiers} 
+          
+          \item \textit{The input signal of a class C amplifier..} \\ 
+          \textbf{c. Produces brief pulses of collector current} 
+          
+          \item \textit{If RC=100 Ωand RL=180Ω, the ac load resistance equals..} \\ 
+          \textbf{The answer} 
+          
+          \item \textit{In a class A amplifier, the collector current flows for..} \\ 
+          \textbf{d. The entire cycle} 
+          
+          \item \textit{With class A, the output signal should be..} \\ 
+          \textbf{a. Unclipped} 
+          
+          \item \textit{A small quiescent current is necessary with a class AB push-pull amplifier to avoid..} \\ 
+          \textbf{a. Crossover distortion} 
+  \end{enumerate}
+
+\section*{Question 2}
+  \begin{enumerate}[label=\alph*)]
+    \item % a)
+    In the push push-pull configuration, the base-emitter junctions of the transistors have a potential of 0.7V. Thus when the input drops below this, at the \textbf{crossover} around the zero-point, the output is cut-off. This introduces a flatline distortion between positive and negative half cycles.
+
+    \item % b)
+    
+
+  \end{enumerate}
+
+\section*{Question 3}
+
+\section*{Question 4}
+  \begin{enumerate}[label=\roman*)]
+    \item % maximum  a.c. power output
+    \item % the power rating of transistor
+    \item % he maximum efficiency.
+  \end{enumerate}
+
+\section*{Question 5}
+
+\section*{Question 6}
+
+\end{document}
