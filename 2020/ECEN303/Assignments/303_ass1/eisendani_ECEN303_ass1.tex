@@ -95,47 +95,78 @@
 
   \begin{enumerate}[label=\roman*)]
     \Item % input power
-    \begin{align*}
-      P_{i(dc)} &= V_{CC}I_{CQ} \\
-      V_{B} &= \frac{R_{2}}{R_{1}+R_{2}}V_{CC} = \frac{1k}{2k}20 = 10V \\
-      V_{E} &= V_{B} - 0.7 = 9.3V \\
-      I_{E} &= \frac{V_{E}}{R_{E}} = \frac{9.3}{100} = 93mA \approx I_{CQ} \\
-      \therefore P_{i(dc)} &= 20 \times 93mA = 1.86W
-    \end{align*}
+      \begin{align*}
+        P_{i(dc)} &= V_{CC}{\cdot}I_{CQ} \\
+        V_{B} &= \frac{R_{2}}{R_{1}+R_{2}}V_{CC} = \frac{1k}{1k+1k}20V = 10V \\
+        V_{E} &= V_{B} - 0.7 = 9.3V \\
+        I_{E} &= \frac{V_{E}}{R_{E}} = \frac{9.3}{100} = 93mA \approx I_{CQ} \\
+        \therefore P_{i(dc)} &= 20 \times 93mA = 1.86W \\
+      \end{align*}
 
     \Item % output power
-    \begin{align*}
-      P_{o(ac)} &= \frac{V_{CEQ}I_{CQ}}{2} \\
-      V_{CEQ}   &= V_{C} - V_{E} = (V_{CC} - I_{C}R_{C}) - V_{E} \\
-                &= (20V - 93mA \times 50\Omega) - 9.3V = 6.05V \\ 
-      \therefore P_{o(ac)} &= \frac{6.05V \times 93mA}{2} = 0.28W
-    \end{align*}
+      \begin{align*}
+        P_{o(ac)} &= \frac{V_{CEQ}{\cdot}I_{CQ}}{2} \\
+        V_{CEQ}   &= V_{C} - V_{E} = (V_{CC} - I_{C}{\cdot}R_{C}) - V_{E} \\
+                  &= (20V - 93mA \times 50\Omega) - 9.3V = 6.05V \\ 
+        \therefore P_{o(ac)} &= \frac{6.05V \times 93mA}{2} = 0.28W \\
+      \end{align*}
 
     \Item % efficiency.
-    \begin{align*}
-      \% \eta &= \frac{P_{o(ac)}}{P_{i(dc)}} \times 100 \\
-              &= \frac{0.28}{1.86} \times 100 = 15\% 
-    \end{align*}
+      \begin{align*}
+        \% \eta &= \frac{P_{o(ac)}}{P_{i(dc)}} \times 100 \\
+                &= \frac{0.28}{1.86} \times 100 = 15\%  \\
+      \end{align*}
   \end{enumerate}
 
 
 \section*{Question 4}
-  \begin{enumerate}[label=\roman*)]
-    \item % maximum  a.c. power output
-    \item % the power rating of transistor
-    \item % he maximum efficiency.
-  \end{enumerate}
+  $V_{CC}$
 
+  \begin{enumerate}[label=\roman*)]
+    \Item % maximum  a.c. power output
+      \begin{align*}
+        &= \\
+      \end{align*}
+    \Item % power rating of transistor (DC input power for this application)
+      \begin{align*}
+        &= \\
+      \end{align*}
+    \Item % maximum efficiency.
+      \begin{align*}
+        &= \\
+      \end{align*}
+  \end{enumerate}
+  
+
+\newpage
 \section*{Question 5}
   $V_{CC} = +30V \; V_{BE} = 0.7V \; R_{1} = 300\Omega \; R_L = 16\Omega$\
   
   \begin{align*}
-    V_{CC} &= 2R_{1}I + 2V_{BE} \\
+    V_{CC} &= 2R_{1}{\cdot}I + 2V_{BE} \\
     30V &= 600\Omega \times I + 1.4V \\
     I &= \frac{30V-1.4V}{600\Omega} = 47.67mA \\
-    R_{2} &= \frac{V_{BE}}{I} = \frac{0.7V}{47.67mA} = 14.67\Omega 
+    R_{2} &= \frac{V_{BE}}{I} = \frac{0.7V}{47.67mA} = 14.67\Omega  \\
   \end{align*}
 
 \section*{Question 6}
+$f=3\mathrm{MHz} \; V_{CC} = 20V \; V_{CE(sat)} = 0.3V \; I_{P}=500mA$
+\begin{enumerate}[label=\roman*)]
+  \Item % Efficiency
+    \begin{align*}
+      V_{P} &= V_{CC} - V_{CE(sat)} \\
+      &= 20V - 0.3 = 19.7V \\
+      P_{)} &= \frac{V_{P}^{2}}{2R_{L}} = \frac{388.09}{200} = 1.94W \\
+      I_{dc} &= \frac{P_{O}}{V_{P}} = \frac{1.94}{19.7} = 98.5mA \\
+      P_{dc} &= V_{CC}{\cdot}I_{dc} = 20 \times 98.5 = 1.97W \\
+      \% \eta &= \frac{P_{)}}{P_{dc}} \times 100 = \frac{1.94}{1.97} \times 100 \\ &= 98.5\% \\ 
+    \end{align*}
+  \Item % Conduction Angle
+    \begin{align*}
+      T &= \frac{1}{f} = \frac{1}{3{\times}10^{6}} = 3.33{\times}10^{-7} \\
+      t &= \frac{P_{O}{\cdot}T}{I_{P}{\cdot}V_{P}} = \frac{1.94{\times}3.33 {\times}10^{-7}}{500{\times}19.7} = 6.56{\times}10^{-8} \\
+      \phi &= \frac{P_{O}}{P_{dc}} \times 360 = \frac{6.56{\times}10^{-8}}{3.33{\times}10^{-7}} \times 360 \\ &= 70.92^{\circ}
+    \end{align*}
+\end{enumerate}
 
 \end{document}
