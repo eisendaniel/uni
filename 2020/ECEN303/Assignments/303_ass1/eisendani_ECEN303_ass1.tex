@@ -67,7 +67,7 @@
           \textbf{c. Produces brief pulses of collector current} 
           
           \item \textit{If RC=100 Ωand RL=180Ω, the ac load resistance equals..} \\ 
-          \textbf{The answer} 
+          \textbf{100Ω} 
           
           \item \textit{In a class A amplifier, the collector current flows for..} \\ 
           \textbf{d. The entire cycle} 
@@ -79,17 +79,45 @@
           \textbf{a. Crossover distortion} 
   \end{enumerate}
 
-\section*{Question 2}
+  \section*{Question 2}
   \begin{enumerate}[label=\alph*)]
     \item % a)
     In the push push-pull configuration, the base-emitter junctions of the transistors have a potential of 0.7V. Thus when the input drops below this, at the \textbf{crossover} around the zero-point, the output is cut-off. This introduces a flatline distortion between positive and negative half cycles.
-
+    
     \item % b)
     
+    
+  \end{enumerate}
+  
+\newpage
+\section*{Question 3}
+  $V_{CC} = +20V \; R_{1,2} = 1k \; R_C = 50\Omega \; R_E = 100\Omega \; R_L = 50\Omega$
 
+  \begin{enumerate}[label=\roman*)]
+    \Item % input power
+    \begin{align*}
+      P_{i(dc)} &= V_{CC}I_{CQ} \\
+      V_{B} &= \frac{R_{2}}{R_{1}+R_{2}}V_{CC} = \frac{1k}{2k}20 = 10V \\
+      V_{E} &= V_{B} - 0.7 = 9.3V \\
+      I_{E} &= \frac{V_{E}}{R_{E}} = \frac{9.3}{100} = 93mA \approx I_{CQ} \\
+      \therefore P_{i(dc)} &= 20 \times 93mA = 1.86W
+    \end{align*}
+
+    \Item % output power
+    \begin{align*}
+      P_{o(ac)} &= \frac{V_{CEQ}I_{CQ}}{2} \\
+      V_{CEQ}   &= V_{C} - V_{E} = (V_{CC} - I_{C}R_{C}) - V_{E} \\
+                &= (20V - 93mA \times 50\Omega) - 9.3V = 6.05V \\ 
+      \therefore P_{o(ac)} &= \frac{6.05V \times 93mA}{2} = 0.28W
+    \end{align*}
+
+    \Item % efficiency.
+    \begin{align*}
+      \% \eta &= \frac{P_{o(ac)}}{P_{i(dc)}} \times 100 \\
+              &= \frac{0.28}{1.86} \times 100 = 15\% 
+    \end{align*}
   \end{enumerate}
 
-\section*{Question 3}
 
 \section*{Question 4}
   \begin{enumerate}[label=\roman*)]
@@ -99,6 +127,14 @@
   \end{enumerate}
 
 \section*{Question 5}
+  $V_{CC} = +30V \; V_{BE} = 0.7V \; R_{1} = 300\Omega \; R_L = 16\Omega$\
+  
+  \begin{align*}
+    V_{CC} &= 2R_{1}I + 2V_{BE} \\
+    30V &= 600\Omega \times I + 1.4V \\
+    I &= \frac{30V-1.4V}{600\Omega} = 47.67mA \\
+    R_{2} &= \frac{V_{BE}}{I} = \frac{0.7V}{47.67mA} = 14.67\Omega 
+  \end{align*}
 
 \section*{Question 6}
 
