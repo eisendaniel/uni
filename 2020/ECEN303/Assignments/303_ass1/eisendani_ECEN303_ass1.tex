@@ -66,8 +66,8 @@
           \item \textit{The input signal of a class C amplifier..} \\ 
           \textbf{c. Produces brief pulses of collector current} 
           
-          \item \textit{If RC=100 Ωand RL=180Ω, the ac load resistance equals..} \\ 
-          \textbf{100Ω} 
+          \item \textit{If RC=100Ω and RL=180Ω, the ac load resistance equals..} \\ 
+          \textbf{a. 64Ω} 
           
           \item \textit{In a class A amplifier, the collector current flows for..} \\ 
           \textbf{d. The entire cycle} 
@@ -79,14 +79,30 @@
           \textbf{a. Crossover distortion} 
   \end{enumerate}
 
+  \newpage
   \section*{Question 2}
   \begin{enumerate}[label=\alph*)]
     \item % a)
     In the push push-pull configuration, the base-emitter junctions of the transistors have a potential of 0.7V. Thus when the input drops below this, at the \textbf{crossover} around the zero-point, the output is cut-off. This introduces a flatline distortion between positive and negative half cycles.
     
     \item % b)
-    
-    
+   
+    \begin{figure}[h]
+      \centering
+      \subfloat[Voltage-Divider Bias]{%
+              \includegraphics[width=0.15\linewidth]{inc/push_pull_R.png}}
+              \hspace{0.15\linewidth}
+      \subfloat[Diode Bias]{
+              \includegraphics[width=0.15\linewidth]{inc/push_pull_D.png}}
+      \caption{Class B/AB Biasing Configurations}
+      \label{fig_graph} 
+    \end{figure} 
+
+    Figure 1a shows a voltage-divider biasing configuration with a summed potential difference of $2V_{BE}$ to unsure the transistors are always on, so the avoid the crossover distortion. The issue with this being high temperature sensitivity with the ultimate issue being thermal runaway. 
+
+    Figure 1b shows a diode biasing configuration, this is a way to avoid thermal runaway and still providing the same potential difference. The curves of the compensating diodes must match the $V_{BE}$ curves of the transistors so temperature changes result in an adjusted bias voltage.
+
+
   \end{enumerate}
   
 \newpage
@@ -120,25 +136,28 @@
 
 
 \section*{Question 4}
-  $V_{CC}$
+  $V_{CC}=V_{CEQ}=5V \;\; I_{CQ}=50mA$
 
   \begin{enumerate}[label=\roman*)]
     \Item % maximum  a.c. power output
       \begin{align*}
-        &= \\
+        P_{o(ac \; max)} &= \frac{I_{CQ}{\cdot}V_{CEQ}}{2} \\
+        &= \frac{50mA{\times}5V}{2} = 0.125W \\
       \end{align*}
     \Item % power rating of transistor (DC input power for this application)
       \begin{align*}
-        &= \\
+        P_{i(dc)} &= I_{CQ}{\cdot}V_{CEQ} \\
+        &= 50mA{\times}5V = 0.25W \\
       \end{align*}
     \Item % maximum efficiency.
       \begin{align*}
-        &= \\
+        \% \eta_{max} &=  \frac{P_{o(ac \; max)}}{P_{i(dc)}} \times 100 \\
+        &= \frac{\frac{I_{CQ}{\cdot}V_{CEQ}}{2}}{I_{CQ}{\cdot}V_{CEQ}} \times 100 \\
+        &= \frac{0.125}{0.25} \times 100 = 50\% \\
       \end{align*}
   \end{enumerate}
   
-
-\newpage
+  \newpage
 \section*{Question 5}
   $V_{CC} = +30V \; V_{BE} = 0.7V \; R_{1} = 300\Omega \; R_L = 16\Omega$\
   
@@ -159,7 +178,7 @@ $f=3\mathrm{MHz} \; V_{CC} = 20V \; V_{CE(sat)} = 0.3V \; I_{P}=500mA$
       P_{)} &= \frac{V_{P}^{2}}{2R_{L}} = \frac{388.09}{200} = 1.94W \\
       I_{dc} &= \frac{P_{O}}{V_{P}} = \frac{1.94}{19.7} = 98.5mA \\
       P_{dc} &= V_{CC}{\cdot}I_{dc} = 20 \times 98.5 = 1.97W \\
-      \% \eta &= \frac{P_{)}}{P_{dc}} \times 100 = \frac{1.94}{1.97} \times 100 \\ &= 98.5\% \\ 
+      \% \eta &= \frac{P_{O}}{P_{dc}} \times 100 = \frac{1.94}{1.97} \times 100 \\ &= 98.5\% \\ 
     \end{align*}
   \Item % Conduction Angle
     \begin{align*}
