@@ -120,12 +120,31 @@
 
         \end{enumerate}
 
-        \item (Navidi 2.6.16) % 1
+        \item (Navidi 2.6.16) % 2
         \begin{enumerate}
                 \Item \\
+                $P(X>1\mathrm{\;and\;}Y>1) = {\displaystyle \int_{1}^{\infty}\int_{1}^{\infty}xe^{-(x+xy)} \,\mathrm{d}x\mathrm{d}y }\\ \\
+                ={\displaystyle \int_{1}^{\infty}(\frac{-e^{-y-1}y-2e^{-y-1}}{(-y-1)^{2}}) \,\mathrm{d}y} \\ \\
+                =\frac{1}{2e^{2}} \approx 0.06766...$ \\
+
                 \Item \\
+                $f_{X}(x)={\displaystyle \int_{-\infty}^{\infty}}f_{XY}(x,y)  \,\mathrm{d}y \\\\
+                ={\displaystyle \int_{0}^{\infty}}xe^{-(x+xy)}  \,\mathrm{d}y \\\\
+                =-e^{-x-xy}\big|^{\infty}_{0} = 0-(-e^{-x}) \\\\
+                f_{X}(x) = e^{-x}$\\
+
                 \Item \\
+                $f_{Y}(y)={\displaystyle \int_{-\infty}^{\infty}}f_{XY}(x,y)  \,\mathrm{d}x \\\\
+                ={\displaystyle \int_{0}^{\infty}}xe^{-(x+xy)}  \,\mathrm{d}x\\\\
+                =e^{-x-xy}\frac{1}{-1-y}x-e^{-x-xy}\frac{1}{(-1-y)^{2}}\big|^{\infty}_{0} =0-(-\frac{1}{(-y-1)^{2}})\\\\
+                f_{Y}(y)=\frac{1}{(-y-1)^{2}}$\\
+
+
                 \Item \\
+                $f(1,1) = e^(2) = 0.13533..\\
+                f_X(1){\cdot}f_{Y}(1) = (e^{-1}){\cdot}(\frac{1}{(-2)^{2}}) = \frac{1}{4e} = 0.09196\\
+                f(x,y) \neq f_{X}(x){\cdot}f_{Y}(y)\;\therefore NO$\\
+
         \end{enumerate}
 \end{enumerate}
 \end{document}
