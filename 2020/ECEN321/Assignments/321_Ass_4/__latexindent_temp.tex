@@ -1,0 +1,85 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage{amsmath} % Required for some math elements
+\usepackage{hyperref} 
+\usepackage{xcolor}
+\usepackage{lipsum} 
+\usepackage{cite}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{bookmark}
+\usepackage{listings}
+\usepackage{mcode}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[margin=24mm]{geometry}
+\usepackage[caption=false, font=footnotesize]{subfig}
+
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{label = Step \arabic*:}
+
+\hypersetup{ %color attributes of citation, link, etc.
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=gray,      
+    urlcolor=blue,
+    citecolor=blue,
+}
+
+\newcommand{\matlab}{\textsc{Matlab }} %very important and totally necessary addition
+
+\newcommand\Item[1][]{%
+  \ifx\relax#1\relax  \item \else \item[#1] \fi
+  \abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
+  %----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+ 
+\title{ECEN321 : Engineering Statistics \\ Assignment 4 Submission}
+\author{Daniel Eisen : 300447549}
+\date{\today}
+
+\begin{document}
+\maketitle
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONTENT
+%----------------------------------------------------------------------------------------
+\begin{enumerate}
+\section*{Measurement Error}
+\item (Navidi 3.1.2) % 1
+\begin{enumerate}
+        \item The first thermometer covers the range 16.2 to 16.6 and the second thermometer covers 16.7 to 16.9. Thus the first thermometer shows greater accuracy.
+        \item The second thermometer as a lower uncertainty, there is the more precise measurement.
+\end{enumerate}
+
+\item (Navidi 3.1.8) % 2
+\begin{enumerate}
+        \item 
+        \item 
+\end{enumerate} 
+
+\section*{Linear Combinations of Measurements}
+\item (Navidi 3.2.2)
+\item (Navidi 3.2.6)
+
+\section*{Uncertainties for Functions of One Measurement}
+\item (Navidi 3.3.4)
+
+\section*{Uncertainties for Functions of Several Measurements}
+\item (Navidi 3.4.2)
+\begin{enumerate}
+        \item 
+        \item 
+\end{enumerate}
+
+\item (Navidi 3.4.14)
+\begin{enumerate}
+        \item 
+        \item 
+\end{enumerate}
+
+\end{enumerate}
+\end{document}

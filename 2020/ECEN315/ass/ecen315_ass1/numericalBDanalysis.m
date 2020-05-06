@@ -3,7 +3,7 @@
 % s = tf('s');  % this tells Matlab that 's' is the Laplace operator rather than a matrix called s 
 % G = s/(s+1)%this is one way of creating a transfer function (tf) - note ';' surpresses the output of a command
 % pause
-stf = feedback(series(1/25, tf(1,[4 0])),1)%tf(num,den) is another way of creating a tf
+stf = feedback(series(1/25, tf(1,[4 0])),1);%tf(num,den) is another way of creating a tf
 % series(a,b) multiplies two blocks in series together
 % feedback(c,d) does forward/(1-loop) for block c in forward path and block d in feedback path (must equal 1 if unity feedback)
 

@@ -1,0 +1,107 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage{amsmath} % Required for some math elements
+\usepackage{hyperref} 
+\usepackage{xcolor}
+\usepackage{lipsum} 
+\usepackage{cite}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{bookmark}
+\usepackage{listings}
+\usepackage{mcode}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[margin=24mm]{geometry}
+\usepackage[caption=false, font=footnotesize]{subfig}
+
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{label = Step \arabic*:}
+
+\hypersetup{ %color attributes of citation, link, etc.
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=gray,      
+    urlcolor=blue,
+    citecolor=blue,
+}
+
+\newcommand{\matlab}{\textsc{Matlab }} %very important and totally necessary addition
+
+\newcommand\Item[1][]{%
+  \ifx\relax#1\relax  \item \else \item[#1] \fi
+  \abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
+  %----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+ 
+\title{ECEN321 : Engineering Statistics \\ Assignment 4 Submission}
+\author{Daniel Eisen : 300447549}
+\date{\today}
+
+\begin{document}
+\maketitle
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONTENT
+%----------------------------------------------------------------------------------------
+\begin{enumerate}
+\section*{Measurement Error}
+\item (Navidi 3.1.2) % 1
+\begin{enumerate}
+        \item The first thermometer covers the range 16.2 to 16.6 and the second thermometer covers 16.7 to 16.9. Thus the first thermometer shows greater accuracy.
+        \item The second thermometer as a lower uncertainty, there is the more precise measurement.
+\end{enumerate}
+
+\item (Navidi 3.1.8) % 2
+\begin{enumerate}
+        \item $\mathrm{Uncertainty} = s = \pm 0.6$
+        \item $\mathrm{Bias} = 26.18$
+\end{enumerate} 
+
+\section*{Linear Combinations of Measurements}
+\item (Navidi 3.2.2) \\ %3
+        $\sigma_{X} = \frac{\sigma}{\sqrt{N}}$ \\
+        $N = (\frac{\sigma}{\sigma_X})^{2} = (\frac{1.5}{0.5})^{2} = 9 $
+\item (Navidi 3.2.6) \\ %4
+        $C = \frac{20.00-19.90}{2} = 0.05$ \\
+        $\sigma_{C} = \sigma_{\frac{h + p}{2}} = \sqrt{\frac{1}{4}0.01^{2}+\frac{1}{4}0.02^{2}} = 0.01118$
+
+\section*{Uncertainties for Functions of One Measurement}
+\item (Navidi 3.3.4) $T = 300 \pm 0.4$ \\ %5
+        $V = 20.04\sqrt{T} = 347.102982$ \\
+        $\frac{dV}{dR} = \frac{10.02}{\sqrt{T}}$ \\
+        $\sigma_{V} \approx {\big|}\frac{10.02}{\sqrt{T}}{\big|}{\cdot}\sigma_T = {\big|}\frac{10.02}{\sqrt{300}}{\big|}{\cdot}0.4 = 0.231401987891$ \\ \\
+        $V = 347.1 \pm 0.23 \; m/s$
+
+\section*{Uncertainties for Functions of Several Measurements}
+\item (Navidi 3.4.2) $V=\frac{\pi}{3}r^{2}h, \;\; r=5.00{\pm}0.02\;cm, \;\; h=6.00{\pm}0.01\;cm$ %6
+\begin{enumerate}
+        \item $V=\frac{\pi}{3}25{\cdot}6 =157.079633$ \\ 
+        $\frac{\delta V}{\delta r}=\frac{2\pi}{6}rh, \;\; \frac{\delta V}{\delta h}=\frac{\pi}{3}r^{2}$ \\
+        $\sigma_{V}=\sqrt{(\frac{\pi}{6}rh)^{2}\sigma_{r}^{2}+(\frac{\pi}{3}r^{2})^{2}\sigma_{h}^{2}}
+        =\sigma_{V}=\sqrt{(\frac{\pi}{6}5{\cdot}6)^{2}0.02^{2}+(\frac{\pi}{3}25)^{2}0.01^{2}}=1.28361817673$ \\ \\ 
+        $V = 157{\pm}1.28\;cm^{3}$ \\
+
+        \item 
+        $\sqrt{(\frac{\pi}{6}5{\cdot}6)^{2}0.01^{2}+(\frac{\pi}{3}25)^{2}0.01^{2}}=0.680678408278 \\ 
+        \sqrt{(\frac{\pi}{6}5{\cdot}6)^{2}0.02^{2}+(\frac{\pi}{3}25)^{2}0.005^{2}}=1.26343635931 \\ 
+        \therefore \mathrm{reducing\;r\;to\;0.01}$ 
+\end{enumerate}
+
+\item (Navidi 3.4.14) $R=kl/d^{2}, \; l=14.0{\pm}0.1\;cm, \; d=4.4{\pm}0.1\;cm$%7
+\begin{enumerate}
+        \item $R=14/4.4^2k=\frac{16k}{19.36} \\
+                \frac{\delta R}{\delta l} = k/d^2 = k/4.4^2=\frac{k}{19.36}\\
+                \frac{\delta R}{\delta d} = -2kl/d^3 = \frac{-28k}{85.184}\\
+                \sigma_{R}=\sqrt{(\frac{k}{19.36})^{2}0.1^{2}+(\frac{-28k}{85.184})^{2}0.1^{2}} = 0.03327k \\\\
+                R = \frac{16k}{19.36}{\pm}0.033{\Omega}$ \\
+        \item $\sigma_{l} = 0.05 \rightarrow \sigma_{R}=0.0329k \\
+                \sigma_{d} = 0.05 \rightarrow \sigma_{R}=0.0172k$ \\
+                $\therefore$ reducing d's uncertainty
+\end{enumerate}
+
+\end{enumerate}
+\end{document}
