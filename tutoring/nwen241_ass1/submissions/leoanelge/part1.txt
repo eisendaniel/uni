@@ -1,0 +1,126 @@
+Name: Elgene Menon Leo Anthony
+Student Id: 300492604
+
+
+Task 1 : Core 
+1(a) while = valid:consists of letters
+(b) record_100 = valid:consist of letters and digits
+(c) $record = invalid: $ is not allowed in C
+(d) integer-counter = invalid: integer is a reserved word
+
+2(a) a + b + c = 15
+(b) a / b = 2 because an integer of 2.333 is 2
+(c) a % b = 1 because its the reminder
+(d) a * b % c = 1 because (7*3)%5 = 21%5 = 1
+
+3(a) c1 + c2 + c3 = 183    ( D+4+? = 68 + 52 + 63 = 183)
+(b) c1 - ’A’ =  3          ( D - 65 ) =  68 - 65 = 3
+(c) 3 * c2 = 156           (3 *4 ) = ( 3 * 52) = 156
+(d) ’3’ * c2 = 2652        (51 * 4)= (51 * 52) = 2652
+
+Task 2 : Completion 
+
+1) [2 Marks] Given the following C code snippet, what is the type of the expression
+c+i+l? Briefly explain your answer.
+char c;
+int i;
+long l;
+
+
+The answer is long because based on the conversion hierarchy chart, 
+the char is the is lowest level, the int is the next level up and long 
+is better than int type. Therefore, char c + int i will convert to int, 
+then int + long will convert to long. Hence, the final type is long. 
+
+
+2) [2 Marks] Given the following C code snippet, what is the value assigned to k in the
+2nd line? Briefly explain your answer.
+int i = 8, j = 6, k;
+k = (j > 5) ? i : j;
+
+The answer is 8 because 6 is bigger than 5 which means the condition is true. Therefore i is accepted.If the condition is false then the value k is accepted.
+
+3) [2 Marks] What is the problem (if any) in the following C statement?
+int rem = 10.0 / 4 % 2;
+
+The problem is the equation cannot be divied. This means 10 / 0 = cannot be divied by 0.
+
+4) [2 Marks] Rewrite the following code, using a for-loop, to produce the same output.
+int main (void)
+{
+int j = 5;
+while(j >= 0)
+printf("%d ", --j);
+return 0;
+}
+
+The answer :
+
+#include <stdio.h>
+int main (void)
+{
+for(int j=4 ; j >= -1 ; --j){
+ printf("%d ",j); 
+}
+return 0;
+}
+
+Task 3: Challenge
+
+
+1) [3 Marks] What is the value of i, j, and k after the last statement in the following C
+code snippet? Explain your answer by showing step-by-step solution.
+int i = 5, j = 10, k = 1;
+(k += 3*--i) - j++;
+
+Answer:
+(1 += (3*4)= 12) - 11 = 2;
+
+k = 13 because  (1 += (3*4= 12)) 
+i = 4 
+j= 11 
+ 
+2) [2 Marks] What is the output of the following code fragment? Explain your answer.
+
+char string[] = "One\0Two\0Three";
+printf("%d", strlen(string));
+
+Answer:
+
+The output is 3 because strlen() function counts the number of all the characters 
+in the string array and stop when it found the null character(\0). 
+This means,One\0Two\0Three, One\0 is 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

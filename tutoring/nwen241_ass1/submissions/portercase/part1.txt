@@ -1,0 +1,47 @@
+Casey Porter 
+300412316 
+NWEN241 A1 Part 1 
+ 
+Part 1: Concepts 
+
+Task 1.  
+	1.	Valid or invalid identifiers  
+		a.	while - invalid (reserved word)  
+		b.	record_100 – valid   
+		c.	$record – invalid ($ not allowed in C)  		
+		d.	Integer-counter – invalid (- not allowed) 
+ 
+	2.	a = 7, b = 3, c =5  
+		a.	a + b + c = 15  
+		b.	a / b = 2  
+		c.	a % b = 1  
+		d.	a * b % c = 1  
+	3.	c1 = D (68), c2 = 4 (52), c3 = ? (63)  
+		a.	c1 + c2 + c3 = 68 + 52 + 63 = 183  
+		b.	c1 - ‘A’ = 68 – 65 = 3  		
+		c.	3 * c2 = 3 * 52 = 156  
+		d.	‘3’ * c2 = 51 * 52 = 2652  
+Task 2. 
+	1.	char + int + long evaluates to be an expression of type long (c + i converts to an int, this int + l converts to a long)  
+	2.	k = 8. (j > 5) ? i : j; is a conditional expression which means if j > 5 then k will evaluate to i. 6 > 5 so k = i =8  
+	3.	You cannot use modulus on a double (10.0/4 evaluates to a double, not an int)  
+	4.	  
+		int main(void) { 
+			for(int i = 4; i >= -1; i--){ 
+				printf("%d ", i); 
+			} 
+			return 0; 
+		} 
+ 
+Task 3. 
+	1) 
+		i = 12, j = 11, k = 13 
+		(k += 3*--i) - j++; 
+		--i = 4 
+		3*4 = 12 (so i = 12) 
+		k += 12 
+		1 += 12 = 13 (so k = 13) 
+		13 – j++; 
+		13 – 11 (so j = 11) 
+ 
+	2) length of string up until first null character is 3 (“One” has 3 elements) 

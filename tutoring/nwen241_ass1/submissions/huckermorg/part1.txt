@@ -1,0 +1,49 @@
+CORE
+
+1.
+	a) Invalid
+	b) Valid
+	c) Invalid
+	d) Invalid
+
+2.
+	a) 15
+	b) 2
+	c) 1
+	d) 1
+	
+3.	
+	a) 183
+	b) 3
+	c) 156
+	d) 2652
+	
+COMPLETION
+
+1.
+	The type is a long becuase a long is
+	higher in the conversion hierarchy 
+	than the other types in the expression.
+	
+2.
+	8 because the condition (j>5) is true so k will be set to the value of i which is 8.
+	
+3.
+	Modulus operator only works with integers, not doubles.
+	
+4.
+	for (int j = 5; j >= 0;)
+	printf("%d ", --j);
+	return 0;
+	
+
+CHALLENGE
+
+1.
+	i = 4 because --i = 5 - 1 = 4
+	j = 11 because j++ = 10 + 1 = 11
+	k = 13 because k += 3*--i = 1 + 12 = 13   (- j++ ignored due to brackets)
+
+2.
+	3 because there are 3 values before the '\0' and length counting starts from 1, not 0.
+	

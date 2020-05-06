@@ -1,0 +1,91 @@
+NWEN241 - Assignment 1
+Part 1: Concepts
+Justin Joe 
+300470389
+joejust
+*************************************************************************************************************************
+Task 1
+
+Question 1:
+
+a. while - not valid (keyword)
+b. record_100 - valid (underscores included as a character)
+c. $record - not valid ($ is not allowed)
+d. integer-counter - not valid ( - is not allowed)
+
+Question 2:
+a = 7, b = 3 and c = 5
+
+a. a + b + c = 7 + 3 + 5   = 15
+b. a / b     = 7 / 3       = 2
+c. a % b     = 7 % 3       = 1
+d. a * b % c = 7 * 3 % 5   = 1
+
+Question 3:
+char c1 = D, c2 = 4, c3 = ?
+
+a. c1 + c2 + c3 = 183
+b. c1 - 'A'     = 3
+c. 3 * c2       = 156
+d. '3' * c2     = 2652
+
+*************************************************************************************************************************
+Task 2
+
+Question 1:
+char c; int i; long l;
+c + i + l?
+
+The type of expression gets promoted to a long.
+This is because the char c gets converted to a ascii value, and the long l is the highest data type in the hierachy,
+which promotes this expression to have a long data type.
+
+Question 2:
+int i = 8, j = 6, k;
+k = (j > 5) ? i : j;
+k = (6 > 5) ? 8 : 6;
+
+The value assigned to k is 8. This is a ternary operator stating that if 6 is greater than 5, then assign 8
+to k. If 6 is not greater than 5, assign 6 to k.
+
+Question 3:
+int rem = 10.0 / 4 % 2;
+
+The problem is that you have two operands which are equal in the operator precedence and associativity (this would 
+operate from left to right) alongside both data types of an integer and a double.
+
+
+
+Question 4:
+
+for (int j = 4; j >= -1; j--) {
+        printf("%d ", j);
+    }
+    return 0;
+
+****************************************************************************************************************************
+Task 3
+
+Question 1:
+int i = 5, j = 10, k = 1;
+(k += 3*--i) - j++;
+(1 += 3*--5) - 10++;
+1 += 3*--5 everything in brackets has highest precedence
+1 += 3*4   decrement is next
+1 += 12    * is next
+13 - 10++  += is next
+13 - 11    postfix increment is next
+2
+
+i = 4, j = 11, k = 13
+
+
+
+Question 2:
+char string[] = "One\0Two\0Three";
+printf("%d", strlen(string));
+
+The code outputs the integer 3. This is because the array contains 3 elements separated by a null terminator (\0).
+strlen only operates on the first element because the null terminator at the end of One, signifies that it is the
+end of the string. This means that strlen only works on "One\0" and returns 3 which is the length up to and not 
+including the null terminator.

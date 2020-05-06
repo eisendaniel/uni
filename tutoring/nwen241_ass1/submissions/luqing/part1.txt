@@ -1,0 +1,58 @@
+Part I: Concepts
+
+Task 1.
+1) (a) while             invalid
+   (b) record_100        valid
+   (c) $record           invalid
+   (d) integer-counter   invalid
+
+2) (a) a + b + c = 15
+   (b) a / b = 2
+   (c) a % b = 1
+   (d) a * b % c = 1
+
+3) (a) c1 + c2 + c3 = 183
+   (b) c1 - 'A' = 3
+   (c) 3 * c2 = 156
+   (d) '3' * c2 = 2652
+
+Task 2.
+1) The type of the expression is: long.
+   When operands have different types in an arithmetic expression, 
+   compiler automatically converts lower-level to higher-level type 
+   in the "Conversion hierarchy" so that the expression can be evaluated 
+   without losing any significance.
+
+2) k = 8
+   When j > 5 is true, k equals i; otherwise, k = j.
+
+3) In "int rem = 10.0 / 4 % 2;", 10.0 is a double value, 4 is int. 
+   Double / int is a double value. We can't use "%" to calculate remainder of double values.
+
+4) #include <stdio.h>
+   int main (void){
+       int j = 5;
+       for(int i = j; i > -1; i--)
+           printf("%d ", --j);
+       return 0;
+   }
+
+Task 3.
+1) i = 4: "--i" means subtracting 1 from i first (here, it is i-1=5-1=4), then doing the operation.
+   j = 11: "j++" means firstly doing the operation first, then add 1 to j. So after the operation, j+1 equals 11.
+   k = 13: As "--i" equals 4, k = k + 3 * --i = 1 + 3 * 4 = 13.
+
+2) The output of the code fragment is:
+   warning: format specifies type 'int' but the argument has type 'unsigned long'
+      [-Wformat]
+        printf("%d", strlen(string));
+                ~~   ^~~~~~~~~~~~~~
+                %lu
+   1 warning generated.
+
+   Reason is that the returned value of strlen() is of type "long int", not "int".
+   If we change d to ld, we will get the length of the char array.
+   
+   The length is 3.
+   Reasons are that the function strlen() stops counting at the null character "\0"; 
+   also, it does not count the null character "\0" while calculating the length.

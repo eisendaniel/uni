@@ -1,0 +1,87 @@
+﻿NWEN 241 2020-T1 (Weeks 1–2 Topics) Assignment 1
+Part I: Concepts
+
+
+Core: 
+1. “ while “ (invalid identifier - this is a reserved keyword)
+2.  “record_100” - (valid identifier) 
+3.  “$record” - (invalid identifier ‘$’ are not allowed)
+4.  “ integer-counter” (invalid identifier because the - is a reserved operator) 
+
+
+2)
+1.  “a + b + c” = 7 + 3 + 5 = 15
+2. “ a/b” = 7 / 3 = 2
+3. “ a % b” = 7 % 3 = 1 
+4. “a * b % c” = 7 * 3%5 = 1
+
+
+3)
+1. C1 + c2 + c3 = 183
+2. c1 - ‘A’ = 3 
+3. 3 * c2 = 156
+4. ‘3’ * c2 = 2652 
+
+
+Completion:
+
+
+1. Because we are engaging in arithmetic with operands that have different types, implicit type conversion is performed to ensure no loss of data, and therefore the final type will be long. 
+
+
+2. This is an example of a ternary operator. Which has the syntax
+
+
+Condition → ? → Value if True: Value if False. 
+
+
+As ‘j’ is greater than 5, ‘k’ will equal ‘i’ which is 8.
+
+
+3. This will cause an error because of the double and int. Because C will not allow us to use the % operator when a double (10.0/4) % and an int (2). The operator % is for integers only and therefore not applicable in this case.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4) for(int j = 5; j >= 0;){
+    printf("%d ", --j );
+}
+return 0;
+
+
+Challenge: 
+
+
+Part One: 
+i = 5, j = 10, k = 1 
+(k += 3*--i) - j++;
+The step by step is: 
+
+
+1. The first step is to carry out the increment --i as well as the j++. Thus, i becomes a value of 4 and j value of 11. 
+2. We then multiple the value of i which is 12 and then as k = k + 12, k becomes 13.
+
+
+Final values are: 
+
+
+i = 4 ; j = 11 ; k = 13
+
+
+
+
+2) Strlen is a function used to return the length of a string and it will terminate/return the length when it sees it first null terminator which in this case will be after One\0 therefore it will count 3 chars and return a value of 3.

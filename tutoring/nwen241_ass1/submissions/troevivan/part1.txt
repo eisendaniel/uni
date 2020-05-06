@@ -1,0 +1,59 @@
+Ivan Panaiotov-Troev
+Student #: 300456276
+NWEN 241 - Assignment 1
+
+
+Task 1
+
+1)
+a. while  //invalid, reserved word
+b. record_ 100  //valid
+c. $record  //invalid, $ is not allowed in C identifiers
+d. integer-counter  //invalid, identifier can only consist of letters and numbers (except _ underscore)
+
+2)
+a. a + b + c = 15
+b. a / b = 2
+c. a % b = 1
+d. a * b % c = 1
+
+3) 
+a. c1 + c2 + c3 = 183
+b. c1 - 'A' = 3
+c. 3 * c2 = 156
+d. '3' * c2 = 2652
+
+
+Task 2
+
+1) The type of the expression is long. First c + i is evaluated (left to right associativity applies to + operator). 
+char c is converted to an int through implicit type conversion, so now (c + i) is an int. Then we have (c + i) + l,
+since l is a long and longs are higher in the conversion hierarchy than ints, (c + i) is converted to a long. \
+
+2) 8 is assigned to k. ?: is the conditional operator and the assignment statement expression to k reads: if j is greather than 5, choose i.
+Otherwise, choose j. 
+
+3) There will be truncation. 10.0 / 4 is evaluated first, the 4 will be converted to a float so we get 10.0/4.0 = 2.5. Then 2.5 % 2,
+again 2 is converted to float getting the expression 2.5 % 2.0 = 0.5. However the problem is that you are assigning this 0.5 to an int
+variable so the fractional part is truncated, meaning you've just assigned 0 to rem which was probably not the programmer's intention.
+
+4)
+int main(void){
+for(int j = 5; j >= 0; j)
+    {
+		printf("%d ", --j);
+    }
+    return 0;
+}
+
+
+Task 3
+
+1) The bracket (k += 3*--i) is evaluated first. Inside the bracket,the -- operator has precedence. i is decremented to 4 and then
+multiplied by 3. New expression is (k += 12) which is the same as (k = k + 12) which evluates to 13. The expression is now
+13 - j++. ++ operator has priority so j is incremented to 11. Final expression is 13 - 11 which evaluates to 2. 
+Final values: i = 4, j = 11, k = 13
+
+2) The output is 3. While the length of the actual array is larger, there is a null terminator after "One" which ends the string.
+The length of the string "One" is 3, there are three characters in "One". 
+

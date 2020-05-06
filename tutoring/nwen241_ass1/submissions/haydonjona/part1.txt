@@ -1,0 +1,44 @@
+Jonathan Haydon	300503776	haydonjona
+
+Core
+1)	a) invalid
+	b) valid
+	c) invalid
+	d) invalid
+
+2)	a) 15
+	b) 2
+	c) 1
+	d) 1
+
+3)	a) 183
+	b) 3
+	c) 156
+	d) 2652
+
+Completion
+1)	Long, as that has more detail in the conversion heirarchy so will be that to prevent any loss of data.
+
+2)	8, essentially functions as an if statement (if j > 5, k = 1, else k = j)
+
+3)	Won't compile, the modulus (%) function requires an int but it is given a double (10.0)
+
+4)	int main (void) {
+		for (int i = 4; i > -2; i--)
+			printf ("%i ", i);
+	}
+
+Challenge
+1)	At end i = 4, j = 11, k = 13;
+	To start i = 5, j = 10, k = 1
+	1.	First we deal with what is in parentheses (k += 3*--i)
+		Within that we do the 3*--i first BUT the syntax --i as opposed to i-- means we deincrement i first meaning i = 4
+		3 * 4 = 12 so we now have k += 12 which means add 12 to k and assign that value to k so k = 13
+		At the end of the parenthesis i = 4, j = 10, k = 13
+	2.	Now we have 13 - j++ so we minus j from 13 giving 2 and then increment j making j = 11
+		We now have 2 but the statement does not assign it to anything so the value is irrelevant
+		At the end of the line i = 4, j = 11, k = 13
+
+2)	3, strlen() gives the length of a given string so the printf gives the length of the string as an int.
+	Only the first 3 characters are counted as what proceeds "One" is the terminating character '\0'which indicates the end of the string what comes after is redundant.
+	The terminating character '\0' does not count toward the string length so the size of the string are the three characters in "One".

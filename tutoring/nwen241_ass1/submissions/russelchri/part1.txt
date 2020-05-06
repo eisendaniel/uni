@@ -1,0 +1,53 @@
+Task 1
+1:
+	a. invalid
+	b. valid
+	c. invalid
+	d. invalid
+
+2:
+	a. 15
+	b. 2
+	c. 1
+	d. 1
+
+3:
+	a. 68 + 52 + 63 = 183
+	b. 68 - 65 = 3
+	c. 3 * 52 = 156
+	d. 51 * 52 = 2652
+
+Task 2
+1.
+	long. Because the compiler automatically converts the type to the type of the largest size to not lose data
+
+2.
+	8 is assigned to k because the line says if j > 5 then k = i (8) which is true so k = 8
+
+3.
+	10.0 / 4 = 2.5, 2.5 % 2 = 0.5 and 0.5 is not a integer like 'rem' is
+
+4.
+	int main (void) {
+		for (int j = 5; j >= 0; j--){
+			printf("%d ", j);
+		}
+		return 0;
+	}
+
+Task 3
+1.
+	--i = 4
+	3*4 = 12
+	1 + 12 = 13
+	k = 13
+	j++ = 11
+	13 - 11 = 2 (But this doesn't affect any variables)
+	So k = 13, i = 4 and j = 11
+
+2.
+	3, because the null escape key says that the string ends after "One" and the escape key is not included in the length.
+
+
+
+	
