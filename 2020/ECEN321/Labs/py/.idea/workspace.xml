@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c134a0a-329b-4593-8080-9056106a1a3f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lab2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ECEN315/ass/ecen315_ass1/numericalBDanalysis.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ECEN315/ass/ecen315_ass1/numericalBDanalysis.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/py.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/py.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../321_lab2/eisendani_321lab2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../321_lab2/eisendani_321lab2.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../321_lab2/eisendani_321lab2.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../321_lab2/eisendani_321lab2.synctex.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../321_lab2/eisendani_321lab2.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../321_lab2/eisendani_321lab2.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../321_lab2/inc/q3_out.png" beforeDir="false" afterPath="$PROJECT_DIR$/../321_lab2/inc/q3_out.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../321_lab2/inc/q3_plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/../321_lab2/inc/q3_plot.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../ENGR301/group-4" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ENGR301/group-4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../tutoring/nwen241_ass1/submissions/alasmaabdu/editor.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../tutoring/nwen241_ass1/submissions/alasmaabdu/editor.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -128,6 +130,9 @@
       <module name="py" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -177,6 +182,8 @@
       <workItem from="1588986338541" duration="17438000" />
       <workItem from="1589084015372" duration="709000" />
       <workItem from="1589087774463" duration="3675000" />
+      <workItem from="1589102133950" duration="467000" />
+      <workItem from="1589139809771" duration="86000" />
     </task>
     <servers />
   </component>

@@ -35,10 +35,9 @@ def q3_cov_corr():
     noise = np.random.randn(1000)
     sin_noisy = sin + noise
 
-    print(f"Covariance of Original and Noisy signal:\n"
-          f"{np.cov(sin, sin_noisy)[1, 0]}")
-    print(f"\nCorrelation Coefficient:\n"
-          f"{np.corrcoef(sin, sin_noisy)[1, 0]}\n")
+    print("Original Signal vs Noise Corrupted Measurement\n")
+    print(f"Covariance: {np.cov(sin, sin_noisy)[1, 0]}")
+    print(f"Correlation Coefficient: {np.corrcoef(sin, sin_noisy)[1, 0]}\n")
 
     ax1 = plt.subplot(1, 2, 1)
     plt.scatter(x, sin, linewidths=0, s=8)
@@ -72,5 +71,5 @@ def q4_combined_uncertainties():
     plt.subplot(2, 2, (3, 4))
     plt.hist(V, bins=50, density=True, edgecolor="black")
     plt.title("Density Hist of V2-V1")
+    
 
-    plt.show()
