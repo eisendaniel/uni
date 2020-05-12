@@ -63,8 +63,6 @@ MU_TEST(test_task4_pos_lt0) {
 
     mu_assert_string_eq(base_editing_buffer, editing_buffer);
     mu_assert_int_eq(r_base, r_test);
-
-    reset_buffers();
 }
 
 /**
@@ -84,8 +82,6 @@ MU_TEST(test_task4_pos_gtl) {
 
     mu_assert_string_eq(base_editing_buffer, editing_buffer);
     mu_assert_int_eq(r_base, r_test);
-
-    reset_buffers();
 }
 
 /**
@@ -105,8 +101,6 @@ MU_TEST(test_task4_pos_eob) {
 
     mu_assert_string_eq(base_editing_buffer, editing_buffer);
     mu_assert_int_eq(r_base, r_test);
-
-    reset_buffers();
 }
 
 /**
@@ -126,8 +120,6 @@ MU_TEST(test_task4_normal) {
 
     mu_assert_string_eq(base_editing_buffer, editing_buffer);
     mu_assert_int_eq(r_base, r_test);
-
-    reset_buffers();
 }
 #endif
 
@@ -151,8 +143,6 @@ MU_TEST(test_task5_offset_lt0) {
 
     mu_assert_string_eq(base_editing_buffer, editing_buffer);
     mu_assert_int_eq(r_base, r_test);
-
-    reset_buffers();
 }
 
 /**
@@ -174,8 +164,6 @@ MU_TEST(test_task5_offset_gtl) {
 
     mu_assert_string_eq(base_editing_buffer, editing_buffer);
     mu_assert_int_eq(r_base, r_test);
-
-    reset_buffers();
 }
 
 /**
@@ -196,8 +184,6 @@ MU_TEST(test_task5_normal) {
 
     mu_assert_string_eq(base_editing_buffer, editing_buffer);
     mu_assert_int_eq(r_base, r_test);
-
-    reset_buffers();
 }
 #endif
 
@@ -224,8 +210,6 @@ MU_TEST(test_task6_offset_lt0) {
 
     mu_assert_string_eq(base_editing_buffer, editing_buffer);
     mu_assert_int_eq(r_base, r_test);
-
-    reset_buffers();
 }
 
 /**
@@ -250,8 +234,6 @@ MU_TEST(test_task6_offset_gtl) {
 
     mu_assert_string_eq(base_editing_buffer, editing_buffer);
     mu_assert_int_eq(r_base, r_test);
-
-    reset_buffers();
 }
 
 /**
@@ -275,8 +257,6 @@ MU_TEST(test_task6_empty_str) {
 
     mu_assert_string_eq(base_editing_buffer, editing_buffer);
     mu_assert_int_eq(r_base, r_test);
-
-    reset_buffers();
 }
 
 /**
@@ -300,8 +280,6 @@ MU_TEST(test_task6_empty_replacement) {
 
     mu_assert_string_eq(base_editing_buffer, editing_buffer);
     mu_assert_int_eq(r_base, r_test);
-
-    reset_buffers();
 }
 
 /**
@@ -347,8 +325,6 @@ MU_TEST(test_task6_normal) {
 
     mu_assert_string_eq(base_editing_buffer, editing_buffer);
     mu_assert_int_eq(r_base, r_test);
-
-    reset_buffers();
 }
 #endif
 
@@ -402,15 +378,19 @@ MU_TEST_SUITE(test_suite) {
 
     MU_RUN_TEST(test_task4_pos_lt0);
     printf("\n");
+    reset_buffers();
 
     MU_RUN_TEST(test_task4_pos_gtl);
     printf("\n");
+    reset_buffers();
 
     MU_RUN_TEST(test_task4_pos_eob);
     printf("\n");
+    reset_buffers();
 
     for (int i = 0; i < 10; i++) {
         MU_RUN_TEST(test_task4_normal);
+        reset_buffers();
     }
     printf("\n");
 #endif
@@ -421,12 +401,15 @@ MU_TEST_SUITE(test_suite) {
 
     MU_RUN_TEST(test_task5_offset_lt0);
     printf("\n");
+    reset_buffers();
 
     MU_RUN_TEST(test_task5_offset_gtl);
     printf("\n");
+    reset_buffers();
 
     for (int i = 0; i < 10; i++) {
         MU_RUN_TEST(test_task5_normal);
+        reset_buffers();
     }
     printf("\n");
 #endif
@@ -437,18 +420,23 @@ MU_TEST_SUITE(test_suite) {
 
     MU_RUN_TEST(test_task6_offset_lt0);
     printf("\n");
+    reset_buffers();
 
     MU_RUN_TEST(test_task6_offset_gtl);
     printf("\n");
+    reset_buffers();
 
     MU_RUN_TEST(test_task6_empty_str);
     printf("\n");
+    reset_buffers();
 
     MU_RUN_TEST(test_task6_empty_replacement);
     printf("\n");
+    reset_buffers();
 
     for (int i = 0; i < 10; i++) {
         MU_RUN_TEST(test_task6_normal);
+        reset_buffers();
     }
     printf("\n");
 #endif
@@ -461,9 +449,11 @@ MU_TEST_SUITE(test_suite) {
 
     MU_RUN_TEST(test_task7_wrap);
     printf("\n");
+    reset_buffers();
 
     MU_RUN_TEST(test_task7_nowrap);
     printf("\n");
+    reset_buffers();
 #endif
 }
 
