@@ -55,8 +55,8 @@
 %----------------------------------------------------------------------------------------
 \section*{Question 1:}
 \begin{enumerate}[label=\alph*)]
-  % Explain the purpose of heat sinks. Also, why do we include an insulating washer between the transistor and the heat sink?
-          \item  Heat Sinks are uses to lower the junction temperature by transferring heat from the junction to ambient. This provides mitigation of the degradation of characteristics and prevent failure due to thermal cycling. The insulating washer provides electrical insulation as well as thermal conductivity.
+% Explain the purpose of heat sinks. Also, why do we include an insulating washer between the transistor and the heat sink?
+          \item Heat Sinks are uses to lower the junction temperature by transferring heat from the junction to ambient. This provides mitigation of the degradation of characteristics and prevent failure due to thermal cycling. The insulating washer provides electrical insulation as well as thermal conductivity.
 % What is the difference between LM7806 andLM7912?
           \item Both are three terminal, fixed voltage regulators. \\
           The LM7806 provides an output of +6V for a minimum $V_i$ of +8.3\\
@@ -65,6 +65,7 @@
 % What are the basic types of switching regulators and how do they differ? What are the basic difference between switching and linear regulators and where do we use them?    
           \item The three types of switching regulators are step-up (boost), step-down (buck), and inverting:
           \\ Step-Up: V-out is always greater than V-in, Step-down: V-out always lower that V-in, Inverting inverted the polarity of the input voltage but can be at any relative level. \\ Switching have max efficiencies of $\ge90\%$ where linear can only much less, especially when the output varies far from the input. Linear are cheaper, so used in lower current application, where efficiency/energy loss isn't that much an issue. Usually when the output is closer to the input. Switching is particularly good for high current applications due to high efficiencies but are harder to control the output noise.
+% What are the main requirements for selecting a voltage regulator for your design?
           \item \begin{itemize}
             \item Required input and out voltages
             \item Total current requirements of the supplied circuit
@@ -74,9 +75,12 @@
           \end{itemize}
 \end{enumerate}
 
+\Newpage
 \section*{Question 2:}
 \begin{enumerate}[label=\alph*)]
+% The data sheet of a 2N3055 lists a power rating of 115W for a case temperature of 25°C. If the derating factor is0.657 W/°C, what is PD(max) when the case temperature is 90°C?
           \item $115-(90-25)*0.657=72.295W$
+% A TO-220 case MOSFET has to dissipate 13W.If Tjmax is 150 C and Tamaxis50oC, a) Select a suitable MOSFET from the market, b) Select a suitable Heatsink, c) Perform the thermal analysis for all the situations (No heat sink, Heatsink, and Heatsink with forced convection) using the tutorial. Document your analysis clearly.
           \Item \\ 
           \textbf{COMPONENTS:}
 
@@ -153,13 +157,40 @@
 
 \end{enumerate}
 
+\Newpage
 \section*{Question 3:}
 \begin{enumerate}[label=\alph*)]
-          \item
-          \item
-          \item
-          \item
-          \item
+% A power supply has VNL= 15 V and VFL= 14.5V. What is the load regulation?
+          \item Load regulation $=(\frac{V_{NL} - V_{FL}}{V_{FL}})\times 100\% = ((15-14.5)/14.5)*100=3.45\%$
+% A voltage regulator is rated at an output current of IL= 0 to 40 mA. Under no-load conditions, the output voltage from the circuit is 8V. Under full-load conditions, the output voltage from the circuit is7.996 V. Determine the load-regulation for the circuit.
+          \item Load regulation $=(\frac{V_{NL} - V_{FL}}{V_{FL}})\times 100\% = ((8-7.996)/7.996)*100=0.05\%$
+% If line voltage changes from 218 to 235 V and load voltage changes from 12Vto 12.6V, what is the line regulation?
+          \item Line regulation $=\frac{(\Delta V_{OUT} / V_{OUT})\times 100\%}{\Delta V_{IN}} = (((12.6-12)/12.6)*100)/(235-218)=0.28\%$ 
+% If R2in the following figure is adjusted to 1.68 kΩ,determine the regulated DC output voltage for the LM317.
+          \item $R_{2} = 1.68k\Omega, \; V_{ref} = 1.25V, \; I_{adj} = 100\mu A$
+          \begin{center}
+            \includegraphics[width=0.3\textwidth]{q3_fig1.png}
+          \end{center}
+
+          \begin{align*}
+            V_o &= V_{ref}(1+\frac{R_2}{R_1}) + I_{adj}R_2 \\
+                &= 1.25*(1 + (1.68E3 / 240)) + 100E-6*1.68E3 \\
+            V_o &= 10.168V
+          \end{align*}
+          
+% The zener diode in the following figure has a minimum zener current of 3 mA and maximum zener current of 100 mA. Determine the minimum allowable value for the load resistor RL?
+          \item $I_{min} = 3mA, \; I_{max} = 100mA$
+          \begin{center}
+            \includegraphics[width=0.2\textwidth]{q3_fig2.png}
+          \end{center}
+
+          \begin{align*}
+            I &= 20/1=20 \\
+            I_{L-max} &= I - I_{Z-min} = 20-3=17 \\
+            R_{L-min} &= \frac{V_Z}{I_{L-max}} = 3.3/17=0.194118k\Omega \\
+            R_L &= 194\Omega
+          \end{align*}
+
 \end{enumerate}
 \end{preview}
 \end{document}
