@@ -11,7 +11,7 @@ J=10.8E8;
 %a
 controller = k*(s+a)/(s+b);
 spacecraft = 1/(J*s^2);
-G = feedback(controller*spacecraft,1);
+G = feedback(controller*spacecraft,1) %closed loop TF
 
 
 %Percent reduction

@@ -1,4 +1,5 @@
 clear;
+clc;
 s = tf('s');
 
 %a

@@ -13,7 +13,9 @@ for a = [1 2 4 8]
     T1 = 1/Wn(1)*Z(1);
     T2 = 1/Wn(2)*Z(2);
     T = sqrt(T1*T2);
-    fprintf("\nFor A = %d:\nT1 = %f T2 = %f\nT = %f\nTs = %f\n",a,T1,T2,T,stepinfo(sys).SettlingTime)
+    fprintf("\nFor A = %d:\nT1 = %f T2 = %f\nT = %f\nTs = %f\n",...
+        a, T1, T2, T,...
+        stepinfo(sys).SettlingTime)
     
 end
 legend('a = 1', 'a = 2', 'a = 4', 'a = 8');
