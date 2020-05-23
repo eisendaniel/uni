@@ -22,7 +22,14 @@ for V = [1 2 3 4 5 6]
 step(V*motor_prop)
 ylabel("Angular Velocity (rad/s)")
 ssg = (numerator/denom_c);
-fprintf("Steady state gain for V = %d: %f\n",V, ssg);
+
+[Wn, Z] = damp(motor_prop); %To get T1 and T2 
+T1 = 1/(Wn(1)*Z(1));
+T2 = 1/(Wn(2)*Z(2));
+T = sqrt(T1*T2);
+
+fprintf("V = %d:\nT=%f SSG=%f\n\n",V,T,ssg);
+
 end
 
 %% import Data
@@ -81,10 +88,15 @@ Kp = 0.0053;
 r = 0.165;
 
 combined_sys = motor_prop .* Kp .* r .* pendulum
-
+figure;
+pzmap(combined_sys)
 figure;
 hold on
 for V = [1 3 4 5]
 step(V*combined_sys)
 end
 ylabel("Angular Displacement (rad)")
+hold off;
+
+
+

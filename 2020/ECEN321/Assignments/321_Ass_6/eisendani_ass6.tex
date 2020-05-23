@@ -41,7 +41,7 @@
 %	DOCUMENT INFORMATION
 %----------------------------------------------------------------------------------------
  
-\title{ECEN321 : Engineering Statistics \\ Assignment 4 Submission}
+\title{ECEN321 : Engineering Statistics \\ Assignment 6 Submission}
 \author{Daniel Eisen : 300447549}
 \date{\today}
 
@@ -54,42 +54,69 @@
 %----------------------------------------------------------------------------------------
 \begin{enumerate}
 \section*{Normal Distribution}
-\item (Navidi 4.5.4
+\item (Navidi 4.5.4 $X ~ N(2,9). \; \mu=2, \; \sigma =\sqrt{9} = 3$ \\
+Using the probability table for the normal distr.
 \begin{enumerate}
-        \item 
-        \item 
-        \item 
-        \item 
+        \item $z = \frac{x - \mu}{\sigma} = \frac{2-2}{3} = 0$ \\
+        $P(X \ge 2) = P(Z>0) = 1-P(Z) = 1-0.5 = 0.5$
+
+        \item $z = \frac{1-2}{3} = -1/3 \approx -0.33$ \\
+        $z = \frac{7-2}{3} = 5/3 \approx 1.67$ \\
+        $P(1 \le X < 7) = P(Z < 1.67) - P(Z < -0.33) = 0.5818$
+
+        \item $z = \frac{-2.5-2}{3} \approx -1.5$ \\
+        $z = \frac{-1-2}{3}\approx -1$ \\
+        $P(-2.5 \le X < 1) = P(Z < -1) - P(Z < -1.5) = 0.0919$
+
+        \item $z = \frac{-3}{3} = -1$ \\
+        $z = \frac{3}{3} = 1$ \\
+        $P(-3 \le X-2 < 3) = P(Z < 1) - P(Z < -1) = 0.6826$
 \end{enumerate}
-\item (Navidi 4.5.22)
+\item (Navidi 4.5.22) $M = 0.5X + Y \; \mu_X=0.45, \sigma_X=0.05,\; \mu_Y=0.25,\sigma_Y=0.025$
 \begin{enumerate}
-        \item 
-        \item 
+        \item $\mu_M = a\mu_X + b\mu_Y = 0.5(0.45) + 0.25=0.475$\\
+        $\sigma_M = \sqrt{a^2\sigma_X^2 + b^2\sigma_Y^2} = \sqrt{0.5^2(0.05^2) + 0.025^2}=0.035355$
+        \item $z = \frac{0.5 - 0.475}{0.035355} = 0.707114$ \\
+        $P(M>0.5) = P(Z > 0.707114) = 1-P(Z<0.707114) = 0.2389$
 \end{enumerate}
 
 \section*{Exponential Distribution}
 \item (Navidi 4.7.10)
 \begin{enumerate}
-        \item 
-        \item 
+        \item $\mu = \frac{1}{\lambda}, \lambda = \frac{1}{\mu} \approx 0.33$
+        \item For 5 metres: $5\frac{1}{3} = \frac{5}{3}$ \\
+        $P(X=2) = \frac{(5/3)^{2}e^{-5/3}}{2!} \approx 0.26$
 \end{enumerate}
 
 \section*{Estimation}
 \item (Navidi 4.9.2) 
-\begin{enumerate}
-        \item 
-        \item 
-        \item 
-        \item 
-\end{enumerate}
+
+Answer: (b)  how close repeated values of the estimator are to each other
 \item (Navidi 4.9.4)
 \begin{enumerate}
-        \item 
-        \item 
-        \item 
-        \item 
+        \Item 
+        \begin{align*}
+                \sigma_{k}^{2} = ((n-1)s^2)/k, \; \mu_{aX} &= a\mu_X, \; \mu_{s^2} = \sigma^2 \\
+                \mathrm{Bias} &= \mu_{\sigma_K^2} - \sigma^2 \\
+                &= \mu_{((n-1)s^2)/k} - \sigma^2 \\
+                &= ((n-1)/k)\mu_{s^2} - \sigma^2 \\
+                &= ((n-1)/k)\sigma^2 - \sigma^2 \\
+                &= \frac{n-1-k}{k}\sigma^2
+        \end{align*}
+        \Item 
+        \begin{align*}
+                \sigma_{k}^{2} = ((n-1)s^2)/k, \; \sigma^2_{aX} &= a^2\sigma^2_X, \; sigma^2_{s^2} = 2\sigma^4/(n-1) \\
+                \mathrm{Variance} &= \sigma^2_{\sigma_{k}^{2}} \\
+                &= \frac{2(n-1)\sigma^4}{k^2}
+        \end{align*}
+        \Item 
+        \begin{align*}
+                MSA_\theta &= Bias^2 + Variance \\
+                &= (\frac{n-1-k}{k}\sigma^2)^2 + \frac{2(n-1)\sigma^4}{k^2} \\
+                &= \frac{(n-1-k)^2}{k^2}\sigma^4 + \frac{2(n-1)\sigma^4}{k^2} \\
+                &= \frac{(n^2 - 2kn + 2k + k^2)\sigma^4}{k^2}
+        \end{align*}
 \end{enumerate}
-\item (Navidi 4.9.8)
 
 \end{enumerate}
 \end{preview}
