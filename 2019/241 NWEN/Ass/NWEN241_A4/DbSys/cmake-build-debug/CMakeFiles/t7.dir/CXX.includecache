@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A4/DbSys/dbms2.cc
+iostream
+-
+fstream
+-
+string
+-
+cstring
+-
+vector
+-
+dbms2.hh
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A4/DbSys/dbms2.hh
+
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A4/DbSys/dbms2.hh
+
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A4/DbSys/lldb.cc
+lldb.hh
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A4/DbSys/lldb.hh
+cstdlib
+-
+
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A4/DbSys/lldb.hh
+dbms2.hh
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A4/DbSys/dbms2.hh
+
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A4/DbSys/t7test.cc
+iostream
+-
+lldb.hh
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A4/DbSys/lldb.hh
+

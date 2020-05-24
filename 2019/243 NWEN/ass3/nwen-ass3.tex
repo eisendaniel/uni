@@ -1,0 +1,109 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[margin=16mm]{geometry}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+%\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+
+%---------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%---------------------------------------------------------------------------------------
+
+\title{NWEN 243 - Assignment 3}
+\author{Daniel Eisen \\ 300447549}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+%---------------------------------------------------------------------------------------
+% DOCUMENT CONTENTS
+%---------------------------------------------------------------------------------------
+\begin{enumerate}
+%1
+\item
+\textcolor{gray}{\textit{Name three network access technologies covered in the lecture.
+State what access technology that you use for your home network.}}\\ \\
+The three access technologies used nominally in home access are;
+xDSL (digital subscriber line), Cable (coaxial cable), Fiber (fibre optic high
+speed transmission lines). Most home network broadband connections are cable with
+a rising fiber roll out and adoption. In my case fiber.
+%2
+\item
+\textcolor{gray}{\textit{Briefly describe router’s core functions.}}\\ \\
+The core fucntions of a router are to accept packets from a host and one; determines source $\rightarrow$ destination route taken, and to forward those packets to their destination(within its own network), or to another router (to outside networks).
+%3
+\item
+\textcolor{gray}{\textit{Briefly compare between packet switch vs circuit switch.}}\\ \\
+Packet switching accepts packets of data, stores and queues them and determines which to send off.
+This is cheap but can result in packets loss and has potentially long delays. Queueing occurs if packet in rate exceed transmission rate, packet loss occurs if buffer size is exceeded.
+
+Circuit switching has a direct, end to end allocated hardware resouces between source and destination.
+These resouces are not shared (as is packet switching) so there is a direct, full performance per call.
+%4
+\item
+\textcolor{gray}{\textit{Briefly explain what a tier-1 ISP is about.}}\\ \\
+Tier-1 ISP ie, large scale commercial ISPs, own large scale networks with national or international coverage. They are usually paid by lower tier ISP's for use of their network.
+%5
+\item
+\textcolor{gray}{\textit{To measure packet delay, what are the delay components?}}\\ \\
+The four sources of packet delay are the nodal processing delay, queue delay, transmission delay, propagation delay.
+%6
+\item
+\textcolor{gray}{\textit{Name the protocol layers. Specify the network stack model that you use.}}\\ \\
+For the internet protocol stack model, the layers are:
+\begin{itemize}
+	\item Application
+	\item Transport
+	\item Network
+	\item Link
+	\item Physical
+\end{itemize}
+\newpage
+%7
+\item
+\textcolor{gray}{\textit{Specify how a TCP or UDP socket is identified at the server side.}}\\ \\
+TCP and UDP have the same data segment format but have different client/server interactions.
+UDP must only specify destination IP address and destination port number.
+Also being non-connections based, is solely a request $\leftrightarrow$ response interaction.\\
+TCP must identify source IP address, source port number, dest IP address, and dest port number. Additionally it must establish a connection per socket. First a 3 way handshake must occur,
+then a datastream is opened and data is exchanged.
+%8
+\item
+\textcolor{gray}{\textit{If you want reliable data transfer, what transport layer protocol would you use?
+Explain why.}}\\ \\
+I would choose TCP. This is due to it being a reliable 'out of the box', as it ensures a constant byte-stream connection between client and server.
+UCP can be made reliable, but that would be up to me to implement.
+%9
+\item
+\textcolor{gray}{\textit{What are the common things between Go-Back-N (GBN) and Selective Repeat (SR), what are the differences?}}\\ \\
+For both pipeline protocols the sender can have up to N unacknowledged packets in the pipeline. The differences being with GBN the receiver only sends 1 cumulative acknowledgement for all sent packets. So the sender must have a timer for the \textit{oldest} unacknowledged packet and retransmits all packets if this expires.
+\\
+SR on the other hand has per packect acknowledgement and thus the sender maintains a per packet timer and only retransmits individual, unacknowledged packets.
+
+%10
+\item
+\textcolor{gray}{\textit{What is Fast Retransmit and AIMD in TCP?}}\\ \\
+Fast Retransmit is a way of determining segment loss, where if sender receives 3
+acknowledgements for the same data, the unacknowledged segment with smallest sequence number is resent.
+\\
+AIMD is a form of congestion control where the sender is probing for and narrowing in on a usuable bandwidth. It does this by gradually increasing transmission rate until loss, then halving and repeating.
+
+%11
+\item
+\textcolor{gray}{\textit{Briefly compare between congestion control vs flow control.}}\\ \\
+Flow control is a way of limiting unacknowledged data, the receiver states it's free buffer space and the sender adheres to that, limiting it's segment sending rate.
+\\
+Congestion control works to limit having more sources sending more data than a \textit{network} can handle. AIMD from the previous question is a form of this. Congestion can manifest as packet loss/delay.
+
+\end{enumerate}
+\end{document}

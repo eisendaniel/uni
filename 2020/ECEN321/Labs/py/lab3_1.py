@@ -2,13 +2,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats
 
-
 mu = 10
 sigma = 2
 var = 4
 
-ten = mu + sigma * (np.random.randn(10, 1000))
-tenThousand = mu + sigma * (np.random.randn(10000, 1000))
+ten = mu + (sigma * (np.random.randn(10, 1000)))
+tenThousand = mu + (sigma * (np.random.randn(10000, 1000)))
 
 ten_mean = np.mean(ten, axis=0)
 tenThousand_mean = np.mean(tenThousand, axis=0)

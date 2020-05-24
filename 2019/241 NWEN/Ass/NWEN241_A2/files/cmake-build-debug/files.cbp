@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="files"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="t7test">
+				<Option output="C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/t7test.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 t7test"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="t7test/fast">
+				<Option output="C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/t7test.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 t7test/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="t8test">
+				<Option output="C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/t8test.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 t8test"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="t8test/fast">
+				<Option output="C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/t8test.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 t8test/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/editor2.c">
+			<Option target="t7test"/>
+			<Option target="t8test"/>
+		</Unit>
+		<Unit filename="C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/editor2.h">
+			<Option target="t7test"/>
+			<Option target="t8test"/>
+		</Unit>
+		<Unit filename="C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/t7test.c">
+			<Option target="t7test"/>
+		</Unit>
+		<Unit filename="C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/t8test.c">
+			<Option target="t8test"/>
+		</Unit>
+		<Unit filename="C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A2/files/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

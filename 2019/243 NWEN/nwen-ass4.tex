@@ -1,0 +1,122 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[margin=16mm]{geometry}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+%\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%---------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%---------------------------------------------------------------------------------------
+
+\title{NWEN 243 : Assignment 4}
+\author{Daniel Eisen : 300447549}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+%---------------------------------------------------------------------------------------
+% DOCUMENT CONTENTS
+%---------------------------------------------------------------------------------------
+\begin{enumerate}
+%1
+\item
+\textcolor{gray}{\textit{Briefly describe what DHCP and NAT are used for.}}\\ \\
+DHCP, the Dynamic Host Configuration Protocol, is uses on a network to dynamically assign IP address (plus other network configs) to a device on the network.
+\\
+NAT is a method of mapping one IP address (of a local networks router) to a range of addresses within the network.
+%2
+\item
+\textcolor{gray}{\textit{Briefly describe how Dijkstra’s algorithm works.}}\\ \\
+It's an algorithm to find the shortest path between a and b. It picks the unvisited node with the low distance, calculates the distance through it to each unvisited neighbor, and updates the neighbor's distance if smaller.
+%3
+\item
+\textcolor{gray}{\textit{Briefly describe how Distance Vector algorithm works.}}
+\begin{tabbing}
+A \= router transmits its distance vector to each of its neighbors.\\
+Each router saves the most recently received distance vector from each of its neighbors.\\
+A router recalculates its distance vector when:\\
+\> It receives a distance vector from a neighbor containing new info.\\
+\> It discovers that a link to a neighbor has gone down.\\
+The DV equation is based on minimizing the cost to each destination
+\end{tabbing}
+%4
+\item
+\textcolor{gray}{\textit{Name two examples of IGP.}}
+\begin{itemize}
+	\item RIP: Routing Information Protocol
+	\item OSPF: Open Shortest Path First
+\end{itemize}
+%5
+\item
+\textcolor{gray}{\textit{In relation to AS, briefly compare what IGP and BGP are
+used for.}}\\ \\
+IGP is the protocol use to route traffic within an autonomous systems.\\
+Where is BGP is the protocol for routing traffic between different autonomous systems.
+%6
+\item
+\textcolor{gray}{\textit{In BGP, explain what eBGP and iBGP do.}}
+\begin{itemize}
+	\item eBGP: obtain subnet reachability information from neighboring ASs.
+	\item iBGP: propagate reachability information to all AS-internal routers.
+\end{itemize}
+%7
+\item
+\textcolor{gray}{\textit{In BGP, explain how the shortest path is determined and
+how to identify the border gateway router (the router connecting
+to the next-hop AS).}}\\ \\
+The shortest path is found with OSPF, utilizing Dijkstra's and the Distance Vector algorithm.
+The border gateway router of an AS is that/those through which packets leave the AS to other AS's etc..
+%8
+\item
+\textcolor{gray}{\textit{In BGP, if there is a tie between two paths with the
+same cost / distance, explain how the path will be selected.}}\\ \\
+It will choose the path with the closest NEXT-HOP.
+%9
+\item
+\textcolor{gray}{\textit{Each network interface card has a permanent address.
+What is this address called? In terms of routing what is this
+address used for?}}\\ \\
+This permanent address is the MAC address. This is used in frame headers to identify source and destination.
+%10
+\item
+\textcolor{gray}{\textit{Based on parity check, explain how a single bit
+error can be detected and corrected.}}\\ \\
+Based on either a checksum or 1-2 stored parity bits the value of an aligned data bit can be determined to be integral of not, ie corrupted.
+%11
+\item
+\textcolor{gray}{\textit{In addition to parity check, why was CRC proposed?
+Briefly explain how CRC works.}}\\ \\
+CRC is a more powerful and robust error-detection coding:
+\\
+Calculates a short, binary sequence, a CRC, for each block of data to be sent or stored and appends it to the data, forming a codeword.
+
+When a codeword is received or read, the device either compares its check value with one freshly calculated from the data block, or equivalently, performs a CRC on the whole codeword and compares the resulting check value with an expected residue constant.
+
+If the CRC values do not match, then the block contains a data error
+%12
+\item
+\textcolor{gray}{\textit{Name two of the fundamental MAC protocols covered in
+the lecture, which use channel partitioning or random access, and
+briefly explain how they work.}}\\ \\
+TDMA, time division multiple access is a channel partitioning MAC protocol. \\
+Channel is accessed in rounds, and each station gets fixed time length per round.
+FDMA, frequency division multiple access is also a channel partitioning protocol.\\
+Channel is divided into frequency bands, where each station has a set bandwidth allocation for access.
+%13
+\item
+\textcolor{gray}{\textit{Explain how ARP works and how the forwarding table
+in a switch (not a router) is created.}}\\ \\
+Address Resolution Protocol is a procedure for mapping a IP address to a MAC address.
+
+\end{enumerate}
+\end{document}

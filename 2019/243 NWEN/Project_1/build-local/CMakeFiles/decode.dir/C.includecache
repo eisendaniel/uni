@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Daniel/Dropbox/Course Work/2019/243 NWEN/Project_1/decode-skel.c
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+ctype.h
+-
+

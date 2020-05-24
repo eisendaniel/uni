@@ -1,0 +1,13 @@
+Introduction: 150,
+Analysis: 1200 {
+	Overview: 150,
+	solar: 300 {
+		tracked: 150,
+		blankets: 150,
+	}
+	nuclear: 250,
+	wind: 150,
+	storage: 200,
+	comparison: 150:
+},
+Recommendations: 150

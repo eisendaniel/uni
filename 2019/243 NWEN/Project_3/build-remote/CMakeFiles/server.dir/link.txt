@@ -1,0 +1,1 @@
+/bin/cc  -Wall -o2 -Wextra -pedantic -g   CMakeFiles/server.dir/server.c.o  -o server 

@@ -1,0 +1,14 @@
+1.	You can speed up the testing process by; increasing the tick speed or
+	maybe more useful, setting the initial time value as the see all the
+	and verifiying the recycling [of h,m,s]. I.e to 23:59:59.
+
+2.	We could not get a reliable oscilloscope ouput, but as this program uses the polling approuch and as the increment subroutine
+	has a differing run length depending on if its overflowing or not, the exact timer will vary.
+
+3.	As value used within the program are hexideciaml to set the intial 
+	display to 23:59:59
+	MOV	R1,#58H		//seconds
+	MOV	R2,#59H		//minutes
+	MOV	R3,#23H		//hours
+	
+	Saved as clock1v1.a51

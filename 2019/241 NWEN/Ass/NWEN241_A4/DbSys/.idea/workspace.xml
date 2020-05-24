@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="DbSys" targetName="t5" />
+      <config projectName="DbSys" targetName="t4" />
+      <config projectName="DbSys" targetName="cmd" />
+      <config projectName="DbSys" targetName="t7" />
+      <config projectName="DbSys" targetName="t6" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6ffc0a4c-2810-4625-94c7-65a7cb0897aa" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ProjectId" id="1W8mBokq1JZDRr7iNVvABLBwvP0" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Daniel\Dropbox\Course Work\2019\241 NWEN\Ass\NWEN241_A4\DbSys\build" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Daniel\Dropbox\Course Work\2019\241 NWEN\Ass\NWEN241_A4\DbSys\cmake-build-debug" />
+      <recent name="C:\Users\Daniel\Dropbox\Course Work\2019\241 NWEN\Ass\NWEN241_A4\DbSys\cmake-build-debug\CMakeFiles" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="CMake Application.t5">
+    <configuration name="cmd" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DbSys" TARGET_NAME="cmd" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DbSys" RUN_TARGET_NAME="cmd">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="t4" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DbSys" TARGET_NAME="t4" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DbSys" RUN_TARGET_NAME="t4">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="t5" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DbSys" TARGET_NAME="t5" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DbSys" RUN_TARGET_NAME="t5">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="t6" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DbSys" TARGET_NAME="t6" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DbSys" RUN_TARGET_NAME="t6">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="t7" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DbSys" TARGET_NAME="t7" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DbSys" RUN_TARGET_NAME="t7">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.cmd" />
+      <item itemvalue="CMake Application.t4" />
+      <item itemvalue="CMake Application.t5" />
+      <item itemvalue="CMake Application.t6" />
+      <item itemvalue="CMake Application.t7" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6ffc0a4c-2810-4625-94c7-65a7cb0897aa" name="Default Changelist" comment="" />
+      <created>1558056114918</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1558056114918</updated>
+      <workItem from="1558056117643" duration="114000" />
+      <workItem from="1558056339307" duration="19000" />
+      <workItem from="1558056699910" duration="85000" />
+      <workItem from="1558056872272" duration="9011000" />
+      <workItem from="1558139354890" duration="19858000" />
+      <workItem from="1558174003140" duration="128000" />
+      <workItem from="1558247944893" duration="3263000" />
+      <workItem from="1558251257392" duration="8347000" />
+      <workItem from="1558317572366" duration="15153000" />
+      <workItem from="1558336859344" duration="14382000" />
+      <workItem from="1558498054925" duration="802000" />
+      <workItem from="1559696055922" duration="4916000" />
+      <workItem from="1559703618789" duration="1102000" />
+      <workItem from="1559727284396" duration="486000" />
+      <workItem from="1559730730777" duration="1210000" />
+      <workItem from="1559780293443" duration="12000" />
+      <workItem from="1559780371195" duration="17000" />
+      <workItem from="1559781346281" duration="1068000" />
+      <workItem from="1559788770612" duration="97000" />
+      <workItem from="1559976227054" duration="389000" />
+      <workItem from="1561448713752" duration="136000" />
+      <workItem from="1562844722054" duration="321000" />
+      <workItem from="1563082916431" duration="412000" />
+      <workItem from="1578539464087" duration="680000" />
+      <workItem from="1578606168887" duration="74000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="databaseCollection" targetName="t7" />
+      <config projectName="databaseCollection" targetName="t6" />
+      <config projectName="databaseCollection" targetName="t5" />
+      <config projectName="databaseCollection" targetName="t34" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b3de37c3-4ae2-481d-8393-f8a98dd4e8aa" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>s</find>
+      <find>table[row_n].id, table[row_n].title, table[row_n].year, table[row_n].artist</find>
+    </findStrings>
+  </component>
+  <component name="ProjectId" id="1U8MRgGmOChgIkusiTRp44YR8ab" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
+    <property name="settings.editor.splitter.proportion" value="0.2379518" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Daniel\Dropbox\Course Work\2019\241 NWEN\Ass\NWEN241_A3\files" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="CMake Application.t7">
+    <configuration name="t34" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="databaseCollection" TARGET_NAME="t34" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="databaseCollection" RUN_TARGET_NAME="t34">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="t5" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="databaseCollection" TARGET_NAME="t5" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="databaseCollection" RUN_TARGET_NAME="t5">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="t6" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="databaseCollection" TARGET_NAME="t6" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="databaseCollection" RUN_TARGET_NAME="t6">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="t7" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="databaseCollection" TARGET_NAME="t7" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="databaseCollection" RUN_TARGET_NAME="t7">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.t34" />
+      <item itemvalue="CMake Application.t5" />
+      <item itemvalue="CMake Application.t6" />
+      <item itemvalue="CMake Application.t7" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b3de37c3-4ae2-481d-8393-f8a98dd4e8aa" name="Default Changelist" comment="" />
+      <created>1556422545471</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1556422545471</updated>
+      <workItem from="1556422546777" duration="3385000" />
+      <workItem from="1556507124691" duration="1068000" />
+      <workItem from="1556510661459" duration="56960000" />
+      <workItem from="1556847464065" duration="1559000" />
+      <workItem from="1556852375869" duration="1050000" />
+      <workItem from="1557017641433" duration="8992000" />
+      <workItem from="1557028422992" duration="665000" />
+      <workItem from="1557099257132" duration="6743000" />
+      <workItem from="1557356802844" duration="282000" />
+      <workItem from="1557459858609" duration="229000" />
+      <workItem from="1557620790916" duration="144000" />
+      <workItem from="1558048524752" duration="47000" />
+      <workItem from="1558048626196" duration="3000" />
+      <workItem from="1558048883437" duration="674000" />
+      <workItem from="1558056191488" duration="4000" />
+      <workItem from="1558056360029" duration="339000" />
+      <workItem from="1558057302136" duration="5669000" />
+      <workItem from="1558149416789" duration="719000" />
+      <workItem from="1558265299885" duration="990000" />
+      <workItem from="1558327072482" duration="926000" />
+      <workItem from="1558336807835" duration="49000" />
+      <workItem from="1559696032914" duration="730000" />
+      <workItem from="1559727275987" duration="7000" />
+      <workItem from="1559780389491" duration="198000" />
+      <workItem from="1561448670532" duration="45000" />
+      <workItem from="1574733764178" duration="13000" />
+      <workItem from="1575499421065" duration="1634000" />
+      <workItem from="1578525728000" duration="243000" />
+      <workItem from="1578539393286" duration="32000" />
+      <workItem from="1578606115156" duration="53000" />
+      <workItem from="1578625571777" duration="1065000" />
+      <workItem from="1581374082066" duration="1854000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

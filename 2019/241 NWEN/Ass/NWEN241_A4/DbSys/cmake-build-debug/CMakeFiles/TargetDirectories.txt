@@ -1,0 +1,7 @@
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A4/DbSys/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A4/DbSys/cmake-build-debug/CMakeFiles/t4.dir
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A4/DbSys/cmake-build-debug/CMakeFiles/t5.dir
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A4/DbSys/cmake-build-debug/CMakeFiles/t6.dir
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A4/DbSys/cmake-build-debug/CMakeFiles/t7.dir
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A4/DbSys/cmake-build-debug/CMakeFiles/cmd.dir
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A4/DbSys/cmake-build-debug/CMakeFiles/edit_cache.dir

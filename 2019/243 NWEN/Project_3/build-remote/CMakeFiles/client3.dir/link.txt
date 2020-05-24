@@ -1,0 +1,1 @@
+/bin/cc  -Wall -Wextra -pedantic -g   CMakeFiles/client3.dir/client.c.o  -o client3 

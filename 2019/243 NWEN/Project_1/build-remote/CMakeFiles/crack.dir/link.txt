@@ -1,0 +1,1 @@
+/bin/cc  -Wall -Wextra -O2 -std=c99 -pedantic -g   CMakeFiles/crack.dir/crack.c.o  -o crack 

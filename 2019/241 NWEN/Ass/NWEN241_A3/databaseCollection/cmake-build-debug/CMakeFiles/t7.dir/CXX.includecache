@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A3/databaseCollection/dbms.cc
+cstdlib
+-
+cstdio
+-
+dbms.hh
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A3/databaseCollection/dbms.hh
+
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A3/databaseCollection/dbms.hh
+
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A3/databaseCollection/t7test.cc
+iostream
+-
+dbms.hh
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A3/databaseCollection/dbms.hh
+

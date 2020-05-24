@@ -1,0 +1,113 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[20pt]{article}
+
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{xcolor}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{amsmath} % Required for some math elements
+\usepackage{amssymb}
+\usepackage[margin=24mm]{geometry}
+\usepackage{courier}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+\lstset{basicstyle=\footnotesize\ttfamily,breaklines=true}
+\captionsetup[figure]{font=small}
+
+%\addtolength{\topmargin}{-8mm}
+%\addtolength{\textheight}{8mm}
+
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------s
+\begin{document}
+$$I_{c} = I_{e} = 0.66mA \> \> \>  \> \> \> V_{cq} = 4.5V$$
+\begin{align*}
+	R_{c} &= \frac{V_{cc} - V_{cq}}{I_{c}} \\
+	      &= \frac{9V - 4.5V}{0.66mA} \\
+	R_{c} &= 6K8
+\end{align*}
+
+$$A = -\frac{R_{c}}{R_{e}}$$
+$$R_{e} = 1K$$
+$$|A| = 6.8$$
+\begin{align*}
+	V_{bias} &= I_{c} * R_{e} + 0.7V \\
+	         &= 0.66mA * 1K + 0.7 \\
+	V_{bias} &= 1.36V
+\end{align*}
+
+$$R_{2} = 10R_{e} = 10K$$
+
+$$V_{bias} = \frac{R_{2}}{R_{1} + R_{2}}V_{cc}$$
+$$1.36V = \frac{10K}{R_{1} + 10K}9V$$
+$$1.36V = \frac{10K}{R_{1} + 10K}9V$$
+$$R_{1} = 56K2$$
+
+$$R_{in} = R_{1}//R_{2} = 8K5$$
+
+$$f_{c} = \frac{1}{2\pi C_{1}R_{in}}$$
+
+\begin{align*}
+	C_{1} &= \frac{1}{2\pi \frac{f_{c}}{10}R_{in}} \\
+	      &= \frac{1}{2\pi \frac{20Hz}{10}8K5} \\
+	      &= 9.3\mu F \\
+	      C_{1} &= 10\mu F
+\end{align*}
+
+$$r_{e}' = \frac{1}{40I_{e}} = \frac{1}{40*0.66mA} = 38\Omega$$
+
+$$f_{c} = \frac{1}{2\pi C_{B}r_{e}'}$$
+
+\begin{align*}
+	C_{B} &= \frac{1}{2\pi f_{c}r_{e}'} \\
+	      &= \frac{1}{2\pi 20Hz*38R} \\
+	      &= 219\mu F \\
+	      C_{B} &= 100\mu F
+\end{align*}
+
+$$\Im$$
+\begin{center}
+given:
+$$|H(\omega)|, \tau (\omega) = -\frac{d}{d\omega}\angle H(\omega)$$
+find $H(\omega)$:
+$$H(\omega) = |H(\omega)|e^{-j\int_{}^{} \tau (\omega)d\omega}$$
+because of:
+$$\mathbb{C} = |\mathbb{itemize}|e^{j\angle \mathbb{C}}$$
+\end{center}
+\newpage
+
+\begin{center}
+x = original price, y = discounted price \\
+For a 15\% discount:
+\end{center}
+$$x - (0.15*x) = y$$
+
+\begin{align*}
+1 - 0.15 &= 0.85 \\
+663 \div 0.85 &= 780 \\
+ie: 780 - (0.15*780) &= 663
+\end{align*}
+
+\begin{align*}
+	x - (0.15*x) &= 663 \\ \\
+	divide \ through \ by \ x \\
+	\frac{x}{x} - \frac{(0.15*x)}{x} &= \frac{663}{x} \\ \\
+	simplify \\
+	1 - 0.15 &= \frac{663}{x} \\ \\
+	bring \ x \ to \ left \\
+	x*0.85 &= 663 \\
+	x = \frac{663}{0.85} &= 780
+\end{align*}
+
+
+
+
+\end{document}

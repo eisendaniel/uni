@@ -1,0 +1,141 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage{amsmath} % Required for some math elements
+\usepackage[margin=30mm]{geometry}
+\addtolength{\topmargin}{-16mm}
+\addtolength{\textheight}{32mm}
+
+
+\setlength\parindent{1pt} % Removes all indentation from paragraphs
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.5}
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{ENGR 201 \\ Literature Review \\ \textit{A Review of methods of Radiation Shielding and Energy Generation on a long term Martian Colony Mission}}
+\author{Daniel Eisen : 300447549}
+\date{\today}
+
+\begin{document}
+\maketitle
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONTENT
+%----------------------------------------------------------------------------------------
+\newpage
+\section{Introduction}
+Human colonisation of Mars is now indisputably the major direction that deeper space exploration is headed. In order for this to be an attainable reality, it is vital that the human aspect of extra-terrestrial inhabitation be the main driver for the design of such colonies. Specifically, what are the major challenges that the Martian environment poses when aiming to have human colonies, such as radiation, energy generation, thermal/environmental control, and other external environmental hazards. This question is of vital significance as the answer will directly enable even the possibility of long-term human occupation of not only Mars, but any and all future deep space human colonisation efforts.
+\\
+This review will investigate the current research of the human risk of radiation exposure (on space voyages) and the available and proposed methods of mitigation, as well as solutions and challenges in designing a sustainable energy generation solution for a permanent Martian colony. Other design aspects, such as thermal control, and oxygen supply will not be investigated in the following text.
+
+
+
+\section{Human Radiation Risks}
+Human undertaking space travel and extra-terrestrial habitation outside of a protective magnetosphere are subject to very high levels of highly damaging radiation [1]. Exposure levels are at least 3 times that experienced in low earth orbit (LEO) [2]. This radiation is of two distinct forms, Galactic Cosmic Rays (GCR) and Solar Particle Events (SPE), each with an equally distinct needed approach to shielding/risk reduction.
+
+\subsection{Requirements for risk mitigation}
+The radiation risk evaluation and mitigation are of the highest importance, as current mission models show that astronauts will vastly exceed the current limit for a career based 3\% increase in Risk of Exposure Induced Death (REID) over the course of a typical mission [3]. Most importantly to vital organs, for example lungs, and with a higher risk to female reproductive organs [3]. To have a mission be sustainable exposure must be brought to what is referred to by OSHA and NASA as, ”as low as reasonably achievable”, or ALARA [4].
+
+\subsection{Technologies to mitigate GCR/SPE Exposure}
+Three shield main shielding technologies have been investigated in [5]; aluminium, water, and liquid hydrogen all reduce GCR damage to BFO (blood forming organs) to 45 $rem.yr^{-1}$, $35 rem.yr^{-1}$ and $15 rem.yr^{-1}$ respectively at a minimum of 10 $g.cm^{-3}$ [5]. Where SPE are unpredictable both in time and power so a higher grade of aluminium shield, nearer 30 $g.cm^{-3}$ is needed to have the same risk reduction. Though the practicality is also a major factor. Mostly the concerns of each of the weight requirement of each, as the liquids and aluminium as sufficiently effective thicknesses are impractically heavy when used on their own. As well as requiring added structural support [1].
+This is where nano tube technologies are particularly promising in part because of their potential cross-application as structural materials as well.
+Tables 2-4 in [1] investigate their respective effectiveness and show promising results:\\
+Nanoporous carbon composites (CNTs), Hydrogen-loaded metal organic frameworks (MOFs), and Hydrogenated boron nitride nano-tubes (BNNTs).
+\subsection{Colony Design}
+In an option to reduce cost and extensive use of external shielding, the Martian regolith\footnote{\textit{Regolith} is a layer of loose, unconsolidated solid material covering solid rock. It includes dust, soil, broken rock, and other related materials and is present on Earth, the Moon, Mars, some asteroids, and other terrestrial planets and moons.
+}, i.e. underground shielding can be used.
+In terms of architecture, the base must be constructed to withstand a worst case SPE for long stay missions (~600 days). This can be mitigated with base location, to reduce direct radiation exposure. Making use of geography and solar angle to reduce radiation intensity. In terms of radiation-effect mitigation, the mission must be supplied with adequate medical supplies to cover the expected length and worst-case exposure, (within planned protocols).
+To have a successful human mission to Mars, with the objective to maintain crew health and safety, the mission must; maintain radiation exposure to acceptable levels and mitigate the effects of suffered exposure.
+
+\section{Energy Generation}
+The provision of electrical power is paramount the functionality of any human colony on Mars. A steady energy supply is necessary not only for operation of the base itself but also to enable all other support systems integral to human survival for any amount of time. The following sections will cover: What are the current established technologies and developing options. The relative (to each other) effectiveness of the differing technologies. Finally, the difficulties and challenges the Martian environment and voyage imposes on any system. Though note this will not cover the equally necessary energy storage solutions.
+
+\subsection{Surface power generation}
+Several generation technologies are currently being developed by the NASA Science Mission Directorate [6], including solar cells, Regenerative fuel cells, and nuclear fission power systems. The later of which is the classically assumed solution, but later research is trending towards the newer solar and in situ fuel cell power systems [7].
+
+\subsubsection*{Solar Cells}
+The available solar energy on Mars' surface is much less than that on Earth, 200Wh vs 1100Wh [8]. There are two main approaches currently under study to solve the inherently low solar energy availability ultra-light amorphous silicon roll-out blanket arrays and high efficiency inflexible tracking arrays [7].\\
+
+The ultra-light amorphous silicon arrays have initial efficiencies of 15\% and a mass/area of $0.063 kg/m^{2}$, except due to the properties of the silicon used the lifetime efficiency decreases not insignificant with time, reducing efficacy [9]. Due to this they are designed to be deployed in very large roll out 'blankets' weighed down with rock and protected with Kevlar (10\% coverage) to secure the array against the top recorded
+Mars wind of 25 m/s [7].
+
+Tracking Array units have higher base efficiency (20\%+) with a much higher mass/area of 2.5 kg/m2 and required structural infrastructure and maintenance, though  multi-axis tracking was
+assumed to achieve perpendicular solar flux throughout the Martian day. \footnote{Solar tracking ensuring constant near 90 degree incidence angle}
+
+\subsubsection*{Fuel Cells}
+Regenerative fuel cell technology are primarily proposed as a secondary power generation and a means of solid state energy storage [7]. Where hydrogen/oxygen fuel is produced from collection and processing of the Martian regolith. The fuel cells have an energy density of
+250Wh/kg [10].
+
+These are available but usually not considered to be a viable solution, at least not as a primary energy source.
+\subsubsection*{Nuclear Fission}
+The more classical approach is that of nuclear reactor units, if fact these are already present on the Martian surface in the Curiosity rover [8].
+
+These technologies are very mature and offer very high constant power outputs with little to no down time [7]. This makes them an excellent candidate for long term colonies with room to expand. The fuel supply is also naturally available, with isotopes readily extractable from the surface.
+These are large scale units that require heavy structural support and upkeep.
+\subsection{Challenges in deployment}
+A major challenge to the deployment of solar technologies on mars is the weather systems [7][8]. Harsh wind speeds lifting blanket arrays and dust storms majorly decreasing effective collection area. The coarse regolith also presents a fast wearing effect on the fragile panels.
+
+The nuclear option, presents an opposing effect, where the plants themselves must be located 210 m from base and have a 3.5m effective regolith shield to mitigate radiation effects [7].
+
+\section{Future Research}
+\subsubsection*{Radiation}
+Existing research [1], has thoroughly covered the technologies necessary to reduce risk to acceptable levels. Existing shielding and deployment options are acceptable to meet NASA levels [2]. However what the majority of the research body fails to cover is that of sustained human occupation (with studies at most investigating upto 600 day long mission [1]), particularly in the systems of support that is required to allow for permanent occupation without exponentially growing need to medical supplies. To meet this necessary requirement future research would be best directed into viability of longer term to permanent missions.
+\subsubsection*{Energy Generation}
+Most studies directed at Mars colonisation tend to investigate the use of established and existing generation technologies [7]. Due to the reality of the mission parameters - strict weight restriction and the lower solar energy availability [8] - to be able to make a feasible first colony energy infrastructure that is then extendible into continuous missions research may want to be focused into higher efficiency solar cell panels, specific to the Martian environment (as opposed to adapted Earth models) and to improve the durability to combat the harsh Martian environment. Specifically in to combat of dust and regolith build up.
+\section{Conclusion}
+With existing technologies, a Martian colonisation mission that successfully meets radiation protection and energy supply requirements is within reach of feasibility. The current direction to the research is trending towards more concrete and specifically usable technologies. Exemplified by the research presented each year at the IEEE Aerospace Conference [1,5]. If promising technologies are further focused to be deployed on Mars, meeting all the demand such an environment imposes; medical procedures/systems to sustain long human occupation and higher efficiency, durable solar panels. A successful mission is obtainable.
+
+%----------------------------------------------------------------------------------------
+%	REFERENCES
+%----------------------------------------------------------------------------------------
+\newpage
+\begin{center}
+\section*{References}
+\end{center}
+\begin{small}
+{[1]} K. A. Worden-Buckner, S. Tackett, J. L. Rhatigan, M. Rhoades, "Reducing Human Radiation Risks on Deep Space Missions", 2018 IEEE Aerospace Conference \\
+
+{[2]} F. A. Cucinotta, M. H. Y. Kim, L. J. Chappell and J. L.
+Huff, "How Safe Is Safe Enough? Radiation Risk for a
+Human Mission to Mars," PLoS ONE, vol. 8, no. 10,
+pp. 1-9, 2013 \\543
+
+{[3]} F. A. Cucinotta and M. Durant, "Risk of Radiation
+Carcinogenesis," in Human Health and Performance
+Risks of Space Exploration Missions, J. C. M. a. J. B.
+Charles, Ed., Washington, DC: NASA, 2010, pp. 119-
+169. \\
+
+{[4]} A. M. Sieffert, "Astronaut Health \& Safety Regulations
+Ionizing Radiation," The SciTech Lawyer, vol. 10, no.
+4, pp. 20-22, 2014 \\
+
+{[5]} K. Worden, "Reducing Human Radiation Risks on
+Deep Space Missions," Naval Postgraduate School,
+Monterey, CA, 2017 \\
+
+{[6]} R.K. Shaltens, W.A. Wong, Advanced Stirling technology development at NASA Glenn Research Center, in: NASA Science
+Technology Conference, Session D2—Space Power, 2007
+\\
+
+{[7]} Cooper, Chase \& Hofstetter, Wilfried \& Hoffman, Jeffrey \& F. Crawley, Edward. (2010). Assessment of architectural options for surface power generation and energy storage on human Mars missions. Acta Astronautica \\
+
+{[8]} Delgado-Bonal, Alfonso \& Martín-Torres, F. J. \& Vázquez-Martín, Sandra \& Zorzano, María-Paz. (2016). Solar and wind exergy potentials for Mars Energy
+\\
+
+{[9]} J.J. Hanak, C. Fulton, A. Myatt, P. Nath, Ultralight amorphous silicon
+alloy photovoltaic modules for space and terrestrial applications,
+American Chemical Society V 3 (1986).
+\\
+
+{[10]} Kenneth A. Burke, Fuel cells for space science applications, NASA/
+TM—2003-212730, 2003.
+
+\end{small}
+\end{document}

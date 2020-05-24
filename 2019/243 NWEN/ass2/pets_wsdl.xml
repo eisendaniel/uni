@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<definitions name="PetDataBase"
+	targetNamespace="http://schemas.xmlsoap.org/wsdl/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/">
+	
+	<types></types>
+	
+	<message name="PetInfo">
+		<part type="xs:string" name="Name"/>
+		<part type="xs:string" name="Species"/>
+		<part type="xs:string" name="Fuzziness"/>
+	</message>
+	
+	<message name="GetData">
+		<part type="xs:string" name="Name"/>
+	</message>
+	
+	<portType name="PetDataBasePort">
+		<operation name="set">
+			<input name="NewData" message="PetInfo"/>
+		</operation>
+		<operation name="add">
+			<input name="NewPet" message="PetInfo"/>
+		</operation>
+		<operation name="get">
+			<input name="Name" message="GetData"/>
+			<output name="Pet" message="PetInfo"/>
+		</operation>
+	</portType>
+</definitions>

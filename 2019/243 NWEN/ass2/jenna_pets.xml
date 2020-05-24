@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<PetList>
+	<Pet>
+		<Name>Marbles</Name>
+		<Species>Dog</Species>
+		<Fuzziness>moderate</Fuzziness>
+	</Pet>
+	
+	<Pet>
+		<Name>Kermit</Name>
+		<Species>Dog</Species>
+		<Fuzziness>low</Fuzziness>
+	</Pet>
+	
+	<Pet>
+		<Name>Peach</Name>
+		<Species>Dog</Species>
+		<Fuzziness>low</Fuzziness>
+	</Pet>
+	
+	<Pet>
+		<Name>Ad</Name>
+		<Species>Hamster</Species>
+		<Fuzziness>high</Fuzziness>
+	</Pet>
+	
+	<Pet>
+		<Name>Bunny</Name>
+		<Species>Dog</Species>
+		<Fuzziness>low</Fuzziness>
+	</Pet>
+</PetList>
+

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/tmp/tmp.sd4mP15XvZ/server.c
+stdio.h
+-
+stdlib.h
+-
+signal.h
+-
+string.h
+-
+unistd.h
+-
+sys/socket.h
+-
+sys/wait.h
+-
+netinet/in.h
+-
+

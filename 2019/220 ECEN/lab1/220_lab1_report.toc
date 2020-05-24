@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}Periodicity}{2}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}Plotting Sampled Signal}{2}{subsection.1.1}% 
+\contentsline {subsection}{\numberline {1.2}Discrete Periodicity Comparison}{2}{subsection.1.2}% 
+\contentsline {section}{\numberline {2}Linearity}{3}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Test by summation}{3}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Test by scaling}{4}{subsection.2.2}% 
+\contentsline {section}{\numberline {3}Convolution}{4}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Matlab Convolution}{4}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Manual Convolution}{4}{subsection.3.2}% 
+\contentsline {section}{\numberline {4}Appendix}{6}{section.4}% 
+\contentsline {subsection}{Figure 1, 2}{6}{section*.13}% 
+\contentsline {subsection}{Figure 3}{6}{section*.14}% 
+\contentsline {subsection}{Figure 4}{7}{section*.15}% 
+\contentsline {subsection}{Figure 5}{8}{section*.16}% 
+\contentsline {subsection}{Figure 6}{8}{section*.17}% 

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="Project_1" targetName="crack" />
+      <config projectName="Project_1" targetName="encode" />
+      <config projectName="Project_1" targetName="decode" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="local" CONFIG_NAME="Debug" GENERATION_DIR="build-local" />
+      <configuration PROFILE_NAME="remote" CONFIG_NAME="Debug" TOOLCHAIN_NAME="ECS - Remote" GENERATION_DIR="build-remote" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="063accfc-da00-45ea-b128-639b89126c45" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:local" />
+  <component name="ProjectId" id="1RwjfDejQK07FE0kakibNs9lP6J" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Daniel\Dropbox\Course Work\2019\243 NWEN\Project_1" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="CMake Application.crack">
+    <configuration name="crack" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project_1" TARGET_NAME="crack" CONFIG_NAME="local" RUN_TARGET_PROJECT_NAME="Project_1" RUN_TARGET_NAME="crack">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="decode" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project_1" TARGET_NAME="decode" CONFIG_NAME="local" RUN_TARGET_PROJECT_NAME="Project_1" RUN_TARGET_NAME="decode">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="encode" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project_1" TARGET_NAME="encode" CONFIG_NAME="local" RUN_TARGET_PROJECT_NAME="Project_1" RUN_TARGET_NAME="encode">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.crack" />
+      <item itemvalue="CMake Application.decode" />
+      <item itemvalue="CMake Application.encode" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="063accfc-da00-45ea-b128-639b89126c45" name="Default Changelist" comment="" />
+      <created>1563402478796</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1563402478796</updated>
+      <workItem from="1563402482060" duration="595000" />
+      <workItem from="1563403212351" duration="2834000" />
+      <workItem from="1563951946401" duration="1167000" />
+      <workItem from="1563953214389" duration="58000" />
+      <workItem from="1563953808569" duration="1725000" />
+      <workItem from="1564008807760" duration="1381000" />
+      <workItem from="1564197075138" duration="2899000" />
+      <workItem from="1564200950909" duration="11581000" />
+      <workItem from="1564220552710" duration="1355000" />
+      <workItem from="1564285031759" duration="9036000" />
+      <workItem from="1564349937010" duration="4685000" />
+      <workItem from="1564376598903" duration="448000" />
+      <workItem from="1564395433456" duration="17314000" />
+      <workItem from="1564539675347" duration="1241000" />
+      <workItem from="1564549386847" duration="4122000" />
+      <workItem from="1564553688488" duration="1190000" />
+      <workItem from="1564556531902" duration="740000" />
+      <workItem from="1564693242160" duration="145000" />
+      <workItem from="1564717999174" duration="473000" />
+      <workItem from="1564718807504" duration="702000" />
+      <workItem from="1564744564840" duration="2369000" />
+      <workItem from="1565219444562" duration="55000" />
+      <workItem from="1570585154575" duration="38000" />
+    </task>
+    <servers />
+  </component>
+</project>

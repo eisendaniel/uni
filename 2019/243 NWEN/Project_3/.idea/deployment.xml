@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData">
+    <serverData>
+      <paths name="ECS - Remote (4645d581-26a8-4903-9b3f-e822cbdc345a)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/tmp.sd4mP15XvZ" local="$PROJECT_DIR$" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/build-local" />
+            <excludedPath local="true" path="$PROJECT_DIR$/build-remote" />
+            <excludedPath local="true" path="$PROJECT_DIR$/build-local" />
+            <excludedPath local="true" path="$PROJECT_DIR$/build-remote" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

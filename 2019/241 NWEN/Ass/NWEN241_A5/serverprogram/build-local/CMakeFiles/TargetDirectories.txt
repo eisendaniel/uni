@@ -1,0 +1,3 @@
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A5/serverprogram/build-local/CMakeFiles/serverprogram.dir
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A5/serverprogram/build-local/CMakeFiles/edit_cache.dir
+C:/Users/Daniel/Dropbox/Course Work/2019/241 NWEN/Ass/NWEN241_A5/serverprogram/build-local/CMakeFiles/rebuild_cache.dir

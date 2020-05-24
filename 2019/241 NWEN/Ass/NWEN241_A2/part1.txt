@@ -1,0 +1,63 @@
+NWEN Assignment 2
+
+
+Part I: Pointer Concepts 
+Task 1. 
+1.  
+    float f = 3.142;
+    float *fp = &f;
+
+
+2.  
+    long* func1(int, int);
+
+
+3.  
+    char* func2(const char*); 
+
+
+4.  
+    int* ipa[20];
+
+
+5.  
+    char strings[][10] = {"cyan", "magenta", "yellow", "black"};
+
+
+Task 2. 
+1. &u  (i.e the numeric value of the memory address) is 1100
+2. &v  (i.e the numeric value of the memory address) is 1101
+3. After line 2 the pointer pv is now assigned to address 1101
+4. *pv is now 66, i.e the ascii decimal value of 'B'
+5. u is now 'C'
+
+
+Task 3.
+1.  
+    [Output]
+    57  80
+    80  80
+
+
+2. Printing int1 outputs 57 as the last line is 
+    int1 = 57
+  Printing int2 outputs 80 as int1Ptr is set to the pointer variable referencing int2, so both pointers intPtr1 and 2 point to int2. Then intPtr1 is dereferenced and set to 80, ie seting the value of int2 to 80
+    int1Ptr = int2Ptr; //int1Ptr now points to int2
+    *int1Ptr = 80; //thus int2 is now 80
+
+
+
+Task 4.
+1. numeric value of a (decimal address of stored data) is 1102
+2. numeric value of ppa (decimal address of pointed to variable pa) is 1114
+3. *ppa (pa) + 2 is 1118. i.e *ppa + 2(2 bytes)
+
+
+Task 5.
+1.  
+    for (int i = 0; i < sizeof(strPtr); i++) {
+            std::cout << *strPtr << std::endl; //outputs the derefances value of strPtr
+            strPtr++; //increments strPtr by a 1 string size
+    }
+2.  
+    delete[] strPtr;

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="Project_3" targetName="client" />
+      <config projectName="Project_3" targetName="server" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="local" CONFIG_NAME="Debug" GENERATION_DIR="build-local" />
+      <configuration PROFILE_NAME="remote" CONFIG_NAME="Debug" TOOLCHAIN_NAME="ECS - Remote" GENERATION_DIR="build-remote" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0bf61d36-103c-4484-98c4-1f31b851bfc9" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:remote" />
+  <component name="ProjectId" id="1RLfgQaMx8wuSMdBTR0B3XzESVc" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="CMake Application.client">
+    <configuration name="client" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project_3" TARGET_NAME="client" CONFIG_NAME="local" RUN_TARGET_PROJECT_NAME="Project_3" RUN_TARGET_NAME="client">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="server" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="12345" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project_3" TARGET_NAME="server" CONFIG_NAME="local" RUN_TARGET_PROJECT_NAME="Project_3" RUN_TARGET_NAME="server">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.client" />
+      <item itemvalue="CMake Application.server" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0bf61d36-103c-4484-98c4-1f31b851bfc9" name="Default Changelist" comment="" />
+      <created>1569451407857</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1569451407857</updated>
+      <workItem from="1569451410495" duration="7984000" />
+      <workItem from="1569468868189" duration="86000" />
+      <workItem from="1569468980030" duration="53000" />
+      <workItem from="1569581528086" duration="1543000" />
+      <workItem from="1569886437690" duration="1029000" />
+      <workItem from="1569894271997" duration="1655000" />
+      <workItem from="1569972627701" duration="1416000" />
+      <workItem from="1570049409131" duration="12392000" />
+      <workItem from="1570091504927" duration="5279000" />
+      <workItem from="1570096918892" duration="247000" />
+      <workItem from="1570584901642" duration="252000" />
+      <workItem from="1571733486655" duration="124000" />
+      <workItem from="1574108497968" duration="21000" />
+    </task>
+    <servers />
+  </component>
+</project>

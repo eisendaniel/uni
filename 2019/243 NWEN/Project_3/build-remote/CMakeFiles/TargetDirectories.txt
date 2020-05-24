@@ -1,0 +1,4 @@
+/tmp/tmp.sd4mP15XvZ/build-remote/CMakeFiles/rebuild_cache.dir
+/tmp/tmp.sd4mP15XvZ/build-remote/CMakeFiles/server.dir
+/tmp/tmp.sd4mP15XvZ/build-remote/CMakeFiles/edit_cache.dir
+/tmp/tmp.sd4mP15XvZ/build-remote/CMakeFiles/client.dir
