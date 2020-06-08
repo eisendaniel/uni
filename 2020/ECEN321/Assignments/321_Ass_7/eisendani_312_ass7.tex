@@ -1,0 +1,152 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage{amsmath} % Required for some math elements
+\usepackage{hyperref} 
+\usepackage{xcolor}
+\usepackage{lipsum} 
+\usepackage{cite}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{bookmark}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[margin=16mm]{geometry}
+\usepackage[caption=false, font=footnotesize]{subfig}
+\usepackage{multirow}
+\usepackage[active,tightpage]{preview}
+
+\renewcommand{\PreviewBorder}{1in}
+\newcommand{\Newpage}{\end{preview}\begin{preview}}
+
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{label = Step \arabic*:}
+
+\hypersetup{ %color attributes of citation, link, etc.
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=gray,      
+    urlcolor=blue,
+    citecolor=blue,
+}
+
+\newcommand{\matlab}{\textsc{Matlab }} %very important and totally necessary addition
+
+\newcommand\Item[1][]{%
+  \ifx\relax#1\relax  \item \else \item[#1] \fi
+  \abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
+  %----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+ 
+\title{ECEN321 : Engineering Statistics \\ Assignment 7 Submission}
+\author{Daniel Eisen : 300447549}
+\date{\today}
+
+\begin{document}
+\begin{preview}
+\maketitle
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONTENT
+%----------------------------------------------------------------------------------------
+\begin{enumerate}
+\section*{Central Limit Theorem}
+\item (Navidi 4.11.14) $\lambda = 30\;\mathrm{particles}.\mathrm{ml}^{-1} \times 2\mathrm{ml} = 60$
+\begin{enumerate}
+        \item $\lambda > 10,\; X \sim \mathcal{N}(\lambda, \lambda) = \mathcal{N}(60, 60)$ \\
+        $z = \frac{x-\mu}{\sigma} = \frac{50-60}{\sqrt{60}}=-1.290994$ \\
+        From lookup table:\\
+        $P(X>50) = P(Z > -1.29) = 90.15\%$
+
+        \item $p = P(X>50) = 0.9015,\;n=10$ \\
+        $P(X = k) = \frac{n!}{k!(n-k)!}p^{k}(1-p)^{n-k}$ \\ \\
+        $P(X \ge 9) = P(X=9)+P(X=10)$ \\
+        $P(X = 9) = \frac{10!}{9!(10-9)!}0.9015^{9}(1-0.9015)^{10-9} = 0.387372$ \\
+        $P(X = 10) = \frac{10!}{10!(10-10)!}0.9015^{10}(1-0.9015)^{10-10} = 0.354534$ \\
+        $P(X \ge 9) = 0.741906 $
+
+        \item $p = P(X>50) = 0.9015,\;n=100$ \\
+        $P(X = k) = \frac{n!}{k!(n-k)!}p^{k}(1-p)^{n-k}$ \\ \\
+        $P(X \ge 90) = P(X=90)+P(X=91)+{\cdots}+P(X=100)$ \\
+        $P(X = 90) = \frac{100!}{90!\left(100-90\right)!}0.9015^{90}\left(1-0.9015\right)^{100-90}=0.131699$ \\
+        $P(X = 91) = \frac{100!}{91!\left(100-91\right)!}0.9015^{91}\left(1-0.9015\right)^{100-91}=0.132456$ \\
+        \dots \\
+        $P(X=92)=0.118592, P(X=93)=0.093367, P(X=94)=0.063634, P(X=95)=0.036783, P(X=96)=0.017534, P(X=97)=0.006618, P(X=98)=0.001854, P(X=99)=$$0.000343, P(X=100)=0.000031$ \\
+        $P(X \ge 90) = 0.6029$
+
+
+\end{enumerate}
+
+\item (Navidi 4.11.16)  
+\begin{enumerate}
+        \item $z = \frac{\bar{x}-\mu_{\bar{x}}}{\sigma / \sqrt{n}} = (36.7 - 40)/(5/ \sqrt{100})=-6.6$ \\
+        $P(z < -6.6) = 0$
+        \item The probability is less than 0.05, ie small. So a sample mean of 36.7 \textbf{is} short.
+        \item As the it is very small the claim seems implausible.
+        \item $z = (39.8 - 40)/(5/ \sqrt{100})=-0.4$ \\
+        $P(z < -0.4) = 0.3446$
+        \item The probability is greater than 0.05, ie not small, so its is not unusually short. 
+        \item Therefore the claim seems plausible.
+\end{enumerate}
+
+\section*{Confidence Intervals}
+\item (Navidi 5.1.2)
+\begin{enumerate}
+        \item $P(-1.96 < Z < 1.96) = P(Z < 1.96) - P(Z < -1.96) = 0.975 - 0.025 = 0.95 = 95\%$
+        \item $P(-2.17 < Z < 2.17) = P(Z < 2.17) - P(Z < -2.17) = 0.985 - 0.015 = 0.97 = 97\%$
+        \item $P(-1.28< Z < 1.28) = P(Z < 1.28) - P(Z < -1.28) = 0.8997 - 0.1003=0.7994 = 79.94\%$
+        \item $P(-3.28 < Z < 3.28) = P(Z < 3.28) - P(Z < -3.28) = 0.9995 - 0.0005 = 0.999 = 99.9\%$
+\end{enumerate}
+
+\item (Navidi 5.1.4) $\hspace{16pt} n=50 \hspace*{16pt} \bar{x} = 654.1 \hspace*{16pt} s = 311.7$
+\begin{enumerate}
+        \item $1-\alpha = 0.95, \alpha / 2 = 0.05/2=0.025, Z_{\alpha/2} = 1.96$ \\
+        $E \approx 1.96\frac{s}{\sqrt{n}} = 1.96\frac{311.7}{\sqrt{50}}=86.398832$ \\
+        $\bar{x}\pm E = 654.1\pm86.4 \rightarrow (558.7,731.5)$
+
+        \item$1-\alpha = 0.98, \alpha / 2 = 0.02/2=0.01, Z_{\alpha/2} \approx 2.33$ \\
+        $E \approx 2.33\frac{s}{\sqrt{n}} = 2.33\frac{311.7}{\sqrt{50}}=102.708815602$ \\
+        $\bar{x}\pm E = 654.1\pm102.71 \rightarrow (551.39,756.81)$
+        
+        \item $CI=(581.6,726.6)$ \\
+        $z = \frac{\bar{x} - \mu_{\bar{x}}}{s/\sqrt{n}}$ \\
+        $\frac{581.6-654.1}{311.7/ \sqrt{50}}=-1.644698  \hspace*{16pt}\frac{726.6-654.1}{311.7/ \sqrt{50}}=1.644698$ \\
+        $P(-1.64 < Z < 1.64) = 0.9495-0.0505=0.899\approx 90\%$
+        
+        \item $1.96\frac{311.7}{\sqrt{n}}=50 \\
+        \left(1.96\frac{311.7}{50}\right)^{2} = n = 149.295 \rightarrow 150$
+
+        \item$ \left(2.33\frac{311.7}{50}\right)^{2} = 210.98 \rightarrow 211$
+\end{enumerate}
+
+
+\item (Navidi 5.1.6) $\hspace{16pt} n=123 \hspace*{16pt} \mu = 136.9 \hspace*{16pt} \sigma = 22.6$
+\begin{enumerate}
+        \item For 95\%, $Z_{\alpha/2} = 1.96 \\
+        E\ =\ 1.96\cdot\frac{22.6}{\sqrt{123}} = 3.994\\
+        \bar{x}\pm E = 136.9\pm3.994 \rightarrow (132.906,140.894)$
+
+        \item $1-\alpha = 0.995, \alpha / 2 = 0.005/2=0.0025, Z_{\alpha/2} = 2.81\\ 
+        E\ =\ 2.81\cdot\frac{22.6}{\sqrt{123}} = 5.726\\
+        \bar{x}\pm E = 136.9\pm5.726 \rightarrow (131.174,142.626)$
+        
+        \item $CI=(133.9,139.9)$ \\
+        $z = \frac{\bar{x} - \mu}{\sigma/\sqrt{n}}$ \\
+        $\frac{133.9 - \mu}{\sigma/\sqrt{n}} - 1.47219511147\hspace*{16pt} \frac{139.9 - \mu}{\sigma/\sqrt{n}} = 1.47219511147$ \\
+        $P(-1.47 < Z < 1.47) = 0.92922 -0.07078=0.85844\approx 86\%$
+        
+        \item $1.96\frac{22.6}{\sqrt{n}}=3 \\
+        \left(1.96\frac{22.6}{3}\right)^{2} = n = 218.015068444 \rightarrow 219$
+
+        \item$ \left(2.575\frac{22.6}{3}\right)^{2} = 376.295336111 \rightarrow 377$
+
+        \item $\mu-1.645\frac{\sigma}{\sqrt{n}} = 133.55$
+        \item $\frac{\mu-134.3}{\frac{\sigma}{\sqrt{n}}} = Z_{\alpha/2} = 1.27590242994 \rightarrow 89.8\% \hspace*{8pt} \mathrm{confidence}$
+\end{enumerate}
+
+\end{enumerate}
+\end{preview}
+\end{document}

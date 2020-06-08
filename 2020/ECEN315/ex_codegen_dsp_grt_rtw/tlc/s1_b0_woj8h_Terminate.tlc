@@ -1,0 +1,26 @@
+%implements s1_b0_woj8h_Terminate "C"
+
+%function Terminate(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcTerminateFcnOfS1B2 = OpaqueTLCBlockFcn("Terminate", 1, 2, 0, 14, 0)
+/* Terminate for MATLABSystem: '<Root>/Lowpass Filter' */
+%<(SLibCGCallSubFcn("matlabCodegenHandle_matlabCod_l", ["&ex_codegen_dsp_DW.obj"], 0, 14, 0))>;
+%<(SLibCGCallSubFcn("matlabCodegenHandle_matlabCodeg", ["&ex_codegen_dsp_DW.gobj_2"], 0, 14, 1))>;
+%<(SLibCGCallSubFcn("matlabCodegenHandle_matlabCodeg", ["&ex_codegen_dsp_DW.gobj_1"], 0, 14, 2))>;
+%if !WHITE_SPACE(tlcTerminateFcnOfS1B2)
+/* Terminate for SignalToWorkspace: '<Root>/Signal To Workspace' */
+%<tlcTerminateFcnOfS1B2>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function TerminateFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Terminate(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 14, fcnProtoType)>
+%endfunction

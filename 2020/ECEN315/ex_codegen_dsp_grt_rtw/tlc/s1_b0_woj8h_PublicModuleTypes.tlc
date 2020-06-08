@@ -1,0 +1,60 @@
+%implements s1_b0_woj8h_PublicModuleTypes "C"
+
+%function PublicModuleTypes(block) Output
+
+#ifndef struct_tag_DWn1lEK8ZsuktxpSoHCVBG
+#define struct_tag_DWn1lEK8ZsuktxpSoHCVBG
+struct tag_DWn1lEK8ZsuktxpSoHCVBG
+{
+    int32_T S0_isInitialized;
+    real_T W0_states[38];
+    real_T P0_InitialStates;
+    real_T P1_Coefficients[39];
+};
+#endif /*struct_tag_DWn1lEK8ZsuktxpSoHCVBG*/
+#ifndef typedef_b_dsp_FIRFilter_0_ex_codegen__T
+#define typedef_b_dsp_FIRFilter_0_ex_codegen__T
+typedef struct tag_DWn1lEK8ZsuktxpSoHCVBG b_dsp_FIRFilter_0_ex_codegen__T;
+#endif /*typedef_b_dsp_FIRFilter_0_ex_codegen__T*/
+#ifndef struct_tag_orJbgB5yTZegguTijmD3LF
+#define struct_tag_orJbgB5yTZegguTijmD3LF
+struct tag_orJbgB5yTZegguTijmD3LF
+{
+    boolean_T matlabCodegenIsDeleted;
+    int32_T isInitialized;
+    boolean_T isSetupComplete;
+    b_dsp_FIRFilter_0_ex_codegen__T cSFunObject;
+};
+#endif /*struct_tag_orJbgB5yTZegguTijmD3LF*/
+#ifndef typedef_b_dspcodegen_FIRFilter_ex_cod_T
+#define typedef_b_dspcodegen_FIRFilter_ex_cod_T
+typedef struct tag_orJbgB5yTZegguTijmD3LF b_dspcodegen_FIRFilter_ex_cod_T;
+#endif /*typedef_b_dspcodegen_FIRFilter_ex_cod_T*/
+#ifndef struct_tag_PMfBDzoakfdM9QAdfx2o6D
+#define struct_tag_PMfBDzoakfdM9QAdfx2o6D
+struct tag_PMfBDzoakfdM9QAdfx2o6D
+{
+    uint32_T f1[8];
+};
+#endif /*struct_tag_PMfBDzoakfdM9QAdfx2o6D*/
+#ifndef typedef_cell_wrap_ex_codegen_dsp_T
+#define typedef_cell_wrap_ex_codegen_dsp_T
+typedef struct tag_PMfBDzoakfdM9QAdfx2o6D cell_wrap_ex_codegen_dsp_T;
+#endif /*typedef_cell_wrap_ex_codegen_dsp_T*/
+#ifndef struct_tag_AsJWXmtHD36XczYJC172a
+#define struct_tag_AsJWXmtHD36XczYJC172a
+struct tag_AsJWXmtHD36XczYJC172a
+{
+    boolean_T matlabCodegenIsDeleted;
+    int32_T isInitialized;
+    boolean_T isSetupComplete;
+    cell_wrap_ex_codegen_dsp_T inputVarSize;
+    int32_T NumChannels;
+    b_dspcodegen_FIRFilter_ex_cod_T *FilterObj;
+};
+#endif /*struct_tag_AsJWXmtHD36XczYJC172a*/
+#ifndef typedef_dsp_LowpassFilter_ex_codegen__T
+#define typedef_dsp_LowpassFilter_ex_codegen__T
+typedef struct tag_AsJWXmtHD36XczYJC172a dsp_LowpassFilter_ex_codegen__T;
+#endif /*typedef_dsp_LowpassFilter_ex_codegen__T*/
+%endfunction

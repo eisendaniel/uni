@@ -1,0 +1,107 @@
+%implements s1_b0_woj8h_Outputs "C"
+
+%function Outputs(block, system) Output
+%<SLibCGIRAccessLocalVar(4, 0, "")> %% rtb_SineWave
+%<SLibCGIRAccessLocalVar(5, 0, "")> %% rtb_Sum
+%<SLibCGIRAccessLocalVar(6, 0, "")> %% rtb_Sum1
+%<SLibCGIRAccessLocalVar(2, 0, "")> %% rtb_LMSFilter_o2
+%<SLibCGIRAccessLocalVar(3, 0, "")> %% rtb_LMSFilter_o3
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+int32_T j;
+b_dsp_FIRFilter_0_ex_codegen__T *obj;
+real_T acc2;
+real_T rtb_LowpassFilter;
+real_T rtb_RandomSource;
+%closefile localVarDecl
+%assign _modelSS = ""
+
+%if SLibCG_FcnCallArgAccessed(0,13,1,9)
+%<SLibCGIRAccessLocalVar(6, 0, "")> %% rtb_Sum1
+%endif
+%if SLibCG_FcnCallArgAccessed(0,13,1,10)
+%<SLibCGIRAccessLocalVar(2, 0, "")> %% rtb_LMSFilter_o2
+%endif
+%if SLibCG_FcnCallArgAccessed(0,13,1,11)
+%<SLibCGIRAccessLocalVar(3, 0, "")> %% rtb_LMSFilter_o3
+%endif
+
+%assign tlcOutputsFcnOfS1B1 = OpaqueTLCBlockFcn("Outputs", 1, 1, 0, 13, 0)
+%assign tlcOutputsFcnOfS1B2 = OpaqueTLCBlockFcn("Outputs", 1, 2, 0, 13, 1)
+%assign tlcOutputsFcnOfS1B3 = OpaqueTLCBlockFcn("Outputs", 1, 3, 0, 13, 2)
+/* {S!d18}S-Function (sdsprandsrc2): '<Root>/Random Source' */
+%<(SLibCGCallSubFcn("RandSrc_GZ_D", ["&rtb_RandomSource", "&ex_codegen_dsp_P.RandomSource_MeanVal", "1", "&ex_codegen_dsp_P.RandomSource_VarianceRTP", "1", "ex_codegen_dsp_DW.RandomSource_STATE_DWORK", "1", "1"], 0, 13, 0))>;
+/* {S!d20}MATLABSystem: '<Root>/Lowpass Filter' */
+if (ex_codegen_dsp_DW.obj.FilterObj->isInitialized != 1) {
+    ex_codegen_dsp_DW.obj.FilterObj->isSetupComplete = false;
+    ex_codegen_dsp_DW.obj.FilterObj->isInitialized = 1;
+    ex_codegen_dsp_DW.obj.FilterObj->isSetupComplete = true;
+    /* System object Initialization function: dsp.FIRFilter */
+    for (j = 0; j < 38; j++) {
+        ex_codegen_dsp_DW.obj.FilterObj->cSFunObject.W0_states[j] = ex_codegen_dsp_DW.obj.FilterObj->cSFunObject.P0_InitialStates;
+    }
+}
+obj = &ex_codegen_dsp_DW.obj.FilterObj->cSFunObject;
+/* System object Outputs function: dsp.FIRFilter */
+/* Consume delay line and beginning of input samples */
+acc2 = rtb_RandomSource * ex_codegen_dsp_DW.obj.FilterObj->cSFunObject.P1_Coefficients[0];
+rtb_LowpassFilter = acc2;
+for (j = 0; j < 38; j++) {
+    acc2 = obj->P1_Coefficients[j + 1] * obj->W0_states[j];
+    rtb_LowpassFilter += acc2;
+}
+/* Update delay line for next frame */
+for (j = 36; j >= 0; j--) {
+    obj->W0_states[j + 1] = obj->W0_states[j];
+}
+ex_codegen_dsp_DW.obj.FilterObj->cSFunObject.W0_states[0] = rtb_RandomSource;
+/* {E!d20}End of MATLABSystem: '<Root>/Lowpass Filter' */
+
+/* {S!d22}S-Function (sdsplms): '<Root>/LMS Filter' */
+%<(SLibCGCallSubFcn("MWSPCGlmsnw_D", ["&rtb_RandomSource", "&rtb_LowpassFilter", "ex_codegen_dsp_P.LMSFilter_mu", "&ex_codegen_dsp_DW.LMSFilter_BUFF_IDX_DWORK", "&ex_codegen_dsp_DW.LMSFilter_IN_BUFFER_DWORK[0U]", "&ex_codegen_dsp_DW.LMSFilter_WGT_IC_DWORK[0U]", "32", "ex_codegen_dsp_P.LMSFilter_leakage", "1", "&rtb_Sum1", "&rtb_LMSFilter_o2", "&rtb_LMSFilter_o3[0U]"], 0, 13, 1))>;
+%if !WHITE_SPACE(tlcOutputsFcnOfS1B1)
+/* {S!d24}ArrayPlot: '<Root>/Array Plot' */
+%<tlcOutputsFcnOfS1B1>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS1B2)
+/* {S!d26}SignalToWorkspace: '<Root>/Signal To Workspace' */
+%<tlcOutputsFcnOfS1B2>\
+%endif
+/* {S!d28}S-Function (sdspsine2): '<Root>/Sine Wave' */
+rtb_SineWave = ex_codegen_dsp_P.SineWave_Amplitude * std::sin(ex_codegen_dsp_DW.SineWave_AccFreqNorm);
+/* Update accumulated normalized freq value
+for next sample.  Keep in range [0 2*pi) */
+ex_codegen_dsp_DW.SineWave_AccFreqNorm += ex_codegen_dsp_P.SineWave_Frequency * 0.31415926535897931;
+if (ex_codegen_dsp_DW.SineWave_AccFreqNorm >= 6.2831853071795862) {
+    ex_codegen_dsp_DW.SineWave_AccFreqNorm -= 6.2831853071795862;
+} else {
+    if (ex_codegen_dsp_DW.SineWave_AccFreqNorm < 0.0) {
+        ex_codegen_dsp_DW.SineWave_AccFreqNorm += 6.2831853071795862;
+    }
+}
+/* {E!d28}End of S-Function (sdspsine2): '<Root>/Sine Wave' */
+
+/* {S!d30}Sum: '<Root>/Sum' */
+rtb_Sum = rtb_SineWave + rtb_LowpassFilter;
+/* {S!d32}Sum: '<Root>/Sum1' */
+rtb_Sum1 = rtb_Sum - rtb_Sum1;
+%if !WHITE_SPACE(tlcOutputsFcnOfS1B3)
+/* {S!d34}Scope: '<Root>/Time Scope' */
+%<tlcOutputsFcnOfS1B3>\
+%endif
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 13, fcnProtoType)>
+%endfunction

@@ -1,0 +1,52 @@
+%implements s1_b0_woj8h_SystemInitialize "C"
+
+%function SystemInitialize(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+real_T arg;
+int32_T i;
+%closefile localVarDecl
+%<SLibInsertAsyncTaskInitializeCode(system)>
+%<SLibWriteMachineInitialize()>
+/* {S!d12}InitializeConditions for S-Function (sdsprandsrc2): '<Root>/Random Source' */
+ex_codegen_dsp_DW.RandomSource_SEED_DWORK = ex_codegen_dsp_P.RandomSource_rawSeed;
+%<(SLibCGCallSubFcn("RandSrcInitState_GZ", ["&ex_codegen_dsp_DW.RandomSource_SEED_DWORK", "&ex_codegen_dsp_DW.RandomSource_STATE_DWORK[0]", "1"], 0, 12, 0))>;
+/* {S!d14}InitializeConditions for S-Function (sdspsine2): '<Root>/Sine Wave' */
+/* This code only executes when block is re-enabled in an
+enabled subsystem when the enabled subsystem states on
+re-enabling are set to 'Reset' */
+/* Reset to time zero on re-enable */
+/* Trigonometric mode: compute accumulated
+normalized trig fcn argument for each channel */
+/* Keep normalized value in range [0 2*pi) */
+arg = std::fmod(ex_codegen_dsp_P.SineWave_Phase, 6.2831853071795862);
+if (arg < 0.0) {
+    arg += 6.2831853071795862;
+}
+ex_codegen_dsp_DW.SineWave_AccFreqNorm = arg;
+/* {E!d14}End of InitializeConditions for S-Function (sdspsine2): '<Root>/Sine Wave' */
+
+/* {S!d16}InitializeConditions for MATLABSystem: '<Root>/Lowpass Filter' */
+if (ex_codegen_dsp_DW.obj.FilterObj->isInitialized == 1) {
+    /* System object Initialization function: dsp.FIRFilter */
+    for (i = 0; i < 38; i++) {
+        ex_codegen_dsp_DW.obj.FilterObj->cSFunObject.W0_states[i] = ex_codegen_dsp_DW.obj.FilterObj->cSFunObject.P0_InitialStates;
+    }
+}
+/* {E!d16}End of InitializeConditions for MATLABSystem: '<Root>/Lowpass Filter' */
+%<SLibInsertInitPeriodicCStatesFcn(system)>
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedSystemInitializeLocalVars", localVarDecl)>
+%endfunction
+%function SystemInitializeFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void SystemInitialize(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 12, fcnProtoType)>
+%endfunction

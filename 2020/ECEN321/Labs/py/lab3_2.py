@@ -16,7 +16,6 @@ mu = 0
 alpha = np.sqrt((2 * sample_var))
 beta = 2  # init beta
 
-
 max_L = N * (np.log(beta) - np.log(2 * alpha) - gammaln(1 / beta)) - np.sum(
     np.power((np.abs(data) / alpha), beta))  # first result
 opt_alpha = alpha
@@ -26,7 +25,7 @@ prev_opt_alpha = opt_alpha
 l = []
 
 while False:
-    for beta in np.linspace(0.01, beta+1, 1000):
+    for beta in np.linspace(0.01, beta + 1, 1000):
         beta_r = N * (np.log(beta) - np.log(2 * alpha) - gammaln(1 / beta)) - np.sum(np.power((np.abs(data) / alpha), beta))
         if beta_r > max_L:
             max_L = beta_r

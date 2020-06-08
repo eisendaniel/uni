@@ -1,0 +1,188 @@
+%implements s1_b0_woj8h_TLCInterface "C"
+
+%function getInputAddr_1_2_0_11_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(3, 0, "")> %% rtb_LMSFilter_o3
+
+%return "&rtb_LMSFilter_o3" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_1_2_0_11_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(3, 0, "")> %% rtb_LMSFilter_o3
+
+%return "rtb_LMSFilter_o3" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_1_2_0_11_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ex_codegen_dsp_DW.SignalToWorkspace_PWORK"
+%endfunction
+
+%function getDWork_1_2_0_11_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ex_codegen_dsp_DW.SignalToWorkspace_PWORK"
+%endfunction
+
+%function getInputAddr_1_3_0_11_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(4, 0, "")> %% rtb_SineWave
+
+%return "&rtb_SineWave"
+%endfunction
+
+%function getInput_1_3_0_11_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(4, 0, "")> %% rtb_SineWave
+
+%return "rtb_SineWave"
+%endfunction
+
+%function getInputAddr_1_3_0_11_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(5, 0, "")> %% rtb_Sum
+
+%return "&rtb_Sum"
+%endfunction
+
+%function getInput_1_3_0_11_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(5, 0, "")> %% rtb_Sum
+
+%return "rtb_Sum"
+%endfunction
+
+%function getInputAddr_1_3_0_11_1_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(6, 0, "")> %% rtb_Sum1
+
+%return "&rtb_Sum1"
+%endfunction
+
+%function getInput_1_3_0_11_1_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(6, 0, "")> %% rtb_Sum1
+
+%return "rtb_Sum1"
+%endfunction
+
+%function getInputAddr_1_3_0_11_1_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(2, 0, "")> %% rtb_LMSFilter_o2
+
+%return "&rtb_LMSFilter_o2"
+%endfunction
+
+%function getInput_1_3_0_11_1_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(2, 0, "")> %% rtb_LMSFilter_o2
+
+%return "rtb_LMSFilter_o2"
+%endfunction
+
+%function getInputAddr_1_1_0_11_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(3, 0, "")> %% rtb_LMSFilter_o3
+
+%return "&rtb_LMSFilter_o3" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_1_1_0_11_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(3, 0, "")> %% rtb_LMSFilter_o3
+
+%return "rtb_LMSFilter_o3" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_1_1_0_13_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(3, 0, "")> %% rtb_LMSFilter_o3
+
+%return "&rtb_LMSFilter_o3" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_1_1_0_13_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(3, 0, "")> %% rtb_LMSFilter_o3
+
+%return "rtb_LMSFilter_o3" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_1_2_0_13_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(3, 0, "")> %% rtb_LMSFilter_o3
+
+%return "&rtb_LMSFilter_o3" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_1_2_0_13_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(3, 0, "")> %% rtb_LMSFilter_o3
+
+%return "rtb_LMSFilter_o3" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_1_2_0_13_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ex_codegen_dsp_DW.SignalToWorkspace_PWORK"
+%endfunction
+
+%function getDWork_1_2_0_13_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ex_codegen_dsp_DW.SignalToWorkspace_PWORK"
+%endfunction
+
+%function getInputAddr_1_3_0_13_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(4, 0, "")> %% rtb_SineWave
+
+%return "&rtb_SineWave"
+%endfunction
+
+%function getInput_1_3_0_13_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(4, 0, "")> %% rtb_SineWave
+
+%return "rtb_SineWave"
+%endfunction
+
+%function getInputAddr_1_3_0_13_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(5, 0, "")> %% rtb_Sum
+
+%return "&rtb_Sum"
+%endfunction
+
+%function getInput_1_3_0_13_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(5, 0, "")> %% rtb_Sum
+
+%return "rtb_Sum"
+%endfunction
+
+%function getInputAddr_1_3_0_13_2_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(6, 0, "")> %% rtb_Sum1
+
+%return "&rtb_Sum1"
+%endfunction
+
+%function getInput_1_3_0_13_2_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(6, 0, "")> %% rtb_Sum1
+
+%return "rtb_Sum1"
+%endfunction
+
+%function getInputAddr_1_3_0_13_2_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(2, 0, "")> %% rtb_LMSFilter_o2
+
+%return "&rtb_LMSFilter_o2"
+%endfunction
+
+%function getInput_1_3_0_13_2_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(2, 0, "")> %% rtb_LMSFilter_o2
+
+%return "rtb_LMSFilter_o2"
+%endfunction
+
+%function getInputAddr_1_2_0_14_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(3, 0, "")> %% rtb_LMSFilter_o3
+
+%return "&rtb_LMSFilter_o3" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_1_2_0_14_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(3, 0, "")> %% rtb_LMSFilter_o3
+
+%return "rtb_LMSFilter_o3" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_1_2_0_14_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ex_codegen_dsp_DW.SignalToWorkspace_PWORK"
+%endfunction
+
+%function getDWork_1_2_0_14_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ex_codegen_dsp_DW.SignalToWorkspace_PWORK"
+%endfunction
+

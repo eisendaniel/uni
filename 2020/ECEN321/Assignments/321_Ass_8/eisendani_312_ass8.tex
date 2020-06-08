@@ -1,0 +1,105 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage{amsmath} % Required for some math elements
+\usepackage{hyperref} 
+\usepackage{xcolor}
+\usepackage{lipsum} 
+\usepackage{cite}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{bookmark}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[margin=24mm]{geometry}
+\usepackage[caption=false, font=footnotesize]{subfig}
+\usepackage{multirow}
+\usepackage[active,tightpage]{preview}
+
+\renewcommand{\PreviewBorder}{1in}
+\newcommand{\Newpage}{\end{preview}\begin{preview}}
+
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{label = Step \arabic*:}
+
+\hypersetup{ %color attributes of citation, link, etc.
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=gray,      
+    urlcolor=blue,
+    citecolor=blue,
+}
+
+\newcommand{\matlab}{\textsc{Matlab }} %very important and totally necessary addition
+
+\newcommand\Item[1][]{%
+  \ifx\relax#1\relax  \item \else \item[#1] \fi
+  \abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
+  %----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+ 
+\title{ECEN321 : Engineering Statistics \\ Assignment 8 Submission}
+\author{Daniel Eisen : 300447549}
+\date{\today}
+
+\begin{document}
+\begin{preview}
+\maketitle
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONTENT
+%----------------------------------------------------------------------------------------
+\section*{Confidence Intervals}
+\begin{enumerate}
+        \item (Navidi 5.2.2), $n=100 \:\: x=73$ % 1
+        \begin{enumerate}
+                \item $\tilde{p} = \frac{x+2}{n+4} = 0.721153846154 \\
+                z_{\alpha/2} = 1.96 \\
+                \tilde{p} \pm z_{\alpha/2}\cdot\sqrt{\frac{\tilde{p}\left(1-\tilde{p}\right)}{n+4}} \\
+                \tilde{p} \pm 0.086185795204 \Rightarrow (0.63496805095, 0.807339641358)$
+        
+                \item $\tilde{p} = \frac{x+2}{n+4} = 0.721153846154 \\
+                z_{\alpha/2} = 2.575 \\
+                \tilde{p} \pm z_{\alpha/2}\cdot\sqrt{\frac{\tilde{p}\left(1-\tilde{p}\right)}{n+4}} \\
+                \tilde{p} \pm 0.113228787066 \Rightarrow (0.607925059087,0.83438263322)$
+
+                \item $n=\left(\frac{1.96\sqrt{\tilde{p}\left(1-\tilde{p}\right)}}{0.05}\right)^{2}-4 \approx 305$\\ note as $\tilde{p}$ is relative to previous n, the actual required n is lower, but 305 will still bring the E below 0.05.
+                
+                \item $n=\left(\frac{2.575\sqrt{\tilde{p}\left(1-\tilde{p}\right)}}{0.05}\right)^{2}-4 \approx 530$\\ note as $\tilde{p}$ is relative to previous n, the actual required n is lower, but 530 will still bring the E below 0.05.
+                
+                \item  $p = 0.7, n=100, \tilde{p} = 0.72115\\
+                z\ =\ \frac{p-\tilde{p}}{\sqrt{\frac{\tilde{p}\left(1-\tilde{p}\right)}{n+4}}} = -0.48 \\
+                P(Z > -0.48) = .6844 = 68.44\%$
+                
+                \item $n = 200, p=0.95, k={193...200} \\
+                P(X=k) = \frac{n!}{k!(n-k)!} \cdot p^k \cdot (1-p)^{n-k}\\
+                P(X > 192) = \sum_{k=193}^{200}\frac{n!}{k!\cdot(n-k)!}\cdot p^{k}\cdot(1-p)^{n-k} = 0.2133$ \\
+                I used wolfram to compute the sum, due to the large factorial.
+        \end{enumerate}
+        \item (Navidi  5.3.8) $\bar{X} = 3410.14,\: s = 1.018,\: n = 8,\: df\: = 7,\: CI=\bar{X}{\pm}t_{\alpha/2}{\cdot}\frac{s}{\sqrt{n}}$ % 2
+        \begin{enumerate}
+                \item $t_{\alpha/2} = 2.356 \\
+                CI = 3410.14{\pm}2.356{\cdot}\frac{1.018}{\sqrt{8}} \Rightarrow (3409.29, 3410.99)$
+                
+                \item $t_{\alpha/2} = 2.998 \\
+                CI = 3410.14{\pm}2.998{\cdot}\frac{1.018}{\sqrt{8}} \Rightarrow (3409.06, 3411.22)$
+                
+                \item No, because to able to use the student t CI's and calculations the samples must come from a population that is approximately normal, as seen by the outlier (3412.66) this sample cannot be said to come from a normal population so the above CI's cannot be used. 
+        \end{enumerate}
+
+        \item (Navidi  5.6.13) \\
+                $$X = (207.4,\:233.1,\:215.9,\:235.1,\:225.6,\:244.4,\:245.3) $$
+                $$\bar{X} = 229.54 ,\: s_X = 14.17 ,\: n_X = 7$$\\
+                $$Y = (84.3,\:53.2,\:127.3,\:201.3,\:174.2,\:246.2,\:149.4,\:156.4,\:103.3) $$
+                $$\bar{Y} = 143.96,\: s_Y = 59.76,\: n_Y = 9$$ \\
+                $$CI = \bar{X}-\bar{Y}{\pm}z_{\alpha/2}{\cdot}\sqrt{\frac{s^2_X}{n_X} + \frac{s^2_Y}{n_Y}}, \:\:\: z_{\alpha/2} = 1.96$$
+                $$85.58{\pm}1.96\cdot\sqrt{\frac{14.17^{2}}{7}+\frac{59.76^{2}}{9}} \approx 85.58{\pm}40.43$$
+                $$CI = (45.15,\:126.01)$$
+        
+\end{enumerate}
+
+\end{preview}
+\end{document}
