@@ -1,0 +1,37 @@
+﻿Part,Manufacturer,Part Number,Quantity,Price ($),Footprint (mm²),Description
+Rdrv,Vishay-Dale,CRCW04024R75FKED,1,0.01,3,Resistance: 4.75 Ω  Tolerance: 1.0%  Power: 63 mW  
+Cd,MuRata,GRM1555C1H561JA01J,1,0.01,3,Cap: 560 pF  Total Derated Cap: 560 pF  VDC: 50 V  ESR: 0 Ω  Package: 0402  
+Cin,CUSTOM,CUSTOM,1,NA,NA,Cap: 7.48 µF  Total Derated Cap: 7.5 µF  VDC: 362.32 V  ESR: 3.34 Ω  Package: null  
+Dsec2,Diodes Inc.,B560C-13-F,1,0.17,83.27,Type: Schottky  VRRM: 60 V  Io: 5 A  
+Cvcc2,TDK,C2012X5R1V226M125AC,1,0.33,6.75,Cap: 22 µF  Total Derated Cap: 22 µF  VDC: 35 V  ESR: 2.05 mΩ  Package: 0805  
+Dz4,ON Semiconductor,MMBZ5244BLT1G,1,0.02,14,Type: SMT  VRWM: 14 V  
+Rsense,Vishay-Dale,CRCW12061R10FKEA,1,0.01,10.92,Resistance: 1.1 Ω  Tolerance: 1.0%  Power: 250 mW  
+M2,Infineon Technologies,BSP135H6327XTSA1,1,0.54,76.5,VdsMax: 600 V  IdsMax: 120 mAmps  
+Cvcc1,TDK,C2012X5R1V106K085AC,1,0.17,6.75,Cap: 10 µF  Total Derated Cap: 1.9 µF  VDC: 35 V  ESR: 2.82 mΩ  Package: 0805  
+Rsnub2,CUSTOM,CUSTOM,1,NA,NA,Resistance: 425.66 kΩ  Tolerance: 0.0%  Power: 0 W  
+Dac,Diodes Inc.,HD06-T,1,0.13,62.1,Type: Switching-Bridge  VRRM: 600 V  Io: 800 mA  
+Cfb,MuRata,GRM033R70J103KA01D,1,0.01,2.08,Cap: 10 nF  Total Derated Cap: 10 nF  VDC: 6.3 V  ESR: 1 mΩ  Package: 0201  
+Rfbb,Vishay-Dale,CRCW040214K7FKED,1,0.01,3,Resistance: 14.7 kΩ  Tolerance: 1.0%  Power: 63 mW  
+VR,Texas Instruments,TL431IDBVR,1,0.06,16.39,IkMin: 400 mA  InitialAccuracy: 1.5%  ReferenceOutput: 2.5 V  
+Cvcc,Kemet,C0805C104M5RACTU,1,0.01,6.75,Cap: 100 nF  Total Derated Cap: 100 nF  VDC: 50 V  ESR: 64 mΩ  Package: 0805  
+Rsnub1,CUSTOM,CUSTOM,1,NA,NA,Resistance: 425.66 kΩ  Tolerance: 0.0%  Power: 0 W  
+U1,Texas Instruments,LM5023MM-2/NOPB,1,0.38,23.6,
+D3,Fairchild Semiconductor,SS26FL,1,0.07,11.7,Type: Schottky  VRRM: 60 V  Io: 2 A  
+Rvin,CUSTOM,CUSTOM,1,NA,NA,Resistance: 26.28 kΩ  Tolerance: 0.0%  Power: 0 W  
+Rvcc,Vishay-Dale,CRCW040276R8FKED,1,0.01,3,Resistance: 76.8 Ω  Tolerance: 1.0%  Power: 63 mW  
+Rcs,Vishay-Dale,CRCW0402499RFKED,1,0.01,3,Resistance: 499 Ω  Tolerance: 1.0%  Power: 63 mW  
+O1,Fairchild Semiconductor,FOD817A,1,0.11,71.06,CTR_Min: 80.0%  CTR_Max: 160.0%  IcMax: 50 mmA  
+Ccs,Samsung Electro-Mechanics,CL21C101JBANNNC,1,0.01,6.75,Cap: 100 pF  Total Derated Cap: 100 pF  VDC: 50 V  ESR: 0 Ω  Package: 0805  
+Ccomp,MuRata,GRM1555C1H102JA01J,1,0.01,3,Cap: 1 nF  Total Derated Cap: 1 nF  VDC: 50 V  ESR: 0 Ω  Package: 0402  
+Ropto,Yageo,RC0201FR-0710KL,1,0.01,2.08,Resistance: 10 kΩ  Tolerance: 1.0%  Power: 50 mW  
+T1,Core=TDK   CoilFormer=TDK,Core=B66317G0000X187   CoilFormer=B66208W1010T001,1,0.22,569.35,Core Type: E25/13/7  Core Material: N87  Turns Ratio(Nps): 171:7  
+Rfbt,Susumu Co Ltd,RR1220P-563-D,1,0.01,6.75,Resistance: 56 kΩ  Tolerance: 0.5%  Power: 100 mW  
+Rqrb,Vishay-Dale,CRCW04022K43FKED,1,0.01,3,Resistance: 2.43 kΩ  Tolerance: 1.0%  Power: 63 mW  
+Rqrt,Vishay-Dale,CRCW04026K98FKED,1,0.01,3,Resistance: 6.98 kΩ  Tolerance: 1.0%  Power: 63 mW  
+Css,Panasonic,ECPU1C154MA5,1,0.17,10.92,Cap: 150 nF  Total Derated Cap: 150 nF  VDC: 16 V  ESR: 0 Ω  Package: 1206  
+Cout,Panasonic,35SVPF82M,2,0.63,106.09,Cap: 82 µF  Total Derated Cap: 160 µF  VDC: 35 V  ESR: 20 mΩ  Package: 8x11.9  
+Dsnub,CUSTOM,CUSTOM,1,NA,NA,Type: ?  VRRM: 1.02 kV  Io: 5.03 mA  
+Csnub,MuRata,GRM31A7U2J102JW31D,1,0.09,10.92,Cap: 1 nF  Total Derated Cap: 1 nF  VDC: 630 V  ESR: 1 mΩ  Package: 1206  
+Dsec,Diodes Inc.,B560C-13-F,1,0.17,83.27,Type: Schottky  VRRM: 60 V  Io: 5 A  
+M1,STMicroelectronics,STW21N90K5,1,3.2,123.2,VdsMax: 900 V  IdsMax: 18.5 Amps  
+Rvsd,Vishay-Dale,CRCW08051M00FKEA,1,0.01,6.75,Resistance: 1 MΩ  Tolerance: 1.0%  Power: 125 mW  

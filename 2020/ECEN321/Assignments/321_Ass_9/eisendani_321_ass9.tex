@@ -54,17 +54,34 @@
 %----------------------------------------------------------------------------------------
 \section*{Hypothesis Tests}
 \begin{enumerate}
-        \item (Navidi 6.2.18)
+        \item (Navidi 6.2.18) $98\%$ lower bound $= 50.1$, $H_0: \mu \le 50$, $H_1: \mu > 50$ \\
+        That lower bounds tells us that there is a 2\% (0.02) chance of obtaining a sample mean more that 50.1.
         \begin{enumerate}
-                \item 
-                \item 
+                \item Cannot determine if $P<0.01$ as we only know that$ P < 0.02$.
+                \item As$ P < 0.02 < 0.05$ we can determine if $P < 0.05$.
         \end{enumerate}
-        \item (Navidi 6.3.8)
-        \item (Navidi 6.4.4)
+        \item (Navidi 6.3.8) $n=300$, $x=12$ and $H_0: p \ge 0.08$, $H_1: p < 0.08$ \\
+
+        $$z = \frac{\hat{p} - p_0}{\sqrt{p_0(1-p_0)/n}}$$
+        $$\mathrm{from\;above: \;}p_0 = 0.08,\; \hat{p} = x/n = 12/300=0.04$$
+        $$z = \frac{0.04-0.08}{\sqrt{0.08(1-0.08)/300}}=-2.55377$$
+        $$P(Z<-2.55) = 0.0054$$
+
+        This is (I think) sufficient evidence to reject the null hypothesis and support the claim of less then 8\% defective production.
+
+        \item (Navidi 6.4.4) \\
+        Ideal: 23 \\
+        Sample: $n = 10$, $\bar{x}=23.2$, $s=0.2$
         \begin{enumerate}
-                \item 
-                \item 
-                \item 
+                \item Null Hypothesis can be that the population mean \textbf{is} 23 and the alternate, that it is not. \\
+                $H_0: \mu = 23$, $H_a: \mu \ne 23$ \\
+
+                Test Statistic: $t = \frac{\bar{x}-\mu}{s/\sqrt{n}} = 0.2 / (0.2/\sqrt{10})=3.162278$
+                $df = n-1 = 9$ \\
+
+                \item From table with, a df of 9 and a t value of $\sim 3.16$ the two tailed P value is $\sim 0.0115$
+
+                \item As this value represents the probability that the population mean is 23, I think there is sufficient evidence to claim that the process needs recalibration.
         \end{enumerate} 
 \end{enumerate}
 

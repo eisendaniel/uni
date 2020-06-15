@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c134a0a-329b-4593-8080-9056106a1a3f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lab4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../321_Lab4/eisendani_321_lab4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../321_Lab4/eisendani_321_lab4.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../321_Lab4/eisendani_321_lab4.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../321_Lab4/eisendani_321_lab4.synctex.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../321_Lab4/eisendani_321_lab4.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../321_Lab4/eisendani_321_lab4.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab3_2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ENGR301/group-4" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ENGR301/group-4" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -230,7 +230,7 @@
       <workItem from="1590284479942" duration="30144000" />
       <workItem from="1590359229536" duration="5371000" />
       <workItem from="1591066562154" duration="472000" />
-      <workItem from="1591497625314" duration="38155000" />
+      <workItem from="1591497625314" duration="40190000" />
     </task>
     <servers />
   </component>

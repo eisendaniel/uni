@@ -1,0 +1,12 @@
+﻿Part,Manufacturer,Part Number,Quantity,Price ($),Footprint (mm²),Description
+Cinx,MuRata,GRM188R71H104KA93D,1,0.02,4.68,Cap: 100 nF  Total Derated Cap: 87 nF  VDC: 50 V  ESR: 20 mΩ  Package: 0603  
+U1,Texas Instruments,TPS56637RPAR,1,1.32,16,
+Cin,TDK,C2012X5R1V156M125AC,1,0.21,6.75,Cap: 15 µF  Total Derated Cap: 1.2 µF  VDC: 35 V  ESR: 1.67 mΩ  Package: 0805  
+Cout,MuRata,GRM31CR61A476KE15L,1,0.26,10.92,Cap: 47 µF  Total Derated Cap: 21 µF  VDC: 10 V  ESR: 3.71 mΩ  Package: 1206  
+L1,Coilcraft,XAL1010-332MEB,1,1.71,159.6,L: 3.3 µH  DCR: 3.7 mΩ  IDC: 25 A  
+Rpg,Vishay-Dale,CRCW0402100KFKED,1,0.01,3,Resistance: 100 kΩ  Tolerance: 1.0%  Power: 63 mW  
+Cboot,MuRata,GRM155R71C104KA88D,1,0.01,3,Cap: 100 nF  Total Derated Cap: 100 nF  VDC: 16 V  ESR: 1 mΩ  Package: 0402  
+Rfbb,Vishay-Dale,CRCW040210K0FKED,1,0.01,3,Resistance: 10 kΩ  Tolerance: 1.0%  Power: 63 mW  
+Rfbt,Vishay-Dale,CRCW040273K2FKED,1,0.01,3,Resistance: 73.2 kΩ  Tolerance: 1.0%  Power: 63 mW  
+Cff,Kemet,C0402C101K4GACTU,1,0.01,3,Cap: 100 pF  Total Derated Cap: 100 pF  VDC: 16 V  ESR: 0 Ω  Package: 0402  
+Rff,Vishay-Dale,CRCW040220K0FKED,1,0.01,3,Resistance: 20 kΩ  Tolerance: 1.0%  Power: 63 mW  
