@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c134a0a-329b-4593-8080-9056106a1a3f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../321_Lab4/eisendani_321_lab4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../321_Lab4/eisendani_321_lab4.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../321_Lab4/eisendani_321_lab4.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../321_Lab4/eisendani_321_lab4.synctex.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../321_Lab4/eisendani_321_lab4.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../321_Lab4/eisendani_321_lab4.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ECEN315/ass/ecen315_ass4/ass4.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ECEN315/ass/ecen315_ass4/ass4.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ECEN315/bodeCOMP.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ECEN315/bodeCOMP.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ENGR301/group-4" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ENGR301/group-4" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -170,6 +169,9 @@
       <module name="py" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -231,6 +233,7 @@
       <workItem from="1590359229536" duration="5371000" />
       <workItem from="1591066562154" duration="472000" />
       <workItem from="1591497625314" duration="40190000" />
+      <workItem from="1592305102110" duration="12000" />
     </task>
     <servers />
   </component>

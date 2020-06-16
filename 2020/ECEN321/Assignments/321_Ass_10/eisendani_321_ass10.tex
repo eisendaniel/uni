@@ -1,0 +1,144 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage{amsmath} % Required for some math elements
+\usepackage{hyperref} 
+\usepackage{xcolor}
+\usepackage{lipsum} 
+\usepackage{cite}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{bookmark}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[margin=24mm]{geometry}
+\usepackage[caption=false, font=footnotesize]{subfig}
+\usepackage{multirow}
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{label = Step \arabic*:}
+
+\hypersetup{ %color attributes of citation, link, etc.
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=gray,      
+    urlcolor=blue,
+    citecolor=blue,
+}
+
+\newcommand{\matlab}{\textsc{Matlab }} %very important and totally necessary addition
+
+\newcommand\Item[1][]{%
+  \ifx\relax#1\relax  \item \else \item[#1] \fi
+  \abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
+  %----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+ 
+\title{ECEN321 : Engineering Statistics \\ Assignment 10 Submission}
+\author{Daniel Eisen : 300447549}
+\date{\today}
+
+\begin{document}
+\maketitle
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONTENT
+%----------------------------------------------------------------------------------------
+\section*{Hypothesis Tests}
+\begin{enumerate}
+        \item (Navidi 6.7.2) \\
+        $x=disk:\:n_x = 6,\: \bar{x} = 255.8,\: s^2_x = 67.51,\: s_x = 8.216$ \\
+        $y=oval:\:n_y = 8,\: \bar{y}= 270.74,\: s^2_y = 141.68,\: s_y =11.9$ \\
+
+        Given claim that $\mu_x \neq \mu_y$:
+        $$H_0\::\:\mu_x = \mu_y$$
+        $$H_a\::\:\mu_x \neg \mu_y$$
+        Compute v:
+        $$v\ =\frac{\ \left(\frac{s_{x}^{2}}{n_{x}}+\frac{s_{y}^{2}}{n_{y}}\right)^{2}}{\frac{\left(\frac{s_{x}^{2}}{n_{x}}\right)^{2}}{n_{x}-1}+\frac{\left(\frac{s_{y}^{2}}{n_{y}}\right)^{2}}{n_{y}-1}} = 11.9 \rightarrow 11$$
+
+        Test Statistic t:
+        $$t=\frac{\left(X-Y\right)-\left(0\right)}{\sqrt{\frac{s_{x}^{2}}{n_{x}}+\frac{s_{y}^{2}}{n_{y}}}} = -2.77$$
+        From student t table (two tailed at df=11): P = 0.02 \\
+        Given the low probability of this occurrence the null hypothesis can be rejected.
+        \item (Navidi 6.8.6) \\
+        D = 3.1, -1.2, 0.4, -0.4, -3.1, -7.7
+        $\bar{D} = -1.483,\: s^2_D = 13.414,\: s_D = 3.66$ \\
+        $n = 6,\: df = n-1=5$
+        $H_0 : \mu_D = 0$
+        $$t=\frac{D-0}{\frac{s_{\bar{D}}}{\sqrt{n}}} =\frac{-1.483}{\frac{3.66}{\sqrt{6}}} = -0.9925$$
+        From student t table (two tailed at df=5): P = 0.4 \\
+        Null hypothesis cannot be rejected.
+        
+        \newpage
+        \item (Navidi 6.9.8) $n_X = n_Y = 15$
+        \begin{table}[h]
+          \begin{tabular}{|r|r|l|}
+          \hline
+          1                        & 1255                    & X \\ \hline
+          2                        & 1255                    & X \\ \hline
+          3                        & 1270                    & X \\ \hline
+          4                        & 1280                    & X \\ \hline
+          5                        & 1287                    & X \\ \hline
+          6                        & 1291                    & X \\ \hline
+          7                        & 1296                    & X \\ \hline
+          8                        & 1301                    & Y \\ \hline
+          9                        & 1302                    & X \\ \hline
+          10                       & 1306                    & X \\ \hline
+          11                       & 1310                    & X \\ \hline
+          12                       & 1314                    & X \\ \hline
+          13                       & 1318                    & X \\ \hline
+          14                       & 1321                    & Y \\ \hline
+          15                       & 1326                    & X \\ \hline
+          16                       & 1328                    & X \\ \hline
+          17                       & 1329                    & X \\ \hline
+          18                       & 1332                    & Y \\ \hline
+          19                       & 1341                    & Y \\ \hline
+          20                       & 1343                    & Y \\ \hline
+          21                       & 1349                    & Y \\ \hline
+          22                       & 1364                    & Y \\ \hline
+          23                       & 1372                    & Y \\ \hline
+          24                       & 1374                    & Y \\ \hline
+          25                       & 1376                    & Y \\ \hline
+          26                       & 1387                    & Y \\ \hline
+          27                       & 1396                    & Y \\ \hline
+          28                       & 1397                    & Y \\ \hline
+          29                       & 1398                    & Y \\ \hline
+          30                       & 1399                    & Y \\ \hline
+          \multicolumn{1}{|l|}{Wx} & \multicolumn{1}{l|}{Wy} &   \\ \hline
+          131                      & 334                     &   \\ \hline
+          \end{tabular}
+          \end{table}
+          $H_0: \mu_X \ge \mu_Y$
+          $$z =\frac{\ W_{X}-\frac{n_{X}\left(n_{X}+n_{Y}+1\right)}{2}}{\sqrt{\frac{n_{X}n_{Y}\left(n_{X}+n_{Y}+1\right)}{12}}} = \frac{131-\frac{15\left(31\right)}{2}}{\sqrt{\frac{15^2\left(31\right)}{12}}} = -4.2100$$
+          $$P(Z < -4.21) \approx 0$$
+          Therefore there is sufficient evidence to reject the null, and accept the claim that "the mean strength is greater for blocks cured for six days."
+        
+        \newpage
+        \item (Navidi 6.10.4 \\
+        $H_0$: That the model \textbf{does} explain the values.
+
+        \begin{table}[h]
+          \begin{tabular}{|r|r|r|l}
+          \hline
+          \multicolumn{1}{|l|}{\textbf{O}} & \multicolumn{1}{l|}{\textbf{E}} & \multicolumn{1}{l|}{$\frac{(O-E)^2}{E}$} & \multicolumn{1}{l|}{$\chi^2$ ie the sum} \\ \hline
+          18                               & 23                              & 1.086956522                                                  & \multicolumn{1}{r|}{21.47460834}                        \\ \hline
+          28                               & 18                              & 5.555555556                                                  &                                                                  \\ \cline{1-3}
+          14                               & 16                              & 0.25                                                         &                                                                  \\ \cline{1-3}
+          7                                & 13                              & 2.769230769                                                  &                                                                  \\ \cline{1-3}
+          11                               & 11                              & 0                                                            &                                                                  \\ \cline{1-3}
+          11                               & 9                               & 0.4444444444                                                 &                                                                  \\ \cline{1-3}
+          10                               & 20                              & 5                                                            &                                                                  \\ \cline{1-3}
+          8                                & 8                               & 0                                                            &                                                                  \\ \cline{1-3}
+          30                               & 19                              & 6.368421053                                                  &                                                                  \\ \cline{1-3}
+          \end{tabular}
+          \end{table}
+
+        $$\chi^2 = \sum(\frac{(O-E)^2}{E}) = 21.47$$
+        $$df = 9-1=8$$
+        From table:
+        $$P = [0.01, 0.005]$$
+        The p-value is low enough to reject the null and support the claim that "the theoretical model does not explain the observed values well."
+\end{enumerate}
+\end{document}
