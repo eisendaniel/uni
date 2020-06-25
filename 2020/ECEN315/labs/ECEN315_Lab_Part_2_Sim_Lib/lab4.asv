@@ -5,7 +5,6 @@ sim_file = 'openloopcontrol';
 supply = 'openloopcontrol/supply';
 driver = 'openloopcontrol/driver';
 pwm = 'openloopcontrol/PWM';
-target = 'openloopcontrol/Angle';
 %% Direct DC vs Angle
 load_system(sim_file);
 steady_angle = [];
@@ -67,11 +66,18 @@ ylabel("Angle (deg)")
 title("System Response : Error/Errorless Comparison")
 %% Multi error measurments
 load_system(sim_file);
-sse = []
+errored = []
+nonerrored = []
 for A = [15 20 30]
-    set_param(target, 'Value', num2str(A))
-    set_param(driver, 'E', "on");
+    set_param(driver, 'off', error);
     sim(sim_file, 10)
-    sse = [sse (A - angles(end))]
+    stepinfo(angles,tout)
+    nonerrored = [nonerrored angles(end)]
+    
+    set_param(driver, 'on', error);
+    sim(sim_file, 10)
+    stepinfo(angles,tout)
+    nonerrored = [nonerrored angles(end)]
 end
+sse = nonerrored - error
 

@@ -1,0 +1,80 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES.. AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage{amsmath} % Required for some math elements
+\usepackage{hyperref} 
+\usepackage{xcolor}
+\usepackage{lipsum} 
+\usepackage{cite}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{bookmark}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[margin=24mm]{geometry}
+\usepackage[caption=false, font=footnotesize]{subfig}
+\usepackage{multirow}
+\usepackage[active,tightpage]{preview}
+
+\renewcommand{\PreviewBorder}{1in}
+\newcommand{\Newpage}{\end{preview}\begin{preview}}
+
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{label = Step \arabic*:}
+
+\hypersetup{ %color attributes of citation, link, etc.
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=gray,      
+    urlcolor=blue,
+    citecolor=blue,
+}
+
+\newcommand{\matlab}{\textsc{Matlab }} %very important and totally necessary addition
+
+\newcommand\Item[1][]{%
+  \ifx\relax#1\relax  \item \else \item[#1] \fi
+  \abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
+  %----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+ 
+\title{ECEN303 : Title \\ Assignment x Submission}
+\author{Daniel Eisen : 300447549}
+\date{\today}
+
+\begin{document}
+\begin{preview}
+\maketitle
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONTENT
+%----------------------------------------------------------------------------------------
+\section*{Stability}
+\begin{enumerate}
+        \item An op-amp will become unstable, when it has feedback and its negative feedback becomes positive due to the accumulation of phase shifts. This will result in the output being driven to supply rails. This phase shift can be produced sometimes by internal causes but often from external reactive components.
+        
+        \item Uncompensated op-amps have no internal compensation.
+        The circuit itself must be designed include appropriate compensation. These op-amps will be faster than equivalent compensated op-amps.
+        A compensated op Amp, is one in which steps were taken to make it stable. The normal way is by putting a large capacitor internally, for that at the frequency at which the there is 180$^\circ$ phase shift between input and output, that the open loop gain is below 1. Therefore it should not oscillate.
+
+        The effect of this large capacitor is to make the amplifier sluggish, so the output is slow to respond to the inputs, as this capacitor has to discharge and charge.
+        
+        \item This places a pole where $1/\beta$ meets $\alpha$. This reduces circuit ringing. THe capacitor adds an extra pole in the amplifier's frequency response, which can increase the phase margin and make the circuit more stable.
+\end{enumerate}
+
+
+\section*{Oscillators}
+\begin{enumerate}
+        \item The Barkhausen Criterion is the condition to determine when the circuit will oscillate. This states that to have stable oscillation, a gain of 1 needs to be produced at the accumulated 180 degrees phase. Ie, less that 180 will be stable, greater will be unstable.
+        
+        \item By having a rapidly changing phase shift (with frequency), so to get more stability we can use more than 2 RC networks. As the given phase shift leads to a smaller f shift.
+        
+        \item Wien Bridge amplitude stabilisation: This is achieved by setting the loop gain (in a Wien bridge configuration) to slightly more than unity and rely on op-amp
+        non-linearity/clipping when the amplitude of the signal approaches the rails.
+        Automatically reduces the loop gain to the required unity with this clipping. This does have significant output distortion. 
+\end{enumerate}
+\end{preview}
+\end{document}
