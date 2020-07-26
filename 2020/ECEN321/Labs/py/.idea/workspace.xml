@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c134a0a-329b-4593-8080-9056106a1a3f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../ECEN315/ass/ecen315_ass4/ass4.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ECEN315/ass/ecen315_ass4/ass4.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ECEN315/bodeCOMP.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ECEN315/bodeCOMP.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../312_Lab5/lab5_321.m" beforeDir="false" afterPath="$PROJECT_DIR$/../312_Lab5/lab5_321.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../ENGR301/group-4" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ENGR301/group-4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ENGR301/group-4.wiki" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ENGR301/group-4.wiki" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -234,6 +234,7 @@
       <workItem from="1591066562154" duration="472000" />
       <workItem from="1591497625314" duration="40190000" />
       <workItem from="1592305102110" duration="12000" />
+      <workItem from="1595397453697" duration="47000" />
     </task>
     <servers />
   </component>

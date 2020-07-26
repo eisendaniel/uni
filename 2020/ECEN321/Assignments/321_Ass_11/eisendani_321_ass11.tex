@@ -1,0 +1,112 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage{amsmath} % Required for some math elements
+\usepackage{hyperref} 
+\usepackage{xcolor}
+\usepackage{lipsum} 
+\usepackage{cite}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{bookmark}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[margin=24mm]{geometry}
+\usepackage[caption=false, font=footnotesize]{subfig}
+\usepackage{multirow}
+\usepackage[active,tightpage]{preview}
+
+\renewcommand{\PreviewBorder}{1in}
+\newcommand{\Newpage}{\end{preview}\begin{preview}}
+
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{label = Step \arabic*:}
+
+\hypersetup{ %color attributes of citation, link, etc.
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=gray,      
+    urlcolor=blue,
+    citecolor=blue,
+}
+
+\newcommand{\matlab}{\textsc{Matlab }} %very important and totally necessary addition
+
+\newcommand\Item[1][]{%
+  \ifx\relax#1\relax  \item \else \item[#1] \fi
+  \abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
+  %----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+ 
+\title{ECEN321 : Engineering Statistics \\ Assignment 11 Submission}
+\author{Daniel Eisen : 300447549}
+\date{\today}
+
+\begin{document}
+\begin{preview}
+\maketitle
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONTENT
+%----------------------------------------------------------------------------------------
+\begin{enumerate}
+\section*{Hypothesis Tests}
+\item (Navidi 6.11.4) x=[12.18 11.77 12.09 12.03 11.87 11.96 12.03 12.36 12.28 11.85], n = 10
+$$\bar{x} = 12.042, \:\: s^2=0.036284, \:\: s=0.1905$$
+$$H_0 \Rightarrow \sigma=0.01$$
+$$\chi^2 = \frac{10-1}{0.01}0.1905^2 = 32.66$$
+$$df = 9$$
+Two tailed p-value from table, $P=0.01$ hence can reject null.
+
+\item (Navidi 6.14.6) 
+\begin{enumerate}
+        \item $$t = \frac{\bar{X} - \mu_0}{s/\sqrt{n}}$$
+        $$t_A = 2.655,\:t_A = -2.832,\:t_A = -0.377,\:t_A = -3.450,\:t_A = -1.382,\:$$
+        $df = 9$, from student t distribution p values obtained, $$P_A = 0.987\:P_B = 0.0098,\:P_C = 0.36,\:P_D = 0.0036,\:P_E = 0.1,\:$$
+        Bonferroni correction is the product of the N of tests, ie 5 times.
+        $$P_A = 4.935 \Rightarrow no\:rejection\:of\:null$$
+        $$P_B = 0.049 \Rightarrow rejection\:of\:null$$
+        $$P_C = 1.8 \Rightarrow no\:rejection\:of\:null$$
+        $$P_D = 0.018 \Rightarrow rejection\:of\:null$$
+        $$P_E = 0.5 \Rightarrow no\:rejection\:of\:null$$
+        \item iii)
+\end{enumerate}
+\section*{Regression}
+\item (Navidi 7.3.8)
+$n=27,\:\bar{x}=0.8404,\:\bar{y} = 0.8267$
+\begin{enumerate}
+        \item $$\beta_1 = \sum(x+\bar{x})(y-\bar{y}) / \sum(x-\bar{x})^2 = 2.8972/2.9679 = 0.976$$
+        $$\beta_0 = \bar{y}-\beta_1{\cdot}\bar{x} = 0.0063$$
+        \item Finding the correlation. 
+        $$r = \frac{2.8972}{\sqrt{2.9679}\cdot\sqrt{2.9446}} = 0.98$$
+        $$s^2 = (1-0.98^2)(2.9446) / 27-2 = 0.00466$$
+        $H_0: \beta_0=0,\:df=25$
+        $$t = \frac{0.0063-0}{s\sqrt{1/n + \bar{x}^2 / \sum(x-\bar{x})^2}} = 0.176$$
+        P=0.80, fail to reject null
+        \item  $H_0: \beta_0=0,\:df=25$
+        $$t = \frac{\beta_1-1}{s/\sqrt{\sum(x-\bar{x})^2}} = -0.601$$
+        P=0.80, fail to reject null
+        \item As we cannot provide sufficient evidence to reject (b, c), so cannot conclude that the method is inaccurate.
+        \item $95\% \rightarrow t_{(1-0.95)/2} = 2.06$
+        $$E = 2.06\sqrt{0.00466(1/27 + (0.8-0.8404)^2 / 2.968)} = 0.0273$$
+        $$0.7873\pm0.0273$$
+        \item the interval [0.76, 0.815] does not contain 0.75, indicate it is unlikely that mean prediction is 0.75$\mu m$. So can conclude claim is false.
+\end{enumerate}
+
+\item (Navidi 7 supplementary 10) 
+$$n=23,\:\bar{x}=28.0783,\:\bar{y}=29.2217$$
+\begin{enumerate}
+        \item $$\beta_1 = -347.2191/287.99 = -1.2056$$
+        $$\beta_0 = \bar{y} - \beta_1{\cdot}\bar{x} = 63.07$$
+        Line is therefore 63.07 - 1.21x
+        \item $$r = -347.22 / (\sqrt{287.99}{\cdot}\sqrt{1692.18}) = -0.4974$$
+        $$s^2 = (1-(-0.4974)^2(1692.1791)) / 23-2 = 60.64$$
+        $$df=21,\: t_{(1-0.95)/2} = 2.08$$ 
+\end{enumerate}
+        
+\end{enumerate}
+\end{preview}
+\end{document}

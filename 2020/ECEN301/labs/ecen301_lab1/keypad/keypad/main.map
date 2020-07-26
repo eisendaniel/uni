@@ -1,0 +1,555 @@
+ASxxxx Linker V03.00 + NoICE + sdld,  page 1.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000000  l_BIT_BANK                      
+C:   00000000  l_BSEG                          
+C:   00000000  l_BSEG_BYTES                    
+C:   00000000  l_CABS                          
+C:   00000000  l_CONST                         
+C:   00000000  l_GSINIT1                       
+C:   00000000  l_GSINIT5                       
+C:   00000000  l_IABS                          
+C:   00000000  l_ISEG                          
+C:   00000000  l_PSEG                          
+C:   00000000  l_REG_BANK_1                    
+C:   00000000  l_REG_BANK_2                    
+C:   00000000  l_REG_BANK_3                    
+C:   00000000  l_RSEG                          
+C:   00000000  l_RSEG0                         
+C:   00000000  l_RSEG1                         
+C:   00000000  l_XABS                          
+C:   00000000  l_XINIT                         
+C:   00000000  l_XISEG                         
+C:   00000000  l_XSEG                          
+C:   00000000  l__CODE                         
+C:   00000000  s_BSEG                          
+C:   00000000  s_CABS                          
+C:   00000000  s_DSEG                          
+C:   00000000  s_HOME                          
+C:   00000000  s_IABS                          
+C:   00000000  s_ISEG                          
+C:   00000000  s_REG_BANK_0                    
+C:   00000000  s_RSEG                          
+C:   00000000  s_RSEG0                         
+C:   00000000  s_RSEG1                         
+C:   00000000  s_XABS                          
+C:   00000001  s_PSEG                          
+C:   00000001  s_XISEG                         
+C:   00000001  s_XSEG                          
+C:   00000003  l_GSFINAL                       
+C:   00000003  l_GSINIT0                       
+C:   00000004  l_OSEG                          
+C:   00000006  l_HOME                          
+C:   00000006  s_GSINIT0                       
+C:   00000008  l_GSINIT                        
+C:   00000008  l_REG_BANK_0                    
+C:   00000008  s_REG_BANK_1                    
+C:   00000009  s_GSINIT1                       
+C:   00000009  s_GSINIT2                       
+C:   0000000A  l_GSINIT2                       
+C:   00000010  s_REG_BANK_2                    
+C:   00000013  s_GSINIT3                       
+C:   00000013  s_OSEG                          
+C:   00000017  s_SSEG                          
+ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000018  s_BIT_BANK                      
+C:   00000018  s_REG_BANK_3                    
+C:   00000020  s_BSEG_BYTES                    
+C:   00000020  s__CODE                         
+C:   00000022  l_GSINIT3                       
+C:   0000002A  l_GSINIT4                       
+C:   00000035  s_GSINIT4                       
+C:   0000005F  s_GSINIT                        
+C:   0000005F  s_GSINIT5                       
+C:   00000067  s_GSFINAL                       
+C:   0000006A  s_CSEG                          
+C:   00000080  l_DSEG                          
+C:   000000E9  l_SSEG                          
+C:   00000100  l_IRAM                          
+C:   00000438  l_CSEG                          
+C:   000004A2  s_CONST                         
+C:   000004A2  s_XINIT                         
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000000  .__.ABS.                           _startup
+     00000080  _AD0                               ECEN301LibSDCC
+     00000080  _DATA                              ECEN301LibSDCC
+     00000080  _P0                                ECEN301LibSDCC
+     00000080  _P0_0                              ECEN301LibSDCC
+     00000081  _AD1                               ECEN301LibSDCC
+     00000081  _P0_1                              ECEN301LibSDCC
+     00000081  _SP                                ECEN301LibSDCC
+     00000082  _AD2                               ECEN301LibSDCC
+     00000082  _DPL                               ECEN301LibSDCC
+     00000082  _P0_2                              ECEN301LibSDCC
+     00000083  _AD3                               ECEN301LibSDCC
+     00000083  _DPH                               ECEN301LibSDCC
+     00000083  _P0_3                              ECEN301LibSDCC
+     00000084  _AD4                               ECEN301LibSDCC
+     00000084  _P0_4                              ECEN301LibSDCC
+     00000085  _AD5                               ECEN301LibSDCC
+     00000085  _P0_5                              ECEN301LibSDCC
+     00000086  _AD6                               ECEN301LibSDCC
+     00000086  _P0_6                              ECEN301LibSDCC
+     00000087  _AD7                               ECEN301LibSDCC
+     00000087  _P0_7                              ECEN301LibSDCC
+     00000087  _PCON                              ECEN301LibSDCC
+     00000088  _IT0                               ECEN301LibSDCC
+     00000088  _TCON                              ECEN301LibSDCC
+     00000089  _IE0                               ECEN301LibSDCC
+     00000089  _TMOD                              ECEN301LibSDCC
+     0000008A  _IT1                               ECEN301LibSDCC
+     0000008A  _TL0                               ECEN301LibSDCC
+     0000008B  _IE1                               ECEN301LibSDCC
+     0000008B  _TL1                               ECEN301LibSDCC
+     0000008C  _TH0                               ECEN301LibSDCC
+     0000008C  _TR0                               ECEN301LibSDCC
+     0000008D  _TF0                               ECEN301LibSDCC
+     0000008D  _TH1                               ECEN301LibSDCC
+     0000008E  _AUXR                              ECEN301LibSDCC
+     0000008E  _TR1                               ECEN301LibSDCC
+     0000008F  _CKCON0                            ECEN301LibSDCC
+     0000008F  _TF1                               ECEN301LibSDCC
+     00000090  _P1                                ECEN301LibSDCC
+     00000090  _P1_0                              ECEN301LibSDCC
+     00000090  _T2                                ECEN301LibSDCC
+     00000091  _P1_1                              ECEN301LibSDCC
+     00000091  _T2EX                              ECEN301LibSDCC
+     00000092  _ECI                               ECEN301LibSDCC
+     00000092  _P1_2                              ECEN301LibSDCC
+     00000093  _CEX0                              ECEN301LibSDCC
+     00000093  _P1_3                              ECEN301LibSDCC
+     00000094  _CEX1                              ECEN301LibSDCC
+     00000094  _P1_4                              ECEN301LibSDCC
+ASxxxx Linker V03.00 + NoICE + sdld,  page 4.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000095  _CEX2                              ECEN301LibSDCC
+     00000095  _P1_5                              ECEN301LibSDCC
+     00000096  _CEX3                              ECEN301LibSDCC
+     00000096  _P1_6                              ECEN301LibSDCC
+     00000097  _CEX4                              ECEN301LibSDCC
+     00000097  _P1_7                              ECEN301LibSDCC
+     00000098  _RI                                ECEN301LibSDCC
+     00000098  _SCON                              ECEN301LibSDCC
+     00000099  _SBUF                              ECEN301LibSDCC
+     00000099  _TI                                ECEN301LibSDCC
+     0000009A  _RB8                               ECEN301LibSDCC
+     0000009B  _TB8                               ECEN301LibSDCC
+     0000009C  _REN                               ECEN301LibSDCC
+     0000009D  _SM2                               ECEN301LibSDCC
+     0000009E  _SM1                               ECEN301LibSDCC
+     0000009F  _CKCON1                            ECEN301LibSDCC
+     0000009F  _FE                                ECEN301LibSDCC
+     0000009F  _SM0                               ECEN301LibSDCC
+     000000A0  _A8                                ECEN301LibSDCC
+     000000A0  _P2                                ECEN301LibSDCC
+     000000A0  _P2_0                              ECEN301LibSDCC
+     000000A0  __XPAGE                            
+     000000A1  _A9                                ECEN301LibSDCC
+     000000A1  _P2_1                              ECEN301LibSDCC
+     000000A2  _A10                               ECEN301LibSDCC
+     000000A2  _AUXR1                             ECEN301LibSDCC
+     000000A2  _P2_2                              ECEN301LibSDCC
+     000000A3  _A11                               ECEN301LibSDCC
+     000000A3  _P2_3                              ECEN301LibSDCC
+     000000A4  _A12                               ECEN301LibSDCC
+     000000A4  _P2_4                              ECEN301LibSDCC
+     000000A5  _A13                               ECEN301LibSDCC
+     000000A5  _P2_5                              ECEN301LibSDCC
+     000000A6  _A14                               ECEN301LibSDCC
+     000000A6  _P2_6                              ECEN301LibSDCC
+     000000A6  _WDTRST                            ECEN301LibSDCC
+     000000A7  _A15                               ECEN301LibSDCC
+     000000A7  _P2_7                              ECEN301LibSDCC
+     000000A7  _WDTPRG                            ECEN301LibSDCC
+     000000A8  _EX0                               ECEN301LibSDCC
+     000000A8  _IEN0                              ECEN301LibSDCC
+     000000A9  _ET0                               ECEN301LibSDCC
+     000000A9  _SADDR                             ECEN301LibSDCC
+     000000AA  _EX1                               ECEN301LibSDCC
+     000000AB  _ET1                               ECEN301LibSDCC
+     000000AC  _ES                                ECEN301LibSDCC
+     000000AD  _ET2                               ECEN301LibSDCC
+     000000AE  _EC                                ECEN301LibSDCC
+     000000AF  _EA                                ECEN301LibSDCC
+     000000B0  _P3                                ECEN301LibSDCC
+     000000B0  _P3_0                              ECEN301LibSDCC
+ASxxxx Linker V03.00 + NoICE + sdld,  page 5.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000B0  _RXD                               ECEN301LibSDCC
+     000000B1  _P3_1                              ECEN301LibSDCC
+     000000B1  _TXD                               ECEN301LibSDCC
+     000000B2  _INT0                              ECEN301LibSDCC
+     000000B2  _P3_2                              ECEN301LibSDCC
+     000000B3  _INT1                              ECEN301LibSDCC
+     000000B3  _P3_3                              ECEN301LibSDCC
+     000000B4  _P3_4                              ECEN301LibSDCC
+     000000B4  _T0                                ECEN301LibSDCC
+     000000B5  _P3_5                              ECEN301LibSDCC
+     000000B5  _T1                                ECEN301LibSDCC
+     000000B6  _P3_6                              ECEN301LibSDCC
+     000000B6  _WR                                ECEN301LibSDCC
+     000000B7  _IPH0                              ECEN301LibSDCC
+     000000B7  _P3_7                              ECEN301LibSDCC
+     000000B7  _RD                                ECEN301LibSDCC
+     000000B8  _IPL0                              ECEN301LibSDCC
+     000000B8  _PX0                               ECEN301LibSDCC
+     000000B9  _PT0                               ECEN301LibSDCC
+     000000B9  _SADEN                             ECEN301LibSDCC
+     000000BA  _PX1                               ECEN301LibSDCC
+     000000BB  _PT1                               ECEN301LibSDCC
+     000000BC  _PS                                ECEN301LibSDCC
+     000000BD  _PT2                               ECEN301LibSDCC
+     000000BE  _PPC                               ECEN301LibSDCC
+     000000C0  _P4                                ECEN301LibSDCC
+     000000C0  _P4_0                              ECEN301LibSDCC
+     000000C0  _RS                                ECEN301LibSDCC
+     000000C1  _P4_1                              ECEN301LibSDCC
+     000000C1  _RW                                ECEN301LibSDCC
+     000000C2  _EN                                ECEN301LibSDCC
+     000000C2  _MISO                              ECEN301LibSDCC
+     000000C2  _P4_2                              ECEN301LibSDCC
+     000000C3  _P4_3                              ECEN301LibSDCC
+     000000C3  _SCK                               ECEN301LibSDCC
+     000000C4  _MOSI                              ECEN301LibSDCC
+     000000C4  _P4_4                              ECEN301LibSDCC
+     000000C8  _CPRL2                             ECEN301LibSDCC
+     000000C8  _T2CON                             ECEN301LibSDCC
+     000000C9  _CT2                               ECEN301LibSDCC
+     000000C9  _T2MOD                             ECEN301LibSDCC
+     000000CA  _RCAP2L                            ECEN301LibSDCC
+     000000CA  _TR2                               ECEN301LibSDCC
+     000000CB  _EXEN2                             ECEN301LibSDCC
+     000000CB  _RCAP2H                            ECEN301LibSDCC
+     000000CC  _TCLK                              ECEN301LibSDCC
+     000000CC  _TL2                               ECEN301LibSDCC
+     000000CD  _RCLK                              ECEN301LibSDCC
+     000000CD  _TH2                               ECEN301LibSDCC
+     000000CE  _CANEN1                            ECEN301LibSDCC
+     000000CE  _EXF2                              ECEN301LibSDCC
+ASxxxx Linker V03.00 + NoICE + sdld,  page 6.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000CF  _CANEN2                            ECEN301LibSDCC
+     000000CF  _TF2                               ECEN301LibSDCC
+     000000D0  _P                                 ECEN301LibSDCC
+     000000D0  _PSW                               ECEN301LibSDCC
+     000000D1  _F1                                ECEN301LibSDCC
+     000000D1  _FCON                              ECEN301LibSDCC
+     000000D2  _EECON                             ECEN301LibSDCC
+     000000D2  _OV                                ECEN301LibSDCC
+     000000D3  _RS0                               ECEN301LibSDCC
+     000000D4  _RS1                               ECEN301LibSDCC
+     000000D4  _SPCON                             ECEN301LibSDCC
+     000000D5  _F0                                ECEN301LibSDCC
+     000000D5  _SPSCR                             ECEN301LibSDCC
+     000000D6  _AC                                ECEN301LibSDCC
+     000000D6  _SPDAT                             ECEN301LibSDCC
+     000000D7  _CY                                ECEN301LibSDCC
+     000000D8  _CCF0                              ECEN301LibSDCC
+     000000D8  _CCON                              ECEN301LibSDCC
+     000000D9  _CCF1                              ECEN301LibSDCC
+     000000D9  _CMOD                              ECEN301LibSDCC
+     000000DA  _CCAPM0                            ECEN301LibSDCC
+     000000DA  _CCF2                              ECEN301LibSDCC
+     000000DB  _CCAPM1                            ECEN301LibSDCC
+     000000DB  _CCF3                              ECEN301LibSDCC
+     000000DC  _CCAPM2                            ECEN301LibSDCC
+     000000DC  _CCF4                              ECEN301LibSDCC
+     000000DD  _CCAPM3                            ECEN301LibSDCC
+     000000DE  _CCAPM4                            ECEN301LibSDCC
+     000000DE  _CR                                ECEN301LibSDCC
+     000000DF  _CF                                ECEN301LibSDCC
+     000000E0  _A                                 ECEN301LibSDCC
+     000000E0  _A0                                ECEN301LibSDCC
+     000000E0  _ACC                               ECEN301LibSDCC
+     000000E0  _ACC0                              ECEN301LibSDCC
+     000000E1  _A1                                ECEN301LibSDCC
+     000000E1  _ACC1                              ECEN301LibSDCC
+     000000E2  _A2                                ECEN301LibSDCC
+     000000E2  _ACC2                              ECEN301LibSDCC
+     000000E3  _A3                                ECEN301LibSDCC
+     000000E3  _ACC3                              ECEN301LibSDCC
+     000000E4  _A4                                ECEN301LibSDCC
+     000000E4  _ACC4                              ECEN301LibSDCC
+     000000E5  _A5                                ECEN301LibSDCC
+     000000E5  _ACC5                              ECEN301LibSDCC
+     000000E6  _A6                                ECEN301LibSDCC
+     000000E6  _ACC6                              ECEN301LibSDCC
+     000000E7  _A7                                ECEN301LibSDCC
+     000000E7  _ACC7                              ECEN301LibSDCC
+     000000E8  _EADC                              ECEN301LibSDCC
+     000000E8  _IEN1                              ECEN301LibSDCC
+     000000E9  _CL                                ECEN301LibSDCC
+ASxxxx Linker V03.00 + NoICE + sdld,  page 7.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000E9  _ESPI                              ECEN301LibSDCC
+     000000EA  _CCAP0L                            ECEN301LibSDCC
+     000000EB  _CCAP1L                            ECEN301LibSDCC
+     000000EC  _CCAP2L                            ECEN301LibSDCC
+     000000ED  _CCAP3L                            ECEN301LibSDCC
+     000000EE  _CCAP4L                            ECEN301LibSDCC
+     000000F0  _B                                 ECEN301LibSDCC
+     000000F0  _B0                                ECEN301LibSDCC
+     000000F1  _B1                                ECEN301LibSDCC
+     000000F2  _ADCLK                             ECEN301LibSDCC
+     000000F2  _B2                                ECEN301LibSDCC
+     000000F3  _ADCON                             ECEN301LibSDCC
+     000000F3  _B3                                ECEN301LibSDCC
+     000000F4  _ADDL                              ECEN301LibSDCC
+     000000F4  _B4                                ECEN301LibSDCC
+     000000F5  _ADDH                              ECEN301LibSDCC
+     000000F5  _B5                                ECEN301LibSDCC
+     000000F5  _B_5                               _gptrget
+     000000F6  _ADCF                              ECEN301LibSDCC
+     000000F6  _B6                                ECEN301LibSDCC
+     000000F6  _B_6                               _gptrget
+     000000F7  _B7                                ECEN301LibSDCC
+     000000F7  _B_7                               _gptrget
+     000000F7  _IPH1                              ECEN301LibSDCC
+     000000F8  _IPL1                              ECEN301LibSDCC
+     000000F9  _CH                                ECEN301LibSDCC
+     000000F9  _PADCL                             ECEN301LibSDCC
+     000000FA  _CCAP0H                            ECEN301LibSDCC
+     000000FB  _CCAP1H                            ECEN301LibSDCC
+     000000FC  _CCAP2H                            ECEN301LibSDCC
+     000000FD  _CCAP3H                            ECEN301LibSDCC
+     000000FE  _CCAP4H                            ECEN301LibSDCC
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 8.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+REG_BANK_0                          00000000    00000008 =           8. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 9.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+DSEG                                00000000    00000080 =         128. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000008  _posLCD                            ECEN301LibSDCC
+     0000000E  _readLineSerial_PARM_2             ECEN301LibSDCC
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 10.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+OSEG                                00000013    00000004 =           4. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000013  __divslong_PARM_2                  _divulong
+     00000013  __divulong_PARM_2                  _divulong
+     00000013  __gptrput_PARM_2                   _gptrput
+ASxxxx Linker V03.00 + NoICE + sdld,  page 11.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+SSEG                                00000017    000000E9 =         233. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000017  __start__stack                     main
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 12.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+HOME                                00000000    00000006 =           6. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000003  __sdcc_program_startup             main
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 13.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT0                             00000006    00000003 =           3. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000006  __sdcc_gsinit_startup              
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 14.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT2                             00000009    0000000A =          10. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 15.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT3                             00000013    00000022 =          34. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000013  __mcs51_genXINIT                   
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 16.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT4                             00000035    0000002A =          42. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000035  __mcs51_genRAMCLEAR                
+C:   0000003B  __mcs51_genXRAMCLEAR               
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 17.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT                              0000005F    00000008 =           8. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 18.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSFINAL                             00000067    00000003 =           3. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 19.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000006A    00000438 =        1080. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000006A  _main                              main
+C:   00000072  _delay                             ECEN301LibSDCC
+C:   00000089  _initLCD                           ECEN301LibSDCC
+C:   00000123  _writeCharLCD                      ECEN301LibSDCC
+C:   0000015E  _writeLineLCD                      ECEN301LibSDCC
+C:   00000196  _clearLCD                          ECEN301LibSDCC
+C:   000001B1  _getLCDPos                         ECEN301LibSDCC
+C:   000001B5  _setLCDPos                         ECEN301LibSDCC
+C:   000001FC  _sampleKeypad                      ECEN301LibSDCC
+C:   0000026D  _sampleADC                         ECEN301LibSDCC
+C:   000002A9  _initSerial                        ECEN301LibSDCC
+C:   000002E2  _writeCharSerial                   ECEN301LibSDCC
+C:   000002EB  _writeLineSerial                   ECEN301LibSDCC
+C:   0000032B  _readCharSerial                    ECEN301LibSDCC
+C:   00000334  _readLineSerial                    ECEN301LibSDCC
+C:   000003B0  __divulong                         _divulong
+C:   00000415  __gptrput                          _gptrput
+C:   00000430  __divslong                         _divslong
+C:   00000482  __gptrget                          _gptrget
+C:   0000049E  __sdcc_external_startup            _startup
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 20.
+
+Files Linked                              [ module(s) ]
+
+Debug\main.rel                            [  ]
+Debug\ECEN301LibSDCC.rel                  [  ]
+
+
+Libraries Linked                          [ object file ]
+
+C:\Program Files\SDCC\bin\..\lib\small/liblong.lib
+                                          [ _divulong.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtclear.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtxinit.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/libsdcc.lib
+                                          [ _gptrput.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtxclear.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/liblong.lib
+                                          [ _divslong.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtpagesfr.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtstart.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/libsdcc.lib
+                                          [ _gptrget.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/libsdcc.lib
+                                          [ _startup.rel ]
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 21.
+
+User Base Address Definitions
+
+HOME = 0x0000
+XSEG = 0x0001
+PSEG = 0x0001
+ISEG = 0x0000
+BSEG = 0x0000
+
+
