@@ -71,9 +71,6 @@ The lab was to learn how to use Atmel Studio to develop c code for microcontroll
 
         \subsubsection{Keyboard scanning}
 
-        For more complex input, the KEYPAD module consisting of a 4x3 standard key panel input is used. This required the use of a provided library to sample the input byte from the keypad to be able to use that data within the program.
-        This is where the first, and really only problem arose. I just could not get the provide precompiled .lib file working with Atmel Studio, never worked out what was wrong so had to end up using the .c and .h as just a part of the project. Hardware wise it was straight forward with the library outlining that the keypad be connected to P2, the IO module was then wire to P1 for output to the LEDs. The software called the sample function and writes to the IO module. Due to the nature of the sample function, a sequential if else ladder of value checks, multiple key inputs yielded unintended outputs, but otherwise operation was as expected and simple. 
-
         \begin{lstlisting}[language=C]
         #include "AT89C51AC3.h"
         #include "ECEN301LibSDCC.h"
@@ -81,7 +78,8 @@ The lab was to learn how to use Atmel Studio to develop c code for microcontroll
         void main()
         {
                 unsigned char key;
-                while (1){
+                while (1)
+                {
                         key = sampleKeypad();
                         P1 = key;
                 }
@@ -90,71 +88,38 @@ The lab was to learn how to use Atmel Studio to develop c code for microcontroll
 
         \subsubsection{Digital to Analogue Conversion (DAC)}
 
-        For the operation of external analogue peripherals, a digital signal from the controller must be converted to a voltage signal with a DAC. To demonstrate this a sine generate was written. Cantering the output values of the function around the proper point was most difficult and required quite the  fiddling to get right. 
-
-
-        \begin{lstlisting}[language=C]
-        #include "AT89C51AC3.h"
-        #include <math.h>
-        
-        #define STEP 2048.0
-        
-        void main(void)
-        {
-                /* Replace with your application code */
-                while (1){
-                        for (int i = 0; i < STEP; ++i){
-                                int val = 127.0 * sinf(((2*PI)/STEP)*i) + 128.0;
-                                P1 = val;
+        \begin{lstlisting}
+                #include "AT89C51AC3.h"
+                #include <math.h>
+                
+                #define STEP 2048.0
+                
+                void main(void)
+                {
+                        /* Replace with your application code */
+                        while (1)
+                        {
+                                for (int i = 0; i < STEP; ++i){
+                                        int val = 127.0 * sinf(((2*PI)/STEP)*i) + 128.0;
+                                        P1 = val;
+                                }
                         }
                 }
-        }        
+                        
         \end{lstlisting}
-        \includegraphics[width=0.3\textwidth]{resource/dac0.jpg}
-        \includegraphics[width=0.3\textwidth]{resource/dac_sinL.jpg}
-        \includegraphics[width=0.3\textwidth]{resource/dac_sinH.jpg}
 
         \subsubsection{DAC Motor Control}
-
-        By utilising bit masking to separate the 8bit word of IO switch's into a speed control word (7bit) and a 1bit direction variable the motor speed and direction could be independently controlled. One issue how ever that the speeds in each direction must re inverse of each other as seen in the code. 
-        
-        \begin{lstlisting}[language=C]
-        #include "AT89C51AC3.h"
-        void main(void)
-        {
-                
-                while (1) {
-                        char con = P2;
-                        char vel = con & 0b01111111; //mask speed value 0-127
-                        
-                        if (con & 0b10000000){
-                                P1 = 128+vel;
-                        } else {
-                                P1 = 128-vel; 
-                        }
-                }
-        }
-
-        //a,b) forward (469mV) @ 4, back (-407mV) @ 5
-        //c) 5V drives a 8.8V
-
-        \end{lstlisting}    
-
-        \includegraphics[width=0.45\textwidth]{resource/motor_wf.jpg}
-        \includegraphics[width=0.45\textwidth]{resource/final_motor.jpg}
-
 \section{Questions}
 \begin{enumerate}
         \item The Object and executable files and object files are generated on compilation. The executable binary is the machine code that will be read and executed the controllers CPU and not really readable or understandable to us. The object file is not executable but is used only in compilation during the linking stage. The rel file is a generated object file from the assembler per src file, this is feed into the linage editor.
         \item Port 0-3 can be fully used, with all 8-bits accessible. But P4.0 and P4.1 are the data lines of the UART connection the computer for programming, the switch (dis)connects these pins from the USB interface.
-        \item By default, unpressed the keypad output was 0c0b
-        \item When multiple keys would be pressed, the sampleKeypad function would output the key that was pressed and closer to the last value it checked against in the function.
-        \item The default should not be a valid value (unpressed), only allow for a single key pressed, have some knowledge of a multiple cycle press.
-        \item Hardware setup is shown is section 2.1.3
+        \item 
+        \item 
+        \item 
         \item 
         \begin{enumerate}
-                \item forward was 469mV at switch position decimal 4
-                \item backwards was 407mV at switch position decimal 5
+                \item 
+                \item 
                 \item 
         \end{enumerate}
 \end{enumerate}
