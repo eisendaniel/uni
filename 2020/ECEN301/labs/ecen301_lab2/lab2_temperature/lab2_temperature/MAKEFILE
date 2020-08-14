@@ -1,0 +1,111 @@
+#######################################
+# ECEN202 / ECEN301 AT89C51AC3 Makefile
+# Hamish Colenso
+# 2019.06.28
+#######################################
+# Todo
+# The MAKEFILE is currently limited to 
+# using main.asm and main.c as the 
+# default target for ASEM-51 and SDCC 
+# respectively. Changing this behaviour 
+# to allow an arbitary filename to be 
+# used would be ideal.
+#######################################
+# Variable Definitions
+#######################################
+# Add the debug directory to the path
+VPATH = Debug;
+# the default location of ASEM-51
+ASEMPATH = C:\ASEM
+# The current working directory in 8.3 Format
+CWD = $(shell for %%A in (.) do @echo %%~sA) 
+# a list of all the C files
+CFILES := $(wildcard *.c)
+# a list of all the ASM files
+ASMFILES := $(wildcard *.asm)
+# a list of all the libraries in the directory
+LIBFILES := $(wildcard *.lib)
+# Multiple file compiling string
+multifile := $(subst main,,$(basename $(wildcard *.c)))
+# Multiple file linking string
+multifilelinking := $(addsuffix .rel, $(addprefix Debug\, $(multifile) ))
+# Compiling for all the files in a list
+$(multifile):
+#	ifeq $(word 1, $(multifile)), $(basename $@)
+#		@echo beginning multiple file compilation
+#	endif
+	@echo compiling $(basename $@)
+	sdcc -c $(basename $@).c -o "Debug\\"
+
+#######################################
+# Build all
+#######################################
+ifeq ($(CFILES),main.c)
+
+#######################################
+# Single file C compiling
+#######################################
+all: $(CFILES)
+	@echo compiling and linking $(CFILES)
+	sdcc $(CFILES) $(LIBFILES) -o "Debug\\"
+	@echo packing itx file to hex
+	packihx Debug\main.ihx > main.hex
+else ifeq ($(ASMFILES),main.asm)
+#######################################
+# Single file ASM assembling
+#######################################
+all:
+	@echo assembling $(ASMFILES)
+	$(ASEMPATH)\\ASEMW "$(ASMFILES)" /INC:$(ASEMPATH)\\MCU
+else ifeq ($(findstring main.asm,$(ASMFILES)),main.asm)
+#######################################
+# Multiple file ASM assembling
+#######################################
+all:
+	@echo assembling $(filter-out main.asm,$(ASMFILES)) if included in main.asm
+	$(ASEMPATH)\\ASEMW "$(findstring main.asm,$(ASMFILES))" /INC:$(ASEMPATH)\\MCU;
+else ifeq ($(findstring main.c,$(CFILES)),main.c)
+#######################################
+# Multi file C compiling
+#######################################
+all: $(multifile)
+	@echo compiling main.c
+	@echo $(CFILES) $(findstring Main.asm,$(CFILES))
+	sdcc -c main.c $(LIBFILES) -o "Debug\\"
+	@echo linking $(wildcard *.c)
+	sdcc Debug\main.rel $(filter-out main.rel,$(multifilelinking))
+	packihx main.ihx > main.hex
+else
+#######################################
+# Error state
+#######################################
+all:
+	@echo "Could not find main.c or main.asm, exiting..."
+	exit 2
+endif
+#######################################
+# Clean all
+#######################################
+.PHONY: clean
+#######################################
+# Clean C
+#######################################
+ifeq ($(findstring main.c,$(CFILES)),main.c)
+clean:
+	@echo Running a clean to remove files from a C compilation:
+	del Debug\*.ihx Debug\*.lk Debug\*.lst Debug\*.map Debug\*.mem Debug\*.rel Debug\*.rst Debug\*.sym Debug\*.asm
+else ifeq ($(findstring main.asm,$(ASMFILES)),main.asm)
+#######################################
+# Clean ASM
+#######################################
+clean:
+	@echo Running a clean to remove files from an ASM assembly:
+	del *.hex *.lst
+else
+#######################################
+# Cannot Clean
+#######################################
+clean:
+	@echo Cannot clean directory
+	exit 2
+endif
