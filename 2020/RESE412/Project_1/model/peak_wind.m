@@ -1,4 +1,4 @@
-    clear;
+clear;
 clc;
 
 ws = [0 2 4 6 8 10 12 16 20 50 51]';
@@ -7,9 +7,9 @@ available_ws = [7.2 6.6 7.7 4.6 6.1 5.6 6.1 6.6 5.6 5.6 5.6 5.1 9.2 7.7 6.6 6.1 
 available_pu = interp1q(ws, pu, available_ws);
 plot(available_pu)
 xlabel("Time (hrs)")
-ylabel("Available PU (% of max)")
-title("Avaialble Percentage of power output over the week")
+ylabel("Available PU of max)")
+title("Avaialble proportion of power output over the week")
 
-mean_pu = mean(available_pu)
-median_pu = median(available_pu)
-average_PWO = sum(available_pu)/7
+mean_pu = mean(available_pu);
+median_pu = median(available_pu);
+average_PWO = sum(available_pu)/7;
