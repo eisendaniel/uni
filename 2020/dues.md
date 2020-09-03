@@ -2,9 +2,9 @@
 
 ## TODO
 
-- [ ] Email Fiona about summer work at Robinson
+- [X] Email Fiona about summer work at Robinson
 - [ ] [Apply to Robinson RA positions](https://careerhub.vuw.ac.nz/students/jobs/detail/2193926)
-- [ ] [Apply for Summer Scholarships (1$^{\mathrm{}}$ Sep)](https://www.wgtn.ac.nz/scholarships/types-of-scholarships/summer-research)
+- [ ] [Apply for Summer Scholarships (15$^{\mathrm{th}}$ Sep)](https://www.wgtn.ac.nz/scholarships/types-of-scholarships/summer-research)
 - [ ] Resubmit fixed Work Experience report and goals
 
 ## Due Dates

@@ -1,0 +1,62 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[journal]{IEEEtran}
+\usepackage{amsmath} % Required for some math elements
+\usepackage{hyperref}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{lipsum} 
+\usepackage{cite}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{bookmark}
+
+\interdisplaylinepenalty=2500 %Note that the amsmath package sets \interdisplaylinepenalty to 10000 thus preventing page breaks from occurring within multiline equations. Use: \interdisplaylinepenalty=2500 after loading amsmath to restore such page breaks as IEEEtran.cls normally does
+
+\hypersetup{ %color attributes of citation, link, etc.
+    colorlinks=orange,
+    linkcolor=cyan,
+    filecolor=gray,      
+    urlcolor=cyan,
+    citecolor=cyan,
+}
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+\title{RESE412 - Project 2 Report \\ Renewable Energy Control Systems}
+\author{Daniel Eisen}
+\date{\today}
+
+\begin{document}
+\onecolumn
+\maketitle
+\tableofcontents
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONTENT
+%----------------------------------------------------------------------------------------
+
+\section*{NOTES}
+\begin{itemize}
+    \item Evolution parameter, compare the PV output to available percentage before and after control
+\end{itemize}
+
+\twocolumn
+\section{Introduction}
+\IEEEPARstart{T}{his} project and report describes\dots
+\section{Reflecting on the Process}
+\section{Conclusions and Recommendations}
+\section{Reflecting on the Project} 
+
+
+\newpage
+\onecolumn
+\appendices
+        \section{Appendix}
+        \label{ap:label}
+
+\newpage
+\nocite{*}
+\bibliography{ref}
+\bibliographystyle{IEEEtran}
+\end{document}
