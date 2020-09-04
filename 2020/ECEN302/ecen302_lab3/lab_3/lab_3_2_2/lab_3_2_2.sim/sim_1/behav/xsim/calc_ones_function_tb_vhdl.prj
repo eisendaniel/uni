@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../lab_3_2_2.srcs/sources_1/imports/Lab4-2-2/calc_ones_function.vhd" \
+"../../../../lab_3_2_2.srcs/sim_1/imports/Lab4-2-2/calc_ones_function_tb.vhd" \
+
+# Do not sort compile order
+nosort

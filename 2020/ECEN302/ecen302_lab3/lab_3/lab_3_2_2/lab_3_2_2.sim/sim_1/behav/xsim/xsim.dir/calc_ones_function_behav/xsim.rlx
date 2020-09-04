@@ -1,0 +1,12 @@
+
+{ 
+    crc :  8737076799509178166  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto 9ea2df6ff8544248a059a8f65405dc3b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot calc_ones_function_behav xil_defaultlib.calc_ones_function" , 
+    buildDate : "May 27 2020" , 
+    buildTime : "20:09:33" , 
+    linkCmd : "C:\\Xilinx\\Vivado\\2020.1\\data\\..\\tps\\mingw\\6.2.0\\win64.o\\nt\\bin\\gcc.exe -Wa,-W  -O -Wl,--stack,104857600 -o \"xsim.dir/calc_ones_function_behav/xsimk.exe\"   \"xsim.dir/calc_ones_function_behav/obj/xsim_0.win64.obj\" \"xsim.dir/calc_ones_function_behav/obj/xsim_1.win64.obj\" -L\"C:\\Xilinx\\Vivado\\2020.1\\lib\\win64.o\" -lrdi_simulator_kernel   -lrdi_simbridge_kernel" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 

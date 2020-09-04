@@ -12,7 +12,7 @@
 
 ### Week 2.1 - 31/08 to 06/09
 
-- [ ] Wed - 02.09.2020 ECEN301 lab 3
+- [X] Wed - 02.09.2020 ECEN301 lab 3
 - [ ] Fri - 04.09.2020 ECEN302 lab 3
 - [ ] Sun - 05.09.2020 ECEN302 Ass 1
 

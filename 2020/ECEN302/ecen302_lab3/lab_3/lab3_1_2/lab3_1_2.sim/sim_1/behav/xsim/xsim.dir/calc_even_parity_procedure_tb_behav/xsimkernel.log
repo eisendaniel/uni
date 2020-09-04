@@ -1,0 +1,7 @@
+Running: xsim.dir/calc_even_parity_procedure_tb_behav/xsimk.exe -simmode gui -wdb calc_even_parity_procedure_tb_behav.wdb -simrunnum 0 -socket 52527
+Design successfully loaded
+Design Loading Memory Usage: 5764 KB (Peak: 5764 KB)
+Design Loading CPU Usage: 46 ms
+Simulation completed
+Simulation Memory Usage: 6408 KB (Peak: 6408 KB)
+Simulation CPU Usage: 62 ms
