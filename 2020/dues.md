@@ -19,9 +19,9 @@
 ### Week 2.2 - 07/09 to 13/09
 
 - [ ] Wed - 09.09.2020 ECEN301 lab 4
-- [ ] Wed - 09.09.2020 RESE 412 Ass 2
-- [ ] Thurs - 10.09.2020 ECEN301 TEST
+- [ ] Thurs - 10.09.2020 ECEN301 TEST (Robin - Lectures 2,3)
 - [ ] Fri - 11.09.2020 ECEN302 lab 4
+- [ ] Fri - 11.09.2020 RESE 412 Ass 2
 
 ### Week 2.3 - 14/09 to 20/09
 
