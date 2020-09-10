@@ -1,0 +1,13 @@
+CCAPMnreg: ECCF to enable the CCF flag to 
+generate the interrupt (clear in software),
+ N or P to select edge trigger of capture
+CCAPnL and nH reg are the interrupt count
+
+IENO 7,6 enable all ,enable PCA
+
+PCA Capture Mode. pg 96 or datasheet
+ISR vec alias PCA_VECTOR
+
+480 counts per rev
+
+Formula: 
