@@ -1,0 +1,1 @@
+-wto "fe750625b0e24789a1cb6b6bbbf282c2" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "FSM_Mealy1_tb_behav" "xil_defaultlib.FSM_Mealy1_tb" -log "elaborate.log" 
