@@ -1,0 +1,98 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage{amsmath} % Required for some math elements
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{lipsum} 
+\usepackage{cite}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{bookmark}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[margin=24mm]{geometry}
+\usepackage[caption=false, font=footnotesize]{subfig}
+\usepackage{multirow}
+\usepackage[active,tightpage]{preview}
+\usepackage{hyperref} 
+
+
+
+\renewcommand{\PreviewBorder}{1in}
+\newcommand{\Newpage}{\end{preview}\begin{preview}}
+
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{label = Step \arabic*:}
+
+\hypersetup{ %color attributes of citation, link, etc.
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=gray,      
+    urlcolor=blue,
+    citecolor=blue,
+}
+
+ 
+\lstdefinelanguage{VHDL}{
+   morekeywords=[1]{
+     library,use,all,entity,is,port,in,out,end,architecture,of,
+     begin,and,or,Not,downto,ALL
+   },
+   morekeywords=[2]{
+     STD_LOGIC_VECTOR,STD_LOGIC,IEEE,STD_LOGIC_1164,
+     NUMERIC_STD,STD_LOGIC_ARITH,STD_LOGIC_UNSIGNED,std_logic_vector,
+     std_logic
+   },
+   morecomment=[l]--
+}
+\definecolor{keyword}{rgb}{0,0.3,0.7}
+\definecolor{STD}{rgb}{0.9,0.0,0.7}
+\definecolor{comment}{rgb}{0.0,0.6,0.1}
+
+\lstdefinestyle{vhdl}{
+   language     = VHDL,
+   basicstyle   = \footnotesize\ttfamily,
+   keywordstyle = [1]\color{keyword}\bfseries,
+   keywordstyle = [2]\color{STD}\bfseries,
+   commentstyle = \color{comment}
+   breaklines=true,                % sets automatic line breaking
+   tabsize=3		                   % sets default tabsize to 2 spaces
+}
+
+
+\newcommand{\matlab}{\textsc{Matlab }} %very important and totally necessary addition
+
+\newcommand\Item[1][]{%
+  \ifx\relax#1\relax  \item \else \item[#1] \fi
+  \abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
+  %----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+ 
+\title{ECEN302 : Integrated Digital Electronics \\ Lab 5 Submission}
+\author{Daniel Eisen : 300447549}
+\date{\today}
+
+
+\begin{document}
+\begin{preview}
+\maketitle
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONTENT
+%----------------------------------------------------------------------------------------
+\section{Overview}
+A lot of HDL coding is respective, boilerplate code that is pretty much always necessary for the project function. I.e. counters, clock sources at specified frequencies, and other basic parts. For this it is less efficient and more error prone to write the HDL code in full, instead the Vivado environment offers the IP catalogue and wizards component creation to build up a base more easily and efficiently.
+
+
+\section{Methodology}
+The first design was a pulse generator, for this I used the clock wizard to generate a high speed 5Mhz input clock. Using the wizard allows for intuitive easy implementation and selection of clocking parameters and frequency, this generates IP that can be directly instigated in the HDL project code. 
+A basic resettable, rising edge counter to count the edges and output a high/low signal across a 1 second period. This was done by counting the edges and outputting a low if count < 2500000 and high otherwise, resetting every 5000000.
+
+
+For the second design, the above 5Mhz to 1 second increment design was used to drive a second utilised 0 to 9 4 bit counter that was imported as from the IP catalogue and customised to reset/enable correctly to output to the seven segment display. The display different values to 2 modules similtationly another divided clock rate must be used to scan across the modules, i.e the refresh rate.
+
+\end{preview}
+\end{document}

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Thu Sep  3 11:45:22 2020
+# Process ID: 4316
+# Current directory: H:/private/projects/ECEN302/lab_5/pulse_gen_lab_5/pulse_gen_lab_5.runs/impl_1
+# Command line: vivado.exe -log one_second_clock_behaviour.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source one_second_clock_behaviour.tcl -notrace
+# Log file: H:/private/projects/ECEN302/lab_5/pulse_gen_lab_5/pulse_gen_lab_5.runs/impl_1/one_second_clock_behaviour.vdi
+# Journal file: H:/private/projects/ECEN302/lab_5/pulse_gen_lab_5/pulse_gen_lab_5.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source one_second_clock_behaviour.tcl -notrace

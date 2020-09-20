@@ -1,0 +1,2 @@
+clk_5MHZ_sim_netlist.vhdl,vhdl,xil_defaultlib,../../../../pulse_gen_lab_5.srcs/sources_1/ip/clk_5MHZ/clk_5MHZ_sim_netlist.vhdl,incdir="../../../../pulse_gen_lab_5.srcs/sources_1/ip/clk_5MHZ"
+glbl.v,Verilog,xil_defaultlib,glbl.v
