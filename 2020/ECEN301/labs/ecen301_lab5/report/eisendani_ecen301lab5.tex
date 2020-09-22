@@ -1,0 +1,110 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage{amsmath} % Required for some math elements
+\usepackage{hyperref} 
+\usepackage{xcolor}
+\usepackage{lipsum} 
+\usepackage{cite}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{bookmark}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[margin=24mm]{geometry}
+\usepackage[caption=false, font=footnotesize]{subfig}
+\usepackage{multirow}
+\usepackage[active,tightpage]{preview}
+
+\renewcommand{\PreviewBorder}{1in}
+\newcommand{\Newpage}{\end{preview}\begin{preview}}
+
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{label = Step \arabic*:}
+
+\hypersetup{ %color attributes of citation, link, etc.
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=gray,      
+    urlcolor=blue,
+    citecolor=blue,
+}
+
+
+\definecolor{mGreen}{rgb}{0,0.7,0.5}
+\definecolor{mWhite}{rgb}{0.9,0.9,0.9}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.0,0.0,0.1}
+
+\lstdefinestyle{Cstyle}{
+    backgroundcolor=\color{backgroundColour},   
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\footnotesize\color{mWhite},
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=4,
+    language=C
+}
+
+
+\newcommand{\matlab}{\textsc{Matlab }} %very important and totally necessary addition
+
+\newcommand\Item[1][]{%
+  \ifx\relax#1\relax  \item \else \item[#1] \fi
+  \abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
+  %----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+ 
+\title{ECEN301 Embedded Systems Lab 5 \\ Bare-metal ARM programming}
+\author{Daniel Eisen 300447549}
+\date{\today}
+
+\begin{document}
+\begin{preview}
+\maketitle
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONTENT
+%----------------------------------------------------------------------------------------
+\section{Objectives}
+This lab marks the beginning of the use of 32bit, ARM based microprocessors and compared to the previous 8-bit 8051, this is the step up into high performance embedded development. For this we used the Texas Instruments Beaglebone-Black dev board, based around the Cortex-A8 AM 3358 and so support both a bare-metal and OS development environments.
+
+This session focused on familiarising ourselves with interfacing with the board via JTAG and UART serial as well as using Code Composer Studio to code, program, and debug the uC.
+
+\section{Methodology}
+    \subsection{Setup and Introduction}
+    To setup the hardware in bare metal mode, the Linux OS auto-boot must be bypassed and this is just done be holding down the S2 as the board is powered on. To enable us to program and receive debugging information during development the board was connected to the computer via a JTAG to USB debugging module this allowed us to write, upload, and run code in a debug session with the Segger debugger giving us complete control and access via the JTAG port.     
+
+    Setting up Code Composer as the programming environment for the board was straightforward, and just required setting the hardware that was being used and selecting the hello\_world C code template.
+    
+    With everything configured and setup the code was compiled, uploaded and run in debug mode and the internal console displayed the print message. In addition we used the Disassembly window to view the generated ARM assembler code, seeing the main entry point (seeing the PC set) and following instructions.
+
+    \subsection{Flashing Lights}
+    As is always necessary with kit that has lights we must make them flash. Code Composer allows for projects stored as archived to be easily unpackaged and imported, so using a provided archive the board was programmed to light up the 4 on board blue LEDs.
+
+    This was controlled in code with the \texttt{GPIO\_setPin/clrPin} functions to individually set the LEDs on/off so I modified the code using simple blocking delays and loops to display a little animation that looked like the light was bouncing back and forth from LED0 to LED3. 
+        
+    \subsection{Serial and LEDs}
+    Now to send information back and forth between the uC and the computer during runtime there is the on bouard UART comms port that we can open a serial connection in a terminal to interface with.
+
+    I used Putty and modified to provided code (see modified below) to receive a char from the COMM ports, send it back and utilise a provided LED\_setValue function to display the 4 least significant bits of that char on the LEDs.
+    
+    This function masks the 4 LSB, clears the port (the 4 LEDs) and pushing the masked value to them, resulting in the bit values of the passed char displayed on the 4 LEDs.
+    \lstinputlisting[language=C, style=Cstyle]{inc/serial.c}
+
+\end{preview}
+\end{document}
