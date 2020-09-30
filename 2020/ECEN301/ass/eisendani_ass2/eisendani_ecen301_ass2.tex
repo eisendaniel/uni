@@ -1,0 +1,104 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage{amsmath} % Required for some math elements
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{lipsum} 
+\usepackage{cite}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{bookmark}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[margin=24mm]{geometry}
+\usepackage[caption=false, font=footnotesize]{subfig}
+\usepackage{multirow}
+\usepackage[active,tightpage]{preview}
+\usepackage{hyperref} 
+
+\renewcommand{\PreviewBorder}{1in}
+\newcommand{\Newpage}{\end{preview}\begin{preview}}
+
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{label = Step \arabic*:}
+
+\hypersetup{ %color attributes of citation, link, etc.
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=gray,      
+    urlcolor=blue,
+    citecolor=blue,
+}
+
+ 
+\lstdefinelanguage{VHDL}{
+    morekeywords=[1]{
+        library,use,all,entity,is,port,in,out,end,architecture,of,begin,and,or,Not,downto,ALL
+    },
+    morekeywords=[2]{
+        STD_LOGIC_VECTOR,STD_LOGIC,IEEE,STD_LOGIC_1164,NUMERIC_STD,STD_LOGIC_ARITH,STD_LOGIC_UNSIGNED,std_logic_vector,std_logic
+    },
+    morecomment=[l]--
+}
+
+\definecolor{keyword}{rgb}{0,0.3,0.7}
+\definecolor{STD}{rgb}{0.9,0.0,0.7}
+\definecolor{comment}{rgb}{0.0,0.6,0.1}
+
+\lstdefinestyle{vhdl}{
+   language     = VHDL,
+   basicstyle   = \footnotesize\ttfamily,
+   keywordstyle = [1]\color{keyword}\bfseries,
+   keywordstyle = [2]\color{STD}\bfseries,
+   commentstyle = \color{comment}
+   breaklines=true,                % sets automatic line breaking
+   tabsize=3		                   % sets default tabsize to 2 spaces
+}
+
+
+\newcommand{\matlab}{\textsc{Matlab }} %very important and totally necessary addition
+
+\newcommand\Item[1][]{%
+    \ifx\relax#1\relax  \item \else \item[#1] \fi
+    \abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+ 
+\title{ECEN302 : Embedded Systems \\ Assignment 2 Submission}
+\author{Daniel Eisen : 300447549}
+\date{\today}
+
+\begin{document}
+\begin{preview}
+\maketitle
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONTENT
+%----------------------------------------------------------------------------------------
+\begin{enumerate}
+    \item \textit{\textbf{Explain how a Cache works and how it improves the performance of a microprocessor.}}
+    
+    \item \textit{\textbf{What is the main purpose of a Memory Management Unit?}}
+    
+    \item \textit{\textbf{What does the acronym JTAG stand for? Explain the uses of a JTAG interface.}}
+    
+    \item \textit{\textbf{Explain at least 4 of the many things that need to be considered when developing an embedded system for a product.}}
+    
+    \item \textit{\textbf{Explain 4 things you can do with a JTAG unit while debugging code.}}
+    
+    \item \textit{\textbf{ADCs and other devices often communicate with the microprocessor via a serial interface. What do the acronyms I2C and SPI stand for? Explain the differences between these two interface methods.}}
+    
+    \item \textit{\textbf{The first time an optical shaft encoder was connected to a microprocessor the engineer used an external interrupt but with it configured as a level edge triggered interrupt. Explain why that was not a good idea.}}
+    
+    \item \textit{\textbf{What does the acronym PCIe stand for? Give an overview of how this interface works and how it uses the advantages of both parallel and serial communications.}}
+    
+    \item \textit{\textbf{Discuss the differences between “bare metal” and a Linux operating system and give an example of when each is more appropriate.}}
+
+
+\end{enumerate}
+
+\end{preview}
+\end{document}  
