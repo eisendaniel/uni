@@ -1,0 +1,7 @@
+vhdl xil_defaultlib  \
+"../../../bd/design_1/ipshared/7180/src/PWMDriver.vhd" \
+"../../../bd/design_1/ipshared/7180/src/PWMAudio.vhd" \
+"../../../bd/design_1/ip/design_1_PWMAudio_0_0/sim/design_1_PWMAudio_0_0.vhd" \
+"../../../bd/design_1/sim/design_1.vhd" \
+
+nosort

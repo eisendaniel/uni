@@ -84,7 +84,32 @@
 %	DOCUMENT CONTENT
 %----------------------------------------------------------------------------------------
 \section{Overview}
+The use of pre-existing IP blocks in the in HDL design is extremely time saving and in many to most cases is necessary when creating a more complex design with more external dependencies or just utilises a lot of basic reused design blocks. Likewise the IP block system can be made use of to package a preexisting design into a library that can be loaded into the user repository and dropped into block designs or directly instanced without having to redo and grunt work. 
 \section{Methodology}
+To do this, we initially setup the basic project. Vivado allows for a project to be exported not only as an archive are other larger containers but as set TCL script file and dependency files that can setup project from launch. THis allows for more efficient storage space, can bypass PATH and directory issues upon transfer and just generally can allow for greater flexibility. This is what was used to launch and setup a PWM audio driver project.
 
+The HDL design worked by varying the time step that read through a sine wave LUT to be fed into a PWD generator. This is what effectively changes the frequency and thus pitch of the outputted (filter smoothed) signal/sound.
+
+This project and its 2 HDL modules can be packaged into it own IP block, and exported into a directory that we then imported, add to the user repository and were able to then utilise the generated block as a part of larger design. 
+
+Approaching the design this way enables this relatively simple design to grow easily into a larger and more complex form. This for example is a setup for a larger embedded softcore processor project where the PWM audio IP will be utilised as a peripheral out module to a MicroBlaze uC and driven to play much more complex sequences that can be generated with DIP switches.  
+
+
+\begin{center}
+  \includegraphics[width=0.5\textwidth]{inc/ip_added.PNG}
+\end{center}
+
+\Newpage
+\section*{Appendix}
+\subsubsection*{PWMAudio}
+\lstinputlisting[language=VHDL, style=vhdl]{inc/PWMAudio.vhd}
+
+\Newpage
+\subsubsection*{PWMDriver}
+\lstinputlisting[language=VHDL, style=vhdl]{inc/PWMDriver.vhd}
+
+\Newpage
+\subsubsection*{HDL Wrapper}
+\lstinputlisting[language=VHDL, style=vhdl]{inc/design_1_wrapper.vhd}
 \end{preview}
 \end{document}

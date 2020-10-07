@@ -1,0 +1,426 @@
+
+*** Running vivado
+    with args -log design_1_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
+
+
+
+****** Vivado v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source design_1_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'h:/private/projects/ECEN302/PWM_IP'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.cache/ip 
+Command: synth_design -top design_1_wrapper -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 2836
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1078.645 ; gain = 18.375
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:24]
+INFO: [Synth 8-3491] module 'design_1' declared at 'H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/synth/design_1.vhd:14' bound to instance 'design_1_i' of component 'design_1' [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:35]
+INFO: [Synth 8-638] synthesizing module 'design_1' [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/synth/design_1.vhd:28]
+INFO: [Synth 8-3491] module 'design_1_PWMAudio_0_0' declared at 'h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ip/design_1_PWMAudio_0_0/synth/design_1_PWMAudio_0_0.vhd:56' bound to instance 'PWMAudio_0' of component 'design_1_PWMAudio_0_0' [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/synth/design_1.vhd:64]
+INFO: [Synth 8-638] synthesizing module 'design_1_PWMAudio_0_0' [h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ip/design_1_PWMAudio_0_0/synth/design_1_PWMAudio_0_0.vhd:65]
+INFO: [Synth 8-3491] module 'PWMAudio' declared at 'h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ipshared/7180/src/PWMAudio.vhd:34' bound to instance 'U0' of component 'PWMAudio' [h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ip/design_1_PWMAudio_0_0/synth/design_1_PWMAudio_0_0.vhd:83]
+INFO: [Synth 8-638] synthesizing module 'PWMAudio' [h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ipshared/7180/src/PWMAudio.vhd:41]
+INFO: [Synth 8-3491] module 'PWMDriver' declared at 'h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ipshared/7180/src/PWMDriver.vhd:34' bound to instance 'pd0' of component 'PWMDriver' [h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ipshared/7180/src/PWMAudio.vhd:67]
+INFO: [Synth 8-638] synthesizing module 'PWMDriver' [h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ipshared/7180/src/PWMDriver.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'PWMDriver' (1#1) [h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ipshared/7180/src/PWMDriver.vhd:40]
+INFO: [Synth 8-3491] module 'dist_mem_gen_0' declared at 'h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ip/design_1_PWMAudio_0_0/src/dist_mem_gen_0/synth/dist_mem_gen_0.vhd:59' bound to instance 'dmg0' of component 'dist_mem_gen_0' [h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ipshared/7180/src/PWMAudio.vhd:74]
+INFO: [Synth 8-638] synthesizing module 'dist_mem_gen_0' [h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ip/design_1_PWMAudio_0_0/src/dist_mem_gen_0/synth/dist_mem_gen_0.vhd:66]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_ADDR_WIDTH bound to: 10 - type: integer 
+	Parameter C_DEFAULT_DATA bound to: 0 - type: string 
+	Parameter C_DEPTH bound to: 1024 - type: integer 
+	Parameter C_HAS_CLK bound to: 0 - type: integer 
+	Parameter C_HAS_D bound to: 0 - type: integer 
+	Parameter C_HAS_DPO bound to: 0 - type: integer 
+	Parameter C_HAS_DPRA bound to: 0 - type: integer 
+	Parameter C_HAS_I_CE bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_CE bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_CLK bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_RST bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_SRST bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO_CE bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO_RST bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO_SRST bound to: 0 - type: integer 
+	Parameter C_HAS_SPO bound to: 1 - type: integer 
+	Parameter C_HAS_WE bound to: 0 - type: integer 
+	Parameter C_MEM_INIT_FILE bound to: dist_mem_gen_0.mif - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_MEM_TYPE bound to: 0 - type: integer 
+	Parameter C_PIPELINE_STAGES bound to: 0 - type: integer 
+	Parameter C_QCE_JOINED bound to: 0 - type: integer 
+	Parameter C_QUALIFY_WE bound to: 0 - type: integer 
+	Parameter C_READ_MIF bound to: 1 - type: integer 
+	Parameter C_REG_A_D_INPUTS bound to: 0 - type: integer 
+	Parameter C_REG_DPRA_INPUT bound to: 0 - type: integer 
+	Parameter C_SYNC_ENABLE bound to: 1 - type: integer 
+	Parameter C_WIDTH bound to: 10 - type: integer 
+	Parameter C_PARSER_TYPE bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'dist_mem_gen_v8_0_13' declared at 'h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ip/design_1_PWMAudio_0_0/src/dist_mem_gen_0/hdl/dist_mem_gen_v8_0_vhsyn_rfs.vhd:3237' bound to instance 'U0' of component 'dist_mem_gen_v8_0_13' [h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ip/design_1_PWMAudio_0_0/src/dist_mem_gen_0/synth/dist_mem_gen_0.vhd:132]
+INFO: [Synth 8-256] done synthesizing module 'dist_mem_gen_0' (5#1) [h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ip/design_1_PWMAudio_0_0/src/dist_mem_gen_0/synth/dist_mem_gen_0.vhd:66]
+INFO: [Synth 8-256] done synthesizing module 'PWMAudio' (6#1) [h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ipshared/7180/src/PWMAudio.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'design_1_PWMAudio_0_0' (7#1) [h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ip/design_1_PWMAudio_0_0/synth/design_1_PWMAudio_0_0.vhd:65]
+INFO: [Synth 8-3491] module 'design_1_clk_wiz_0_0' declared at 'h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.v:70' bound to instance 'clk_wiz_0' of component 'design_1_clk_wiz_0_0' [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/synth/design_1.vhd:71]
+INFO: [Synth 8-6157] synthesizing module 'design_1_clk_wiz_0_0' [h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.v:70]
+INFO: [Synth 8-6157] synthesizing module 'design_1_clk_wiz_0_0_clk_wiz' [h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_clk_wiz.v:68]
+INFO: [Synth 8-6157] synthesizing module 'IBUF' [C:/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:32977]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IBUF' (8#1) [C:/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:32977]
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:39994]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 10.000000 - type: double 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: double 
+	Parameter CLKIN2_PERIOD bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 10.000000 - type: double 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT1_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT1_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT2_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT2_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT3_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT3_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT4_CASCADE bound to: FALSE - type: string 
+	Parameter CLKOUT4_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT4_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT5_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT5_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT6_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT6_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT6_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT6_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter IS_CLKINSEL_INVERTED bound to: 1'b0 
+	Parameter IS_PSEN_INVERTED bound to: 1'b0 
+	Parameter IS_PSINCDEC_INVERTED bound to: 1'b0 
+	Parameter IS_PWRDWN_INVERTED bound to: 1'b0 
+	Parameter IS_RST_INVERTED bound to: 1'b0 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
+	Parameter REF_JITTER2 bound to: 0.010000 - type: double 
+	Parameter SS_EN bound to: FALSE - type: string 
+	Parameter SS_MODE bound to: CENTER_HIGH - type: string 
+	Parameter SS_MOD_PERIOD bound to: 10000 - type: integer 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (9#1) [C:/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:39994]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:1083]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (10#1) [C:/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:1083]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_clk_wiz_0_0_clk_wiz' (11#1) [h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_clk_wiz.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_clk_wiz_0_0' (12#1) [h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.v:70]
+INFO: [Synth 8-256] done synthesizing module 'design_1' (13#1) [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/synth/design_1.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (14#1) [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:24]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1173.676 ; gain = 113.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1173.676 ; gain = 113.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1173.676 ; gain = 113.406
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1173.676 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_board.xdc] for cell 'design_1_i/clk_wiz_0/inst'
+Finished Parsing XDC File [h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_board.xdc] for cell 'design_1_i/clk_wiz_0/inst'
+Parsing XDC File [h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc] for cell 'design_1_i/clk_wiz_0/inst'
+Finished Parsing XDC File [h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc] for cell 'design_1_i/clk_wiz_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [h:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Parsing XDC File [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'CLK100MHZ'. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:7]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CLK100MHZ'. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:8]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports CLK100MHZ]'. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:8]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'swt[0]'. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[1]'. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[2]'. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[3]'. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[4]'. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[5]'. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[6]'. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[7]'. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:33]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:33]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:34]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:34]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[2]'. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:35]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[3]'. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[4]'. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[5]'. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:38]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[6]'. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:39]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:39]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[7]'. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc:40]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.srcs/constrs_1/imports/counter_lab1/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1252.383 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1252.383 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1252.383 ; gain = 192.113
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1252.383 ; gain = 192.113
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for design_1_i/clk_wiz_0/inst. (constraint file  H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.runs/synth_1/dont_touch.xdc, line 21).
+Applied set_property DONT_TOUCH = true for design_1_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/PWMAudio_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/PWMAudio_0/U0/dmg0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/clk_wiz_0. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1252.383 ; gain = 192.113
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1252.383 ; gain = 192.113
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   10 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 3     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   3 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 1252.383 ; gain = 192.113
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping	Report
++---------------------+--------------------------------------------------------+---------------+----------------+
+|Module Name          | RTL Object                                             | Depth x Width | Implemented As | 
++---------------------+--------------------------------------------------------+---------------+----------------+
+|rom                  | rom[1023]                                              | 1024x10       | LUT            | 
+|dist_mem_gen_v8_0_13 | synth_options.dist_mem_inst/gen_rom.rom_inst/rom[1023] | 1024x10       | LUT            | 
++---------------------+--------------------------------------------------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 1252.383 ; gain = 192.113
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 1256.320 ; gain = 196.051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 1258.098 ; gain = 197.828
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 1263.871 ; gain = 203.602
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 1263.871 ; gain = 203.602
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 1263.871 ; gain = 203.602
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 1263.871 ; gain = 203.602
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 1263.871 ; gain = 203.602
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 1263.871 ; gain = 203.602
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |BUFG       |     2|
+|2     |CARRY4     |     9|
+|3     |LUT1       |     9|
+|4     |LUT2       |     5|
+|5     |LUT3       |     6|
+|6     |LUT4       |    18|
+|7     |LUT5       |    14|
+|8     |LUT6       |   122|
+|9     |MMCME2_ADV |     1|
+|10    |MUXF7      |    44|
+|11    |MUXF8      |    21|
+|12    |FDRE       |    48|
+|13    |IBUF       |    11|
+|14    |OBUF       |     1|
+|15    |OBUFT      |     1|
++------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 1263.871 ; gain = 203.602
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:28 . Memory (MB): peak = 1263.871 ; gain = 124.895
+Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 1263.871 ; gain = 203.602
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1263.871 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 75 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1283.563 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+52 Infos, 19 Warnings, 18 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:37 . Memory (MB): peak = 1283.563 ; gain = 223.293
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'H:/private/projects/ECEN302/lab_7_block/blocky_mono_bass/blocky_mono_bass.runs/synth_1/design_1_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Sep 17 11:32:46 2020...
