@@ -37,7 +37,11 @@
 %	DOCUMENT CONTENT
 %----------------------------------------------------------------------------------------
 \section{Introduction}
+Battery powered RC cars with the requirement of a on-site renewable energy source is a project that incorporate our previous exploration of Environmental and Resource Analysis in determining and informing how to best design a system to collect and deliver that energy. Additionally, the nature of the course and car presents an opportunity to test and investigate a more dynamic demand from the energy consumer and ultimately utilising that gathered data to better inform design decisions in optimising the very composition of that demand to better match a developed strategy.
 
+More plainly, by analysing the energy resource and the power requirements of various loadouts of motors/track paths and race strategies we could come to a final design of both generation and consumption platform and tune the behaviour of said consumer to attempt to best utilise that resource.  
+
+We as a team approached this by examining historical data, doing on site observations, making an Arduino based testbed to collect power and performance metrics of various car configuration, and more.   
 
 \section{Environmental Conditions}
 The primary and sole energy source of the charge station is solar, due to the elimination of wind due to non-functional turbine, and thus the resource examined was an solar irradiance availality as well as likely hood of external interference due to tree coverage/building occlusion and selection of array bearing and tilt.
@@ -77,6 +81,7 @@ To prevent drastically oversizing the final design and to ensure optimising for 
 By visiting the site during the time on the week off the race, we were able to make an inspection of effects of shadows from building and trees. Seen above, the tree coverage of the northern tree line does not infringe on the section of field intended for solar collection, nor do any building. Therefore we can directly use the NIWA data under assumption that the only occlusion of direct sun we would experience would be cloud coverage.
 
 \section{Race/Track Conditions}
+\subsection{Description}
 \begin{figure}[h!]
     \begin{center}
         \includegraphics[width=0.42\textwidth]{inc/tracks.png}
@@ -87,19 +92,39 @@ By visiting the site during the time on the week off the race, we were able to m
 
 The track as established consisted of two distinct course routes that were required to be chosen between. These are illustrated above [\ref{fig:routes}]: 
 
-The first route, A, is roughly 234.3 meters and is roughly triangular where
+The first route, A, is roughly 234.3 meters and is roughly triangular.
 
+The second , B, is $\approx 283.7$ meters but has the \textbf{possible} benefit of less distance on the turf.
+
+The assumption that is required to be tested is that the current requirements of the 2 surface is of significant difference, ie higher on turf. Thus leading to a possible requirement of comparing trade off in potentially higher current draw to a shorter track.
+
+\subsection{Testing}
+To investigate the potential difference in motor performance, the testing procedure was to take one motor as a reference and perform set tasks while collected real-time data of current drawn from the battery.
+
+We did this only for one motor to make observation to compare not necessarily the difference in motors but the general affect of surface and action on the power requirements of the platform.
 
 \begin{figure}[h!]
     \begin{center}
         \includegraphics[width=\textwidth]{inc/contrete_behaviour.png}
+        \caption{Concrete Performance}
         \includegraphics[width=\textwidth]{inc/turf_behaviour.png}
+        \caption{Turf Performance}
     \end{center}
 \end{figure}
 
+We performed taking corners, from stand still acceleration and continuous turning on both surfaces build enough of an idea to compare.
+
+From the data visualised above we observed a greater baseline current usage on the turf than the concrete, a significant up to 50\% greater current draw at times.
+
+Behaviourally, it was observed that large acceleration spikes are consistent between the two surfaces, but due to the higher baseline of the turf the average current draw from alot of turning and corner taking draw more current, more consistently.\\
+
+Using this initial analysis, we concluded that being in more control of the car to increase the time at straight, constant speed and reduce accelerations would most likely increase the lifetime of the battery charge and that the trade off between reduced length and higher current draw would have to be further examined and made up for with other optimisations.
+
+
+
 \section{Component Testing}
-\subsection{Battery Capacity and Charge Time}
 \subsection{Motors}
+To characterise and compare available motor types and performance
 
 \begin{figure}[h!]
     \begin{center}
@@ -109,6 +134,8 @@ The first route, A, is roughly 234.3 meters and is roughly triangular where
     \end{center}
 \end{figure}
 
+\subsection{Battery Capacity and Charge Time}
+
 \section{System Design}
 \subsection{Charge Station}
 
@@ -117,14 +144,12 @@ The first route, A, is roughly 234.3 meters and is roughly triangular where
 \end{center}
 
 \subsection{Car}
-
 \begin{figure}[h!]
     \begin{center}
         \includegraphics[width=0.3\textwidth]{inc/long_lap.png}
         \includegraphics[width=0.3\textwidth]{inc/short_lap.png}
     \end{center}
 \end{figure}
-
 \section{Risk Analysis}
 
 \section{Budget}
