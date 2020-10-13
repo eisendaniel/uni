@@ -96,22 +96,30 @@
     
     \item \textit{\textbf{Briefly discuss and compare the performance and typical uses of microprocessors and FPGAs.}}
     
+    The basic differentiation between the devices is 
     
     
     \item \textit{\textbf{List four advantages of integrating a microprocessor and an FPGA onto a single chip.}}
     
     \begin{itemize}
-        \item 
-        \item 
-        \item 
+        \item Able deploy a more traditional sequential CPU based workload that can make use of parallel hardware accelerated processing.
+        \item Same die mean higher bandwidth communication between the to devices.
+        \item More efficient power usage due to single die.
+        \item Reduce requirement of auxiliary interfacing components.
     \end{itemize}
     
     \item \textit{\textbf{Provide one application or product example that benefits from having both a microprocessor and a FPGA.}}
+    
+    High speed portable digital oscilloscope, such as the DS213. This used a ARM cortex m3 for the general purpose processing and operation and an FPGA to manage/drive the large amount of data from the inputs ADCs.
 
     \item \textit{\textbf{In a RF receiver signal chain, why is it advantageous to have the ADC as close as possible to the Antenna?}}
     
+    Reduce analog signal line length as much as possible to reduce interference from noise and reactive coupling, as to digital output signals are much harder to corrupt.
+
     \item \textit{\textbf{Describe the operation of the OSERDES and ISERDES FPGA I/O blocks.}}
     
+    
+
     \item \textit{\textbf{Describe, with the aid of diagrams, how you would connect the AD9739 DAC to a Xilinx 7 series device and run the DAC at 2GSPS (note: you do not need to create a detailed schematic diagram).}}
     
 
