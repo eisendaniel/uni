@@ -96,7 +96,10 @@
     
     \item \textit{\textbf{Briefly discuss and compare the performance and typical uses of microprocessors and FPGAs.}}
     
-    The basic differentiation between the devices is 
+    Microprocessors and FPGAs differ in complexity, designing for and in traditional deployment.
+    Microprocessors have a fixed instruction set, hardwired logic blocks and executes instructions sequentially per cycle; they can run very fast at sequential task and are the typical use for tradition computing, cpu's etc.
+    
+    An FPGA doesn’t have any hardwired logic blocks and consist of logic blocks laid out like a net with each junction containing a switch that the user program. This determines how the logic of each block is determined. For these reasons a traditional use case for FPGA is to configure them for large, high performant parallel processing tasks. While they may run are lower clock speeds than top shelf microprocessors the ability to process large amounts to independent parallel data per cycle has made them invaluable in image/video processing, ML/AI, and signal processing. 
     
     
     \item \textit{\textbf{List four advantages of integrating a microprocessor and an FPGA onto a single chip.}}
@@ -117,10 +120,16 @@
     Reduce analog signal line length as much as possible to reduce interference from noise and reactive coupling, as to digital output signals are much harder to corrupt.
 
     \item \textit{\textbf{Describe the operation of the OSERDES and ISERDES FPGA I/O blocks.}}
-    
+    OSERDES ((Output parallel to serial converter) and ISERDES (Input serial to parallel converter) are the IO interface responsible for converting between individually slower internal parallel data lines to a much higher speed exterior serial data stream. 
     
 
     \item \textit{\textbf{Describe, with the aid of diagrams, how you would connect the AD9739 DAC to a Xilinx 7 series device and run the DAC at 2GSPS (note: you do not need to create a detailed schematic diagram).}}
+    By using 8 DDS's and sending two LVDS data streams with the clocking shown below, the AD9739 can be sampled at 2Ghz. 
+
+
+    \begin{center}
+        \includegraphics[width=0.75\textwidth]{res/afsdffg.png}
+    \end{center}
     
 
 \end{enumerate}

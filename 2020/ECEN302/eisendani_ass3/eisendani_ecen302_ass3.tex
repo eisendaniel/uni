@@ -1,0 +1,127 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage{amsmath} % Required for some math elements
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{lipsum} 
+\usepackage{cite}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{bookmark}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[margin=24mm]{geometry}
+\usepackage[caption=false, font=footnotesize]{subfig}
+\usepackage{multirow}
+\usepackage[active,tightpage]{preview}
+\usepackage{hyperref} 
+
+\renewcommand{\PreviewBorder}{1in}
+\newcommand{\Newpage}{\end{preview}\begin{preview}}
+
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{label = Step \arabic*:}
+
+\hypersetup{ %color attributes of citation, link, etc.
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=gray,      
+    urlcolor=blue,
+    citecolor=blue,
+}
+
+ 
+\lstdefinelanguage{VHDL}{
+    morekeywords=[1]{
+        library,use,all,entity,is,port,in,out,end,architecture,of,begin,and,or,Not,downto,ALL
+    },
+    morekeywords=[2]{
+        STD_LOGIC_VECTOR,STD_LOGIC,IEEE,STD_LOGIC_1164,NUMERIC_STD,STD_LOGIC_ARITH,STD_LOGIC_UNSIGNED,std_logic_vector,std_logic
+    },
+    morecomment=[l]--
+}
+
+\definecolor{keyword}{rgb}{0,0.3,0.7}
+\definecolor{STD}{rgb}{0.9,0.0,0.7}
+\definecolor{comment}{rgb}{0.0,0.6,0.1}
+
+\lstdefinestyle{vhdl}{
+   language     = VHDL,
+   basicstyle   = \footnotesize\ttfamily,
+   keywordstyle = [1]\color{keyword}\bfseries,
+   keywordstyle = [2]\color{STD}\bfseries,
+   commentstyle = \color{comment}
+   breaklines=true,                % sets automatic line breaking
+   tabsize=3		                   % sets default tabsize to 2 spaces
+}
+
+
+\newcommand{\matlab}{\textsc{Matlab }} %very important and totally necessary addition
+
+\newcommand\Item[1][]{%
+    \ifx\relax#1\relax  \item \else \item[#1] \fi
+    \abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+ 
+\title{ECEN302 : Integrated Digital Electronics \\ Assignment 3 Submission}
+\author{Daniel Eisen : 300447549}
+\date{\today}
+
+\begin{document}
+\begin{preview}
+    \maketitle
+    %----------------------------------------------------------------------------------------
+    %	DOCUMENT CONTENT
+    %----------------------------------------------------------------------------------------
+    \begin{enumerate}
+        \item \textit{\textbf{Describe three key features about FPGAs that make them suitable for hardware acceleration applications.}}
+
+              The user/developers ability to reconfigure and tune the device to the  specific requirements of a task.
+
+              The ability for that configuration to make use of large scale parallel processing to accelerate lots of independent operations.
+
+              High IO bandwidth capacities allow to the fast input, processing and output of data.
+
+        \item \textit{\textbf{Discuss the relative advantages and disadvantages of an FPGA solution compared to an ASIC solution.}}
+
+              FPGA's ability for reconfiguration leads to quick design-build-test cycles, the ability to do "firmware updates" after deployment and even for use in the ASIC development cycle in design and functional prototyping/testing.
+
+              ASIC however are faster with leaner design, and less logical overhead than an FPGA as they are custom manufactured for the deployment task. Also for this this reason, ASICs often use less power than an FPGA.
+
+              FPGA: smaller volume is cheaper as development/testing cycle cost is lower.
+              ASIC: higher volume is cheaper, as once is mass manufacture the individual device cost is smaller for bulk orders.
+
+        \item \textit{\textbf{Discuss the key advantage of using HLS in FPGA code development.}}
+
+              The use of HLS as a the primary language/framework for writing FPGA is to drastically increase development time for design/testing and eliminating what would normally be the FPGA engineer bottleneck from a products development.
+
+        \item \textit{\textbf{Describe how a test bench can be developed for testing HLS C code and the resulting RTL.}}
+
+              Second main file that calls some function (the is being tested), passing it set inputs, and compares the output of the function call to a set of 'golden' outputs either in a file or an array etc.
+
+              Note this doesn't include timing analysis, which is done later in the design process.
+
+        \item \textit{\textbf{Describe a situation where significant processing speed gains can be made and how you go about implementing the improvement.}}
+
+              Unrolling a large sequential looping operation. Such as performing a kernel based image processing algorithm in (or close to) real-time and doing these independent operations in parallel in significantly less clock cycles.
+
+        \item \textit{\textbf{Explain, using the terms “control, data path, scheduling and binding”, how C code is converted to RTL.}}
+
+              The process of HLS is basically the construction and mapping of a state-machine from the the C code that is to to implemented on device.
+
+              The first stage is the Control Extraction, where the C/C++ code is analysed and the internal loops are correlated to the FSM's states to define the behaviours of the hardware. After this the operations within each of those loops are at unified into the known control states to form the data path and dataflow behaviour.
+
+              Next scheduling maps the operations in the dataflow into the clock cycles. The output/result of the scheduling I dependant on user defined constraints, i.e. clock speed etc and can result is more/less operation per clock cycle for example.
+              Once the operations have been scheduled, binding maps these to specific IP cores and configures them in accordance to the scheduling, i.e. how many multiplications per cycle, recourse sharing etc.
+
+
+
+    \end{enumerate}
+
+\end{preview}
+\end{document}
