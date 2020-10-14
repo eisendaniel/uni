@@ -16,11 +16,8 @@
 \usepackage[margin=24mm]{geometry}
 \usepackage[caption=false, font=footnotesize]{subfig}
 \usepackage{multirow}
-\usepackage[active,tightpage]{preview}
 \usepackage{hyperref} 
 
-\renewcommand{\PreviewBorder}{1in}
-\newcommand{\Newpage}{\end{preview}\begin{preview}}
 
 \newlist{steps}{enumerate}{1}
 \setlist[steps, 1]{label = Step \arabic*:}
@@ -73,7 +70,6 @@
 \date{\today}
 
 \begin{document}
-\begin{preview}
     \maketitle
     %----------------------------------------------------------------------------------------
     %	DOCUMENT CONTENT
@@ -102,6 +98,7 @@
 
               $1V/2^{12}=244.14 \mu V \therefore \mathrm{quantisation \; error} \approx \pm 122 \mu V$
 
+              \newpage
         \item \textit{\textbf{A 16-bit successive approximation ADC with an input voltage range of $\pm$5V is connected to a 16 MHz clock. This ADC is used to convert an input signal of 2.1362V. Determine the digital output and the time for the conversion.}}
 
               Take 16 'guesses', one per clock cycle, therefore the conversion time is $1\mu S$.
@@ -128,5 +125,4 @@
               \end{enumerate}
     \end{enumerate}
 
-\end{preview}
 \end{document}
