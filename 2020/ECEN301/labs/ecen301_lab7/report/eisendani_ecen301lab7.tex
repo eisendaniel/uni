@@ -77,18 +77,31 @@
     %----------------------------------------------------------------------------------------
     %	DOCUMENT CONTENT
     %----------------------------------------------------------------------------------------
-    \section{Objectives}
-    The ARM processor that is core to the BeagleBone black is powerful enough to run an embedded operating system (In this case we use a Linux install). The benefit of using an preinstalled OS environment whe
+    \section{Overview}
+    The ARM processor that is core to the BeagleBone black is powerful enough to run an embedded operating system (In this case we use a Linux install). The benefit of using an preinstalled OS environment for developing a project over say a bare-metal implementation is that it enable a level of decoupling from the specific hardware and can be transferable between different devices running the same environment, make use of prewritten peripheral drivers and system libraries. These are particular useful when working on a larger/more complex piece of software with say networking etc.
+
     \section{Methodology}
+
+        Due to the UNIX OS we can use an emulated serial connection via the USB port for all our connections.
+
+        One thing of importance/note is that everything within a UNIX operating system is defined/controlled via files, this includes thing like physical LEDs on the dev board.\\
+
+        This means to alter the output to an individual LED we write to the \\ \texttt{/sys/class/leds/beaglebone:green:usr\textit{N}} directory with individual configuration files such as /brightness, and /trigger.
+
+        As these are file operations, the code we write is not limited to binary compilations i.e. from c-code. We can make use of the OS's shell scripting, a Python interpreter to call sys operation and do IO or we can if fact write c code and directly compile it on system with the install c build system (GCC).
+
+        We ran multiple prewritten scripts/programs using the above methods then expanded by extending the function of the c program to access multiple LEDs to accept a ASCII char and display its 4 least significant bits.
+
+        I achieved this by looping 4 times over a bit shift and masking operation to isolate the nth bit in from the char byte and write it to the brightness file.
 
     \section*{Questions}
     \begin{enumerate}
         \item \begin{itemize}
-            \item cd: change directory 
-            \item ls: prints contents of current directory to terminal
-            \item mkdir: make directory
-            \item rm: file/folder removal with optional recursive function.
-        \end{itemize}
+                  \item cd: change directory
+                  \item ls: prints contents of current directory to terminal
+                  \item mkdir: make directory
+                  \item rm: file/folder removal with optional recursive function.
+              \end{itemize}
     \end{enumerate}
 
     \section*{Appendix}
