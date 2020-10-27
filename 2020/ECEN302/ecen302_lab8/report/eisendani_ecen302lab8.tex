@@ -59,6 +59,32 @@
    tabsize=3		                   % sets default tabsize to 2 spaces
 }
 
+\definecolor{mGreen}{rgb}{0,0.7,0.5}
+\definecolor{mWhite}{rgb}{0.9,0.9,0.9}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.0,0.0,0.1}
+
+\lstdefinestyle{Cstyle}{
+    backgroundcolor=\color{backgroundColour},   
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\footnotesize\color{mWhite},
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=4,
+    language=C
+}
+
 \newcommand{\matlab}{\textsc{Matlab }} %very important and totally necessary addition
 
 \newcommand\Item[1][]{%
@@ -79,6 +105,29 @@
   %	DOCUMENT CONTENT
   %----------------------------------------------------------------------------------------
   \section{Overview}
+  As a follow on and integration of the previous few labs, this labs goal is to combines the softcore MCU and the PWM based audio IP we developed previously so that we could write C code that could play a set 'song' and control LED lights simultaneously.
+  
   \section{Methodology}
+  Firstly we take our previously constructed block design of the MicroBlaze softcore, import and wire the PWM audio driver IP that was packaged and saved last lab and implement a new MCU driven audio design that is then exported and loaded in Vitus. 
+
+  To program a the soft-core to play a note using the PWM driver we use:
+  \begin{center}
+    \texttt{XGpio\_DiscreteWrite(\&GpioOutput, 1, n);}
+  \end{center}
+Where n is the input value. To programmatically form any efficient way to writing songs, the note values (frequency) must be mapped to this input and this function wrapped in an appropriate function including delays for time signature. This is achieved by making use of a auxiliary header containing note to frequency mappings in arrays and defined defang constants. see Appendix. 
+
+
+  System clock: 100Mhz, n: input to PWM driver, 1024: sine samples
+
+  $$f_{note} = \frac{100Mhz}{1024{\times}n}$$
+  
+  From this we can note that the minimum frequency output is $\approx 191Hz$ and can rearrange to map the note frequency from the table of arrays in \texttt{audio.h} to the required PWM input.
+
+  $$n = \frac{100Mhz}{1024{\times}f_{note}}$$
+  
+
+  \section*{Appendix}
+  \lstinputlisting[language=C,style=Cstyle]{inc/audio.h}
+
 \end{preview}
 \end{document}

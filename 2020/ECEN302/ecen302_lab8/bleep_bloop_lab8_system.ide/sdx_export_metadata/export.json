@@ -1,0 +1,24 @@
+{
+  "version": "2020.1",
+  "applications": [],
+  "platforms": [],
+  "systems": [
+    {
+      "name": "bleep_bloop_lab8_system",
+      "platform": "C:/Users/eisendani/workspaces/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm",
+      "sysConfig": "design_1_wrapper",
+      "applications": [
+        {
+          "name": "bleep_bloop_lab8",
+          "platform": "C:/Users/eisendani/workspaces/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm",
+          "platformPath": "C:\\Users\\eisendani\\workspaces\\design_1_wrapper\\export\\design_1_wrapper",
+          "sysConfig": "design_1_wrapper",
+          "domain": "domain_microblaze_0",
+          "system": "bleep_bloop_lab8_system"
+        }
+      ],
+      "platformPath": "C:\\Users\\eisendani\\workspaces\\design_1_wrapper\\export\\design_1_wrapper"
+    }
+  ],
+  "others": []
+}

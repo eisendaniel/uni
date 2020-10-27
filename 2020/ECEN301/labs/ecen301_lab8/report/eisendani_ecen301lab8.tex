@@ -61,7 +61,7 @@
 
 \newcommand{\matlab}{\textsc{Matlab }} %very important and totally necessary addition
 
-\newcommand\Item[1][]{%
+\newcommand\Item[1][]{
   \ifx\relax#1\relax  \item \else \item[#1] \fi
   \abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
   %----------------------------------------------------------------------------------------
@@ -78,8 +78,34 @@
     %	DOCUMENT CONTENT
     %----------------------------------------------------------------------------------------
     \section{Objectives}
+    Up until now we have either been writing small direct programs, flashing via JTAG or just writing and editing programs directly on the hardware. Sometimes even compiling it with build tools on the embedded OS.
+
+    For the large majority of real world cases, a developer would have a defined and setup dev environment that support debugging and cross-compiling on the host machine and only transferring/flashing the compiled binaries of the project to the device. This frees up resources in the device, makes use of much more powerful hardware for compiling and using and allows for a much more user friendly interface for development than terminal text-editor (though some may say they prefer it).
     \section{Methodology}
+    To setup cross-compilation a new Code Composer project must be pointed to use the compiler and set of build tools and libraries that are for the device/device family in order to build a compatible set of binaries for the hardware. This is done with by setting the projects environmental/build variable to the correct file/dir. paths.
+
+    Now we are able to build a native executable for the embedded Linux install on any machine/OS, even Windows if its behaving.
+    
+    
+    To enable the transfer and remote execution and debugging of the project the beaglebone run a virtual SSH interface that we interacted with over USB and connected to like any other via the Remote Application config in CC.
+    
+    \subsection{Cylon}
+    To write a small LED animation I extended teh clear LEDS function to clear all LEDS by accessing their brightness files. Then I added a "cylon" input argument and looped through the forward and back steps of the animations.  See below.
+
     \section*{Appendix}
     \lstinputlisting[style=Cstyle, language=C]{inc/bbb_gpiotest.cpp}
 \end{preview}
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+

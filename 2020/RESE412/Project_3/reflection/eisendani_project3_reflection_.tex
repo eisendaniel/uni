@@ -1,0 +1,73 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage{amsmath} % Required for some math elements
+\usepackage{hyperref}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{lipsum} 
+\usepackage{cite}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{adjustbox}
+\usepackage{bookmark}
+\usepackage[margin=24mm]{geometry}
+
+
+\interdisplaylinepenalty=2500 %Note that the amsmath package sets \interdisplaylinepenalty to 10000 thus preventing page breaks from occurring within multiline equations. Use: \interdisplaylinepenalty=2500 after loading amsmath to restore such page breaks as IEEEtran.cls normally does
+
+\hypersetup{ %color attributes of citation, link, etc.
+    colorlinks=orange,
+    linkcolor=cyan,
+    filecolor=gray,      
+    urlcolor=cyan,
+    citecolor=cyan,
+}
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+\title{RESE412 - Project 3 	Project reflection \\ Remote Control Car Charge Station}
+\author{Daniel Eisen}
+\date{\today}
+
+\begin{document}
+\maketitle
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONTENT
+%----------------------------------------------------------------------------------------
+
+% I just wanted to give a little detail on the final report which is due next week. This report should be a reflection on the final project and a bit on RESE412 in general. It shouldn’t be longer than a couple to a few pages (no more than 5, but 2 to 3 should probably be sufficient). It should compare the design and assumptions of the board/car for the final race with the actual events of the day. Im sure your assumptions were perfectly reasonable, but what would you have changed during your design assuming you had a crystal ball and knew the exact conditions? Did anything surprise you on the day? What did you observe in your system? Voltages? Currents? Power? You should reflect a little on your personal learning during the course. And, any feedback on the process would be helpful to me.%
+
+\section{Introduction}
+Leading on from the design stage of a remote charge station, we as a team constructed the assembly and carried out the race and strategy on race day. To reiterate this was a 6x10W panel array, with an attached 12V MPPT charge controller driving 36W max buck convertor far load battery charging. Load behaviour strategy was to be always charging one of 2 batteries to minimise downtime/maximise driving time. Race time was from 11am to 2pm on 7th of October.
+
+\section{Race Day}
+\subsection*{Charge Station}
+Environment wise the solar availability was higher than was designed for, with an almost cloudless sky for the entire race duration. This resulting in a very high performance from our robustly designed charge station. As we intended it to be a high usability at 50\% ideal solar irradiance the ideal conditions on the day meant the MPPT rebooted power output of 60W to 70W when charging a depleted battery. The batteries, 2000mAh, were being charged from "empty" to full at max current (4A from buck output) with zero cloud cover (most times) and were full within the 10min that we estimated and tested for during out design stage. We therefore experienced zero battery charging downtime with our dual battery setup. Charging and the sun was intense enough that it was required to be shaded to keep cool.
+
+\subsection*{RC Car}
+The car/race strategy however did not go as smoothly. Initially we began our race making use our the low current draw of our chosen motor and the small remaining charge in the "discharged" battery 1 to rack up some laps while we charged the second to full. This \textit{outstanding} move gained us 2 extra laps before the slowness required a swap of the second battery. This strategy allowed each of the batteries to be receiving a full charge per stop after 2-3 put stops.
+
+We decided on the small motor for its lower current draw for what we determined was a OK speed trade off and high control. We were however finding that due to this control and long run lengths (battery charge) we were keeping pace with other faster cars on the track, especially with the zero charge downtime advantage; but this where the issues began that prevented us from full evaluating that particular design decision. Though I will say that the speed trade off was looking to be to much, at least on an ideal day like it was.
+
+First the RC controller batteries died, which cause downtime. Then the RC receiver completely died on our car. This is resulted in a large time loss, upwards of 10mins. 
+
+We replaced the car in its entirety, this meant we were then using the stock motor which was soo much faster than any of the 3 other motors with an assumed current draw to match. This presented a challenge in driving and a strain test of the charging station but presented what turned into a great advantage in terms of lap speed. The charge station was able to keep up perfectly with the new higher demand, fully charging a battery in still less time than a discharge cycle from the car thus displaying the robustness/scaling of our design taking into account a possible dud day. 
+
+Our success was again cut shot by the new faster car slamming into concrete wall. I was at this time we discovered that the motor was mounted with exactly 2 screws and came completely detached, with another 5-10min of downtime and one cannibalised car later we were back on track with only occasional dislocation of the front wheel we completed the race with a total of 83 laps.
+
+
+\section{Conclusion}
+In conclusion, despite the incidents, we reached 83 laps in 3hrs, a near constant max power output from the charge station and a successful zero downtime battery strategy. 
+Had we known that the day would have been as good as it was, we defiantly would have considered reducing the panel count of the system as we pretty much always exceeding out max out in production to save cost.  
+
+With our smaller budget of \$553.14 and duel battery strategy we achieved a dollars per lap march of \$6.66.
+
+\section*{Project and Course Reflection}
+Overall I found the project very rewarding and the team aspect allowed for really efficient task handling and splitting, especially with the amount of testing and data that was required to be collected in parallel. As with everything time/availability was a largest constraint and we ended up feeling rushed towards the end but I can't really see a way past that. 
+
+The course as a whole was exactly what I was looking for. It offered a much larger/diverse range of learning than I was expecting due to all the guest lecturing/material and it was really good to get back to power/electrical engineering. I think it really did benefit from the inclusion of the controls project and would feel like it was missing something without it, it just fits really well. Though having practically 1 week to do it was exciting.       
+
+
+\end{document}
