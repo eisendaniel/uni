@@ -16,6 +16,13 @@
 \usepackage{enumitem}
 \usepackage[margin=16mm]{geometry}
 \usepackage[caption=false, font=footnotesize]{subfig}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{ENGR222 Assignment 1 Submission}
+\rhead{Daniel Eisen : 300447549}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
 
 \newlist{steps}{enumerate}{1}
 \setlist[steps, 1]{label = Step \arabic*:}
@@ -36,7 +43,7 @@
 %----------------------------------------------------------------------------------------
 %	DOCUMENT INFORMATION
 %----------------------------------------------------------------------------------------
- 
+
 \title{ENGR 222 \\ Assignment 1 Submission}
 \author{Daniel Eisen : 300447549}
 \date{\today}
@@ -202,11 +209,8 @@
                   \end{vmatrix}                                                                                              \\
                                                             & = \textbf{i}(2(-3)-2(-6)) - \textbf{j}(2(1)-0(2)) + \textbf{k}(1(-6)-0(-3)) \\
                                                             & = 6\textbf{i} - 2\textbf{j} - 6\textbf{k}                                   \\
-                  \| \textbf{r}'(t)\times\textbf{r}''(t) \| & = \sqrt{6^2 + (-2)^2 + (-6)^2} = \sqrt{76}                                  \\
-              \end{align*}
-
-              \begin{align*}
-                  \textbf{B}(t) & = \frac{6\textbf{i} - 2\textbf{j} - 6\textbf{k}}{\sqrt{76}} \\
+                  \| \textbf{r}'(t)\times\textbf{r}''(t) \| & = \sqrt{6^2 + (-2)^2 + (-6)^2} = \sqrt{76}                                  \\\\
+                  \textbf{B}(t)                             & = \frac{6\textbf{i} - 2\textbf{j} - 6\textbf{k}}{\sqrt{76}}                 \\
               \end{align*}
 
               \Item\\
