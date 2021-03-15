@@ -21,15 +21,13 @@ def surf():
     fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
 
     # Make data.
-    x = np.arange(-10, 10, 0.25)
-    y = np.arange(-10, 10, 0.25)
+    x = np.arange(-8, 8, 0.1)
+    y = np.arange(-8, 8, 0.1)
     x, y = np.meshgrid(x, y)
-    z = -2*x**3 + 3*x**2*y + 2*y**3 - 9*y + 5
+    z = -2*x**3 + 3*(x**2)*y + 2*y**3 - 9*y + 5
 
     # Plot the surface.
     surf = ax.plot_surface(x, y, z, cmap=cm.coolwarm,linewidth=0, antialiased=False)
-    surf1 = ax.plot_surface(x, 0,-6*x**2+6*x*y,cmap=cm.coolwarm,linewidth=0, antialiased=False)
-    surf2 = ax.plot_surface(0, y,3*x**2+6*y**2-9,cmap=cm.coolwarm,linewidth=0, antialiased=False)
 
     # Customize the z axis.
     # ax.set_zlim(-1.01, 1.01)
