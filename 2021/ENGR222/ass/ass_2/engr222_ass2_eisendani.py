@@ -15,7 +15,6 @@ def para3d():
     y = np.sin(0.5*t)
     z = np.cos(3*t)
     ax.plot(x,y,z)
-    plt.show()
 
 def surf(x,y,z,title):
     fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
@@ -38,17 +37,13 @@ def surf(x,y,z,title):
 
 
 # Make data.
-x = np.arange(-10, 10, 0.1)
-y = np.arange(-10, 10, 0.1)
-x, y = np.meshgrid(x, y)
-z = -2*x**3 + 3*(x**2)*y + 2*y**3 - 9*y + 5
-fx = -6*x**2 + 6*x*y
-fy = 3*x**2 + 6*y**2 - 9
+# x = np.arange(-2, 2, 0.1)
+# y = np.arange(-2, 2, 0.1)
+# x, y = np.meshgrid(x, y)
+# z = -2*x**3 + 3*(x**2)*y + 2*y**3 - 9*y + 5
+# fx = -6*x**2 + 6*x*y
+# fy = 3*x**2 + 6*y**2 - 9
 
-# surf(x,y,z,"F")
-# # surf(x,y,fx,"F_x")
-# # surf(x,y,fy,"F_y")
-# plt.show()
 
-plt.imshow(z)
+para3d()
 plt.show()
