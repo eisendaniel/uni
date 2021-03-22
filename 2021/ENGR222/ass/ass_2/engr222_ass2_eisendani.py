@@ -37,13 +37,9 @@ def surf(x,y,z,title):
 
 
 # Make data.
-# x = np.arange(-2, 2, 0.1)
-# y = np.arange(-2, 2, 0.1)
-# x, y = np.meshgrid(x, y)
-# z = -2*x**3 + 3*(x**2)*y + 2*y**3 - 9*y + 5
-# fx = -6*x**2 + 6*x*y
-# fy = 3*x**2 + 6*y**2 - 9
-
-
-para3d()
+x = np.arange(-5, 5, 0.1)
+y = np.arange(-5, 5, 0.1)
+x, y = np.meshgrid(x, y)
+z = (9-x**2)**(1/2) 
+surf(x,y,z,"")
 plt.show()
