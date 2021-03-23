@@ -231,31 +231,62 @@
                   \end{align*}
                   \Item $z=\sqrt{9-x^{2}}, \; R = \{(x,y) : 0 \le y \le x, x \in [0,3]\}$ \\\\
                   \begin{align*}
-                      \mathrm{surface \; area} &= \int \int_R \sqrt{(f_{x})^2 + (f_{y})^2 +1} \, dA \\ 
-                      &= \int_{0}^{3} \int_{0}^{x} \sqrt{\left(-\frac{x}{\sqrt{9-x^2}}\right)^2 + 0^2 + 1} \,dy \,dx \\ 
-                      &= \int_{0}^{3} \int_{0}^{x} \frac{3}{\sqrt{9-x^{2}}} \,dy \,dx \\
-                      &= \int_{0}^{3} \Big| \frac{3y}{\sqrt{9-x^{2}}} \Big|_{y=0}^{y=x} \,dx \\
-                      &= \int_{0}^{3} \frac{3x}{\sqrt{9-x^{2}}} \,dx \\
-                      &= \Big| -3\sqrt{9-x^2} \Big|_{x=0}^{x=3} \\
-                      &= (-3\sqrt{0}) - -3\sqrt{9} = 9
+                      \mathrm{surface \; area} & = \int \int_R \sqrt{(f_{x})^2 + (f_{y})^2 +1} \, dA                                           \\
+                                               & = \int_{0}^{3} \int_{0}^{x} \sqrt{\left(-\frac{x}{\sqrt{9-x^2}}\right)^2 + 0^2 + 1} \,dy \,dx \\
+                                               & = \int_{0}^{3} \int_{0}^{x} \frac{3}{\sqrt{9-x^{2}}} \,dy \,dx                                \\
+                                               & = \int_{0}^{3} \Big| \frac{3y}{\sqrt{9-x^{2}}} \Big|_{y=0}^{y=x} \,dx                         \\
+                                               & = \int_{0}^{3} \frac{3x}{\sqrt{9-x^{2}}} \,dx                                                 \\
+                                               & = \Big| -3\sqrt{9-x^2} \Big|_{x=0}^{x=3}                                                      \\
+                                               & = (-3\sqrt{0}) - -3\sqrt{9} = 9
                   \end{align*}
               \end{enumerate}
         \item \textbf{Lab question}
               \begin{enumerate}
                   \item
                         \begin{enumerate}
-                            \item
-                            \item
-                            \item
+                            \item \texttt{py output: min e of 1.358351831015625e-08 at h = 1.232846739442064e-09} \\
+                                  \includegraphics[width=0.5\textwidth]{fig/4ai.png}
+
+                            \item \texttt{py output: min e of 2.7182700534922333e-11 at h = 1.1497569953977361e-06} \\
+                                  \includegraphics[width=0.5\textwidth]{fig/4aii.png}
+
+                            \item \texttt{py output: min e of 4.330683012199188e-08 at h = 2.1544346900318827e-05} \\
+                                  \includegraphics[width=0.5\textwidth]{fig/4aiii.png}
                         \end{enumerate}
                   \item
                         \begin{enumerate}
                             \item
+                                  \texttt{py output: For a subinterval of 10, intergral is 4.607872940794085} \\
+                                  \texttt{py output: For a subinterval of 20, intergral is 4.651934278080257}\\
+                                  \texttt{py output: For a subinterval of 40, intergral is 4.664330479310646}\\
+                                  \texttt{py output: For a subinterval of 80, intergral is 4.667686103287532}\\
+                                  \texttt{py output: For a subinterval of 160, intergral is 4.668571606382887}\\
+                                  Therefore the interval can be estimated to converge on \textbf{4.669} \\
+                                  \includegraphics[width=0.5\textwidth]{fig/4bi.png}
                             \item
+                                  \texttt{py output: For a subinterval of 10, intergral is 4.657102287466295}\\
+                                  \texttt{py output: For a subinterval of 20, intergral is 4.666621390508981}\\
+                                  \texttt{py output: For a subinterval of 40, intergral is 4.668462546387442}\\
+                                  \texttt{py output: For a subinterval of 80, intergral is 4.668804644613161}\\
+                                  \texttt{py output: For a subinterval of 160, intergral is 4.668866774081337}\\
+                                  Giving the speed of conversion, a comfortable approximation is 4dp after 5 iterations: \textbf{6.6689}
+                                  \includegraphics[width=0.5\textwidth]{fig/4bii.png}
                             \item
+                                  \texttt{py output: output at upperlimit: 10 = 4.668880328350932}\\
+                                  \texttt{py output: output at upperlimit: 100 = 11.875967391881685}\\
+                                  \texttt{py output: output at upperlimit: 1000 = 11.999999998713985}\\
+                                  This appears to be converging on 12\\
+                                  \texttt{py output: To positive infinity: 12.000000000094914} \\
+                                  With some floating point error, this confirms 12.
                         \end{enumerate}
               \end{enumerate}
     \end{enumerate}
+
+\end{preview}
+\begin{preview}
+    
+    \lstinputlisting[language=Python]{engr222_ass2_eisendani.py}
+
 \end{preview}
 
 \end{document}
