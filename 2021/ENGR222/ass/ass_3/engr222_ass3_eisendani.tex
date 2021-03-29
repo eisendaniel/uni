@@ -155,8 +155,8 @@
                     \textbf{r}(1)                              & = \pi cos(\pi/2)\textbf{i} + \left( \frac{\pi}{2} + sin(8\pi)\right)\textbf{j} + 0\textbf{k}                                         \\
                                                                & =                                           0\textbf{i} +  \frac{\pi}{2}\textbf{j} +  0\textbf{k}                                    \\\\
                     \int_C \nabla_{\phi} \cdot \; d \textbf{r} & =\phi(0,\pi/2,0) - \phi(\pi,\pi/2,0)                                                                                                 \\
-                    &= cos(0{\times}sin((\pi/2)e^{0}))  - cos(\pi{\times}sin((\pi/2)e^{0})) \\
-                    &= 1 - -1 = 2
+                                                               & = cos(0{\times}sin((\pi/2)e^{0}))  - cos(\pi{\times}sin((\pi/2)e^{0}))                                                               \\
+                                                               & = 1 - -1 = 2
                   \end{align*}
             \item
           \end{enumerate}
@@ -164,25 +164,40 @@
           \begin{enumerate}
             \item
                   \begin{enumerate}
+                    \item \texttt{(x(10), y(10)) = (-2.8179467555071627, -0.31125999010827476)}
+                          \begin{center}
+                            \includegraphics[width=0.33\textwidth]{inc/q4ai.png}
+                          \end{center}
                     \item
-                    \item
+                          \texttt{h=0.0001: K(s=5) = 1.2001138830544655} \\
+                          \texttt{h=0.001: K(s=5) = 1.200113871589581} \\
+                          \texttt{h=0.003: K(s=5) = 1.2001137789245757} \\
+                          \texttt{h=0.005: K(s=5) = 1.2001135935941987} \\
+                          \texttt{h=0.01: K(s=5) = 1.2001127248505328} \\\\
+                          $K(s=5) \approx 1.20011$
                   \end{enumerate}
             \item
                   \begin{enumerate}
-                    \item
-                    \item
+                    \item \texttt{t = 2: (x,y,z) = (-0.5580567444088435, -0.2720113135900402, 0.11995195426460033)}
+                          \begin{center}
+                            \includegraphics[width=0.5\textwidth]{inc/q4bi_0.png}
+                          \end{center}
+                    \item unit tangent, principal unit normal and binormal vectors at $t = 2$.
+                          \begin{center}
+                            \includegraphics[width=0.5\textwidth]{inc/q4bii.png}
+                          \end{center}
                   \end{enumerate}
             \item
                   \begin{enumerate}
-                    \item
-                    \item
+                    \item \texttt{result: 8906.117634354589, error: 6.960997495135904e-05}
+                    \item \texttt{result: 10.787064853079258, error: 1.1976047768013373e-13}
                   \end{enumerate}
           \end{enumerate}
   \end{enumerate}
 
   \Newpage
 
-  \inputpython{engr222_ass3_eisendani.py}{1}{100}
+  \inputpython{engr222_ass3_eisendani.py}{1}{1000}
 
 \end{preview}
 
