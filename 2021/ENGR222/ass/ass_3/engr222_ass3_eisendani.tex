@@ -106,8 +106,8 @@
                   \end{align*}
             \item Curl: $\textbf{F}=x^{2}y^{3}z^{4}\textbf{i} - xyz\textbf{j} + (x+y+z)\textbf{k}$
                   \begin{align*}
-                    \mathrm{curl} \; \textbf{F} & = (h_y - g_z)\textbf{i} + (f_z - h_x)\textbf{j} + (g_x - f_y)\textbf{k}                      \\
-                                                & = (1 + xy)\textbf{i} + (4x^{2}y^{3}z^{3} - 1)\textbf{j} + (-yz - 3x^{2}y^{2}z^{4})\textbf{k} \\
+                    \mathrm{curl} \; \textbf{F} & = (h_y - g_z)\textbf{i} - (f_z - h_x)\textbf{j} + (g_x - f_y)\textbf{k}                      \\
+                                                & = (1 + xy)\textbf{i} - (4x^{2}y^{3}z^{3} - 1)\textbf{j} + (-yz - 3x^{2}y^{2}z^{4})\textbf{k} \\
                   \end{align*}
             \item Gradient field: $\phi(x,y,z)=xz^{2}+sin(y)e^{x}$
                   \begin{align*}
@@ -141,10 +141,23 @@
                   \begin{align*}
                     \textbf{r}'(t)                          & = 2 \textbf{i} + 2t \textbf{j} + \frac{1}{t} \textbf{k}                                                                                                        \\\\
                     \int_C \textbf{F} \cdot \; d \textbf{r} & = \int_{1}^{4} \left(2t \textbf{i} - e^{ln(t)} \textbf{j} + t^2 \textbf{k}\right) \cdot \left(2 \textbf{i} + 2t \textbf{j} + \frac{1}{t} \textbf{k}\right)\,dt \\
-                                                            & = \int_{1}^{4} 2(2t) - t(2t) + \frac{1}{t}(t^2) \,dt  = \int_{1}^{4} 5t - 2t^2 \,dt \\
-                                                            &= \frac{5t^2}{2} - \frac{2t^3}{3} \Big|_{1}^{4} = (5(4^2)/2 - 2(4^3)/3) - (5(1^2)/2 - 2(1^3)/3)=-4.5\\
+                                                            & = \int_{1}^{4} 2(2t) - t(2t) + \frac{1}{t}(t^2) \,dt  = \int_{1}^{4} 5t - 2t^2 \,dt                                                                            \\
+                                                            & = \frac{5t^2}{2} - \frac{2t^3}{3} \Big|_{1}^{4} = (5(4^2)/2 - 2(4^3)/3) - (5(1^2)/2 - 2(1^3)/3)=-4.5                                                           \\
                   \end{align*}
-            \item
+            \item Calculate $\int_C \textbf{F} \cdot \; d \textbf{r}$
+                  \begin{align*}
+                    \phi                                       & = cos(xsin(ye^{z}))                                                                                                                  \\
+                    \textbf{F}                                 & = \nabla_{\phi}                                                                                                                      \\
+                    \int_C \nabla_{\phi} \cdot \; d \textbf{r} & =\phi(x_1,y_1,z_1) - \phi(x_0,y_0,z_0)                                                                                               \\\\
+                    \textbf{r}(t)                              & = \pi cos(\pi t/2)\textbf{i} + \left( \frac{\pi}{2} + sin(8\pi t)\right)\textbf{j} + t(1-t)\textbf{k} \; \mathrm{for} \; t \in [0,1] \\
+                    \textbf{r}(0)                              & = \pi cos(0)\textbf{i} + \left( \frac{\pi}{2} + sin(0)\right)\textbf{j} + 0\textbf{k}                                                \\
+                                                               & =                                          \pi\textbf{i} + \frac{\pi}{2} \textbf{j} + 0 \textbf{k}                                   \\
+                    \textbf{r}(1)                              & = \pi cos(\pi/2)\textbf{i} + \left( \frac{\pi}{2} + sin(8\pi)\right)\textbf{j} + 0\textbf{k}                                         \\
+                                                               & =                                           0\textbf{i} +  \frac{\pi}{2}\textbf{j} +  0\textbf{k}                                    \\\\
+                    \int_C \nabla_{\phi} \cdot \; d \textbf{r} & =\phi(0,\pi/2,0) - \phi(\pi,\pi/2,0)                                                                                                 \\
+                    &= cos(0{\times}sin((\pi/2)e^{0}))  - cos(\pi{\times}sin((\pi/2)e^{0})) \\
+                    &= 1 - -1 = 2
+                  \end{align*}
             \item
           \end{enumerate}
     \item \textbf{Lab Questions}
@@ -169,7 +182,7 @@
 
   \Newpage
 
-  \inputpython{engr222_ass3_eisendani.py}{1}{60}
+  \inputpython{engr222_ass3_eisendani.py}{1}{100}
 
 \end{preview}
 
