@@ -178,8 +178,12 @@
                   f_y &= -2xe^{-x^2}cos(y) \\
                   g_x &= -2xe^{-x^2}cos(y) \\
                   \therefore \; \mathrm{conservative} \\
-                  \phi_x = f \therefore \phi &= \int -2xe^{-x^2}sin(y) dx = e^{-x^2}\sin \left(y\right)+k(y)\\
-            \end{align*}
+                  \phi_x = f \therefore \phi &= \int -2xe^{-x^2}sin(y) dx = e^{-x^2}sin(y)+k(y)\\
+                  g &= 1+e^{-x^2}cos(y) \\
+                  \phi_y &=  e^{-x^2}cos(y)+k'(y) \\
+                  \therefore k'(y) &= 1, k(y) = \int 1 \,dy = y + C \\
+                  \phi &= e^{-x^2}sin(y) + y + C \\
+ \\            \end{align*}
             For any closed curve C, the $\oint \textbf{F}{\cdot}d \textbf{r} = \iint_R (g_x - f _y) dA$, so as \textbf{F} is conservative, thus the integrand is 0. 
           \end{enumerate}
     \item \textbf{Lab Questions}
