@@ -98,6 +98,7 @@ def q4biii():
     result = quad(f,0.0,np.inf)
     print(f"To positive infinity: {result[0]}")
 
+
     
 
 

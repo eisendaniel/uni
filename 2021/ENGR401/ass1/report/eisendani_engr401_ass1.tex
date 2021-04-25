@@ -1,0 +1,49 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage{amsmath} % Required for some math elements
+\usepackage{hyperref}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{lipsum} 
+\usepackage{cite}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{adjustbox}
+\usepackage{bookmark}
+\usepackage[margin=24mm]{geometry}
+
+
+\interdisplaylinepenalty=2500 %Note that the amsmath package sets \interdisplaylinepenalty to 10000 thus preventing page breaks from occurring within multiline equations. Use: \interdisplaylinepenalty=2500 after loading amsmath to restore such page breaks as IEEEtran.cls normally does
+
+\hypersetup{ %color attributes of citation, link, etc.
+    colorlinks=orange,
+    linkcolor=cyan,
+    filecolor=gray,      
+    urlcolor=cyan,
+    citecolor=cyan,
+}
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+\title{ENGR401 Assignment 1 \\ Case Study: Code of Ethics for AI \\ \dots}
+\author{Daniel Eisen}
+\date{\today}
+
+\begin{document}
+\maketitle
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONTENT
+%----------------------------------------------------------------------------------------
+\section{Introduction}
+\dots \cite{einstein}, \cite{knuthwebsite}, \cite{latexcompanion}
+
+\section{Main}
+
+\section{Conclusion}
+
+\newpage
+\bibliography{ref}
+\bibliographystyle{IEEEtran}
+\end{document}
