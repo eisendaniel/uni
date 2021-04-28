@@ -40,43 +40,82 @@
 % Outline scope and constraints of study: what it is/is not addressing, what it will produce.
 % what the area of tech is, why its important to ethically analysis it and on what terms the study will do so. Maybe intro issue topics
 
-Facial Recognition technology is arguably one of the most potentially dangerous applications of artificial intelligence, if its development and deployment is not kept in careful check its flaws both create and reinforce discredited categorizations around gender and race, as well as propergating bias and compromising rights \cite{plutonium}, \cite{nature_main}.
+Facial Recognition technology is arguably one of the most potentially dangerous applications of artificial intelligence, if its development and deployment is not kept in careful check its flaws both create and reinforce discredited categorisations around gender and race, as well as propagating bias and compromising rights \cite{plutonium}, \cite{nature_main}.\\
 
-Facial Recognition as a technology will only improve technically with time. The rise of social media and growing online presence also enables and lowers the bar for the mass collection and analysis of photographs. The use of this technology is a popular and alluring method of biometric identification within the industry, as a person's face is a long-lasting identifier, and this roll out is already seen in wide and growing use. Key tech giants (Google, Apple, Facebook, Amazon, and Microsoft (GAFAM)) have extensively developed internal products that are already being partially deployed to user bases \cite{thales} but this tech is by no means being limited to commercial use. While China may be the only state with wide unchecked surveillance and policing deployment, the US, UK, EU and others \cite{nature_main},\cite{thales} all have a level of facial recognition ID in research or testing.  
+Facial Recognition as a technology will only improve technically with time. The rise of social media and growing online presence also enables and lowers the bar for the mass collection and analysis of photographs. The use of this technology is a popular and alluring method of biometric identification within the industry, as a person's face is a long-lasting identifier, and this roll out is already seen in wide and growing use. Key tech giants (Google, Apple, Facebook, Amazon, and Microsoft (GAFAM)) have extensively developed internal products that are already being partially deployed to user bases \cite{thales} but this tech is by no means being limited to commercial use. While China may be the only state with wide unchecked surveillance and policing deployment, the US, UK, EU and others \cite{nature_main},\cite{thales} all have a level of facial recognition ID in research or testing.
 
-Facial Recognition, in these specific instances and as a whole technology, presents a host of ethical problems in its development and use. On the development side, lawful and consensual collection of large, varied datasets which by definition is likely to be personal and potentially sensitive. Closely related is the subject of access and sharing of these datasets and the products of the development (AI output, classifiers and tags) and the potential implication of privacy violation and security breaches. As mass surveillance is likely and known target for this technology there also arises the issue of unintended bias (implement presence in datasets) and the possibility of an AI to be specially developed to discriminate persons based on bias as how these affect and are exposed to vulnerable populations.
+Facial Recognition, in these specific instances and as a whole technology, presents a host of ethical problems in its development and use. On the development side, lawful and consensual collection of large, varied datasets which by definition is likely to be personal and potentially sensitive. Closely related is the subject of access and sharing of these datasets and the products of the development (AI output, classifiers and tags) and the potential implication of privacy violation and security breaches. As mass surveillance is a likely and known target for this technology there also arises the issue of unintended bias (implement presence in datasets) and the possibility of an AI to be specially developed to discriminate persons based on bias as how these affect and are exposed to vulnerable populations.\\
 
-This study will cover on the following ethical issues; Data without consent, Access and Privacy, and Bias and vulnerable populations. Specially focusing on use cases on the greater public (apposed to the individual, i.e. FaceID unlock etc) with the intention of discussing and backing these concerns with ethical frameworks, exploring possible solutions through the construction of a Code of Ethics to address the situation, and providing an evaluation of its limitations, gaps and likelihood of success. 
+This study will not cover whether Facial Recognition is as a whole unethical \cite{plutonium}, but rather on the following specific ethical issues; Data without consent, Access and Privacy, and Bias and vulnerable populations. Specially focusing on use cases on the greater public (opposed to the individual, i.e. FaceID unlock etc) with the intention of discussing and backing these concerns with ethical frameworks, exploring possible solutions through the construction of a Code of Ethics to address the situation, and providing an evaluation of its limitations, gaps and likelihood of success.
 
 \section{Background}
-Before proceding it is important to clarify definitions as this topic (facial recognition) is prone to a blurring of lines and inconsistent use. Facial scanning systems can placed under 3 broad categorisations \cite{ethics_book}. 
+Before proceeding it is important to clarify definitions as this topic (facial recognition) is prone to a blurring of lines and inconsistent use. Facial scanning systems can be placed under 3 broad categorisations \cite{ethics_book}.
 
-Detection: Is it a face?, camera focus, face highlight etc. Key is no Personally identifiable information (PII) is collected, nor is any derived. Not considered directly and excluded from the definition of facial recognition.
+Detection: The most simple case, concerned on finding a face within a captured frame. Key is no Personally identifiable information (PII) is collected, nor is any derived.
 
-Characterisation: Smile/frown detection, emotional indictors, gender/age approximating. While this do not collect PII , the process, particularly in systems to detect emotions and characteristic estimation (guessing), raising ethical concerns when the output of say an unproven facial characterization system uses externally to discriminate an individual, such as
-inferring sexuality or race.
+Characterisation: Smile/frown detection, emotional indicators, gender/age approximating. While this does not collect PII, the process, particularly in systems to detect emotions and characteristic estimation (guessing) derives/produces a subjective assessment of a subject.
 
-Verification and Identification: This more precisely fit the definition of Facial Recognition. In addition to having the same ethical concerns of characteristic algorithms, verification and identification (are they who the say they are and they are this person) requires the collection and storage of an explicit PII database.
+Verification and Identification: This more precisely fits the definition of Facial Recognition. This is concerned with assessing whether the subject matches a stored 'faceprint', with the purpose of answering "Is this image of a known person?", and requires the collection and storage of an explicit PII database.
 
+These all have shared technological basis \cite{ethics_book} and each being a superset or including the prior. Therefore the defined focus of Facial Recognition in this study is concerned with the wider use (i.e. on public) of Verification and Identification.\\
 
+AI Facial Recognition is based fundamentally as the three step process: \textit{detection}, \textit{capture}, and \textit{matching} \cite{ethics_book}, \cite{thales}.
 
+For this pipeline of algorithms to be successful, they require extensive training of very large ingested datasets (of human faces) with large variation in lighting and angles. In early research these datasets were consensually sourced from volunteers, but as the technology matured and grew in scope, complexity and entered the commercial market development on these algorithms has increasing relied on amassing these larger and larger datasets without permission. Often they rely taking advantage of overly lenient licences (MegaFace, based on .3 million images pulled directly from Flickr), direct internet scaping (MSCeleb, 10 million) or in the research space controversially forming datasets from university security cameras \cite{nature_main}. This rising common practice raises obvious ethical concerns surrounding consent and knowledge of use but also in the ongoing safety and privacy/access concerns as these datasets are shared/bought and used in future projects.\\
+
+A very real development/deployment focus of the technology is integration in public surveillance and possible usage as a form of identification and tracking (at both a commercial and state level), \cite{nature_main}, \cite{thales}, \cite{nature_bias}. Therefore there is present a very serious risk in the effect of not only unintentionally biased data and AI output, especially when the system is a decision making hierarchy, but also in the development of intentionally bias based classifiers. For example the Uyghur targeting algorithms in use in Xinjiang \cite{nature_bias}, \cite{nature_main}.
+
+\newpage
 \section{Analysis}
-Analysis: Cover the various ethical problems from multiple framework perspectives and what constraints could solve them
+In order to ground the following discussion(s) in ethical theory some definitions that this study will reflect and intentions must be outlined; chiefly Virtue based, Deontological, and Utilitarian Ethics.\\
 
-\subsection{Training Data Collection} 
-\cite{nature_main}
+Virtue Ethics as an approach is that the places emphasis on what is the 'right' action for an entity to take in a situation, i.e what action would be representative of a good moral character \cite{sep-ethics-virtue}. It can be said that virtue based ethics would be less concerned with operating under (especially opposing) rules/laws or focused on an actions larger consequences if it were in contrast to the immediate moral action.\\
 
-\subsection{Privacy, Access and Data Sharing}
+Deontological Ethics, in contrast, places emphasis on adhering to established rules and duties (hence duty ethics) \cite{sep-ethics-deontological}. Namely Deontological ethics holds that at least some acts are morally obligatory regardless of their consequences, i.e. duty is upheld, law is obeyed and rights maintained.\\
+
+Utilitarian Ethics is fixated on whether an action's consequences result in the best outcome for the most amount of people, regardless if the action is of benefit to the direct participants of that action \cite{sep-consequentialism}. 
+
+\subsection{Training Data Collection}
+Facial Recognition by its nature requires the large scale acquisition of personal photographs for training and the continued storage of PII databases (identification, verification), \cite{ethics_book}, \cite{nature_main}, \cite{thales}. 
+
+On the acquisition and training side it is a uncomfortable truth that a not insignificant number of the datasets currently in use are obtained and/or constructed data collected without complete or any informed concert \cite{nature_main}. An example that is particularly representative is a dataset compiled and distributed by Duke University in Durham, North Carolina, which contains more than 2 million video frames of footage of students walking on the university campus \cite{nature_main}, \cite{megapixel}. Examining this case as a typical procedure of dataset acquisition and resulted danger of such is insightful as to why this practice with AI development is a concern. The MegaPixel project \cite{megapixel} tracked the usage and citations associated with this dataset and it was not only used for the express purpose of the development of re-identification algorithms, "Tracking Social Groups Within and Across Cameras", and with citations in papers linked to the Chinese Military and surveillance companies active in the Xinjiang region of China.\\
+
+From the perspective of virtue ethics, as an individual should have the ability to exercise free choice and maintain control of themselves, informed consent as well and full transparency of the use of the data and the option to opt out of the usage of PII is a requirement for that collection to ethical and right. The collected data should then be treated as the 'property' of of the person it identifies and thus a failure in the above is a violation.
+
+A utilitarian approach could be more lenient as an argument could be made that the illicit collection of the data was outweighed by the good it created via for example a Law Enforcement application \cite{ethics_book}. This however is narrow and has major assumptions about assumed intent of the enforcing entity, the security of the collected and produced data and equality concerns of the distribution of that system. So what could be allowed in a narrow applications of utilitarian values may in reality result in undue harm.
+
+Deontological concerns arise from the potential violation of the defined rights of the citizens the data is collected from (rights to privacy etc) and not just a developments adherence to laws and agreements.   
 
 \subsection{Bias and Vulnerable Populations}
-\cite{nature_bias}
+Particularly in the application of facial recognition and characterisation based surveillance systems, the affect of bias within a training dataset can be disproportionate in its impact on vulnerable populations \cite{nature_main}. A theoretical system that is within the decision making hierarchy could very well amplify bias and unguided could result in the unfair persecution (whether intended or not) of individuals. \\
 
-\section{Recommendations}
-The designed code of ethics
-\dots
+Since the introduction of ‘deep learning' techniques into the field about a decade ago, the accuracy of facial recognition has improved dramatically. However, whether or not this means it can be used on lower-quality, "in the wild" photos is a hotly debated subject. And there are also unanswered concerns about how to test facial-recognition devices in a straightforward manner \cite{nature_bias}.
+
+Timnit Gebru and other key tech players published a ground breaking paper that found that leading facial-recognition software packages performed much worse at recognising the gender of women and people of colour than male, white faces. \cite{nature_bias}.
+
+\section{Recommendations - Code of Ethics}
+
+\subsection*{Guiding Principal}
+Mass usage of facial recognition should only be undertaken to make the world safer, more secure and more convenient while ensuring the harm is minimised and that steps are taken to identify and mitigate misuse. If violation of this principle inhibits and or limits the capability if a system, then that is the intended consequence of this CoE.
+
+\subsection*{Regarding Data Collection, Use, and Privacy}
+\begin{itemize}
+    \item The entity collecting data, and or enrolling an individual in a facial recognition database must receive full informed specific consent from the individual.
+    \item At any point an individual must have the ability to fully opt-out of the process with \textbf{PII} being fully transferred and or destroyed as per request.
+    \item The entity must hold security at the highest priority and be held fully accountable for breaches
+    \item Access by 3rd party entities must be in full accordance to the law and be included in accordance with the previous points   
+\end{itemize}
+
+\subsection*{Regarding Bias and Vulnerable Populations}
+\begin{itemize}
+    \item Based on the history and inherent limitations of the technological facial recognition should never be used in real-time surveillance of lawful activity
+    \item Have its access completely restricted from those under the age of consent
+    \item Never be used as the sole evidence in court proceeding
+    \item Characterisation based systems should never be used in the distinguishing of a population or be the basis of any control or external monitoring of a person. 
+\end{itemize}
 
 \section{Evaluation}
-Discussion of what the points outlined in the above CoE. What the do and do not address and the limitations of this kind of analysis to begin with
+This code of ethics is by design narrow in scope and hence has gaps and limitations. It is then only useable in providing the guiding principle for the development and deployment of an AI driven facial recognition system as well as targeted solutions to problems of consensual PII data collection and usage in avoiding bias and disproportionate affects on vulnerable populations. On the topic of enforceability it may be used to guide state and corporate policy but it itself is not law but voluntary policy.  
 
 
 \newpage
