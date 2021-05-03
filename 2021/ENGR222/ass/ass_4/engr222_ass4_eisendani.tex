@@ -67,13 +67,59 @@
       %----------------------------------------------------------------------------------------
       \begin{enumerate}
             \setcounter{enumi}{3}
-            \item 
-            \item 
-            \setcounter{enumi}{6}
-            \item 
-            \item 
-            \item 
-            \item 
+            \item
+                  $$aug       = \left( \begin{array}{cccc|c}1&-1&2&4&2\\ 3&-3&1&2&1\\ 2&-1&1&0&-1\\ 2&-6&1&10&9 \end{array}\right)$$ \\
+                  Solved using sympy: \\
+                  \begin{python}
+                        from sympy import symbols,linsolve, Matrix
+                        x,y,z,w = symbols("x,y,z,w")
+W
+                        aug = Matrix([[1,-1,2,4,2],[3,-3,1,2,1],[2,-1,1,0,-1],[2,-6,1,10,9]])
+                        linsolve(aug,x,y,z,w)
+                  \end{python}
+                  $$(x,y,z,w)  = (2w-2,2w-2, 1-2w, w)$$ \\
+            \item
+                  $$aug       = \left( \begin{array}{cccc|c}1&2&2&3&0\\ -4&-8&-8&-9&0\\ 2&4&1&0&3\\ 1&2&-2&-4&4 \end{array}\right)$$ \\
+                  Solved using sympy: \\
+                  \begin{python}
+                        from sympy import symbols,linsolve, Matrix
+                        x,y,z,w = symbols("x,y,z,w")
+
+                        aug = Matrix([[1,2,2,3,0],[-4,-8,-8,-9,0],[2,4,1,0,3],[1,2,-2,-4,4]])
+                        linsolve(aug,x,y,z,w)
+                  \end{python}
+                  $$(x,y,z,w) = (2-2y,y, -1, 0)$$ \\
+                  \setcounter{enumi}{6}
+            \item $aCH_4 + bO_2 \rightarrow cCO_2 + dH_2O$
+                  \begin{align*}
+                         & C : a = c  \rightarrow 1a + 0b - 1c + 0d = 0                                    \\
+                         & H : 4a = 2d  \rightarrow 4a + 0b + 0c - 2d = 0                                  \\
+                         & O : 2b = 2c + d  \rightarrow 0a + 2b - 2c + 1d = 0                              \\\\
+                         & \begin{pmatrix}1&0&-1&0&0\\ 4&0&0&-2&0\\ 0&2&-2&1&0 \end{pmatrix}\begin{pmatrix}
+                              a \\b\\c\\d
+                        \end{pmatrix}  = \begin{pmatrix}
+                              0 \\0\\0\\0
+                        \end{pmatrix} \\\\
+                         & (a,b,c,d) = (1,2,1,2)
+                  \end{align*}
+            \item \begin{align*}
+                        x : (1,0) & \rightarrow (-1,0.3)        \\
+                        y : (0,1) & \rightarrow (0.2,0.5)       \\
+                        A         & = \begin{pmatrix}-1&0.2\\ 0.3&0.5\end{pmatrix}
+                  \end{align*}
+                  \setcounter{enumi}{9}
+            \item Steps:
+                  \begin{itemize}
+                        \item Counter clockwise rotation of $20^{\circ}$
+                        \item reflection about x-axis
+                        \item Clockwise rotation of $20^{\circ}$
+                  \end{itemize}
+                  \begin{align*}
+                          & cos(20) = 0.93969, \; sin(20) = 0.34202                                        \\\\
+                          & \begin{pmatrix}cos(20)&-sin(20)\\ sin(20)&cos(20)\end{pmatrix}\begin{pmatrix}1&0\\ \:0&-1\end{pmatrix}\begin{pmatrix}cos(20)&sin(20)\\ \:-sin(20)&cos(20)\end{pmatrix} \\
+                        = & \begin{pmatrix}0.93969&-0.34202\\ 0.34202&0.93969\end{pmatrix}\begin{pmatrix}1&0\\ \:0&-1\end{pmatrix}\begin{pmatrix}0.93969&0.34202\\ \:-0.34202&0.93969\end{pmatrix} \\
+                        = & \begin{pmatrix}0.7660&0.6428\\ 0.6428&-0.7660\end{pmatrix}
+                  \end{align*}
       \end{enumerate}
 \end{preview}
 
