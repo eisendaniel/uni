@@ -12,7 +12,7 @@ x[0]*x[1]
 A = Matrix([[1,1,0],[1,1,0],[1,0,1],[1,0,1]])
 v = Matrix([1,3,8,2])
 x = A.pinv()*v
-x
+A*x
 
 # %% 3
 A = Matrix([[1,1,0],[1,1,0],[1,0,1],[1,0,1]])
@@ -28,4 +28,6 @@ v = Matrix([4,2,1,-1])
 x = A.pinv()*v
 x
 # %% 5
-
+A = Matrix([[7,8],[11,7],[14,-2]])
+U, D, V = A.singular_value_decomposition()
+# %%
