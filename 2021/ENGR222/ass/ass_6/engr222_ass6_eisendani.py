@@ -1,6 +1,7 @@
 # %% 
 from sympy import Matrix
 from sympy.functions.elementary.miscellaneous import sqrt
+import numpy as np
 
 # %% 1
 A = Matrix([[-1,2],[2,-3],[-1,3]])
@@ -27,7 +28,4 @@ A = Matrix([[2,1],[3,1],[5,1],[8,1]])
 v = Matrix([4,2,1,-1])
 x = A.pinv()*v
 x
-# %% 5
-A = Matrix([[7,8],[11,7],[14,-2]])
-U, D, V = A.singular_value_decomposition()
-# %%
+
