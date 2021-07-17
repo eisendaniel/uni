@@ -104,9 +104,13 @@
                         \includegraphics[width=0.3\textwidth]{img/highest_f.png} \\
                         \textit{Lowest Frequency} \hspace*{0.15\textwidth} \textit{Highest Frequency}
                   \end{center}
-            \item Analog circuits funky
-            \item The LM319 is a duel chip, flip the input for the second and pull up its output to get an inverted signal
-            \item Sub-circuits: Gain Amp Oscillator and Integrator 
+            \item This circuit is constructed in the real world on a breadboard. So it differs from ideal with parasitic capacitance, imperfect slew rates from the op-amps and comparators and possibly other non-ideal factors. Due to this the upper theoretical frequency (~3Mhz) was could not be achieved, with only a recorded max of ~200kHz.
+            \item The LM319 is a duel comparator chip, so to add an inverted output to the circuit the input just need to be switched and fed into the second comparator pins and its out also pulled up. 
+            \item This circuit consists of two main subcircuits.
+                  \begin{center}
+                        \includegraphics[width=0.75\textwidth]{img/blovk.png} \\
+                        \textit{Sub-circuits: Gain Amp Oscillator and Integrator:}
+                  \end{center}
       \end{enumerate}
       \hrule
 \end{preview}
