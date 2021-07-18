@@ -104,9 +104,12 @@
                         \includegraphics[width=0.3\textwidth]{img/highest_f.png} \\
                         \textit{Lowest Frequency} \hspace*{0.15\textwidth} \textit{Highest Frequency}
                   \end{center}
-            \item This circuit is constructed in the real world on a breadboard. So it differs from ideal with parasitic capacitance, imperfect slew rates from the op-amps and comparators and possibly other non-ideal factors. Due to this the upper theoretical frequency (~3Mhz) was could not be achieved, with only a recorded max of ~200kHz.
+            \item This circuit is constructed in the real world on a breadboard. So it differs from ideal with parasitic capacitance, imperfect slew rates from the op-amps and comparators and possibly other non-ideal factors. Due to this the upper theoretical frequency (\~3Mhz) was could not be achieved, with only a recorded max of \~200kHz.
             \item The LM319 is a duel comparator chip, so to add an inverted output to the circuit the input just need to be switched and fed into the second comparator pins and its out also pulled up. 
-            \item This circuit consists of two main subcircuits.
+            \item This circuit consists of two main subcircuits, and produces a triangle wave on its output to be fed to a comparator to produce the PWM signal.
+
+            The gain amp is unsatable with positive feedback and thus oscillates from rail to rail (R3 controls gain, ie scales f/a). An integrator then produces the output triangle wave. With R4 controling the charge current for its feedback capacitor, thus controlling frequency.    
+            
                   \begin{center}
                         \includegraphics[width=0.75\textwidth]{img/blovk.png} \\
                         \textit{Sub-circuits: Gain Amp Oscillator and Integrator:}
