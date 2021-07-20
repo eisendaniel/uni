@@ -1,0 +1,80 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage{amsmath} % Required for some math elements
+\usepackage{hyperref}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{lipsum} 
+\usepackage{cite}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{adjustbox}
+\usepackage{bookmark}
+\usepackage[margin=24mm]{geometry}
+
+
+\interdisplaylinepenalty=2500 %Note that the amsmath package sets \interdisplaylinepenalty to 10000 thus preventing page breaks from occurring within multiline equations. Use: \interdisplaylinepenalty=2500 after loading amsmath to restore such page breaks as IEEEtran.cls normally does
+
+\hypersetup{ %color attributes of citation, link, etc.
+    colorlinks=orange,
+    linkcolor=cyan,
+    filecolor=gray,      
+    urlcolor=cyan,
+    citecolor=cyan,
+}
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+\title{ECEN426 Assignment 1 \\ Mechatronic Picker \& Dampers Literature Review}
+\author{Daniel Eisen}
+\date{\today}
+
+\begin{document}
+\maketitle
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONTENT
+%----------------------------------------------------------------------------------------
+\section{Overview}
+Core to the design of mechatronic chordophones is the string excitation and damping "loop". This pattern is necessary to the (re)production of music by enabling the how long a note is sustained by the excited string.
+
+This report explores a collection of projects that have developed picker and damper mechanisms, compare and comment on their approaches and attempt to better understand breadth of the field.
+
+While the traditional approach to string excitation is the emulation of "human" style picking/strumming is the most common, this niche area does have some projects that are utilising the unique aspects of medium to produce a wider field of sound via interesting takes on these core mechanisms.
+
+
+\section{Mechanisms}
+
+\cite{hammer} Aimed to enable play with a guitarist. Hammer to excite string instead of picks to produce new sound, esspeaclly simultaneous strikes. High speed servos drive striking hammers with soft pads and dampers with rubber interface (1 each per string). Ie both hammer and damper have strength/travel control. Volume control capable
+
+\cite{vibe_harp} Unique approach, suspended vibrating motors actuate strings, allow for sharp pulses to long drawn out sustains and unique timbre. Solenoids are used to damp/control sustain, as well as provide a method of hammering/drum excitation, but binary. No pick/strike per second number available 
+
+\cite{actuated} Uses motorised fader, linear/back and forth picking motion. Simply implemented attachable to guitar multistring. No damping, no volume/pick area control 
+
+\cite{singer} Pick-wheel style picking mechanism, 4 nylon picks, DC servo mounted under assembly motion transferred via belt/pulley. Picking is variable velocity (MIDI pitch) and can be continuous changed. Damping is a digital solenoid.
+
+\cite{strumbot} SCARA arm picking mechanism with servo control pitch angle for amplitude control. Able to play different distances from bridge back and forth at 9.3 strums/s. 2 picks back and forth motion. Damping mechanism doubles as variable tension control with build in muting contact to control sustain
+
+\subsection{Picking/Excitation}
+The picking or excitation mechanism is the means through which energy is primarily imparted into the string to produce sound. This mechanism, depending on its design, can control/change aspects of the produced sound, i.e. rhythm, speed, timbre, pitch.
+
+A straight-forward approach is linear picking. This describes the method where a guitar pick is attached to an actuator that moves through a straight path across the string(s). \cite{actuated}, \cite{Kapur}
+
+Rotary picking \cite{singer}, \cite{strumbot}
+
+novel excitation, \cite{hammer}, \cite{vibe_harp}
+
+\subsection{Damping/Sustain Control}
+
+digital/binary , Servo control pressure
+
+
+\section{Discussion}
+Large various in picking approach's, that also extend passed traditional "picking" excitation of string (i.e. hammer, vibrating etc). approaches that opt for the linear or rotary picking often forgo pick area contact control and opt for variable strike speed (pitch over volume). Damping mechanisms are often simpler or given less attention with common  approach of simple digital solenoids, or at most servo actuated rubberlike pads.  
+
+
+\newpage
+\bibliography{ref}
+\bibliographystyle{IEEEtran}
+\end{document}
