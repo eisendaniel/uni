@@ -46,32 +46,38 @@ While the traditional approach to string excitation is the emulation of "human" 
 
 \section{Mechanisms}
 
-\cite{hammer} Aimed to enable play with a guitarist. Hammer to excite string instead of picks to produce new sound, esspeaclly simultaneous strikes. High speed servos drive striking hammers with soft pads and dampers with rubber interface (1 each per string). Ie both hammer and damper have strength/travel control. Volume control capable
 
-\cite{vibe_harp} Unique approach, suspended vibrating motors actuate strings, allow for sharp pulses to long drawn out sustains and unique timbre. Solenoids are used to damp/control sustain, as well as provide a method of hammering/drum excitation, but binary. No pick/strike per second number available 
-
-\cite{actuated} Uses motorised fader, linear/back and forth picking motion. Simply implemented attachable to guitar multistring. No damping, no volume/pick area control 
-
-\cite{singer} Pick-wheel style picking mechanism, 4 nylon picks, DC servo mounted under assembly motion transferred via belt/pulley. Picking is variable velocity (MIDI pitch) and can be continuous changed. Damping is a digital solenoid.
-
-\cite{strumbot} SCARA arm picking mechanism with servo control pitch angle for amplitude control. Able to play different distances from bridge back and forth at 9.3 strums/s. 2 picks back and forth motion. Damping mechanism doubles as variable tension control with build in muting contact to control sustain
 
 \subsection{Picking/Excitation}
 The picking or excitation mechanism is the means through which energy is primarily imparted into the string to produce sound. This mechanism, depending on its design, can control/change aspects of the produced sound, i.e. rhythm, speed, timbre, pitch.
 
-A straight-forward approach is linear picking. This describes the method where a guitar pick is attached to an actuator that moves through a straight path across the string(s). \cite{actuated}, \cite{Kapur}
+A straight-forward approach is linear picking. This describes the method where a guitar pick is attached to an actuator that moves through a straight path across the string(s). These solutions are usually easy to mount and drive, and as shown with the case of the Actuated Guitar\cite{actuated}, can extend to multi-string strumming. This method of course lacks any sound control, as the motion is so heavily simplified when compared the a hands range.
 
-Rotary picking \cite{singer}, \cite{strumbot}
 
-novel excitation, \cite{hammer}, \cite{vibe_harp}
+A rotary picking motion, especially when driven by stepper or servo motors, is a fast and accurate (as well as generally popular way) of picking a string. The LEMUR GuitarBot\cite{singer} uses an example is a 'pickwheel', where multiple picks are mounted servo driven shaft. This allows a pick accurately rotated so that a note can be struck and the next
+pick brought into position to await the next trigger. Additionally pickwheels can be rotated at various speeds to vary pitch and produce unique tremolo.
+It however lacks any pick contact area control to affect excitation amplitude. The StrumBot\cite{strumbot}, provides a method for this with a SCARA arm picking mechanism with servo control pitch angle (of 2 mounted picks) for amplitude control. Able to play different distances from bridge back and forth at 9.3 strums/s. 
+
+
+Pick emulation is however not the only path explored this field. Where previous methods attempt the remain close the sound of pick on string with various degrees of freedom, other projects make uses the mechatronic field to take novel approaches.
+The RAEG\cite{hammer} attaches hammering mechanisms to the body of a guitar (near the bridge) and is design such that a human player is still able to have shared control (i.e. strum while bot hammers). Servos drive a striking hammer per string which enables unique excitation, as well as amplitude control per strike.
+The Tremolo-Harp\cite{vibe_harp} takes an even more "out-there" approach. The strings are actuated directly by suspended vibration motors, these allow for sharp pulses to long drawn out sustains in order the create very unique waveforms/timbre. 
+While not directly comparable to the pick emulation techniques, these illustrate the breadth of possibly within the mechatronic chordophone space.
 
 \subsection{Damping/Sustain Control}
+Damping mechanisms are often simpler than their excitation counterparts (where much of the sound exploration is done) so the variation is lesser. 
 
-digital/binary , Servo control pressure
+A very common method is just to have binary sustain control via a solenoid, such as shown with the LEMUR\cite{singer}. But the Tremolo-Harp\cite{vibe_harp} shows these can be utilised as a method of "hammer" like excitation as well as sustain control. 
+
+The RAEG\cite{hammer} matches its hammer control with more high speed servos that drive a damper with rubber interface per string. There control the damping pressure the control drop-off and various interfaces can control the "sound" of that damping curve.  
+
+The StrumBot\cite{strumbot} displays the most unique damping mechanism that doubles as variable tension control with built in muting contact to control sustain. 
 
 
 \section{Discussion}
-Large various in picking approach's, that also extend passed traditional "picking" excitation of string (i.e. hammer, vibrating etc). approaches that opt for the linear or rotary picking often forgo pick area contact control and opt for variable strike speed (pitch over volume). Damping mechanisms are often simpler or given less attention with common  approach of simple digital solenoids, or at most servo actuated rubberlike pads.  
+From the project explored above, it can be said there is a large variation in picking/excitation approaches, that also extend beyond traditional "picking" excitation of string approaches. Most mechanisms that emulate piking often forgo pick area contact control and opt for variable strike speed (pitch over volume), but when they do the mechatronic is more greater in complexity but can provide greater functionality that just amplitude control\cite{strumbot}. Damping mechanisms are often simpler or given less attention with common  approach of simple digital solenoids, but there are options that allow for damping pressure control, and can even be built into compound pitch control mechanisms.
+
+Definitive area of lacking more comparable results between mechatronic implementations, but the field is rich and experimental.
 
 
 \newpage
