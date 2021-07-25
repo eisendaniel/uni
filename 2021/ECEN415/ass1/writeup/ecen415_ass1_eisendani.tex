@@ -1,0 +1,124 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage{amsmath} % Required for some math elements
+\usepackage{hyperref} 
+\usepackage{xcolor}
+\usepackage{lipsum} 
+\usepackage{cite}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{bookmark}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[margin=16mm]{geometry}
+\usepackage[caption=false, font=footnotesize]{subfig}
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\usepackage[active,tightpage]{preview}
+\renewcommand{\PreviewBorder}{1in}
+\newcommand{\Newpage}{\end{preview}\begin{preview}}
+
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{label = Step \arabic*:}
+
+\hypersetup{ %color attributes of citation, link, etc.
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=gray,      
+    urlcolor=blue,
+    citecolor=blue,
+}
+
+\newcommand{\matlab}{\textsc{Matlab }} %very important and totally necessary addition
+
+\newcommand\Item[1][]{%
+  \ifx\relax#1\relax  \item \else \item[#1] \fi
+  \abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{ECEN 415 \\ Assignment 1 Submission}
+\author{Daniel Eisen : 300447549}
+\date{\today}
+
+\begin{document}
+\begin{preview}
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONTENT
+%----------------------------------------------------------------------------------------
+\section*{Section A - Formative Questions}
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item 
+        $$G_1(s) = \frac{20(s^2 + s + 0.5)}{s(s+1)(s+10)}$$
+        \begin{center}
+            \includegraphics[width=0.33\textwidth]{fig/1a.png}
+        \end{center}
+        The system in its current state is stable as there are no enclosures of the critical point, and no open open-loop poles in the right half side of the s-place. Neither increasing decreasing the gain of this system will result in an enclosure, and thus cannot be made unstable with this method.  
+        \item 
+        $$G_2(s) = \frac{20(s^2 + s + 0.5)}{s(s-1)(s+10)}$$
+        \begin{center}
+            \includegraphics[width=0.33\textwidth]{fig/1b.png}
+        \end{center}
+        The system in its current state is stable as there is one open-loop pole in the right half side of the s-place and one anti-clockwise encirclement of the critical point. However with reduced gain, there will be no enclosure of the critical point and the system can be driven unstable.
+        \item 
+        $$G_3(s) = \frac{s^2 + 3}{(s+1)^2}$$
+        \begin{center}
+            \includegraphics[width=0.33\textwidth]{fig/1c.png}
+        \end{center}
+        The system in its current state is stable as there are no enclosures of the critical point, and no open open-loop poles in the right half side of the s-place. Neither increasing decreasing the gain of this system will result in an enclosure, and thus cannot be made unstable with this method.
+        \item 
+        $$G_4(s) = \frac{3(s+1)}{s(s-10)}$$
+        \begin{center}
+            \includegraphics[width=0.33\textwidth]{fig/1d.png}
+        \end{center}
+        The system is currently unstable, as there is one open-loop pole in the right half side of the s-place and no anti-clockwise encirclements of the critical point. By increasing the gain we can make and anti-clockwise encirclement of the critical point and result in a stable system.
+    \end{enumerate}
+    \item
+    $$G = e^{-0.2s}\frac{4}{s+2}$$
+    \begin{enumerate}
+        \item 
+        \begin{center}
+            \includegraphics[width=0.33\textwidth]{fig/2a.png}
+        \end{center}
+        \item 
+        \begin{center}
+            \includegraphics[width=0.33\textwidth]{fig/2bs.png}
+            \includegraphics[width=0.33\textwidth]{fig/2bu.png}
+        \end{center}
+        \item 
+        \begin{center}
+            \includegraphics[width=0.33\textwidth]{fig/2c.png}
+        \end{center}
+    \end{enumerate} 
+    \item 
+    \begin{center}
+        \includegraphics[height=0.3\textwidth]{fig/3_imp.png}
+        \includegraphics[height=0.3\textwidth]{fig/3_stp.png}
+        \includegraphics[height=0.3\textwidth]{fig/3_bode.png}
+    \end{center}
+\end{enumerate}
+
+\section*{Section B - Summative Questions}
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item 
+        \item 
+        \item 
+    \end{enumerate}
+    \item 
+    \item 
+\end{enumerate}
+\end{preview}
+\end{document}
