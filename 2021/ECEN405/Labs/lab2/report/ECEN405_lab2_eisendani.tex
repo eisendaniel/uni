@@ -83,16 +83,20 @@
 
             Deadtime, in the context on MOSFET gate driving, is the time between 1 FET's gate is switched off and the other is turned on. This prevents the circumstance when (the FETs being in series between V+ and GND without resistance) both FETS are on due to switching delays and causes a short. 
       \section{Constant Output}
+            The filtering capacitance smooths the high frequency PWM output and the VL varies dependant on Vin to meet constant output voltage.
       \section{Waveforms}
             \begin{center}
                   \includegraphics[height=0.2\textwidth]{img/10perc_duty_output.JPG}
                   \includegraphics[height=0.2\textwidth]{img/80perc_dut.JPG}
             \end{center}
+            The waveforms above are captured from the S-D junction of the FETs, Ie the output, and shows the pulse width modulated signal of the Vo = 20V at both 10 and 80 percent.
       \section{Efficiency vs Output Current}
             \begin{center}
                   \includegraphics[height=0.3\textwidth]{img/eff.png}
             \end{center}
       \section{Bootstrap Circuit}
+            The bootstrap circuit provides a positive bias for the high-side gate driver. This provides the correct reference to enable the gate to be switched on when the high-side driver is active. 
+
       \hrule
 \end{preview}
 \end{document}

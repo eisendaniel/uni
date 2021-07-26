@@ -1,9 +1,17 @@
 %% 1
 clc; clear;
 s = tf('s');
-td = -1;
-D = exp(s*td);
-bode(D)
+figure()
+hold on
+
+for td = 0.000261
+    D = exp(-td*s);
+    P1 = pade(D,1); %0.00027
+    P2 = pade(D,2); %0.000261
+    bode(P2)
+end
+
+
 
 %% 2
 clc;clear;
