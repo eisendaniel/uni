@@ -11,15 +11,34 @@ for td = 0.000261
     bode(P2)
 end
 
-
-
 %% 2
 clc;clear;
 s=tf('s');
 G=15/((s+1)*(s+2));
-D=c2
+t_s = -0.177;
+p_ap = pade(exp(s * t_s)) 
+sampler = (1 - p_ap)/s
+rlocus(G);
+xlim([-6 1])
+ylim([-4 4])
 figure()
-root
-
+rlocus(sampler*G);
+xlim([-6 1])
+ylim([-4 4])
 
 %% 3
+clear;
+s=tf('s');
+phase = -inf;
+fs = 1807000;
+while phase < -10
+    ts = 1/fs;
+    sampler = (1 - pade(exp(s * -ts)))/s;
+    wc = 2*pi*(fs/20);
+    Gb = (wc^2) / (s^2 + sqrt(2)*wc*s+wc^2);
+    [gain, phase] = bode(sampler*Gb,2*pi*10000);
+    fs = fs+1;
+end
+gain
+phase
+fs

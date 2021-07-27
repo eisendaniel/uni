@@ -119,9 +119,32 @@
         \item $$\omega = 1000 rad/s, \; \phi=15^{\circ} = \frac{\pi}{12}$$
         $$t_d = \frac{\pi}{1200}$$
         \item 
+            \begin{center}
+                \includegraphics[width=0.3\textwidth]{fig/b1c_270u.png}
+                \includegraphics[width=0.3\textwidth]{fig/b1c_2_261u.png}
+            \end{center}
     \end{enumerate}
+    \item
+    $$sampler = \frac{1-e^{st_s}}{s}$$
+    $$pade: e^{st_s} \approx \frac{1-s\frac{t_2}{2}}{1+s\frac{t_s}{2}}$$
+    $$substitute \rightarrow sampler \approx \frac{2}{s + \frac{s}{t_s}}$$
+    \begin{center}
+        \includegraphics[width=0.25\textwidth]{fig/b2_ts_1_rloc.png}
+        \includegraphics[width=0.25\textwidth]{fig/b2_ts_0.1_rloc.png}
+        \includegraphics[width=0.25\textwidth]{fig/b2_cont_rloc.png}
+    \end{center}
+    Sampler effectively inserts a left and pole at 2 / sampling time. Therefore as the sampling speed increases, the inserted pole becomes less and less dominant, the gain margin increases and the system more accurately represents the unsampled system.
+
+    Unity gain frequency is $3.55 rad/s = 0.565Hz$, new sampling: $f = 5.56Hz, t_s = 0.177$
+    \begin{center}
+        \includegraphics[width=0.3\textwidth]{fig/b2GM.png}
+    \end{center}
     \item 
-    \item 
+    Corner frequency at 2 decades before sampling frequency to attenuate Nyquist frequency signal by -40dB. 
+    $$fs = 1.81Mhz, fc = fs/20$$
+    \begin{center}
+        \includegraphics[width=0.3\textwidth]{fig/b3.png}
+    \end{center}
 \end{enumerate}
 \end{preview}
 \end{document}
