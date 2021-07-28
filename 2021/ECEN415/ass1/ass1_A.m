@@ -25,7 +25,7 @@ G.IODelay = 0.2;
 figure()
 nyquist(G)
 hold on
-nyquist(2.2981*G)
+nyquist(2.2940*G)
 hold off
 
 %% 2b
@@ -36,7 +36,7 @@ G.IODelay = 0.2;
 figure()
 step(feedback(G,1))
 figure()
-step(feedback(G, 2.2981))   
+step(feedback(G, 2.2940))   
 
 %% 2c
 clc;clear;
