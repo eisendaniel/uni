@@ -1,11 +1,12 @@
 {
     "spellright.language": [
-        "en-NZ"
+        "English (Australian)"
     ],
     "spellright.documentTypes": [
         "markdown",
         "latex",
         "plaintext"
     ],
-    "python.pythonPath": "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"
+    "python.pythonPath": "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "cmake.configureOnOpen": false
 }

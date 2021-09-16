@@ -15,11 +15,21 @@
 \usepackage[table]{xcolor}
 \usepackage{matlab}
 
+\usepackage[active,tightpage]{preview}
+\renewcommand{\PreviewBorder}{8mm}
+\newcommand{\Newpage}{\end{preview}\begin{preview}}
+
 \sloppy
 \epstopdfsetup{outdir=./}
 \graphicspath{ {./ecen415_ass2_eisendani_images/} }
 
+\title{ECEN 415 \\ Assignment 2 Submission}
+\author{Daniel Eisen : 300447549}
+\date{\today}
+
 \begin{document}
+\begin{preview}
+\maketitle
 
 \matlabheadingthree{\textbf{1.}\textit{ A state space system is described by the system matrices}}
 
@@ -29,21 +39,22 @@
 
 \begin{matlabcode}
 clear;
-A = [12.5314 , -91.36    , 28.7129 , 59.9628; 
-     21.316  , -115.6631 , 37.5584 , 75.0519; 
-     13.967  , -53.5817  , 15.4161 , 33.4391; 
-     20.5222 , -123.3107 , 42.267  , 79.7156];
+
+A = [12.5314, -91.36   , 28.7129, 59.9628; 
+     21.316 , -115.6631, 37.5584, 75.0519; 
+     13.967 , -53.5817 , 15.4161, 33.4391; 
+     20.5222, -123.3107, 42.267 , 79.7156];
  
-B = [1.7649 , 1.7649; 
-     2.8318 , 2.8318; 
-     2.2353 , 2.2353; 
-     2.7294 , 2.7294];
+B = [1.7649, 1.7649; 
+     2.8318, 2.8318; 
+     2.2353, 2.2353; 
+     2.7294, 2.7294];
  
-C = [-0.46166 , -4.4635 , 1.9151 , 3.7274;
-      1.0853  , -12.82  , 4.5753 , 8.3759];
+C = [-0.46166, -4.4635, 1.9151, 3.7274;
+      1.0853 , -12.82 , 4.5753, 8.3759];
   
-D = [0 , 0; 
-     0 , 0];
+D = [0, 0; 
+     0, 0];
 \end{matlabcode}
 
 
@@ -60,11 +71,12 @@ D = [0 , 0;
 \end{par}
 
 \begin{matlabcode}
-sys = ss(A,B,C,D);
-x0 = [1; 1; 1; 2];
-t = 0:0.01:10;
-u = zeros(length(t),2);
-[Y,T,X] = lsim(sys,u,t,x0);
+sys = ss(A,B,C,D);           %create system
+x0 = [1; 1; 1; 2];           %initial state
+t = 0:0.01:10;               %time vector
+u = zeros(length(t),2);      %inputs for all t, 2 wide
+[Y,T,X] = lsim(sys,u,t,x0);  %extract outputs, t vect, states
+
 figure();
 plot(T,X);
 title("System State");
@@ -73,9 +85,10 @@ xlabel('t[s]')
 grid on;
 \end{matlabcode}
 \begin{center}
-\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_0.eps}
+\includegraphics[width=\maxwidth{57.90265930757652em}]{figure_0.eps}
 \end{center}
 \begin{matlabcode}
+figure();
 plot(T,Y);
 title("Output");
 legend("Y_1","Y_2");
@@ -83,7 +96,7 @@ xlabel('t[s]')
 grid on;
 \end{matlabcode}
 \begin{center}
-\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_1.eps}
+\includegraphics[width=\maxwidth{57.90265930757652em}]{figure_1.eps}
 \end{center}
 
 
@@ -94,16 +107,18 @@ grid on;
 \end{par}
 
 \begin{matlabcode}
-Xe = [];
-Ye = [];
-for t_ = t
-    xe = expm(A*t_)*x0;
-    ye = C*xe + D*[0; 0];
+Xe = [];                    %State history 
+Ye = [];                    %Output history 
+for t_ = t                  %reuse previous t vector
+    xe = expm(A*t_)*x0;     %compute phi*x_0
+    ye = C*xe + D*[0; 0];   %output
     
+    %append to history
     Xe = [Xe; xe'];
     Ye = [Ye; ye'];
 end
 
+figure();
 plot(t',Xe);
 title("System State");
 legend("X_1","X_2","X_3","X_4");
@@ -111,10 +126,10 @@ xlabel('t[s]')
 grid on;
 \end{matlabcode}
 \begin{center}
-\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_2.eps}
+\includegraphics[width=\maxwidth{57.90265930757652em}]{figure_2.eps}
 \end{center}
 \begin{matlabcode}
-
+figure();
 plot(t',Ye);
 title("Output");
 legend("Y_1","Y_2");
@@ -122,7 +137,7 @@ xlabel('t[s]')
 grid on;
 \end{matlabcode}
 \begin{center}
-\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_3.eps}
+\includegraphics[width=\maxwidth{57.90265930757652em}]{figure_3.eps}
 \end{center}
 
 
@@ -146,12 +161,13 @@ u_2 =2u\left(t-5\right)
 \end{par}
 
 \begin{matlabcode}
-u_ = zeros(length(t),2);
-u_(t>=1,1) = 1;
+u_ = zeros(length(t),2);   %generate empty input
+u_(t>=1,1) = 1;            %piecewise steps at t=1 and t=5
 u_(t>=5,2) = 2;
 
 [Y_,T_,X_] = lsim(sys,u_,t,x0);
 
+figure();
 plot(T_,X_);
 hold on
 plot(t,u_,'Color',[0.5,0.5,0.5]);
@@ -162,9 +178,10 @@ xlabel('t[s]')
 grid on;
 \end{matlabcode}
 \begin{center}
-\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_4.eps}
+\includegraphics[width=\maxwidth{57.90265930757652em}]{figure_4.eps}
 \end{center}
 \begin{matlabcode}
+figure();
 plot(T_,Y_);
 hold on
 plot(t,u_,'Color',[0.5,0.5,0.5]);
@@ -175,24 +192,25 @@ xlabel('t[s]')
 grid on;
 \end{matlabcode}
 \begin{center}
-\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_5.eps}
+\includegraphics[width=\maxwidth{57.90265930757652em}]{figure_5.eps}
 \end{center}
 
 
 \begin{par}
 \begin{flushleft}
-\textbf{d)}\textit{ Use }\texttt{\textbf{c2d}}\texttt{\textit{ }}\textit{to discretize the system with an appropriate sampling frequency and use }\texttt{\textbf{lsim}}\texttt{\textit{ }}\textit{to plot the response of the discrete time system.}
+\textbf{d)}\textit{ Use }\texttt{\textbf{c2d}}\texttt{\textit{ }}\textit{to discretise the system with an appropriate sampling frequency and use }\texttt{\textbf{lsim}}\texttt{\textit{ }}\textit{to plot the response of the discrete time system.}
 \end{flushleft}
 \end{par}
 
 \begin{matlabcode}
-ts=0.05;
-zyz = c2d(sys,ts);
-tz = 0:ts:10;
+ts=0.05;                    %sampling time
+zyz = c2d(sys,ts);          %discrete system
+tz = 0:ts:10;               %match t vector and input
 uz = zeros(length(tz),2);
 
 [Yz,Tz,Xz] = lsim(zyz,uz,tz,x0);
 
+figure();
 stairs(Tz,Xz);
 title("System State");
 legend("Xz_1","Xz_2","Xz_3","Xz_4");
@@ -200,10 +218,10 @@ xlabel('t[s]')
 grid on;
 \end{matlabcode}
 \begin{center}
-\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_6.eps}
+\includegraphics[width=\maxwidth{57.90265930757652em}]{figure_6.eps}
 \end{center}
 \begin{matlabcode}
-
+figure();
 stairs(Tz,Yz);
 title("Output");
 legend("Yz_1","Yz_2");
@@ -211,12 +229,8 @@ xlabel('t[s]')
 grid on;
 \end{matlabcode}
 \begin{center}
-\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_7.eps}
+\includegraphics[width=\maxwidth{57.90265930757652em}]{figure_7.eps}
 \end{center}
-\begin{matlabcode}
-
-\end{matlabcode}
-
 
 \begin{par}
 \begin{flushleft}
@@ -225,7 +239,8 @@ grid on;
 \end{par}
 
 \begin{matlabcode}
-for ts = [0.5 0.15 0.05]
+figure();
+for ts = [0.5 0.15 0.05]     %varied ts's 
     zyz = c2d(sys,ts);
     tz = 0:ts:10;
     uz = zeros(length(tz),2);
@@ -234,8 +249,7 @@ for ts = [0.5 0.15 0.05]
     stairs(tz, Yz(:,1))
     hold on
 end
-plot(T,Y(:,1))
-
+plot(T,Y(:,1))  %plot the original system
 title('Varied Sampling Period of Discretised System')
 legend("ts=0.5","ts=0.15", "ts=0.05", "continuous");
 xlim([0.00 3])
@@ -246,8 +260,14 @@ grid on
 hold off
 \end{matlabcode}
 \begin{center}
-\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_8.eps}
+\includegraphics[width=\maxwidth{57.90265930757652em}]{figure_8.eps}
 \end{center}
+
+\begin{par}
+\begin{flushleft}
+Varying the sampling time most noticeably affects the resolution of the computed signals. Hence showing to accurately represent a given system an appropriate \texttt{\textbf{ts}} must be chosen to prevent aliasing of the given states/outputs, though any given point is still accurate.
+\end{flushleft}
+\end{par}
 
 
 \begin{par}
@@ -257,18 +277,22 @@ hold off
 \end{par}
 
 \begin{matlabcode}
-Ad = expm(ts*A);
+%compute discrete A matrix
+Ad = expm(ts*A);                    
 
 Xzp = [];
 Yzp = [];
 
 for tz_ = tz
-    xzp = real((Ad^(tz_/ts))*x0);
+    %compute next state and scale by sampling time 
+    xzp = real((Ad^(tz_/ts))*x0);   
     yzp = C*xzp;
     
     Xzp = [Xzp; xzp'];
     Yzp = [Yzp; yzp'];
 end
+
+figure();
 stairs(tz,Xzp);
 title("System State");
 legend("Xz_1","Xz_2","Xz_3","Xz_4");
@@ -276,9 +300,10 @@ xlabel('t[s]')
 grid on;
 \end{matlabcode}
 \begin{center}
-\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_9.eps}
+\includegraphics[width=\maxwidth{57.90265930757652em}]{figure_9.eps}
 \end{center}
 \begin{matlabcode}
+figure();
 stairs(tz,Yzp);
 title("Output");
 legend("Yz_1","Yz_2");
@@ -286,7 +311,7 @@ xlabel('t[s]')
 grid on;
 \end{matlabcode}
 \begin{center}
-\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_10.eps}
+\includegraphics[width=\maxwidth{57.90265930757652em}]{figure_10.eps}
 \end{center}
 
 
@@ -388,7 +413,13 @@ $$A=$$$$\left\lbrack \begin{array}{ccc}
 \vspace{1em}
 \begin{par}
 \begin{flushleft}
-\textbf{Ans.} Eigenvalues values of the $A$ correspond to the poles of the system. So to find sustained osccilations, we are looking for purely miagginary poles, i.e. eignenvalule with zero real and non-zero imganingery 
+\textbf{Ans.} The eigenvalues of the $A$ matrix correspond to the poles of the system. So to find the point of sustained oscillations, we are looking for purely imaginary poles, e.g. $0\pm 1i$.
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+To find this, R, R1, C were set and R2 swept to find the purely imaginary dominant poles.
 \end{flushleft}
 \end{par}
 
@@ -404,19 +435,21 @@ B=[];
 D=[];
 
 res=[];
-for r2 = 1000:10:100000
+for r2 = 1000:10:100000     %sweep R2 values
     A=[-(2/(r*c)), 1/(r*c), -(r2/r1)*(1/(r*c));
         1/(r*c)  ,-2/(r*c),  1/(r*c)          ;
         0        ,1/(r*c), -(1/(r*c))-(1/(r1*c))];
     res = [res; [r2,eig(A)']];
-    if real(res(end,3)) == 0
+    if real(res(end,3)) == 0 %check zero real
         r2
+        ratio = r2/r1
         eig(A)
     end
 end
 \end{matlabcode}
 \begin{matlaboutput}
 r2 = 56000
+ratio = 56
 ans = 3x1 complex    
   -6.0000 + 0.0000i
    0.0000 + 3.1623i
@@ -424,15 +457,29 @@ ans = 3x1 complex
 
 \end{matlaboutput}
 \begin{matlabcode}
-plot(real(res(:,1)), abs(real(res(:,3))))
-
+r2 = ratio*r1;
+figure();
+pos_0 = find(real(res(:,3))==0);
+plot(real(res(:,1)), abs(real(res(:,3))),
+    ...'*-','MarkerEdgeColor','red','MarkerIndices', pos_0)
+text(real(res(pos_0,1))-5000, abs(real(res(pos_0,3))-0.1),
+    ...num2str(r2))
 xlabel('R_2')
-ylabel('absolate real component')
+ylabel('|Re(\lambda_2)|')
+title('R2 Sweep')
 \end{matlabcode}
 \begin{center}
-\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_11.eps}
+\includegraphics[width=\maxwidth{57.90265930757652em}]{figure_11.eps}
 \end{center}
 
+\begin{par}
+\begin{flushleft}
+Theis gives a R2/R1 ratio of 56 for R=R1=1000
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
 \begin{par}
 \begin{flushleft}
 \textbf{c) }\textit{Determine the oscillation frequency of the circuit using the state space model.}
@@ -440,11 +487,10 @@ ylabel('absolate real component')
 \end{par}
 
 \begin{matlabcode}
- r2 = 56*r1;
- A=[-(2/(r*c)), 1/(r*c), -(r2/r1)*(1/(r*c));
-        1/(r*c)  ,-2/(r*c),  1/(r*c)          ;
-        0        ,1/(r*c), -(1/(r*c))-(1/(r1*c))];
-    
+
+ A=[-(2/(r*c)) , 1/(r*c), -(r2/r1)*(1/(r*c));
+        1/(r*c),-2/(r*c),   1/(r*c)         ;
+        0      , 1/(r*c), -(1/(r*c))-(1/(r1*c))];
 poles = eig(A)
 \end{matlabcode}
 \begin{matlaboutput}
@@ -456,13 +502,14 @@ poles = 3x1 complex
 \end{matlaboutput}
 \begin{matlabcode}
 
-w = imag(poles(2))
+w = imag(poles(2)) %rad/s
 \end{matlabcode}
 \begin{matlaboutput}
 w = 3.1623
 \end{matlaboutput}
 \begin{matlabcode}
-f = w/(2*pi)
+
+f = w/(2*pi) %Hz
 \end{matlabcode}
 \begin{matlaboutput}
 f = 0.5033
@@ -480,36 +527,22 @@ f = 0.5033
 \end{flushleft}
 \end{par}
 
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+\textbf{Ans: }By using the the eigenvector(s) of the oscillatry pole are an initial state we can observer the sustained osculations at the above computed frequency.
+\end{flushleft}
+\end{par}
+
 \begin{matlabcode}
-sys = ss(A,B,C,D)
-\end{matlabcode}
-\begin{matlaboutput}
-sys =
- 
-  A = 
-        x1   x2   x3
-   x1   -2    1  -56
-   x2    1   -2    1
-   x3    0    1   -2
- 
-  B = 
-     Empty matrix: 3-by-0
- 
-  C = 
-       x1  x2  x3
-   y1   0   0   1
- 
-  D = 
-     Empty matrix: 1-by-0
- 
-Continuous-time state-space model.
-\end{matlaboutput}
-\begin{matlabcode}
+sys = ss(A,B,C,D);
 [V,wc] = eig(A);
 x0 = V(:,2);
 t = 0:0.01/f:4/f;
 [Y,T,X] = lsim(sys,[],t,x0);
 
+figure();
 plot(T,real(X));
 title("System State");
 legend("v_a","v_b","v_c");
@@ -517,10 +550,10 @@ xlabel('t[s]')
 grid on;
 \end{matlabcode}
 \begin{center}
-\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_12.eps}
+\includegraphics[width=\maxwidth{57.90265930757652em}]{figure_12.eps}
 \end{center}
 \begin{matlabcode}
-
+figure();
 plot(T,real(Y));
 title("Output");
 legend("v_o");
@@ -528,7 +561,7 @@ xlabel('t[s]')
 grid on;
 \end{matlabcode}
 \begin{center}
-\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_13.eps}
+\includegraphics[width=\maxwidth{57.90265930757652em}]{figure_13.eps}
 \end{center}
 
 
@@ -628,7 +661,7 @@ which is to say that before launch it is stationary at the origin, with 1000 kg 
 
 \begin{par}
 \begin{flushleft}
-The rocket’s state evolves according to the following set of nonlinear equations.
+The rocket’s state evolves according to the following set of non-linear equations.
 \end{flushleft}
 \end{par}
 
@@ -660,7 +693,7 @@ k=6\;\textrm{is}\;\textrm{the}\;\textrm{distance}\;\textrm{between}\;\textrm{the
 
 \begin{par}
 \begin{flushleft}
-(Note that these quantities may not make physical sense; they are constructed to make an interesting exercise. In addition, the model doesn’t attempt to capture all of the nonlinear effects. As an example $L$ should most likely change as the fuel load is depleted.)
+(Note that these quantities may not make physical sense; they are constructed to make an interesting exercise. In addition, the model doesn’t attempt to capture all of the non-linear effects. As an example $L$ should most likely change as the fuel load is depleted.)
 \end{flushleft}
 \end{par}
 
@@ -672,7 +705,7 @@ Hints:
 
 \begin{par}
 \begin{flushleft}
-1. The nonlinear simulation code calculates the rocket’s trajectory in time chunks of length \texttt{\textbf{dt}}. The control input $\mathit{\mathbf{u}}$ is calculated only once per time chunk. If you decrease \texttt{\textbf{dt}}\texttt{ }the ODE solver may be more accurate, and as a side effect you can calculate $\mathit{\mathbf{u}}$ more frequently (and vice versa). This may be useful for debugging, but your final solution will be marked with \texttt{\textbf{dt=1}}. However, for this assignment you need not change $\mathit{\mathbf{u}}$ anyway, so there is little to be gained by changing $\textrm{dt}$.
+1. The non-linear simulation code calculates the rocket’s trajectory in time chunks of length \texttt{\textbf{dt}}. The control input $\mathit{\mathbf{u}}$ is calculated only once per time chunk. If you decrease \texttt{\textbf{dt}}\texttt{ }the ODE solver may be more accurate, and as a side effect you can calculate $\mathit{\mathbf{u}}$ more frequently (and vice versa). This may be useful for debugging, but your final solution will be marked with \texttt{\textbf{dt=1}}. However, for this assignment you need not change $\mathit{\mathbf{u}}$ anyway, so there is little to be gained by changing $\textrm{dt}$.
 \end{flushleft}
 \end{par}
 
@@ -685,7 +718,7 @@ Hints:
 
 \begin{par}
 \begin{flushleft}
-\textbf{a)} \textbf{[5 marks]}\textit{ Use the nonlinear model to devise a nominal control signal }$\mathit{\mathbf{u}}$\textit{. You should assume that }$u_1$\textit{ is a constant throughout the 15 seconds of flight, such that there is no remaining fuel after that time. You should then choose }$u_2$\textit{ to effect the required pitch-over maneouvre.}
+\textbf{a)} \textbf{[5 marks]}\textit{ Use the non-linear model to devise a nominal control signal }$\mathit{\mathbf{u}}$\textit{. You should assume that }$u_1$\textit{ is a constant throughout the 15 seconds of flight, such that there is no remaining fuel after that time. You should then choose }$u_2$\textit{ to effect the required pitch-over manoeuvre.}
 \end{flushleft}
 \end{par}
 
@@ -705,13 +738,13 @@ Hints:
 \vspace{1em}
 \begin{par}
 \begin{flushleft}
-Ans. $\left\lbrack \begin{array}{c}
+\textbf{Ans.} $\left\lbrack \begin{array}{c}
 u_1 \\
 u_2 
 \end{array}\right\rbrack =\left\lbrack \begin{array}{c}
-20000\\
-1357\ldotp 02
-\end{array}\right\rbrack \to \textrm{final}\;\textrm{angle}:10\ldotp 0000$
+42000\\
+1198\ldotp 75
+\end{array}\right\rbrack \to \mathrm{final}\;\mathrm{angle}:10\ldotp 0000$
 \end{flushleft}
 \end{par}
 
@@ -719,10 +752,11 @@ u_2
 clear;
 constant_u1 = 42000;
 final_u2 = 1198.75;
+figure();
 run("q3_nonlinear_sim.m");
 \end{matlabcode}
 \begin{center}
-\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_14.eps}
+\includegraphics[width=\maxwidth{57.90265930757652em}]{figure_14.eps}
 \end{center}
 \begin{matlaboutput}
 final_angle = 10.0000
@@ -754,28 +788,55 @@ max_i = 57
 \end{matlaboutput}
 \begin{matlabcode}
 
-subplot(111);
-plot(T(2:end),a_y,T(2:end),a_x,T(2:end),a,'*-','MarkerEdgeColor','red','MarkerIndices', max_i);
-legend({'Vertical Acceleration','Horizontal Acceleration','Total Acceleration'})
+figure();
+% subplot(111);
+plot(T(2:end),a_y,T(2:end),a_x,T(2:end),a,
+    ...'*-','MarkerEdgeColor','red','MarkerIndices', max_i);
+legend({'Vertical Acceleration','Horizontal Acceleration',
+    ...'Total Acceleration'})
 text(T(max_i-25), a(max_i)-0.5, num2str(a_max))
 xlabel('t[s]')
 ylabel('ms^{-2}')
 \end{matlabcode}
 \begin{center}
-\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_15.eps}
+\includegraphics[width=\maxwidth{57.90265930757652em}]{figure_15.eps}
 \end{center}
-
 
 \begin{par}
 \begin{flushleft}
-\textbf{c) [3 marks] }\textit{Which state variables are important in the linearisation? That is, in which variables is the model nonlinear? Provide physical reasoning for the identified nonlinearities.}
+Maximum Total Acceleration experienced was $11\ldotp 3965{\mathrm{ms}}^{-2}$
 \end{flushleft}
 \end{par}
 
 
 \begin{par}
 \begin{flushleft}
-\textbf{d) [5 marks] }\textit{Linearise the model at the position where it begins its pitch-over maneouvre }$\left(t=5\right)$\textit{ and plot the rocket’s trajectory when you apply your nominal control signal.}
+\textbf{c) [3 marks] }\textit{Which state variables are important in the linearisation? That is, in which variables is the model non-linear? Provide physical reasoning for the identified non-linearities.}
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+\textbf{Ans. }$x_{\left\lbrack 2,4,6\right\rbrack }$ are related the various velocities of the rocket. The rocket has a constant thrust force with changing mass, experiences drag and also must over come it inertia therefore (and this is seen above) the rocket experiences non-constant acceleration throughout its flight, and thus cannot experience a linear velocity change (and in turn position change). This can be seen represented in the non-linear elements of their equations for their change. ${\dot{\;x} }_{\left\lbrack 1,3,5\right\rbrack } \;$are derived from these and are thus also non-linear.
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+$x_7$ is fuel and undergoes linear depletion. 
+\end{flushleft}
+\end{par}
+
+
+\begin{par}
+\begin{flushleft}
+\textbf{d) [5 marks] }\textit{Linearise the model at the position where it begins its pitch-over manoeuvre }$\left(t=5\right)$\textit{ and plot the rocket’s trajectory when you apply your nominal control signal.}
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+\textbf{Approach: } Form the linearised A, B matrices at the operating points, form a system and run lsim within a modified .m file.
 \end{flushleft}
 \end{par}
 
@@ -797,7 +858,8 @@ DfDx =
 \end{matlabsymbolicoutput}
 \begin{matlabcode}
 syms u1 u2
-A = subs(DfDx, [x1, x2, x3, x4, x5, x6, x7, u1, u2], [clean_X(T==5,:), constant_u1, 0])
+A = subs(DfDx, [x1, x2, x3, x4, x5, x6, x7, u1, u2], 
+    ...[clean_X(T==5,:), constant_u1, 0])
 \end{matlabcode}
 \begin{matlabsymbolicoutput}
 A = 
@@ -829,7 +891,8 @@ DfDu =
 \end{array}\right)$
 \end{matlabsymbolicoutput}
 \begin{matlabcode}
-B = subs(DfDu, [x1, x2, x3, x4, x5, x6, x7, u1, u2], [clean_X(T==5,:), constant_u1, 0])
+B = subs(DfDu, [x1, x2, x3, x4, x5, x6, x7, u1, u2], 
+    ...[clean_X(T==5,:), constant_u1, 0])
 \end{matlabcode}
 \begin{matlabsymbolicoutput}
 B = 
@@ -848,16 +911,20 @@ B =
 A = double(A);
 B = double(B);
 sys = ss(A,B,[],[]);
+figure();
 run("q3_linearised_sim.m")
 \end{matlabcode}
 \begin{center}
-\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_16.eps}
+\includegraphics[width=\maxwidth{57.90265930757652em}]{figure_16.eps}
 \end{center}
+\begin{matlaboutput}
+final_angle = 9.0291
+\end{matlaboutput}
 
 
 \begin{par}
 \begin{flushleft}
-\textbf{e) [5 marks]}\textit{\textbf{ }}\textit{Linearize the model at its final position }$\left(t=15\right)$\textit{ and plot the rocket trajectory when you apply your nominal control signal.}
+\textbf{e) [5 marks]}\textit{\textbf{ }}\textit{Linearise the model at its final position }$\left(t=15\right)$\textit{ and plot the rocket trajectory when you apply your nominal control signal.}
 \end{flushleft}
 \end{par}
 
@@ -878,8 +945,9 @@ DfDx =
 \end{array}\right)$
 \end{matlabsymbolicoutput}
 \begin{matlabcode}
-syms u1 u2
-A = subs(DfDx, [x1, x2, x3, x4, x5, x6, x7, u1, u2], [clean_X(T==15,:), constant_u1, 0])
+syms u1 u2 
+A = subs(DfDx, [x1, x2, x3, x4, x5, x6, x7, u1, u2], 
+    ...[clean_X(T==15,:), constant_u1, 0])
 \end{matlabcode}
 \begin{matlabsymbolicoutput}
 A = 
@@ -911,7 +979,8 @@ DfDu =
 \end{array}\right)$
 \end{matlabsymbolicoutput}
 \begin{matlabcode}
-B = subs(DfDu, [x1, x2, x3, x4, x5, x6, x7, u1, u2], [clean_X(T==15,:), constant_u1, 0])
+B = subs(DfDu, [x1, x2, x3, x4, x5, x6, x7, u1, u2], 
+...[clean_X(T==15,:), constant_u1, 0])
 \end{matlabcode}
 \begin{matlabsymbolicoutput}
 B = 
@@ -934,8 +1003,11 @@ figure();
 run("q3_linearised_sim.m")
 \end{matlabcode}
 \begin{center}
-\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_17.eps}
+\includegraphics[width=\maxwidth{57.90265930757652em}]{figure_17.eps}
 \end{center}
+\begin{matlaboutput}
+final_angle = 12.3973
+\end{matlaboutput}
 
 
 \begin{par}
@@ -944,4 +1016,14 @@ run("q3_linearised_sim.m")
 \end{flushleft}
 \end{par}
 
+\begin{par}
+\begin{flushleft}
+\textbf{Ans. } Linearising at an operating point of T=5 results in a system that responds very similar to the non-linear simulation with a slight difference in final angle and large difference is horizontal speed and resulting downrange distance, though overall shape of system state progression remains consistent.
+
+At T=15 however, the resulting system is only sparingly close to the "real" system. Fuel and angle are roughly correct but the resulting velocities and positions are wildly incorrect. 
+
+When applying a linearisation to a real world  scenario, choosing an operating point that is within the time you are interested in, though for this system specifically a 1st order approximation still has quite a large divergence.
+\end{flushleft}
+\end{par}
+\end{preview}
 \end{document}

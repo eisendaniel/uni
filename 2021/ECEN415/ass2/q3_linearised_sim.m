@@ -8,7 +8,7 @@ u(t>=5,2) = final_u2;
 
 [Y,t_,X] = lsim(sys,u,t,x_0');
 plot_telemetry(t_, [X, u]);
-
+final_angle = X(end,5)
 %--------------------------------------------------------------------------
 % Plotting function to display the telemetry during flight.
 %--------------------------------------------------------------------------
