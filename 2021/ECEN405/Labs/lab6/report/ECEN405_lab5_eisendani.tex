@@ -1,0 +1,102 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt]{article}
+\usepackage{amsmath} % Required for some math elements
+\usepackage{hyperref} 
+\usepackage{xcolor}
+\usepackage{lipsum} 
+\usepackage{cite}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{bookmark}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{pythonhighlight}
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+\usepackage[margin=8mm]{geometry}
+\usepackage[caption=false, font=footnotesize]{subfig}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\usepackage[active,tightpage]{preview}
+\renewcommand{\PreviewBorder}{1in}
+\newcommand{\Newpage}{\end{preview}\begin{preview}}
+  
+
+
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{label = Step \arabic*:}
+
+\hypersetup{ %color attributes of citation, link, etc.
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=gray,      
+    urlcolor=blue,
+    citecolor=blue,
+}
+
+\newcommand{\matlab}{\textsc{Matlab }} %very important and totally necessary addition
+\newcommand{\hdotrule}[1]{\hbox to \textwidth{\leaders\hbox to #1pt{\hss . \hss}\hfil}}
+
+\newcommand\Item[1][]{%
+  \ifx\relax#1\relax  \item \else \item[#1] \fi
+  \abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{ECEN 405 \\ Lab 6: Power converters \\ (feedback) \\ Submission}
+\author{Daniel Eisen : 300447549}
+\date{\today}
+
+\begin{document}
+\begin{preview}
+
+    \maketitle
+    \hrule
+    %----------------------------------------------------------------------------------------
+    %	DOCUMENT CONTENT
+    %----------------------------------------------------------------------------------------
+    \section{Buck Converter}
+    \begin{center}
+        \includegraphics[width=0.75\textwidth]{img/buck.eps}\\
+        \textit{...}
+    \end{center}
+    
+    \section{Controller}
+    
+    \section{Controller Bode}
+    \begin{center}
+        \includegraphics[width=0.75\textwidth]{img/controller.eps}\\
+        \textit{...}
+    \end{center}
+    
+    \section{Uncontrolled vs Controlled}
+    \begin{center}
+        \includegraphics[width=0.75\textwidth]{img/comp.png}\\
+        \textit{...}
+    \end{center}
+    
+    \section{Simulink Model}
+    \begin{center}
+        \includegraphics[width=0.75\textwidth]{img/sim.png}\\
+        \includegraphics[width=0.75\textwidth]{img/uncontrolled v controlled.png}\\
+        \includegraphics[width=0.75\textwidth]{img/step_zoom.png}\\
+        \textit{...}
+    \end{center}
+    
+    \section{Schematic}
+    \begin{center}
+        \frame{\includegraphics[trim={75mm 0 0 75mm},clip,width=0.75\textwidth]{img/shem.pdf}}\\
+        \textit{...}
+    \end{center}
+
+    \hrule
+\end{preview}
+\end{document}
