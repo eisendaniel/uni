@@ -67,12 +67,12 @@ In a single-phase diode rectifier bridge $I_s = 10$A(rms), $I_{s1}=8$A(rms) and 
 Calculate the percentage \textbf{harmonic distortion} of individual component and total THD for an output signal having a fundamental amplitude of 5V, second harmonic amplitude of 0.5V and a third and fourth harmonic components of 0.3 and 0.2.
 
 \begin{align*}
-    2^{nd} & = \frac{0.5}{5} = 10\%                                                \\\\
-    3^{rd} & = \frac{0.3}{5} = 6\%                                                 \\\\
-    4^{th} & = \frac{0.2}{5} = 4\%                                                 \\\\
-    THD         & = \frac{\sqrt{ \sum_{n=2}^{\infty} \; V^2_{n\_rms} }}{ V_{fund\_rms}} \\
-                & = \frac{\sqrt{ 0.5^2 + 0.3^2 + 0.2^2 }}{ 5 }                          \\
-                & = 12.32\%
+    2^{nd} & = \frac{0.5}{5} = 10\%                                                \\
+    3^{rd} & = \frac{0.3}{5} = 6\%                                                 \\
+    4^{th} & = \frac{0.2}{5} = 4\%                                                 \\
+    THD    & = \frac{\sqrt{ \sum_{n=2}^{\infty} \; V^2_{n\_rms} }}{ V_{fund\_rms}} \\
+           & = \frac{\sqrt{ 0.5^2 + 0.3^2 + 0.2^2 }}{ 5 }                          \\
+           & = 12.32\%
 \end{align*}
 
 \newpage
@@ -83,39 +83,39 @@ A \textbf{magnetic core} has the following properties: The core Area $A_m = $ 0.
     \item Calculate the Reluctance of the core.
 
           \begin{align*}
-              \mathfrak{R} & = \frac{l}{\mu_{r}\mu_{0}A}                                             \\
+              \mathfrak{R} & = \frac{l}{\mu_{r}\mu_{0}A}                                 \\
                            & = \frac{0.0376}{5000(4\pi\times10^{-7})(9.21\times10^{-5})} \\
                            & = 64277.399 \; \mathrm{ampturns/Wb}
           \end{align*}
 
     \item Calculate the reluctance of an air gap of length 1mm is introduced in the core.
 
-        \textit{New Core Reluctance:}
-        \begin{align*}
-            \mathfrak{R}_i &= \frac{0.0376 - 0.001}{5000\cdot 4\pi\times10^{-7}\cdot 0.931\times 10^{-6}} \\ 
-            &= 62567.9 \approx 62.568\times 10^3 \mathrm{ampturns/Wb}
-        \end{align*}
+          \textit{New Core Reluctance:}
+          \begin{align*}
+              \mathfrak{R}_i & = \frac{0.0376 - 0.001}{5000\cdot 4\pi\times10^{-7}\cdot 0.931\times 10^{-6}} \\
+                             & = 62567.9 \approx 62.568\times 10^3 \mathrm{ampturns/Wb}
+          \end{align*}
           \textit{Air Gap Reluctance:}
           \begin{align*}
-            \mathfrak{R}_a &= \frac{0.001}{1\cdot 4\pi\times10^{-7}\cdot 9.31\times 10^{-5}}\\
-             &= 8547526.48 \approx 8.548\times 10^6 \mathrm{ampturns/Wb}
+              \mathfrak{R}_a & = \frac{0.001}{1\cdot 4\pi\times10^{-7}\cdot 9.31\times 10^{-5}} \\
+                             & = 8547526.48 \approx 8.548\times 10^6 \mathrm{ampturns/Wb}
           \end{align*}
 
           \textit{Total Reluctance:}
           \begin{align*}
-            \mathfrak{R} &= \mathfrak{R}_i + \mathfrak{R}_a\\ 
-            &= 62.568\times 10^3 + 8.548\times 10^6\\
-            &= 8.611\times 10^6 \mathrm{ampturns/Wb}
+              \mathfrak{R} & = \mathfrak{R}_i + \mathfrak{R}_a       \\
+                           & = 62.568\times 10^3 + 8.548\times 10^6  \\
+                           & = 8.611\times 10^6 \mathrm{ampturns/Wb}
           \end{align*}
 
     \item A coil with 25 turns is wound on the core with an air gap introduced in ii. Calculate the inductance of the coil.
 
           fit
           \begin{align*}
-            L &= \frac{N^2}{R}\\ 
-            &=\frac{25^2}{8.611\times 10^6}\\ 
-            &= 7.258\times 10^{-5}H = 72.58\mu H
-        \end{align*}
+              L & = \frac{N^2}{R}                     \\
+                & =\frac{25^2}{8.611\times 10^6}      \\
+                & = 7.258\times 10^{-5}H = 72.58\mu H
+          \end{align*}
 
     \item If the flux density in the core of question (iii) is not to exceed 0.2T, what is the maximum current that can be allowed to flow through the inductor coil?
           fit
@@ -123,32 +123,32 @@ A \textbf{magnetic core} has the following properties: The core Area $A_m = $ 0.
 
           $$i = \frac{B\mathfrak{R}A}{N} = \frac{0.2(8.611\times10^6)(9.31\times 10^{-5})}{25} = 6.41A$$
 
-    \newpage
+          \newpage
     \item At the maximum current calculated in question (iv), calculate the energy stored in the magnetic core and the air gap. Compare the two.
 
           fit
           $$V = 9.31\times10^{-5}\cdot 10^{-3} = 9.31\times10^{-8}m^3$$
 
           fit
-          \begin{align*}  
-            E &= \frac{1}{2}\frac{B^2}{\mu_0 \mu_r}V\\ 
-            &= \frac{1}{2}\frac{0.2}{4\pi\times10^{-7}\cdot 1}\cdot 9.31\times10^{-8}\\ 
-            &= 1.482\times 10^{-3}J \approx 1.48m J
-        \end{align*}
-
-          fit
           \begin{align*}
-            V &= 9.31\times10^{-5}\cdot 3.76^{-2}\\
-             &= 3.5\times10^{-6}m^3
+              E & = \frac{1}{2}\frac{B^2}{\mu_0 \mu_r}V                                    \\
+                & = \frac{1}{2}\frac{0.2}{4\pi\times10^{-7}\cdot 1}\cdot 9.31\times10^{-8} \\
+                & = 1.482\times 10^{-3}J \approx 1.48m J
           \end{align*}
 
           fit
           \begin{align*}
-            E &= \frac{1}{2}\frac{B^2}{\mu_0 \mu_r}\cdot V\\ 
-            &= \frac{1}{2}\frac{0.2^2}{4\pi\times10^{-7}\cdot 5000}\cdot 3.5\times10^{-6}\\ 
-            &= 1.11\times 10^{-5}J \approx 11.1\mu J
+              V & = 9.31\times10^{-5}\cdot 3.76^{-2} \\
+                & = 3.5\times10^{-6}m^3
           \end{align*}
-        The energy stored in the air gap is much much higher due to low permittivity.
+
+          fit
+          \begin{align*}
+              E & = \frac{1}{2}\frac{B^2}{\mu_0 \mu_r}\cdot V                                  \\
+                & = \frac{1}{2}\frac{0.2^2}{4\pi\times10^{-7}\cdot 5000}\cdot 3.5\times10^{-6} \\
+                & = 1.11\times 10^{-5}J \approx 11.1\mu J
+          \end{align*}
+          The energy stored in the air gap is much much higher due to low permittivity.
 \end{enumerate}
 
 
@@ -160,11 +160,11 @@ A current of 50mA is applied to the coil of example in \textbf{EM} lecture slide
 \end{center}
 
 \begin{align*}
-    \Phi & = \frac{Li}{n} = \frac{50.5\times10^{-3} \cdot 50 \times 10^{-3}}{500}                           \\&= 5.05\times10^{-6}Wb\\
-    B    & = \frac{\Phi}{A} = \frac{5.05\times10^{-6}}{10^{-4}}                                                   \\
-         & = 5.05\times10^{-2}T                                                                              \\
+    \Phi & = \frac{Li}{n} = \frac{50.5\times10^{-3} \cdot 50 \times 10^{-3}}{500}                                \\&= 5.05\times10^{-6}Wb\\
+    B    & = \frac{\Phi}{A} = \frac{5.05\times10^{-6}}{10^{-4}}                                                  \\
+         & = 5.05\times10^{-2}T                                                                                  \\
     H    & = \frac{B}{\mu} = \frac{B}{\mu_r \cdot \mu_0} = \frac{5.05\times10^{2}}{900 \cdot 4\pi\times 10^{-7}} \\
-         & = 44.65 \; \mathrm{ampturns/m}                                                    \\
+         & = 44.65 \; \mathrm{ampturns/m}                                                                        \\
 \end{align*}
 
 \subsubsection*{Question Five}
@@ -185,7 +185,7 @@ A 10-hp, 3-phase, 50-Hz \textbf{motor} has a full-load speed of 1,165 rpm. It is
     \item \textit{Number of poles and slip:}\\
           5 pole pairs gives the closest above 1165
           \begin{align*}
-              n_s               & =\frac{60{\cdot}50Hz}{p/2}          \\
+              n_s               & =\frac{60{\cdot}50Hz}{p/2}    \\
                                 & =\frac{3000}{5/2} = 1200rpm   \\
               \mathrm{Slip:\;s} & =100(1200-1165)/1200=2.9167\%
           \end{align*}
@@ -194,8 +194,8 @@ A 10-hp, 3-phase, 50-Hz \textbf{motor} has a full-load speed of 1,165 rpm. It is
           \begin{align*}
               \omega_m & = (1165/60)2\pi =121.9985 \mathrm{rad/s} \\
               T_{out}  & = P_{out}/\omega_m                       \\
-                       & = 10(746)/121.9985=7460/121.9985
-              \\&=61.15\mathrm{Nm}
+                       & = 10(746)/121.9985=7460/121.9985         \\
+                       & =61.15\mathrm{Nm}
           \end{align*}
 
     \item \textit{Power input and efficiency:}\\
@@ -210,7 +210,7 @@ A 10-hp, 3-phase, 50-Hz \textbf{motor} has a full-load speed of 1,165 rpm. It is
               P_{devel}  & = 7460+175=7635W                               \\
               P_{airgap} & = P_{devel}/(1-s) = 7635/(1-0.029167)=7864.38W \\
               P_{rotor}  & = P_{airgap}-P_{devel} = 7864.38-7635=229.38W  \\
-              P_{stator} & = P_{in}-P_{airgap}=9616.69-7864.38=1752.31W \\
+              P_{stator} & = P_{in}-P_{airgap}=9616.69-7864.38=1752.31W   \\
           \end{align*}
 \end{enumerate}
 
@@ -219,33 +219,33 @@ A 10-hp, 3-phase, 50-Hz \textbf{motor} has a full-load speed of 1,165 rpm. It is
 For the above motor, specify the capacitance per phase (in kVARs) needed to improve the power factor to 92\%. Then find the magnitude of the line current with the added capacitance
 
 \begin{align*}
-    P_{in} &= 9.617kW,\; P_{phase}=3.206kW\;at\;0.71\;\mathrm{lagging}\\
-    Q_{old/phase} &= 3.206tan(cos^{-1}(0.71)) = 3.1798 \mathrm{kVAR} \\
-    Q_{new/phase} &= 3.206\left(\tan\left(\cos^{-1}\left(0.92\right)\right)\right) = 1.366 \mathrm{kVAR} \\
-    Q_{C/phase} &= 1.366 - 3.1798=-1.8138 \mathrm{kVAR}/\phi \\
-    I_{line} &= \frac{P}{\sqrt{3}|V_{line}|pf} = \frac{9616.69}{\sqrt{3}(460)(0.92)}\\
-              &= 13.12 A
+    P_{in}        & = 9.617kW,\; P_{phase}=3.206kW\;at\;0.71\;\mathrm{lagging}                            \\
+    Q_{old/phase} & = 3.206tan(cos^{-1}(0.71)) = 3.1798 \mathrm{kVAR}                                     \\
+    Q_{new/phase} & = 3.206\left(\tan\left(\cos^{-1}\left(0.92\right)\right)\right) = 1.366 \mathrm{kVAR} \\
+    Q_{C/phase}   & = 1.366 - 3.1798=-1.8138 \mathrm{kVAR}/\phi                                           \\
+    I_{line}      & = \frac{P}{\sqrt{3}|V_{line}|pf} = \frac{9616.69}{\sqrt{3}(460)(0.92)}                \\
+                  & = 13.12 A
 \end{align*}
 
 \subsubsection*{Question Eight}
 In a single phase 50Hz \textbf{power factor correction} circuit, $V_s$ = 240V (rms), $V_d$ = 500V and the output power is 600W. Calculate $i_L(t)$, $d(t)$ and the average current $i_d$ through the output diode. Calculate the second harmonic peak voltage in the capacitor if C = 690$\mu$F
 
 \begin{align*}
-    d(t) &= 1-\frac{\hat{V_s}|sin(\omega t)|}{V_d}\\
-    \hat{V_s} &= \sqrt{2}230 = 339.411255V\\
-    d(t) &= 1-\frac{339.41|sin(100\pi t)|}{500}\\\\
-    \bar{i_L} &= \hat{I_L}|sin(\omega t)| \\
-    I_d &= \frac{1}{2}\frac{\hat{V_s}}{V_d}\hat{I_L} \rightarrow \hat{I_L} = 2I_d \frac{V_d}{\hat{V_s}} \\
-    I_d &= 600W/500V=1.2A \\
-    \hat{I_L} &= 2(1.2) \frac{500}{339.41} = 3.536A \\
-    \bar{i_L} &= 3.536|sin(100\pi t)| \\\\
-    \bar{i_d} &= \frac{\hat{V_s}\hat{I_L}}{V_d}|sin(100\pi t)|^2 \\
-              &= \frac{339.41(3.536)}{500}|sin(100\pi t)|^2\\
-              &= 2.4|sin(100\pi t)|^2 \\
-    \bar{i}_{d(rms)} &= 2.4/\sqrt{2} = 1.697A \;\;\mathrm{or}\;\; \bar{i}_{d(avg)} = 2.4/2 = 1.2A\\\\
-    \hat{V}_{d2} &= \frac{\hat{I_L}}{4\omega C}\frac{\hat{V_s}}{V_d} \\
-    &= \frac{3.536}{400\pi(690\times10^{-6})}\frac{339.41}{500} \\
-    &= 2.768V
+    d(t)             & = 1-\frac{\hat{V_s}|sin(\omega t)|}{V_d}                                                       \\
+    \hat{V_s}        & = \sqrt{2}230 = 339.411255V                                                                    \\
+    d(t)             & = 1-\frac{339.41|sin(100\pi t)|}{500}                                                          \\\\
+    \bar{i_L}        & = \hat{I_L}|sin(\omega t)|                                                                     \\
+    I_d              & = \frac{1}{2}\frac{\hat{V_s}}{V_d}\hat{I_L} \rightarrow \hat{I_L} = 2I_d \frac{V_d}{\hat{V_s}} \\
+    I_d              & = 600W/500V=1.2A                                                                               \\
+    \hat{I_L}        & = 2(1.2) \frac{500}{339.41} = 3.536A                                                           \\
+    \bar{i_L}        & = 3.536|sin(100\pi t)|                                                                         \\\\
+    \bar{i_d}        & = \frac{\hat{V_s}\hat{I_L}}{V_d}|sin(100\pi t)|^2                                              \\
+                     & = \frac{339.41(3.536)}{500}|sin(100\pi t)|^2                                                   \\
+                     & = 2.4|sin(100\pi t)|^2                                                                         \\
+    \bar{i}_{d(rms)} & = 2.4/\sqrt{2} = 1.697A \;\;\mathrm{or}\;\; \bar{i}_{d(avg)} = 2.4/2 = 1.2A                    \\\\
+    \hat{V}_{d2}     & = \frac{\hat{I_L}}{4\omega C}\frac{\hat{V_s}}{V_d}                                             \\
+                     & = \frac{3.536}{400\pi(690\times10^{-6})}\frac{339.41}{500}                                     \\
+                     & = 2.768V
 \end{align*}
 
 \newpage
@@ -253,7 +253,7 @@ In a single phase 50Hz \textbf{power factor correction} circuit, $V_s$ = 240V (r
 In a 2-pole, three-phase \textbf{PMAC motor drive}, the torque constant $k_{T(\phi)}$ and the voltage constant $k_{E(\phi)}$ are 0.5 in MKS units. The synchronous inductance is 20mH (neglect the winding resistance). This motor is supplying a torque of 3 Nm at a speed of 3,000 rpm in a balanced sinusoidal steady state. Calculate the per-phase voltage across the power-processing unit as it supplies controlled currents to this motor.
 
 \begin{align*}
-    T_{em(\phi)} &= \frac{T_{em}}{3} = 1\;\mathrm{Nm}\\
+    T_{em(\phi)} & = \frac{T_{em}}{3} = 1\;\mathrm{Nm} \\
 \end{align*}
 
 \end{document}
