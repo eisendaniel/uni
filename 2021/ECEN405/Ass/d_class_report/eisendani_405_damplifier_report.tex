@@ -115,9 +115,9 @@ Another addition that was made as an extension to the scope the inclusion of 2 l
 
 \subsection{Input Bandpass Filter}
 
-Active Bandpass filter with adjustable gain stage to pass 10Hz to 200Hz.
+Nickolai designed the input stage that consists of 4th order Butterworth active low pass and a 2nd order active high pass filter with corner frequencies at 10Hz and 300Hz to meet the bandwidth specification in \cref{S:spec} with no attenuation at 200Hz. This stage additional imposes the signal on a mid-rail reference voltage of 2.5V to enable the entire logic side of this project to utilise a single ended 5V supply and also utilised a spare op-amp (from single quad package) as an adjustable gain stage for fine control and tuning.
 
-\textit{this is what is was designed to do to meet these spec with this method, with these nice additions}
+All this is shown in \cref{F:ipf_schem} as the final design.
 
 \begin{figure}[h!]
   \centering
@@ -128,6 +128,8 @@ Active Bandpass filter with adjustable gain stage to pass 10Hz to 200Hz.
 
 \subsection{Audio Sampling and SPWM}
 
+Niels designed the circuitry required to generate the high frequency triangle wave required to sample the processed input audio with the duel comparators to produced an inverted and non-inverted Sinusoidal Pulse-width-modulated signal at the required 5V level for controlling the gate drivers.    
+
 \begin{figure}[h!]
   \centering
   \frame{\includegraphics[page=3, trim={35mm 133.5mm 30mm 15mm},clip,width=0.85\textwidth]{img/schematic.pdf}}
@@ -135,6 +137,9 @@ Active Bandpass filter with adjustable gain stage to pass 10Hz to 200Hz.
   \label{F:sample_schem}
 \end{figure}
 
+It basically operates by comparing the current signal level to the triangle wave and encoding that in the width of the SPWM. This circuit also integrates both adjustable triangle wave frequency and scale to tune the switching speed and signal enveloping for best performance.
+
+\newpage
 \subsection{Power Stage and Output Filter}
 
 These sections are required to amplify the generated 5V SPWM from the sampler filter out the carrier frequency to reproduce the audio signal. 
@@ -142,23 +147,36 @@ These sections are required to amplify the generated 5V SPWM from the sampler fi
 They consist of two symmetric MOSFET bridges (non-inverted and inverted SPWM amplifiers) that forming the full bridge topology and a low pass reconstruction filter to decode the audio signal.
 Each of these require require following a design procedure to meets specification and the optimisation of component choice to minimise losses, maintain signal integrity and add protection.
 
-\subsubsection*{Power Amplifying Bridge}
+\subsubsection*{Power Amplifying Bridge}\label{S:power_des}
 
-
+In order the successfully amplify the SPWM encoded audio the MOSFET bridges must be switched quickly and efficiently, minimising conduction losses and retaining signal clarity. The design of such an effective amplifying bridge relies on three main aspects: 
 
 \begin{itemize}
-  \item FET selection
-  \item Driver selection
-  \item Bootstrapping and dead time
+  \item Correct MOSFET Selection
+  \item Gate Drivers for fast gate charging
+  \item Bootstrapping and switching dead time
 \end{itemize}
 
+The finalised design of both bridges is shown here in \cref{F:gate_drive_schem} accepting the 5V SPWM signals and outputting the POUT amplified signal for filtering.
+
 \begin{figure}[h!]
-  \centering
-  \frame{\includegraphics[page=5, trim={85mm 149mm 5mm 12mm},clip,width=0.85\textwidth]{img/schematic.pdf}}
-  \caption{Gate driver schematic}
-  \label{F:gate_drive_schem}
+\centering
+\frame{\includegraphics[page=5, trim={85mm 149mm 5mm 12mm},clip,width=0.85\textwidth]{img/schematic.pdf}}
+\caption{Gate driver schematic}
+\label{F:gate_drive_schem}
 \end{figure}
 
+Before component selection can occur the FET voltage rating must be calculated:
+
+\begin{align}
+  BV_dss &= \frac{\sqrt{2\cdot P_{out}\cdot R_{L}}}{0.85}\cdot1.5 = 44.6V
+\end{align}
+
+The selected FETs for the project are the PHP23NQ11T. These were selected for their combination of very low $R_ds(on)$ of $49m\Omega$ and very low gate charge of $10nC$. These factors work to minimise gate charge time as well as reduce the on state conduction power loss. They exceed the voltage rating at 110V and have an ambient power dissipation of 100W so will be comfortably operating at maximum quarter power. 
+
+The IR21834PBF in SMD packaging were selected as the gate driving ICs as they integrate a large all the necessary features for proper bridge control. Each is a dedicated half-bridge driver designed of the required bootstrap operation to properly reference the high-side MOSFET to allow for successful switching. It can supply the gate outputs with up to 1.8A of charge current for nominal gate ON/OFF times of 40ns and 20ns. It is also 5V input to be compatible with the SPWM generation stage and features a matched preparation delay between each channel to prevent phase drift/offset and inter-channel interference in the filter stage.  
+
+Most importantly these drivers support a programmable dead time to prevent VDD to GND shoot through across the FETs and allows for tuning the project overall THD by changing the control resistance, nominally set to 10K for a 63nS dt.
 
 \subsubsection*{Reconstruction Filter}
 
@@ -169,99 +187,87 @@ Specifically the configuration chosen is the Alternate Balanced 2-Pole Filter sh
 
 \begin{figure}[h!]
   \centering
-  \frame{\includegraphics[page=4, trim={115mm 97mm 105mm 75mm},clip,width=0.6\textwidth]{img/schematic.pdf}}
+  \frame{\includegraphics[page=4, trim={115mm 97mm 105mm 75mm},clip,width=0.5\textwidth]{img/schematic.pdf}}
   \caption{Alternate Balanced 2-Pole LPF}
   \label{F:opf_schem}
 \end{figure}
 
-\begin{itemize}
-  \item Topology and Design
-  \item Simulation and Part selection
-\end{itemize}
+The calculation of these values are all derived from the load ($R_L$) and selected cutoff frequency. This was placed one decade before the minimum switching frequency of 30kHz to ensure a -40dB attenuation.
 
-% Signal freq max of 200Hz, Switching frequency of ~30kHz
-% Place corner frequency of filter at 3kHz (decade centred)
-% mes
+\begin{align}
+    f_{0} &= 3\,kHz, \; \omega_{0} = 18850\,rad.s^{-1} \\
+    C_{L} &= \frac{1}{R_{L}w_{o}\sqrt{2}} = 9.38\,\mu F \\
+  C_{a,b} &= 0.2C_{L} = 1.88\,\mu F \\
+        L &= \frac{R_{L}\sqrt{2}}{2w_{o}} = 150\,\mu H
+\end{align}
 
-
-% https://datasheets.maximintegrated.com/en/ds/MAX4295.pdf
-
-% Figure 4c. Alternate Balanced 2-Pole Filter
-
-% Balanced 2-Pole (Figure 4b):
-% A  balanced  2-pole  filter  does  not  have  the  common-
-% mode swing problem of the single-ended filter.
-% C = 2 / (√2 ✕ RL ✕ ωo), L = (√2 ✕ RL)/(2 ✕ ωo); choosing
-% fo =  3kHz  and  RL =  4Ω,  C1a  =  C1b  =  1.87μF,  L1a  =
-% L1b = 150μH.
-% A single capacitor connected across RL, with a value of
-% CL = 1/(√2 ✕ RL ✕ ωo), can be used in place of C1a and
-% C1b.  However,  the  configuration  as  shown  gives  an
-% improved  rejection  to  common-mode  signal  compo-
-% nents  of  OUT+_  and  OUT-_.    If  the  single  capacitor
-% scheme is used, additional capacitors (Ca and Cb) can
-% be  added  from  each  side  of  RL,  providing  a  high-fre-
-% quency  short  to  ground  (Figure  4c).  These  capacitors
-% should be approximately 0.2 ✕ CL.
-
+These exact values are obviously not directly available for purchase and obtaining the inductors is the main limiting factor. Therefore the above values were used as the starting off point in component selection, and the recalculated values to match the available inductors were simulated to ensure functionality was retained. 
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.75\textwidth]{img/output_filter_sim.png}
+  \includegraphics[width=0.6\textwidth]{img/output_filter_sim.png}
   \caption{Output filter option simulations}
   \label{F:opf_sim}
 \end{figure}
 
+In \cref{F:opf_sim} you can see the 3 real world attainable circuits (based of real component values in stock) simulated. These all still match in topology performance and all have a corner frequency (-3dB) of under 3kHz thus retaining the intended attenuation.
+All these values were found in the same or very similar product series. The inductors were sourced as high current (5A), shielded core signal transformers to ensure a constant inductance across the expected output current, the main capacitor was a unpolarised film capacitor for signal quality, tight tolerances and closer to ideal characteristics.
 
+From these the final values were selected to help meet the price specification.
 
-\newpage
 \section{Implementation}
-
-\textit{Here you should discuss the assembly of the amplifier and any problems you faced as a team building the amplifier.
-Here, the individual components should also be characterised. For example: if you have a filter, what is the response and how does it compare to the calculated? If you have a triangle wave, how does it look? Is it doing what I should? Why? Why not? How do the inputs/outputs of your comparator look? How does the square wave on the gate of the MOSFETs look?}
- 
-
 \subsection{PCB Layout}
 
-\begin{figure}
+With each of the amplifiers stages fully designed and top-level connective schematic complete, the next step is to implement it by laying out an integrated PCB. This can be seen in \cref{F:PCB} showing the full layout the projects deliverable.
+
+\begin{figure}[h!]
   \centering
-  \begin{subfigure}{0.5\textwidth}
+  \begin{subfigure}{0.45\textwidth}
     \includegraphics[width=\columnwidth]{img/traces.png}
-    \subcaption{}
+    \subcaption{PCB trace layout}
   \end{subfigure}
-  \begin{subfigure}{0.5\textwidth}
+  \begin{subfigure}{0.45\textwidth}
     \includegraphics[width=\columnwidth]{img/top_layer.png}
-    \subcaption{}
+    \subcaption{Top Copper}
   \end{subfigure}
-  \begin{subfigure}{0.5\textwidth}
+  \begin{subfigure}{0.45\textwidth}
     \includegraphics[width=\columnwidth]{img/bottom_layer.png}
-    \subcaption{}
+    \subcaption{Back Copper}
   \end{subfigure}
-  \caption{}
+  \caption{Final Full PCB}
+  \label{F:PCB}
 \end{figure}
+
+By design this project includes a mix of sensitive signal processing at the input, and high power, high frequency switching at the output. This represents and important requirement to isolation of grounds and management of current return paths.
+
+This is primarily achieved by completely separating the Power and Signal ground planes on both sides and providing a single return path for signal currents to  via a net-tie from signal to power ground. This completely prevents any high currents from the amplification bridges from returning around/under the sensitive op amps. \Cref*{F:PCB} b\&c's copper pour shows this isolation and return path.
+
+Adjacent to this approach, this project heavily utilised copper pour zones and heavy via stitching to ensure constant ground references and very low impedance current paths for the high power output. To match these custom zones we also made custom FET footprints that allows us to dissipate excess heat into the board.
+
+Finally we defined explicit pour keepout zones under the output terminals to prevent connectors shorting to the ground plane and under the output half both gate drivers to prevent noise coupling into the gate input signals.
 
 \subsection{Gate Driving and Bridge Output}
 \begin{figure}[h!]
   \centering
   \begin{subfigure}{0.3\textwidth}
-      \includegraphics[width=\columnwidth]{img/testing/power_output/gate_input.JPG}
-      \subcaption{High and Low side gate signals}
+    \includegraphics[width=\columnwidth]{img/testing/power_output/gate_input.JPG}
+    \subcaption{High and Low side gate signals}
   \end{subfigure}
   \begin{subfigure}{0.3\textwidth}
-      \includegraphics[width=\columnwidth]{img/testing/power_output/dead_time.JPG}
-      \subcaption{Deadtime}
+    \includegraphics[width=\columnwidth]{img/testing/power_output/dead_time.JPG}
+    \subcaption{Deadtime}
   \end{subfigure}
   \begin{subfigure}{0.3\textwidth}
-      \includegraphics[width=\columnwidth]{img/testing/power_output/fet_output.JPG}
-      \subcaption{Both bridges amplified SPWM (FET outputs)}
+    \includegraphics[width=\columnwidth]{img/testing/power_output/fet_output.JPG}
+    \subcaption{Both bridges amplified SPWM (FET outputs)}
   \end{subfigure}
   \caption{}
+  \label{F:imp_drive}
 \end{figure}
 
+The bridge driving sections functionality was confirmed by examining the generated gate signals, dead-time and the resulting amplified signals. In \cref{F:imp:drive} you can observe the high side gate signal (a) being correctly bootstrapped up and the Miller charge plateau can even be seen, the deadtime (b) is also successfully being set at 63ns as outlined in  \cref{S:power_des}, and successfully results in a non-inverted and inverted amplified SPWM (c).
 
-\section{Results}
- 
-\textit{Here I would expect to see the results of the whole amp, for example: an output wave, analysis of the efficiency, discuss maximum power output (which may be frequency dependent), and THD.} 
+\subsection{Reconstruction Filter}
  
 \begin{figure}[h!]
   \centering
@@ -289,20 +295,37 @@ Here, the individual components should also be characterised. For example: if yo
       \includegraphics[width=\columnwidth]{img/testing/power_output/filter_output_2kHz.JPG}
       \subcaption{}
   \end{subfigure}
-  \caption{}
+  \caption{Output from Reconstruction filter at various frequencies}
+  \label{F:opt_filter_res}
 \end{figure}
+
+To show the reconstruction filter successfully removed the carrier frequency and retain the correct bandwidth attenuation to meet the specification in \cref{S:spec} the input signal was varied from 10Hz to 2kHz and the results are very successfully shown in \cref{F:opt_filter_res}.
+
+\subsubsection*{Extra}
+The only changes made in testing was the addition of an $100uF$ smoothing capacitor on the mid-rail voltage reference for the input signal processing to prevent oscillations. 
+
+\newpage
+\section{Results}
+
+To finalise and summarise the overall performance of this Class D amplifier a series of frequency sweeps were undertaken and the measurements relevant to \cref{S:spec} were taken. 
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.75\textwidth]{img/testing/amplifier_bode.pdf}
   \caption{}
+  \label{F:bode}
 \end{figure}
+
+By taking an FFT of the output signal (loaded) the Bode plot \cref{F:bode} shows a flat passband matching the 10Hz to 200Hz specification.
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.75\textwidth]{img/testing/Efficiency_vs._Frequency.pdf}
   \caption{}
+  \label{F:eff}
 \end{figure}
+
+\cref{F:eff} shows that by utilising the D class approach to power amplification, a very high efficiency could be achieved across the operating range. Sustaining 85\% to 95\%.  
 
 \begin{table}[h!]
   \centering
@@ -320,24 +343,24 @@ Here, the individual components should also be characterised. For example: if yo
   \label{T:THD}
 \end{table}
 
+This \%THD was also measured across the measurable range (\cref{T:THD}) of the meter and shows what was approximately expected for a deadtime of 63ns. It could be possible to reduce this to sub \%1 by dropping down to 40ns but this was not explored.   
 
+\newpage
 \section{Conclusions}
  
-\textit{What worked, didn’t work? How would you change your approach? Any interesting insights?}
+In conclusion our segmented and thorough approach to design and careful layout consideration resulted in this project very successfully producing a D-Class amplifier to the given specifications in \cref{S:spec}. We were also able to maintain the \$50 per board cost and order and construct 3 working devices, outlined in this \href{https://niels-clayton.github.io/D-Class\_Amplifier/}{Interactive BOM}.
 
-Per brd the price was kept to the 50 dollar per mark as per this BOM (https://niels-clayton.github.io/D-Class\_Amplifier/)
-
-
+The feeling of which can be accurately summarised by \cref{F:thumbs}.
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.75\textwidth]{img/thumbs.png}  
+  \includegraphics[width=0.5\textwidth]{img/thumbs.png}  
   \caption{}
   \label{F:thumbs}
 \end{figure}
 
 \newpage
 \section*{Appendix}
-
+Implementation results of other team members stages.
 \subsection*{Input Filter}
 \begin{figure}[h!]
   \centering
