@@ -56,7 +56,7 @@
 
 \section{Introduction}
 
-In the relm of auido ampliifers the D Class offers a method of supplying a high power loads with very high efficiency (esspecailly when compared to other classes). Classes A, AB offer high power output with very low signal distortion but suffer greatly in the efficency department due to continous linear conduction times and resulting losses in their amplifying elements/transistors. D class amplifiers can achieve up to 90-95\% power efficiency by taking advantage of a switching approach but require a more complex design process and circuit.
+In the relm of auido amplifiers the D Class offers a method of supplying a high power loads with very high efficiency (esspecailly when compared to other classes). Classes A, AB offer high power output with very low signal distortion but suffer greatly in the efficency department due to continous linear conduction times and resulting losses in their amplifying elements/transistors. D class amplifiers can achieve up to 90-95\% power efficiency by taking advantage of a switching approach but require a more complex design process and circuit.
 
 \begin{figure}[h!]
   \centering
@@ -78,14 +78,7 @@ This report outlines and discussed the specifics in design, implementation and r
 
 \section{Design}
 
-A D-class amplifier operates on the signal sampling, switching amplification, and signal reconstruction as briefly described above. This can be practically realised \dots
-
-Nick designed input stage that handles signal preconditioning and bandpass filtering
-
-Niels designed Sampler and SPWM generation
-
-I designed Power Driving Stage (Bridges) and Low Pass Output/Reconstruction filter
-
+A D-class amplifier operates on the signal sampling, switching amplification, and signal reconstruction as briefly described above. This project practically realised this approach with the high level design shown in \cref{F:top_schem}. 
 
 \begin{figure}[h!]
   \centering
@@ -93,17 +86,31 @@ I designed Power Driving Stage (Bridges) and Low Pass Output/Reconstruction filt
   \label{F:top_schem}
 \end{figure}
 
+As the the intended load is a sub-woofer and there is a required bandwidth, the input audio signal must undergo some filtering and other preconditioning. This is handled by the input stage and was designed by Nickolai Wolfe. This stage band-passes the audio to meet the frequency range requirement, and otherwise adjusts gain and reference levels to make to suitable for the sampling stage.
+
+The Sampler or Sinusoidal pulse width modulation (SPWM) generation stage was designed by Niels Clayton and encodes the audio signal into a high frequency carrier PWM signal. This signal is output (non-inverted and inverted for positive and negative output channel) at the correct voltage level for the driving circuitry as the switching control signal to the Power Amplifying Stage.
+
+The last stage(s) of the D-Class is the Amplifying Bridges and reconstruction (Low pass) filters and their design was handled by myself. This project utilised two independent MOSFET bridges to amplify both SPWM signals and the reconstruction filter then strips out the high frequency carrier PWM to output the desired audio signal to the load.  
+
 \subsection{Top Level Design Decisions}
+\subsubsection*{Topology}
+First is a topology choice. D-class amplifiers come in two main "flavours", Full and Half Bridge. Full Bridge amplifiers dedicate a whole bridge (1 driver, 2 MOSFETs) for each of a channels output rails. A Half bridge on the other hand has a single bridge that drives both the positive and negative sides of the output signal.
 
-\begin{itemize}
-  \item Single main supply voltage regulated down to driver and logic supplied to produce a more cohesive final product
-\end{itemize}
+As the half bridge does not have independent bridges it will therefore require double the supply voltage (and is usually duel rail) to achieve the same output power. Its configuration also resulting in the commutation current being pumped back through the power supply, resulting in fluctuation and often the need for implementation a closed loop feedback system to maintain output stability. 
 
+For the above drawbacks of the half-bridge as well as the fact that we are producing a mono output channel we decided to use an open loop full bridge topology to make breaking up the design simpler, maintain a single supply rail and sacrifice the required component duplication as a compromise. 
+
+\subsubsection*{Power Supply}
+
+Now that the project confirmed as Full Bridge, to meet the require output power to the 4 Ohm load the required VDD needs to be set.
+
+\vspace*{-10mm}
 \begin{align*}
-  V_{DD} &= \sqrt{2\cdot R_{L}\cdot P_{out}} \\
-         &= 25.298V\\
-  V_{DD} &= 26V (min)
+  V_{DD} &= \sqrt{2\cdot R_{L}\cdot P_{out}} = 25.298V\\
+         &= 26V (min)
 \end{align*}
+
+Another addition that was made as an extension to the scope the inclusion of 2 linear regulators to power the drivers and logic circuitry such that this project would produce a more cohesive final product. These are included in \cref{F:top_schem}.
 
 
 \subsection{Input Bandpass Filter}
@@ -130,6 +137,21 @@ Active Bandpass filter with adjustable gain stage to pass 10Hz to 200Hz.
 
 \subsection{Power Stage and Output Filter}
 
+These sections are required to amplify the generated 5V SPWM from the sampler filter out the carrier frequency to reproduce the audio signal. 
+
+They consist of two symmetric MOSFET bridges (non-inverted and inverted SPWM amplifiers) that forming the full bridge topology and a low pass reconstruction filter to decode the audio signal.
+Each of these require require following a design procedure to meets specification and the optimisation of component choice to minimise losses, maintain signal integrity and add protection.
+
+\subsubsection*{Power Amplifying Bridge}
+
+
+
+\begin{itemize}
+  \item FET selection
+  \item Driver selection
+  \item Bootstrapping and dead time
+\end{itemize}
+
 \begin{figure}[h!]
   \centering
   \frame{\includegraphics[page=5, trim={85mm 149mm 5mm 12mm},clip,width=0.85\textwidth]{img/schematic.pdf}}
@@ -138,31 +160,50 @@ Active Bandpass filter with adjustable gain stage to pass 10Hz to 200Hz.
 \end{figure}
 
 
+\subsubsection*{Reconstruction Filter}
 
-Signal freq max of 200Hz, Switching frequency of ~30kHz
-Place corner frequency of filter at 3kHz (decade centred)
-mes
+This D-class is designed around a minimum switching/carrier frequency of 30kHz therefore a filter is required on the bridges output to attenuate this and restore the audio signal for output and driving the sub-woofer. Even though the carrier frequency is outside the audible range and the sub-woofer could not accurately reproduce it, leaving it unfiltered could degrade the efficiency and well as cause EMI issues.
+
+As audio signal integrity is a priory the chosen topology is a low-pass Butterworth filter to maintain a flat gain in the passband and good phase response.
+Specifically the configuration chosen is the Alternate Balanced 2-Pole Filter shown in \cref{F:opf_schem}. This utilises duel matched inductors ($L$) to eliminate common-mode swing, a single full rail unpolarised capacitor ($C_L$) for improved rejection and two addition balancing capacitors ($C_{a,b}$) that provide a HF ground shorts.
+
+\begin{figure}[h!]
+  \centering
+  \frame{\includegraphics[page=4, trim={115mm 97mm 105mm 75mm},clip,width=0.6\textwidth]{img/schematic.pdf}}
+  \caption{Alternate Balanced 2-Pole LPF}
+  \label{F:opf_schem}
+\end{figure}
+
+\begin{itemize}
+  \item Topology and Design
+  \item Simulation and Part selection
+\end{itemize}
+
+% Signal freq max of 200Hz, Switching frequency of ~30kHz
+% Place corner frequency of filter at 3kHz (decade centred)
+% mes
 
 
-https://datasheets.maximintegrated.com/en/ds/MAX4295.pdf
+% https://datasheets.maximintegrated.com/en/ds/MAX4295.pdf
 
-Figure 4c. Alternate Balanced 2-Pole Filter
+% Figure 4c. Alternate Balanced 2-Pole Filter
 
-Balanced 2-Pole (Figure 4b):
-A  balanced  2-pole  filter  does  not  have  the  common-
-mode swing problem of the single-ended filter.
-C = 2 / (√2 ✕ RL ✕ ωo), L = (√2 ✕ RL)/(2 ✕ ωo); choosing
-fo =  3kHz  and  RL =  4Ω,  C1a  =  C1b  =  1.87μF,  L1a  =
-L1b = 150μH.
-A single capacitor connected across RL, with a value of
-CL = 1/(√2 ✕ RL ✕ ωo), can be used in place of C1a and
-C1b.  However,  the  configuration  as  shown  gives  an
-improved  rejection  to  common-mode  signal  compo-
-nents  of  OUT+_  and  OUT-_.    If  the  single  capacitor
-scheme is used, additional capacitors (Ca and Cb) can
-be  added  from  each  side  of  RL,  providing  a  high-fre-
-quency  short  to  ground  (Figure  4c).  These  capacitors
-should be approximately 0.2 ✕ CL.
+% Balanced 2-Pole (Figure 4b):
+% A  balanced  2-pole  filter  does  not  have  the  common-
+% mode swing problem of the single-ended filter.
+% C = 2 / (√2 ✕ RL ✕ ωo), L = (√2 ✕ RL)/(2 ✕ ωo); choosing
+% fo =  3kHz  and  RL =  4Ω,  C1a  =  C1b  =  1.87μF,  L1a  =
+% L1b = 150μH.
+% A single capacitor connected across RL, with a value of
+% CL = 1/(√2 ✕ RL ✕ ωo), can be used in place of C1a and
+% C1b.  However,  the  configuration  as  shown  gives  an
+% improved  rejection  to  common-mode  signal  compo-
+% nents  of  OUT+_  and  OUT-_.    If  the  single  capacitor
+% scheme is used, additional capacitors (Ca and Cb) can
+% be  added  from  each  side  of  RL,  providing  a  high-fre-
+% quency  short  to  ground  (Figure  4c).  These  capacitors
+% should be approximately 0.2 ✕ CL.
+
 
 \begin{figure}[h!]
   \centering
@@ -171,14 +212,9 @@ should be approximately 0.2 ✕ CL.
   \label{F:opf_sim}
 \end{figure}
 
-\begin{figure}[h!]
-  \centering
-  \frame{\includegraphics[page=4, trim={115mm 97mm 105mm 75mm},clip,width=0.6\textwidth]{img/schematic.pdf}}
-  \caption{Final output filter schematic}
-  \label{F:opf_schem}
-\end{figure}
 
 
+\newpage
 \section{Implementation}
 
 \textit{Here you should discuss the assembly of the amplifier and any problems you faced as a team building the amplifier.
@@ -290,6 +326,14 @@ Here, the individual components should also be characterised. For example: if yo
 \textit{What worked, didn’t work? How would you change your approach? Any interesting insights?}
 
 Per brd the price was kept to the 50 dollar per mark as per this BOM (https://niels-clayton.github.io/D-Class\_Amplifier/)
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.75\textwidth]{img/thumbs.png}  
+  \caption{}
+  \label{F:thumbs}
+\end{figure}
 
 \newpage
 \section*{Appendix}
